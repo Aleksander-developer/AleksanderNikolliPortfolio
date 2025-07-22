@@ -1,0 +1,92 @@
+/* src/app/app.component.scss */
+
+// Importa le variabili globali dal tuo file _variables.scss
+@use '../styles/variables' as vars;
+
+/*
+ * Struttura Flexbox per il layout principale.
+ * Questo assicura che il footer stia correttamente in fondo.
+ */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*
+ * Contenuto principale
+ */
+.main-content {
+  background-image: url('/assets/sfondo.png'); // Usa il percorso assoluto per l'immagine di sfondo
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 64px); /* 64px è l’altezza tipica della mat-toolbar */
+  padding: 2rem;
+  // Assicurati che il contenuto abbia un colore di base per il testo
+  color: vars.$text-color; // Usa la variabile globale per il testo
+}
+
+
+/*
+ * ===============================================================
+ * Stili per il pulsante "Scroll to Top"
+ * ===============================================================
+ */
+.scroll-to-top-button {
+  position: fixed;
+
+  /* --- POSIZIONAMENTO ORIZZONTALE --- */
+  /* Queste due righe ancorano il pulsante al lato DESTRO dello schermo */
+  right: 20px;
+  left: auto; /* Assicura che non ci sia un posizionamento a sinistra */
+  bottom: 20px; /* Aggiungi una posizione di default dal basso, se non gestita da JS */
+
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, bottom 0.3s ease-out;
+
+  // Usa le variabili globali invece di var(--mat-accent-color) e valori hardcoded
+  background-color: vars.$accent-color; // Usa vars.$accent-color
+  box-shadow: 0px 5px 15px rgba(vars.$accent-color, 0.4); // Usa vars.$accent-color
+  border-radius: 50%;
+  border: 1px solid rgba(vars.$accent-color, 0.6); // Usa vars.$accent-color
+}
+
+/* Visibilità del pulsante */
+.scroll-to-top-button.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Effetto hover */
+.scroll-to-top-button:hover {
+  background-color: darken(vars.$accent-color, 10%); // Usa vars.$accent-color
+  box-shadow: 0px 8px 20px rgba(vars.$accent-color, 0.6); // Usa vars.$accent-color
+  transform: translateY(-2px);
+}
+
+/* Icona interna */
+.scroll-to-top-button mat-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: vars.$text-color; // Usa vars.$text-color (che è il tuo text-color-light)
+  text-shadow: 0 0 5px rgba(vars.$text-color, 0.7), 0 0 10px rgba(vars.$accent-color, 0.5); // Usa vars.$text-color e vars.$accent-color
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Stili per mobile */
+@media (max-width: vars.$breakpoint-md) { // Usa variabile globale per il breakpoint
+  .scroll-to-top-button {
+    right: 15px;
+    width: 48px;
+    height: 48px;
+  }
+  .scroll-to-top-button mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+  }
+}

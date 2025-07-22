@@ -1,0 +1,61 @@
+<!-- src/app/pages/home/home.component.html -->
+
+<!-- HERO SECTION -->
+<section class="hero-section mat-elevation-z4">
+  <div class="hero-content">
+    <h1 i18n="@@homeHeroTitle">Ciao, sono Aleksander <span class="emoji-tech">👨‍💻</span></h1> <!-- AGGIUNTO i18n -->
+    <p i18n="@@homeHeroSubtitle">Frontend & Backend Developer appassionato di tecnologia e codice pulito.</p> <!-- AGGIUNTO i18n -->
+    <button mat-stroked-button color="primary" routerLink="/contatti" aria-label="Contattami" i18n-aria-label="@@homeHeroContactAriaLabel" i18n="@@homeHeroContactButton">Contattami</button> <!-- AGGIUNTO i18n e i18n-aria-label -->
+  </div>
+</section>
+
+<!-- WHY CHOOSE ME SECTION -->
+<app-why-chose-me></app-why-chose-me>
+
+<!-- QUOTE BOX SECTION -->
+<app-quote-box></app-quote-box>
+
+<!-- TECH STACK SECTION -->
+<section class="tech-section">
+  <h2 class="section-title" i18n="@@techSkillsTitle">Competenze Tecnologiche</h2> <!-- AGGIUNTO i18n -->
+  <div class="tech-grid">
+    <!-- Assicurati che techList sia definito in home.component.ts -->
+    <!-- Nota: i valori dei chip sono statici per ora, se diventano dinamici dal backend, la traduzione è gestita dal backend -->
+    <mat-card *ngFor="let tech of techList" class="tech-tile mat-elevation-z2">
+      <mat-card-content class="tech-content">{{ tech }}</mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
+
+<!-- FEATURED PROJECTS SECTION -->
+<!-- Ho lasciato questa sezione commentata come nel tuo codice.
+      Se la decommenti, assicurati che 'featuredProjects' sia definito in home.component.ts
+      e che le immagini siano disponibili nel percorso specificato.
+      Ricorda di aggiungere i18n anche qui se la decommenti. -->
+<!--
+<section class="featured-projects-section">
+  <h2 class="section-title" i18n="@@featuredProjectsTitle">Progetti in Evidenza</h2>
+  <div class="projects-grid">
+    <mat-card *ngFor="let project of featuredProjects" class="project-card mat-elevation-z3">
+      <img mat-card-image [src]="project.image" [alt]="project.title" i18n-alt="@@projectImageAlt">
+      <mat-card-header>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ project.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary" [routerLink]="project.link" i18n="@@viewDetailsButton">Vedi dettagli</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>
+-->
+
+<!-- CTA SECTION -->
+<section class="cta-section mat-elevation-z2">
+  <h2 i18n="@@ctaTitle">Hai un progetto in mente?</h2> <!-- AGGIUNTO i18n -->
+  <p i18n="@@ctaSubtitle">Parliamone! Posso aiutarti a costruirlo da zero.</p> <!-- AGGIUNTO i18n -->
+  <button mat-raised-button color="accent" routerLink="/contatti" i18n="@@ctaButton">Scrivimi ora</button> <!-- AGGIUNTO i18n -->
+</section>

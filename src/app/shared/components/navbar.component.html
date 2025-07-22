@@ -1,0 +1,63 @@
+<!-- src/app/shared/components/navbar/navbar.component.html -->
+<mat-toolbar color="primary" class="toolbar-custom">
+
+  <!-- Logo centrale (rimane al centro) -->
+  <a routerLink="/" class="brand-link"> <!-- MODIFICATO: routerLink="/" -->
+    Aleksander Nikolli
+  </a>
+
+  <!-- Sezione sinistra (solo desktop) - Spostata per un layout più pulito -->
+  <div class="nav-links-container desktop-links left-section">
+    <a mat-button routerLink="/" routerLinkActive="active" i18n="@@navbarHome">Home</a> <!-- MODIFICATO: routerLink="/" -->
+    <a mat-button routerLink="/progetti" routerLinkActive="active" i18n="@@navbarProjects">Progetti</a>
+  </div>
+
+  <!-- Sezione destra (solo desktop) -->
+  <div class="nav-links-container desktop-links right-section">
+    <a mat-button routerLink="/servizi" routerLinkActive="active" i18n="@@navbarServices">Servizi</a>
+    <a mat-button routerLink="/contatti" routerLinkActive="active" i18n="@@navbarContact">Contatti</a>
+    <a mat-button routerLink="/chi-sono" routerLinkActive="active" i18n="@@navbarAboutMe">Chi sono</a>
+
+    <!-- Pulsanti Lingua per Desktop -->
+    <div class="language-buttons desktop-lang-buttons">
+      <button mat-button (click)="changeLanguage('it')" [class.active-lang]="getCurrentLanguage() === 'it'" aria-label="Cambia lingua in italiano" i18n-aria-label="@@changeLangItAriaLabel">
+        <img src="assets/flags/it.png" alt="Italian Flag" class="flag-icon">
+        <span class="lang-text">IT</span>
+      </button>
+      <button mat-button (click)="changeLanguage('en')" [class.active-lang]="getCurrentLanguage() === 'en'" aria-label="Change language to English" i18n-aria-label="@@changeLangEnAriaLabel">
+        <img src="assets/flags/en.png" alt="UK Flag" class="flag-icon">
+        <span class="lang-text">EN</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Bottone menu (solo mobile) -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="menu-button" aria-label="Open navigation menu" i18n-aria-label="@@navbarMenuAriaLabel">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<!-- Menu mobile -->
+<mat-menu #menu="matMenu">
+  <!-- Rimosso (click)="menu.close()" da qui e dai seguenti mat-menu-item -->
+  <button mat-menu-item routerLink="/" i18n="@@navbarHomeMobile">Home</button>
+  <button mat-menu-item routerLink="/progetti" i18n="@@navbarProjectsMobile">Progetti</button>
+  <button mat-menu-item routerLink="/servizi" i18n="@@navbarServicesMobile">Servizi</button>
+  <button mat-menu-item routerLink="/contatti" i18n="@@navbarContactMobile">Contatti</button>
+  <button mat-menu-item routerLink="/chi-sono" i18n="@@navbarAboutMeMobile">Chi sono</button>
+
+  <!-- Pulsanti Lingua per Mobile (all'interno del menu) -->
+  <div class="language-buttons mobile-lang-buttons">
+    <!-- Rimosso menu.close() da qui -->
+    <button mat-menu-item (click)="changeLanguage('it')" [class.active-lang]="getCurrentLanguage() === 'it'" i18n="@@changeLangItMobile">
+      <img src="assets/flags/it.png" alt="Italian Flag" class="flag-icon">
+      <span class="lang-text">Italiano</span>
+    </button>
+    <!-- Rimosso menu.close() da qui -->
+    <button mat-menu-item (click)="changeLanguage('en')" [class.active-lang]="getCurrentLanguage() === 'en'" i18n="@@changeLangEnMobile">
+      <img src="assets/flags/en.png" alt="UK Flag" class="flag-icon">
+      <span class="lang-text">English</span>
+    </button>
+  </div>
+</mat-menu>

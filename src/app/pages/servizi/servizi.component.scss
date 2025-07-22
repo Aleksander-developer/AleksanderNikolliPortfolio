@@ -1,0 +1,179 @@
+/* src/app/pages/servizi/servizi.component.scss */
+
+@use '../../../styles/variables' as vars;
+
+.servizi-section {
+  padding: vars.$spacing-xl vars.$spacing-lg;
+  text-align: center;
+  font-family: vars.$font-family-base;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: vars.$spacing-xl;
+    color: vars.$accent-color;
+    text-shadow: 0 0 15px rgba(vars.$accent-color, 0.6);
+    font-weight: 700;
+  }
+
+  .servizi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: vars.$spacing-lg;
+    max-width: 1200px;
+    width: 100%;
+    margin-bottom: vars.$spacing-xl;
+  }
+
+  .servizio-card {
+    background: lighten(vars.$dark-bg, 3%);
+    color: vars.$text-color;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(vars.$accent-color, 0.5);
+    border: 1px solid rgba(vars.$accent-color, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(vars.$accent-color, 0.6);
+    }
+
+    .icon {
+      font-size: 3rem;
+      width: 3rem;   /* Aggiunto per correggere il taglio */
+      height: 3rem;  /* Aggiunto per correggere il taglio */
+      color: vars.$accent-color;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: vars.$accent-color;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.9;
+      color: vars.$light-gray;
+    }
+  }
+
+  /* --- Stili per il pulsante Contattami --- */
+  .contact-button-container {
+    margin-top: vars.$spacing-xl;
+    margin-bottom: vars.$spacing-xl;
+
+    button {
+      font-size: 1.2rem;
+      padding: 0.8rem 2rem;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+
+      background-color: vars.$primary-color;
+      color: vars.$text-color;
+      box-shadow: 0 5px 15px rgba(vars.$primary-color, 0.4);
+      border: 1px solid rgba(vars.$primary-color, 0.6);
+
+      mat-icon {
+        margin-right: 8px;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+      }
+
+      &:hover {
+        background-color: darken(vars.$primary-color, 10%);
+        box-shadow: 0 8px 25px rgba(vars.$primary-color, 0.6);
+        transform: translateY(-3px);
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: vars.$breakpoint-md) {
+  .servizi-section {
+    padding: vars.$spacing-lg vars.$spacing-md;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: vars.$spacing-lg;
+    }
+    .servizi-grid {
+      grid-template-columns: 1fr;
+      gap: vars.$spacing-md;
+    }
+    .servizio-card {
+      padding: 1rem;
+      .icon {
+        font-size: 2.5rem;
+        width: 2.5rem;  /* Aggiunto per correggere il taglio */
+        height: 2.5rem; /* Aggiunto per correggere il taglio */
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+    .contact-button-container button {
+      font-size: 1rem;
+      padding: 0.7rem 1.5rem;
+      mat-icon {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// Media query per schermi piccoli (fino a vars.$breakpoint-sm)
+@media (max-width: vars.$breakpoint-sm) {
+  .servizi-section {
+    padding: vars.$spacing-md vars.$spacing-sm;
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: vars.$spacing-md;
+    }
+    .servizi-grid {
+      gap: vars.$spacing-sm;
+    }
+    .servizio-card {
+      padding: 0.8rem;
+      .icon {
+        font-size: 2rem;
+        width: 2rem;   /* Aggiunto per correggere il taglio */
+        height: 2rem;  /* Aggiunto per correggere il taglio */
+      }
+      h2 {
+        font-size: 1.1rem;
+      }
+      p {
+        font-size: 0.85rem;
+      }
+    }
+    .contact-button-container {
+      margin-top: vars.$spacing-lg;
+      margin-bottom: vars.$spacing-lg;
+      button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        mat-icon {
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+  }
+}

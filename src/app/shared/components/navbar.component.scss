@@ -1,0 +1,196 @@
+/* src/app/shared/components/navbar/navbar.component.scss */
+
+// Importa le variabili globali dal tuo file _variables.scss
+@use '../../../styles/variables' as vars;
+
+// Variabili specifiche della navbar.
+$darkest-bg: #141428;     // Toolbar molto scura
+$brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
+
+
+.toolbar-custom {
+  display: flex;
+  justify-content: space-between; /* Distribuisce gli elementi */
+  align-items: center;
+  background-color: $darkest-bg !important;
+  padding: 0 vars.$spacing-md;
+  font-family: vars.$font-family-base;
+  height: 64px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.brand-link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: $brand-link-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  /* Assicura che il brand sia sempre visibile e centrato verticalmente */
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    color: lighten($brand-link-color, 10%);
+  }
+}
+
+/* Contenitori per i link desktop */
+.nav-links-container {
+  display: flex;
+  gap: vars.$spacing-md;
+  align-items: center; /* Allinea verticalmente i link */
+}
+
+/* Regola la posizione delle sezioni sinistra e destra */
+.left-section {
+  order: 1; /* Primo elemento */
+}
+
+.right-section {
+  order: 3; /* Terzo elemento */
+}
+
+.brand-link {
+  order: 2; /* Secondo elemento, al centro */
+  flex-grow: 1; /* Permette al brand di occupare spazio extra al centro */
+  text-align: center; /* Centra il testo del brand se non ci sono altri elementi */
+}
+
+
+.desktop-links a {
+  color: vars.$text-color;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    color: vars.$accent-color;
+    transform: translateY(-2px);
+  }
+
+  &.active { /* Stile per il link attivo */
+    color: vars.$accent-color;
+    border-bottom: 2px solid vars.$accent-color;
+    padding-bottom: 6px; /* Per compensare il bordo */
+  }
+}
+
+.menu-button {
+  display: none; /* Nascosto per desktop */
+  color: vars.$text-color;
+  order: 4; /* Posiziona il pulsante menu a destra */
+}
+
+/* Stili per i pulsanti lingua */
+.language-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: vars.$spacing-md; /* Spazio tra i link e i pulsanti lingua */
+
+  button {
+    min-width: unset; /* Rimuove il min-width predefinito di mat-button */
+    padding: 4px 8px; /* Padding ridotto per i pulsanti lingua */
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: vars.$text-color; /* Colore del testo per i pulsanti lingua */
+
+    .flag-icon {
+      width: 24px; /* Dimensione delle immagini bandiera */
+      height: 16px;
+      margin-right: 5px;
+      border-radius: 2px; /* Angoli leggermente arrotondati per le bandiere */
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .lang-text {
+      font-size: 0.85rem; /* Dimensione del testo IT/EN */
+      font-weight: 500;
+    }
+
+    &.active-lang {
+      background-color: rgba(vars.$accent-color, 0.2); /* Sfondo leggero per la lingua attiva */
+      border: 1px solid vars.$accent-color; /* Bordo per evidenziare */
+      color: vars.$accent-color; /* Colore del testo per la lingua attiva */
+    }
+
+    &:hover {
+      background-color: rgba(vars.$accent-color, 0.1);
+    }
+  }
+}
+
+/* Nascondi i pulsanti lingua mobile su desktop */
+.mobile-lang-buttons {
+  display: none;
+}
+
+/* Media query per dispositivi mobili */
+@media (max-width: vars.$breakpoint-md) {
+  .desktop-links {
+    display: none; /* Nasconde i link desktop */
+  }
+
+  .desktop-lang-buttons {
+    display: none; /* Nasconde i pulsanti lingua desktop */
+  }
+
+  .menu-button {
+    display: block; /* Mostra il pulsante menu mobile */
+  }
+
+  .toolbar-custom {
+    justify-content: space-between; /* Distribuisce il brand e il pulsante menu */
+  }
+
+  .brand-link {
+    flex-grow: 1; /* Permette al brand di occupare lo spazio centrale */
+    text-align: center; /* Centra il testo del brand */
+  }
+
+  /* Mostra i pulsanti lingua mobile all'interno del menu */
+  .mobile-lang-buttons {
+    display: flex;
+    flex-direction: column; /* Impila i pulsanti verticalmente */
+    padding: 8px 0;
+    border-top: 1px solid rgba(vars.$text-color, 0.1); /* Separatore */
+
+    button {
+      width: 100%; /* I pulsanti occupano tutta la larghezza del menu */
+      justify-content: flex-start; /* Allinea contenuto a sinistra */
+      padding: 8px 16px; /* Padding per i mat-menu-item */
+      border: none; /* Rimuove il bordo per i mat-menu-item */
+      background-color: transparent; /* Sfondo trasparente */
+
+      &:hover {
+        background-color: rgba(vars.$text-color, 0.05); /* Sfondo hover leggero */
+      }
+
+      .lang-text {
+        font-size: 1rem; /* Dimensione del testo completo (Italiano/English) */
+      }
+    }
+  }
+}
+
+// Stili per il menu di Angular Material (mat-menu)
+.mat-menu-panel {
+  background-color: lighten(vars.$dark-bg, 5%);
+  border: 1px solid rgba(vars.$accent-color, 0.2);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.mat-menu-item {
+  color: vars.$text-color;
+  font-family: vars.$font-family-base;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: lighten(lighten(vars.$dark-bg, 5%), 5%);
+    color: vars.$accent-color;
+  }
+}

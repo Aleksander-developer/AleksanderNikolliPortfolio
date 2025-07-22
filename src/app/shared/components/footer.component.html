@@ -1,0 +1,57 @@
+<!-- src/app/shared/components/footer/footer.component.html -->
+<footer class="footer-container">
+  <div class="footer-socials">
+    <a [href]="githubUrl" target="_blank" aria-label="GitHub Profile" i18n-aria-label="@@footerGithubAriaLabel" mat-icon-button> <!-- AGGIUNTO i18n-aria-label -->
+      <i class="fab fa-github"></i>
+    </a>
+    <a [href]="'mailto:' + emailAddress" aria-label="Send Email" i18n-aria-label="@@footerEmailAriaLabel" mat-icon-button> <!-- AGGIUNTO i18n-aria-label -->
+      <mat-icon>email</mat-icon>
+    </a>
+    <a [href]="linkedinUrl" target="_blank" aria-label="LinkedIn Profile" i18n-aria-label="@@footerLinkedInAriaLabel" mat-icon-button> <!-- AGGIUNTO i18n-aria-label -->
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a [href]="instagramUrl" target="_blank" aria-label="Instagram Profile" i18n-aria-label="@@footerInstagramAriaLabel" mat-icon-button> <!-- AGGIUNTO i18n-aria-label -->
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a [href]="facebookUrl" target="_blank" aria-label="Facebook Profile" i18n-aria-label="@@footerFacebookAriaLabel" mat-icon-button> <!-- AGGIUNTO i18n-aria-label -->
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a [href]="whatsappLink" target="_blank" aria-label="WhatsApp Chat" i18n-aria-label="@@footerWhatsAppAriaLabel" mat-icon-button> <!-- AGGIUNTO i18n-aria-label -->
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a [href]="'tel:' + phoneNumber" aria-label="Call Phone" i18n-aria-label="@@footerPhoneAriaLabel" mat-icon-button> <!-- AGGIUNTO i18n-aria-label -->
+      <mat-icon>phone</mat-icon>
+    </a>
+  </div>
+
+  <div class="footer-separator"></div>
+
+  <div class="footer-bottom-bar">
+    <div class="footer-copyright">
+      <span i18n="@@footerCopyright">&copy; {{ currentYear }} Aleksander Nikolli</span> <!-- AGGIUNTO i18n -->
+    </div>
+    <div class="footer-tech-stack">
+      <span class="built-with-text" i18n="@@footerBuiltWith">Built with:</span> <!-- AGGIUNTO i18n -->
+      <div class="tech-item">
+        <mat-icon class="tech-icon">code</mat-icon>
+        <span class="tech-name">Angular</span>
+      </div>
+      <div class="tech-item">
+        <mat-icon class="tech-icon">storage</mat-icon>
+        <span class="tech-name">Node.js</span>
+      </div>
+      <div class="tech-item">
+        <mat-icon class="tech-icon">data_object</mat-icon>
+        <span class="tech-name">MongoDB</span>
+      </div>
+      <div class="tech-item">
+        <mat-icon class="tech-icon">speed</mat-icon>
+        <span class="tech-name">Express</span>
+      </div>
+      <div class="tech-item">
+        <mat-icon class="tech-icon">dns</mat-icon>
+        <span class="tech-name">MySQL</span>
+      </div>
+    </div>
+  </div>
+</footer>

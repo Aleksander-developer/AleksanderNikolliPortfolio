@@ -1,0 +1,82 @@
+// src/styles.scss
+
+// 1. Regole @use DEVONO essere le primissime righe
+@use './styles/variables' as vars;
+@use './styles/mixins' as mixins;
+
+// 2. Poi le regole @import
+@import '@angular/material/prebuilt-themes/azure-blue.css'; // CORRETTO: rimosso il ".2"
+
+/* Puoi aggiungere qui stili globali, e anche importare altri file di stile */
+
+// Stili globali per il body, font, ecc.
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: vars.$font-family-base; // Usa la variabile globale
+  background-color: vars.$dark-bg; // Usa la variabile globale
+  color: vars.$text-color; // Usa la variabile globale
+}
+
+/* Stili per il pulsante scroll-to-top (dal tuo app.component.html) */
+.scroll-to-top-button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px; /* Questo verrà sovrascritto dalla logica in app.component.ts */
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, bottom 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-to-top-button.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top-button.over-footer {
+  /* Stili aggiuntivi se il pulsante è sopra il footer */
+  box-shadow: 0 0 15px vars.$shadow-glow-color; /* Esempio di glow */
+}
+
+/* Stili per il contenitore principale dell'app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Assicura che il contenitore occupi almeno l'intera altezza della viewport */
+}
+
+/* Stili per il contenuto principale */
+.main-content {
+  flex-grow: 1; /* Fa sì che il contenuto principale si espanda per occupare lo spazio disponibile */
+  padding-top: 64px; /* Spazio per la navbar fissa, aggiusta se la tua navbar ha un'altezza diversa */
+}
+
+/* Stili per il footer */
+app-footer {
+  /* Assicurati che il footer non abbia position: fixed o absolute se vuoi che spinga il pulsante */
+  position: relative; /* O static, o relativo */
+  width: 100%;
+  /* Altri stili del footer */
+}
+
+/* --- Animazione per la sottolineatura (globale) --- */
+@keyframes animated-underline {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  25% {
+    width: 100%;
+    opacity: 1;
+  }
+  75% {
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 0;
+  }
+}

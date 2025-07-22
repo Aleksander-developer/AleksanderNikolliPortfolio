@@ -1,0 +1,37 @@
+// src/styles/_variables.scss
+
+// Importa Angular Material qui se hai bisogno di accedere alle sue palette
+// per definire le tue variabili globali.
+// Se usi solo i tuoi colori personalizzati, questa riga non è strettamente necessaria qui.
+@use '@angular/material' as mat;
+
+// --- Colori del Tema ---
+$dark-bg: #1a1a2e;
+$accent-color: #00bcd4; // Ciano brillante
+$text-color: #e0e0e0; // Bianco/grigio molto chiaro (per testo generale)
+$text-color-white: white; // <--- QUESTA VARIABILE DEVE ESSERE 'white'
+$light-gray: #a0a0a0; // Grigio chiaro per testo secondario
+$primary-color: #1976d2; // Blu primario
+$card-bg: #2e2e4a;
+
+// --- Colori per Stati Specifici ---
+$shadow-glow-color: rgba($accent-color, 0.6); // Colore per l'ombra luminosa
+$error-color: #ff5252; // Rosso per gli errori
+$error-dark-color: darken($error-color, 20%); // Rosso più scuro per sfondi errore
+$success-color: #00e676; // Verde vibrante per i successi
+
+// --- Font (se usi un font specifico globalmente) ---
+$font-family-base: 'Roboto Mono', monospace; // Il tuo font tech preferito
+$font-family-heading: 'Roboto Mono', monospace; // O un altro font per i titoli
+
+// --- Spaziature Comuni (opzionale, ma utile) ---
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// --- Breakpoints per Media Queries (opzionale, ma utile) ---
+$breakpoint-sm: 600px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;

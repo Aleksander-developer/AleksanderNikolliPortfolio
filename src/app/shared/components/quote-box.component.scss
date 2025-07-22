@@ -1,0 +1,95 @@
+// Rimuovi: @use '@angular/material' as mat;
+// Rimuovi tutte le definizioni di variabili locali come $dark-bg, $accent-color, ecc.
+
+// Importa le variabili globali dal tuo file _variables.scss
+@use '../../../styles/variables' as vars;
+
+.quote-box {
+  background: lighten(vars.$dark-bg, 3%); // Usa vars.$dark-bg
+  color: vars.$text-color; // Usa vars.$text-color
+  font-family: vars.$font-family-base; // Usa variabile globale per il font
+  margin: 4rem auto;
+  padding: 2.5rem 3rem;
+  max-width: 800px;
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid rgba(vars.$accent-color, 0.2); // Usa vars.$accent-color
+  // Ombra di base potenziata con un bagliore sottile dell'accent color
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(vars.$accent-color, 0.4); // Usa vars.$accent-color
+  overflow: hidden;
+  // Transizione più morbida per un effetto premium
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /*
+   * --- MODIFICA CHIAVE ---
+   * Effetto hover potenziato per un look più intrigante e "tech".
+   */
+  &:hover {
+    // Sollevamento più accentuato per dare spazio all'ombra
+    transform: translateY(-12px);
+
+    // Ombra a più strati per un effetto di profondità realistico e d'impatto,
+    // con un bagliore più intenso per lo stile "tech".
+    box-shadow:
+      0 12px 20px rgba(0, 0, 0, 0.5), // Ombra #1: Più vicina e definita
+      0 0 35px rgba(vars.$accent-color, 0.7); // Ombra #2: Bagliore accentuato e diffuso per un effetto tech (Usa vars.$accent-color)
+  }
+}
+
+// Stili per le icone decorative (invariati)
+.quote-icon-top,
+.quote-icon-bottom {
+  position: absolute;
+  font-size: 5rem;
+  color: rgba(vars.$accent-color, 0.08); // Usa vars.$accent-color
+  user-select: none;
+}
+
+.quote-icon-top {
+  top: 1rem;
+  left: 1.5rem;
+  transform: rotate(180deg);
+}
+
+.quote-icon-bottom {
+  bottom: 1rem;
+  right: 1.5rem;
+}
+
+// Stili per il testo della citazione (invariati)
+.quote-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+
+  strong {
+    color: vars.$accent-color; // Usa vars.$accent-color
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(vars.$accent-color, 0.3);
+  }
+
+  em {
+    display: block;
+    margin-top: 1.2rem;
+    color: vars.$light-gray; // Usa vars.$light-gray
+    font-style: italic;
+    font-size: 1rem;
+  }
+}
+
+// Media query per la responsività (invariata)
+@media (max-width: vars.$breakpoint-md) { // Usa variabile globale per il breakpoint
+  .quote-box {
+    margin: vars.$spacing-lg vars.$spacing-md; // Usa variabili globali per il margine
+    padding: vars.$spacing-lg vars.$spacing-md; // Usa variabili globali per il padding
+  }
+  .quote-text {
+    font-size: 1rem;
+  }
+  .quote-icon-top,
+  .quote-icon-bottom {
+    font-size: 4rem;
+  }
+}

@@ -1,0 +1,346 @@
+/* src/app/pages/home/home.component.scss */
+
+// Rimuovi le definizioni delle variabili locali.
+// Rimuovi: @use '@angular/material' as mat; (non strettamente necessario qui se non usi mixin specifici di mat)
+
+// Importa le variabili globali dal tuo file _variables.scss
+@use '../../../styles/variables' as vars;
+
+// Se hai bisogno di funzioni SASS come darken/lighten, non richiedono l'import di Angular Material.
+// Sono funzioni native di Sass.
+
+.section-title {
+  font-family: 'Share Tech Mono', monospace; // Mantieni i font specifici se diversi dal globale
+  font-size: 2.2rem;
+  color: vars.$accent-color; // Usa vars.$accent-color
+  text-align: center;
+  margin-top: vars.$spacing-xl; // Usa la variabile globale per la spaziatura
+  margin-bottom: vars.$spacing-lg; // Usa la variabile globale per la spaziatura
+  text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5); /* Effetto luminoso tech */
+}
+
+/* HERO SECTION */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  // Gradiente scuro coerente con la vibe tech
+  background: linear-gradient(135deg, vars.$dark-bg 0%, darken(vars.$dark-bg, 5%) 100%); // Usa vars.$dark-bg
+  color: vars.$text-color; // Usa vars.$text-color
+  text-align: center;
+  padding: 4rem 2rem;
+  border-bottom: 2px solid vars.$accent-color; // Usa vars.$accent-color
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6); // Ombra pronunciata
+
+  .hero-content {
+    max-width: 900px;
+  }
+
+  h1 {
+    font-family: 'Fira Code', monospace; // Mantieni i font specifici
+    font-size: 3.5rem;
+    margin-bottom: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+    color: vars.$accent-color; // Usa vars.$accent-color
+    text-shadow: 0 0 10px rgba(vars.$accent-color, 0.7);
+  }
+
+  .emoji-tech {
+    display: inline-block;
+    animation: bounce 2s infinite; // Animazione leggera per l'emoji
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-bottom: vars.$spacing-lg; // Usa la variabile globale per la spaziatura
+    color: lighten(vars.$text-color, 10%); // Usa vars.$text-color
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid vars.$primary-color; // Usa vars.$primary-color
+    color: vars.$primary-color; // Usa vars.$primary-color
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: vars.$primary-color; // Usa vars.$primary-color
+      color: vars.$text-color; // Usa vars.$text-color
+      box-shadow: 0 0 15px rgba(vars.$primary-color, 0.7);
+    }
+  }
+}
+
+/* TECH STACK SECTION */
+.tech-section {
+  padding: vars.$spacing-xl vars.$spacing-lg; // Usa le variabili globali per la spaziatura
+  background-color: vars.$dark-bg; // Usa vars.$dark-bg
+  text-align: center;
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .tech-tile {
+    text-align: center;
+    background-color: vars.$card-bg !important; // Usa vars.$card-bg
+    color: vars.$accent-color; // Usa vars.$accent-color
+    padding: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+    border-radius: 0.8rem;
+    border: 1px solid rgba(vars.$accent-color, 0.3); // Usa vars.$accent-color
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 6px 15px rgba(vars.$accent-color, 0.3);
+    }
+
+    .tech-content {
+      font-family: 'Roboto Mono', monospace; // Mantieni i font specifici
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.4;
+      color: vars.$text-color; // Usa vars.$text-color
+      transition: color 0.3s ease, transform 0.3s ease;
+      cursor: default;
+
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+
+      &:hover {
+        color: vars.$accent-color; // Usa vars.$accent-color
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/* FEATURED PROJECTS SECTION */
+.featured-projects-section {
+  padding: vars.$spacing-xl vars.$spacing-lg; // Usa le variabili globali per la spaziatura
+  background-color: darken(vars.$dark-bg, 5%); // Usa vars.$dark-bg
+  text-align: center;
+
+  .section-title {
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-family: 'Share Tech Mono', monospace;
+    color: vars.$accent-color; // Usa vars.$accent-color
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .project-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: vars.$card-bg !important; // Usa vars.$card-bg
+    color: vars.$text-color; // Usa vars.$text-color
+    border-radius: 1rem;
+    border: 1px solid rgba(vars.$primary-color, 0.3); // Usa vars.$primary-color
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(vars.$accent-color, 0.4); // Usa vars.$accent-color
+    }
+
+    img {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    mat-card-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      font-family: 'Share Tech Mono', monospace;
+      color: vars.$accent-color; // Usa vars.$accent-color
+    }
+
+    mat-card-subtitle {
+      color: lighten(vars.$text-color, 5%); // Usa vars.$text-color
+    }
+
+    mat-card-content {
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: vars.$text-color; // Usa vars.$text-color
+      }
+    }
+    mat-card-actions {
+      padding: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+      button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid vars.$primary-color; // Usa vars.$primary-color
+        color: vars.$primary-color; // Usa vars.$primary-color
+        &:hover {
+          background-color: vars.$primary-color; // Usa vars.$primary-color
+          color: vars.$text-color; // Usa vars.$text-color
+        }
+      }
+    }
+  }
+}
+
+/* CTA SECTION */
+.cta-section {
+  // Gradiente accento per la CTA
+  background: linear-gradient(45deg, vars.$accent-color 0%, darken(vars.$accent-color, 20%) 100%); // Usa vars.$accent-color
+  color: vars.$dark-bg; // Usa vars.$dark-bg
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: vars.$spacing-xl; // Usa la variabile globale per la spaziatura
+  border-radius: 1rem;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+
+  h2 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5rem;
+    margin-bottom: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+    color: vars.$dark-bg; // Usa vars.$dark-bg
+  }
+  p {
+    font-size: 1.3rem;
+    margin-bottom: vars.$spacing-lg; // Usa la variabile globale per la spaziatura
+    color: darken(vars.$dark-bg, 10%); // Usa vars.$dark-bg
+  }
+  button {
+    font-size: 1.3rem;
+    padding: 1rem 3rem;
+    border-radius: 0.5rem;
+    background-color: vars.$dark-bg; // Usa vars.$dark-bg
+    color: vars.$accent-color; // Usa vars.$accent-color
+    border: 2px solid vars.$dark-bg; // Usa vars.$dark-bg
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: lighten(vars.$dark-bg, 10%); // Usa vars.$dark-bg
+      color: lighten(vars.$accent-color, 10%); // Usa vars.$accent-color
+      box-shadow: 0 0 20px rgba(vars.$dark-bg, 0.5);
+    }
+  }
+}
+
+/* Animazione per l'emoji */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 3rem;
+  }
+  .hero-section p {
+    font-size: 1.3rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  .cta-section p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: vars.$breakpoint-md) { // Usa vars.$breakpoint-md
+  .hero-section {
+    padding: 3rem 1rem;
+  }
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+  .hero-section button {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+  .tech-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .tech-tile {
+    padding: 0.8rem;
+    .tech-content {
+      font-size: 0.9rem;
+    }
+  }
+  .cta-section {
+    padding: 3rem 1rem;
+    margin: 2rem 1rem;
+  }
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+  .cta-section p {
+    font-size: 1rem;
+  }
+  .cta-section button {
+    font-size: 1.1rem;
+    padding: 0.8rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  .hero-section p {
+    font-size: 0.9rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .tech-grid {
+    grid-template-columns: 1fr; /* Singola colonna su schermi molto piccoli */
+  }
+  .cta-section h2 {
+    font-size: 1.5rem;
+  }
+  .cta-section p {
+    font-size: 0.9rem;
+  }
+}

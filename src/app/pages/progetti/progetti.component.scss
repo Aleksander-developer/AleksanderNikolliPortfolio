@@ -1,0 +1,307 @@
+/* src/app/pages/progetti/progetti.component.scss */
+
+@use '../../../styles/variables' as vars;
+
+.progetti-section {
+  padding: vars.$spacing-xl vars.$spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; // Spazio tra le sezioni
+  align-items: center;
+  font-family: vars.$font-family-base;
+  min-height: calc(100vh - 120px);
+  justify-content: center;
+}
+
+.progetti-card {
+  max-width: 900px; // Aumentato per contenere la griglia di progetti
+  width: 100%;
+  padding: vars.$spacing-lg;
+  background: lighten(vars.$dark-bg, 3%);
+  color: vars.$text-color;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(vars.$accent-color, 0.5);
+  border: 1px solid rgba(vars.$accent-color, 0.2);
+  text-align: center;
+
+  mat-card-header {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    .mat-mdc-card-header-text {
+      margin: 0;
+    }
+    mat-icon {
+      font-size: 38px;
+      width: 38px;
+      height: 38px;
+      margin-right: 0.8rem;
+    }
+    mat-card-title {
+      font-size: 2.2rem;
+      color: vars.$accent-color;
+      text-shadow: 0 0 18px rgba(vars.$accent-color, 0.7);
+      font-weight: 700;
+    }
+  }
+
+  mat-card-content {
+    p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: vars.$light-gray;
+      margin-bottom: 1.2rem;
+    }
+    strong {
+      color: vars.$accent-color;
+      font-weight: 700;
+      text-shadow: 0 0 10px rgba(vars.$accent-color, 0.4);
+    }
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: vars.$spacing-lg;
+    margin-top: vars.$spacing-lg;
+    justify-content: center;
+  }
+
+  .project-item {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: vars.$card-bg !important;
+    color: vars.$text-color;
+    border-radius: 1rem;
+    border: 1px solid rgba(vars.$primary-color, 0.3);
+    text-align: left; // Allinea il testo all'interno della card del progetto
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(vars.$accent-color, 0.4);
+    }
+
+    img {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    mat-card-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+      font-family: 'Share Tech Mono', monospace;
+      color: vars.$accent-color;
+      padding: vars.$spacing-sm vars.$spacing-md; // Padding per il titolo
+    }
+
+    mat-card-content {
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: vars.$text-color;
+        margin-bottom: vars.$spacing-md;
+        padding: 0 vars.$spacing-md; // Padding per la descrizione
+      }
+      .tech-chips-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0 vars.$spacing-md; // Padding per i chip
+        margin-top: 0.5rem;
+        mat-chip-row {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.85rem;
+          border-radius: 15px;
+          background-color: rgba(vars.$primary-color, 0.2);
+          border: 1px solid rgba(vars.$primary-color, 0.4);
+          ::ng-deep .mat-mdc-chip-action-label,
+          ::ng-deep .mdc-evolution-chip__text-content {
+            color: vars.$text-color;
+          }
+        }
+      }
+    }
+    mat-card-actions {
+      padding: vars.$spacing-md;
+      button {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        border: 1px solid vars.$primary-color;
+        color: vars.$primary-color;
+        &:hover {
+          background-color: vars.$primary-color;
+          color: vars.$text-color;
+        }
+      }
+    }
+  }
+}
+
+/* --- Stili per il pulsante Contattami --- */
+.contact-button-container {
+  margin-top: vars.$spacing-xl;
+  margin-bottom: vars.$spacing-xl;
+
+  button {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+
+    background-color: vars.$primary-color;
+    color: vars.$text-color;
+    box-shadow: 0 5px 15px rgba(vars.$primary-color, 0.4);
+    border: 1px solid rgba(vars.$primary-color, 0.6);
+
+    mat-icon {
+      margin-right: 8px;
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background-color: darken(vars.$primary-color, 10%);
+      box-shadow: 0 8px 25px rgba(vars.$primary-color, 0.6);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.loading-spinner, .error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: lighten(vars.$dark-bg, 5%);
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+  color: vars.$text-color;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+  p {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+.error-message {
+  border: 1px solid vars.$error-color;
+  background-color: rgba(vars.$error-dark-color, 0.2);
+  color: vars.$error-color;
+  box-shadow: 0 5px 20px rgba(vars.$error-dark-color, 0.5);
+}
+
+
+/* --- Media Query per Responsività --- */
+@media (max-width: vars.$breakpoint-md) {
+  .progetti-section {
+    padding: vars.$spacing-lg vars.$spacing-md;
+    gap: 1.5rem;
+  }
+
+  .progetti-card {
+    padding: 1.5rem;
+    mat-card-header {
+      margin-bottom: 1rem;
+      mat-icon {
+        font-size: 32px;
+        width: 32px;
+        height: 32px;
+      }
+      mat-card-title {
+        font-size: 1.8rem;
+      }
+    }
+    mat-card-content {
+      p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+    .projects-grid {
+      grid-template-columns: 1fr; // Una colonna su schermi medi
+      gap: vars.$spacing-md;
+    }
+  }
+  .contact-button-container button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+    mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint-sm) {
+  .progetti-section {
+    padding: vars.$spacing-md vars.$spacing-sm;
+    gap: 1rem;
+  }
+
+  .progetti-card {
+    padding: vars.$spacing-sm;
+    mat-card-header {
+      margin-bottom: 0.8rem;
+      mat-icon {
+        font-size: 28px;
+        width: 28px;
+        height: 28px;
+      }
+      mat-card-title {
+        font-size: 1.5rem;
+      }
+    }
+    mat-card-content {
+      p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+      .tech-chips-container {
+        mat-chip-row {
+          font-size: 0.75rem; // Chip più piccoli
+          padding: 0.3rem 0.6rem;
+        }
+      }
+    }
+  }
+  .contact-button-container button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    mat-icon {
+      font-size: 18px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .loading-spinner, .error-message {
+    padding: 1.5rem;
+    gap: 0.8rem;
+    mat-icon {
+      font-size: 40px;
+      width: 40px;
+      height: 40px;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+}

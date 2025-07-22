@@ -1,0 +1,120 @@
+// Importa le variabili globali dal tuo file _variables.scss
+@use '../../../styles/variables' as vars;
+
+.why-choose-me-card {
+  background-color: vars.$card-bg !important;
+  color: vars.$text-color;
+  font-family: vars.$font-family-base;
+  margin: vars.$spacing-lg auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  max-width: 800px;
+  border: 1px solid rgba(vars.$accent-color, 0.3);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+
+  mat-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: vars.$spacing-md;
+  }
+
+  .header-icon {
+    color: vars.$accent-color;
+    margin-right: 10px;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+  }
+
+  mat-card-title {
+    font-size: 1.8rem;
+    color: vars.$accent-color;
+    font-family: vars.$font-family-heading;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: vars.$spacing-md 0;
+
+    li {
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start; /* MODIFICATO: allinea in alto se il testo va a capo */
+      // Aggiungi flex-wrap per permettere al testo di andare a capo
+      flex-wrap: wrap; /* NUOVO: Permette al contenuto di andare a capo */
+    }
+  }
+
+  .negative-icon,
+  .positive-icon {
+    flex-shrink: 0; /* Impedisce all'icona di rimpicciolirsi */
+    margin-right: 8px;
+    // Aggiungi un piccolo margine in basso per separare l'icona dalla riga successiva di testo se il testo è lungo
+    margin-bottom: 4px; /* NUOVO: Per allineamento migliore con testo multi-riga */
+  }
+
+  .negative-icon {
+    color: vars.$error-color;
+  }
+
+  .positive-icon {
+    color: vars.$success-color;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: vars.$spacing-md;
+  }
+
+  .conclusione {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: vars.$accent-color;
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: flex-start; /* MODIFICATO: allinea in alto se il testo va a capo */
+    flex-wrap: wrap; /* NUOVO: Permette al contenuto di andare a capo */
+  }
+}
+
+// Responsive adjustments
+@media (max-width: vars.$breakpoint-md) {
+  .why-choose-me-card {
+    margin: vars.$spacing-md;
+    padding: vars.$spacing-md;
+  }
+
+  mat-card-title {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .conclusione {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: vars.$breakpoint-sm) {
+  .why-choose-me-card {
+    margin: vars.$spacing-sm;
+    padding: vars.$spacing-sm;
+  }
+
+  mat-card-title {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .conclusione {
+    font-size: 1rem;
+  }
+}
