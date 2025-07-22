@@ -1,15 +1,16 @@
 {
   "name": "aleksander-nikolli-portfolio",
   "version": "0.0.0",
+  "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:AleksanderNikolliPortfolio": "node dist/aleksander-nikolli-portfolio/server/server.mjs"
+    "build:ssr": "ng build && ng run aleksander-nikolli-portfolio:server",
+    "serve:ssr": "node dist/aleksander-nikolli-portfolio/server/server.mjs"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
     "@angular/cdk": "^18.2.14",

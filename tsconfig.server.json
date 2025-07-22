@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/server",
+    "module": "commonjs"
+  },
+  "files": [
+    "server.ts",
+    "src/main.server.ts"
+  ]
+}

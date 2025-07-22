@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-i18n-app": {
+    "aleksander-nikolli-portfolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/test-i18n-app",
+            "outputPath": "dist/aleksander-nikolli-portfolio/browser",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -68,18 +68,37 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "test-i18n-app:build:production"
+              "buildTarget": "aleksander-nikolli-portfolio:build:production"
             },
             "development": {
-              "buildTarget": "test-i18n-app:build:development"
+              "buildTarget": "aleksander-nikolli-portfolio:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/aleksander-nikolli-portfolio/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "sourceMap": false
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "test-i18n-app:build"
+            "buildTarget": "aleksander-nikolli-portfolio:build"
           }
         },
         "test": {
@@ -109,7 +128,6 @@
     }
   },
   "cli": {
-    "analytics": "9ea4927b-593a-43a1-9e56-7744ca7ec12a"
+    "analytics": false
   }
 }
-
