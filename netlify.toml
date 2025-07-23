@@ -16,4 +16,3 @@
   from = "/en/*"
   to = "/en/index.html"
   status = 200
-
