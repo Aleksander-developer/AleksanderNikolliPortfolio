@@ -1,28 +1,77 @@
 [build]
-  command = "npm run build"
+  command = "ng build --configuration=production"
   publish = "dist/aleksander-nikolli-portfolio/browser"
+  plugins = [
+    { package = "@netlify/angular-runtime", disable = true }
+  ]
+
+# --- Regole di Reindirizzamento consolidate qui (CORRETTE per Angular Application Builder) ---
 
 # Reindirizza la root alla lingua italiana di default
-    [[redirects]]
-      from = "/"
-      to = "/it/index.html"
-      status = 200
+[[redirects]]
+  from = "/"
+  to = "/index.html" # <--- CORRETTO: Punta all'index.html italiano che è nella root della publish directory
+  status = 200
 
-    # Tutte le route IT
-    [[redirects]]
-      from = "/it/*"
-      to = "/it/index.html"
-      status = 200
+# Regole per le route in italiano (gestite dal router di Angular dall'index.html italiano)
+# Queste sono necessarie per l'SPA routing
+[[redirects]]
+  from = "/home"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/chi-sono"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/contatti"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/servizi"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/progetti"
+  to = "/index.html"
+  status = 200
+[[redirects]]
+  from = "/progetti/*"
+  to = "/index.html"
+  status = 200
 
-    # Tutte le route EN
-    [[redirects]]
-      from = "/en/*"
-      to = "/en/index.html"
-      status = 200
+# Regole per le route in inglese (gestite dal router di Angular dall'index.html inglese)
+[[redirects]]
+  from = "/en/" # Per l'accesso diretto alla root inglese
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/en/home"
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/en/chi-sono"
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/en/contatti"
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/en/servizi"
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/en/progetti"
+  to = "/en/index.html"
+  status = 200
+[[redirects]]
+  from = "/en/progetti/*"
+  to = "/en/index.html"
+  status = 200
 
-    # Catch-all fallback (per qualsiasi percorso non trovato, reindirizza alla home italiana)
-    [[redirects]]
-      from = "/*"
-      to = "/it/index.html"
-      status = 200
-    
+# Catch-all fallback per qualsiasi altro percorso non corrispondente, reindirizza alla home italiana
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
