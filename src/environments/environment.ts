@@ -3,3 +3,4 @@
       production: false,
       apiUrl: 'http://localhost:10000/api' // <--- CORREZIONE: Qui dovrebbe essere il tuo backend LOCALE
     };
+
