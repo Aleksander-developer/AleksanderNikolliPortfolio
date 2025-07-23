@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --configuration=production",
-    "postbuild": "cp src/_redirects dist/aleksander-nikolli-portfolio/browser/_redirects",
+    "postbuild": "cp src/_redirects dist/aleksander-nikolli-portfolio/browser/_redirects && cp dist/aleksander-nikolli-portfolio/browser/it/index.html dist/aleksander-nikolli-portfolio/browser/index.html && cp src/favicon.ico dist/aleksander-nikolli-portfolio/browser/favicon.ico",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:ssr": "ng build && ng run aleksander-nikolli-portfolio:server",
@@ -47,3 +47,4 @@
     "typescript": "~5.5.2"
   }
 }
+
