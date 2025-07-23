@@ -1,0 +1,12 @@
+    [build]
+      command = "ng build --configuration=production"
+      # La publish directory corretta per la tua build Angular con i18n
+      # Angular genera le locali all'interno di questa cartella base.
+      publish = "dist/aleksander-nikolli-portfolio/browser"
+
+    # Disabilita il plugin Netlify Angular Runtime
+    # Questo è cruciale per far funzionare l'i18n correttamente con _redirects
+    [[plugins]]
+      package = "@netlify/angular-runtime"
+      disable = true # <--- IMPOSTA A TRUE PER DISABILITARLO
+    

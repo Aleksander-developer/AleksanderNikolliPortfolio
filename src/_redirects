@@ -1,0 +1,26 @@
+    # Regole di reindirizzamento per Angular i18n su Netlify
+
+    # Regola per la lingua italiana (sourceLocale)
+    # Reindirizza tutti i percorsi non specifici per l'inglese all'index.html della build italiana.
+    # Questo è necessario per il routing interno di Angular.
+    /home /index.html 200
+    /chi-sono /index.html 200
+    /contatti /index.html 200
+    /servizi /index.html 200
+    /progetti /index.html 200
+    /progetti/* /index.html 200 # Per i dettagli dei progetti in italiano
+
+    # Regola per la lingua inglese
+    # Reindirizza tutti i percorsi che iniziano con /en/ all'index.html della build inglese.
+    /en/home /en/index.html 200
+    /en/chi-sono /en/index.html 200
+    /en/contatti /en/index.html 200
+    /en/servizi /en/index.html 200
+    /en/progetti /en/index.html 200
+    /en/progetti/* /en/index.html 200 # Per i dettagli dei progetti in inglese
+
+    # Regola di fallback predefinita
+    # Qualsiasi altro percorso non corrispondente (es. URL sbagliati o root senza prefisso)
+    # verrà reindirizzato all'index.html della build italiana.
+    /* /index.html 200
+    
