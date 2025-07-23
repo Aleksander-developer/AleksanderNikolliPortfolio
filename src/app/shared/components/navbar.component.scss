@@ -10,7 +10,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 
 .toolbar-custom {
   display: flex;
-  justify-content: space-between; /* Distribuisce gli elementi */
+  justify-content: space-between; /* Distribuisce gli elementi ai lati */
   align-items: center;
   background-color: $darkest-bg !important;
   padding: 0 vars.$spacing-md;
@@ -22,6 +22,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   right: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  position: relative; /* Necessario per il posizionamento assoluto del brand */
 }
 
 .brand-link {
@@ -30,9 +31,12 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   color: $brand-link-color;
   text-decoration: none;
   transition: color 0.3s ease;
-  /* Assicura che il brand sia sempre visibile e centrato verticalmente */
-  display: flex;
-  align-items: center;
+
+  /* Posizionamento assoluto per centrare il brand */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Assicura che sia sopra gli altri link se si sovrappongono */
 
   &:hover {
     color: lighten($brand-link-color, 10%);
@@ -44,6 +48,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   display: flex;
   gap: vars.$spacing-md;
   align-items: center; /* Allinea verticalmente i link */
+  z-index: 2; /* Assicura che i link siano sopra il brand se si sovrappongono */
 }
 
 /* Regola la posizione delle sezioni sinistra e destra */
@@ -54,13 +59,6 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 .right-section {
   order: 3; /* Terzo elemento */
 }
-
-.brand-link {
-  order: 2; /* Secondo elemento, al centro */
-  flex-grow: 1; /* Permette al brand di occupare spazio extra al centro */
-  text-align: center; /* Centra il testo del brand se non ci sono altri elementi */
-}
-
 
 .desktop-links a {
   color: vars.$text-color;
@@ -148,6 +146,11 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   }
 
   .brand-link {
+    /* Torna al flusso normale per mobile */
+    position: static;
+    transform: none;
+    left: auto;
+    order: 2; /* Ri-applica l'ordine per mobile */
     flex-grow: 1; /* Permette al brand di occupare lo spazio centrale */
     text-align: center; /* Centra il testo del brand */
   }
