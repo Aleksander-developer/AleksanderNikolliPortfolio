@@ -12,7 +12,4 @@
   to = "/en/index.html"
   status = 200
 
-[[redirects]]
-  from = "/*"
-  to = "/en/index.html"
-  status = 200
+
