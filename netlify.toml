@@ -2,32 +2,27 @@
   command = "npm run build"
   publish = "dist/aleksander-nikolli-portfolio/browser"
 
-# IT routes
-[[redirects]]
-  from = "/it/*"
-  to = "/it/index.html"
-  status = 200
+# Reindirizza la root alla lingua italiana di default
+    [[redirects]]
+      from = "/"
+      to = "/it/index.html"
+      status = 200
 
-# EN routes
-[[redirects]]
-  from = "/en/*"
-  to = "/en/index.html"
-  status = 200
+    # Tutte le route IT
+    [[redirects]]
+      from = "/it/*"
+      to = "/it/index.html"
+      status = 200
 
-# IT routes
-[[redirects]]
-  from = "/it/*"
-  to = "/it/index.html"
-  status = 200
+    # Tutte le route EN
+    [[redirects]]
+      from = "/en/*"
+      to = "/en/index.html"
+      status = 200
 
-# Root redirect to IT
-[[redirects]]
-  from = "/"
-  to = "/it/index.html"
-  status = 200
-
-# Catch-all fallback
-[[redirects]]
-  from = "/*"
-  to = "/it/index.html"
-  status = 200
+    # Catch-all fallback (per qualsiasi percorso non trovato, reindirizza alla home italiana)
+    [[redirects]]
+      from = "/*"
+      to = "/it/index.html"
+      status = 200
+    
