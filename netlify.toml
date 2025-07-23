@@ -1,20 +1,13 @@
+
 [build]
-  command = "ng build --configuration=production"
-  publish = "dist/aleksander-nikolli-portfolio/browser"
-  plugins = [
-    { package = "@netlify/angular-runtime", disable = true }
-  ]
+  command = "npm run build"
+  publish = "dist/aleksander-nikolli-portfolio/browser/it"
 
-# --- Regole di Reindirizzamento consolidate qui (CORRETTE per Angular Application Builder) ---
-
-# Reindirizza la root alla lingua italiana di default
 [[redirects]]
   from = "/"
-  to = "/index.html" # <--- CORRETTO: Punta all'index.html italiano che è nella root della publish directory
+  to = "/index.html"
   status = 200
 
-# Regole per le route in italiano (gestite dal router di Angular dall'index.html italiano)
-# Queste sono necessarie per l'SPA routing
 [[redirects]]
   from = "/home"
   to = "/index.html"
@@ -40,38 +33,8 @@
   to = "/index.html"
   status = 200
 
-# Regole per le route in inglese (gestite dal router di Angular dall'index.html inglese)
+# Reindirizza tutto ciò che inizia con /en verso la build inglese
 [[redirects]]
-  from = "/en/" # Per l'accesso diretto alla root inglese
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/en/home"
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/en/chi-sono"
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/en/contatti"
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/en/servizi"
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/en/progetti"
-  to = "/en/index.html"
-  status = 200
-[[redirects]]
-  from = "/en/progetti/*"
-  to = "/en/index.html"
-  status = 200
-
-# Catch-all fallback per qualsiasi altro percorso non corrispondente, reindirizza alla home italiana
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/en/*"
+  to = "/en/:splat"
   status = 200
