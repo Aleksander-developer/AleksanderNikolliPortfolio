@@ -1,11 +1,23 @@
 [build]
-  command = "ng build --configuration=production"
+  command = "npm run build"
   publish = "dist/aleksander-nikolli-portfolio/browser"
+
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/it/*"
+  to = "/it/index.html"
+  status = 200
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-[[plugins]]
-  package = "@netlify/angular-runtime"
+[[redirects]]
+  from = "/"
+  to = "/it/index.html"
+  status = 200
