@@ -1,12 +1,7 @@
-[build]
-  command = "ng build --configuration=production"
-  publish = "dist/aleksander-nikolli-portfolio/browser"
-  # Per disabilitare il plugin, si usa la sezione "plugins" qui sotto "build"
-  # e si specifica il package e disable = true
-  plugins = [
-    { package = "@netlify/angular-runtime", disable = true }
-  ]
-
-# Non è più necessario il blocco [[plugins]] separato se lo disabilitiamo qui sopra.
-# Se in futuro volessi abilitare altri plugin con input specifici,
-# useresti [[plugins]] con [plugins.inputs] come nell'esempio di Netlify.
+    [build]
+      command = "ng build --configuration=production"
+      publish = "dist/aleksander-nikolli-portfolio/browser"
+      plugins = [
+        { package = "@netlify/angular-runtime", disable = true }
+      ]
+    
