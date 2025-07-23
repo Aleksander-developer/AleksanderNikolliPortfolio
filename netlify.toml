@@ -3,6 +3,11 @@
   command = "ng build --configuration=production --localize"
 
 [[redirects]]
+  from = "/"
+  to = "/it/index.html"
+  status = 200
+
+[[redirects]]
   from = "/it/*"
   to = "/it/index.html"
   status = 200
@@ -11,5 +16,4 @@
   from = "/en/*"
   to = "/en/index.html"
   status = 200
-
 
