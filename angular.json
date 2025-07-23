@@ -33,7 +33,11 @@
                 "output": "/"
               },
               "src/assets",
-              "src/_redirects"
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -54,21 +58,13 @@
                   "maximumError": "20kb"
                 }
               ],
-              "outputHashing": "all",
-              "localize": ["it", "en"]
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true,
-              "localize": ["it"]
-            },
-            "it": {
-              "localize": ["it"]
-            },
-            "en": {
-              "localize": ["en"]
+              "namedChunks": true
             }
           },
           "defaultConfiguration": "production"
@@ -81,10 +77,6 @@
             },
             "development": {
               "buildTarget": "aleksander-nikolli-portfolio:build:development"
-            },
-            "localize-all": {
-              "buildTarget": "aleksander-nikolli-portfolio:build",
-              "localize": true
             }
           },
           "defaultConfiguration": "development"
