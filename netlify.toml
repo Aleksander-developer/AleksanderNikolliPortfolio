@@ -1,26 +1,22 @@
-# AleksanderNikolliPortfolio/netlify.toml
-
 [build]
   command = "npm run build"
   publish = "dist/aleksander-nikolli-portfolio/browser"
 
-[[redirects]]
-  from = "/"
-  to = "/it/index.html"
-  status = 200
-
+# Route per lingua EN
 [[redirects]]
   from = "/en/*"
   to = "/en/index.html"
   status = 200
 
+# Route per lingua IT
 [[redirects]]
   from = "/it/*"
   to = "/it/index.html"
   status = 200
 
+# Redirect root verso IT
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/"
+  to = "/it/index.html"
   status = 200
 
