@@ -2,28 +2,27 @@
   publish = "dist/aleksander-nikolli-portfolio/browser"
   command = "ng build --configuration=production --localize"
 
-# Italiano come default
+# Italiano come lingua di default
 [[redirects]]
   from = "/"
   to = "/it/index.html"
   status = 200
 
-# Reindirizza tutte le rotte italiane al loro index
+# Italian routes
 [[redirects]]
   from = "/it/*"
   to = "/it/index.html"
   status = 200
 
-# Reindirizza tutte le rotte inglesi al loro index
-[[redirects]]
-  from = "/en/*"
-  to = "/en/index.html"
-  status = 200
-
-# Reindirizza anche il root delle versioni
 [[redirects]]
   from = "/it"
   to = "/it/index.html"
+  status = 200
+
+# English routes
+[[redirects]]
+  from = "/en/*"
+  to = "/en/index.html"
   status = 200
 
 [[redirects]]
