@@ -1,7 +1,10 @@
-    [build]
-      command = "ng build --configuration=production"
-      publish = "dist/aleksander-nikolli-portfolio/browser"
-      plugins = [
-        { package = "@netlify/angular-runtime", disable = true }
-      ]
-    
+[build]
+  command = "ng build --configuration=production"
+  publish = "dist/aleksander-nikolli-portfolio/browser"
+
+# Disabilitiamo qualsiasi plugin automatico di Angular
+[[plugins]]
+  package = "@netlify/angular-runtime"
+  [plugins.inputs]
+    disabled = true
+
