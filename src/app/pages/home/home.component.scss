@@ -105,7 +105,7 @@
 
   .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Default per schermi più grandi */
     gap: vars.$spacing-md;
     max-width: 1200px;
     margin: 0 auto;
@@ -303,7 +303,7 @@
     font-size: 2rem;
   }
   .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* MODIFICATO: Forza 3 colonne per tablet */
   }
   .cta-section h2 {
     font-size: 2rem;
@@ -313,7 +313,7 @@
   }
 }
 
-@media (max-width: vars.$breakpoint-md) { // Per schermi più piccoli di 768px (smartphone)
+@media (max-width: vars.$breakpoint-md) { // Per schermi più piccoli di 768px (smartphone e tablet piccoli)
   .hero-section {
     padding: 3rem 1rem;
     min-height: unset; // Rimuovi min-height per adattarsi al contenuto
@@ -347,7 +347,7 @@
     font-size: 1.8rem;
   }
   .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* MODIFICATO: Forza 2 colonne per tablet e smartphone */
   }
   .tech-tile {
     padding: 0.8rem;
@@ -371,7 +371,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 400px) {
   .hero-section {
     .hero-image-container {
       width: 160px; // Riduci dimensione immagine per schermi molto piccoli
@@ -390,7 +390,7 @@
     font-size: 1.5rem;
   }
   .tech-grid {
-    grid-template-columns: repeat(2, 1fr); /* MODIFICATO: Forza 2 colonne */
+    grid-template-columns: repeat(2, 1fr); /* MANTIENI: Forza 2 colonne per schermi molto piccoli */
   }
   .cta-section h2 {
     font-size: 1.5rem;
