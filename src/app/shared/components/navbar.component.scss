@@ -16,13 +16,13 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   padding: 0 vars.$spacing-md;
   font-family: vars.$font-family-base;
   height: 64px;
-  position: fixed;
+  position: fixed; /* Mantiene la navbar in alto */
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-  position: relative; /* Necessario per il posizionamento assoluto del brand */
+  position: relative; /* IMPORTANTE: Necessario per il posizionamento assoluto del brand */
 }
 
 .brand-link {
@@ -32,11 +32,12 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   text-decoration: none;
   transition: color 0.3s ease;
 
-  /* Posizionamento assoluto per centrare il brand */
+  /* RIPRISTINATO: Posizionamento assoluto per centrare il brand */
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1; /* Assicura che sia sopra gli altri link se si sovrappongono */
+  z-index: 3; /* Assicura che sia sopra gli altri link se si sovrappongono */
+  white-space: nowrap; /* Impedisce al testo di andare a capo */
 
   &:hover {
     color: lighten($brand-link-color, 10%);
@@ -48,16 +49,22 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   display: flex;
   gap: vars.$spacing-md;
   align-items: center; /* Allinea verticalmente i link */
-  z-index: 2; /* Assicura che i link siano sopra il brand se si sovrappongono */
+  z-index: 2; /* Assicura che i link siano sotto il brand ma sopra lo sfondo */
+  flex-shrink: 1; /* Permette ai link di restringersi se necessario */
+  flex-basis: auto; /* Permette agli elementi di avere una dimensione basata sul contenuto */
 }
 
 /* Regola la posizione delle sezioni sinistra e destra */
 .left-section {
   order: 1; /* Primo elemento */
+  // Aggiungiamo un margine destro per spingere via il brand se i link sono lunghi
+  margin-right: auto; /* Spinge il brand verso il centro */
 }
 
 .right-section {
   order: 3; /* Terzo elemento */
+  // Aggiungiamo un margine sinistro per spingere via il brand se i link sono lunghi
+  margin-left: auto; /* Spinge il brand verso il centro */
 }
 
 .desktop-links a {
@@ -65,6 +72,10 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   text-transform: uppercase;
   font-weight: 500;
   transition: color 0.3s ease, transform 0.2s ease;
+  padding: 0 12px; /* Padding di default per i link */
+  white-space: nowrap; /* Impedisce ai link di andare a capo */
+  flex-shrink: 1; /* Permette ai link di restringersi */
+  min-width: 0; /* Permette ai link di restringersi oltre il loro contenuto se necessario */
 
   &:hover {
     color: vars.$accent-color;
@@ -89,6 +100,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   display: flex;
   align-items: center;
   margin-left: vars.$spacing-md; /* Spazio tra i link e i pulsanti lingua */
+  flex-shrink: 0; /* Impedisce ai pulsanti lingua di restringersi */
 
   button {
     min-width: unset; /* Rimuove il min-width predefinito di mat-button */
@@ -128,7 +140,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 }
 
 /* Media query per dispositivi mobili */
-@media (max-width: vars.$breakpoint-md) {
+@media (max-width: vars.$breakpoint-md) { /* Per schermi più piccoli di 768px (smartphone) */
   .desktop-links {
     display: none; /* Nasconde i link desktop */
   }
@@ -147,12 +159,13 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 
   .brand-link {
     /* Torna al flusso normale per mobile */
-    position: static;
+    position: static; /* Assicura che non ci siano residui di posizionamento assoluto */
     transform: none;
     left: auto;
     order: 2; /* Ri-applica l'ordine per mobile */
     flex-grow: 1; /* Permette al brand di occupare lo spazio centrale */
     text-align: center; /* Centra il testo del brand */
+    font-size: 1.5rem; /* Revert to original size for mobile if desired */
   }
 
   /* Mostra i pulsanti lingua mobile all'interno del menu */
@@ -176,6 +189,33 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
       .lang-text {
         font-size: 1rem; /* Dimensione del testo completo (Italiano/English) */
       }
+    }
+  }
+}
+
+/* NUOVO: Media query specifica per la fascia 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .brand-link {
+    font-size: 1.2rem; /* Riduci la dimensione del font del brand */
+  }
+  .desktop-links {
+    gap: vars.$spacing-xs; /* Riduci il gap tra i link */
+  }
+  .desktop-links a {
+    font-size: 0.85rem; /* Riduci la dimensione del font dei link */
+    padding: 0 6px; /* Riduci il padding dei link */
+  }
+  .language-buttons {
+    margin-left: vars.$spacing-xs; /* Riduci il margine per i pulsanti lingua */
+  }
+  .language-buttons button {
+    padding: 2px 4px; /* Riduci il padding dei pulsanti lingua */
+    .lang-text {
+      font-size: 0.7rem; /* Riduci la dimensione del testo IT/EN */
+    }
+    .flag-icon {
+      width: 18px;
+      height: 12px;
     }
   }
 }
