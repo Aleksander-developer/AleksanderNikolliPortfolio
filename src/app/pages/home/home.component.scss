@@ -105,7 +105,8 @@
 
   .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Default per schermi più grandi */
+    // MODIFICATO: Aumentato il minmax per il default (desktop)
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Default per schermi più grandi */
     gap: vars.$spacing-md;
     max-width: 1200px;
     margin: 0 auto;
@@ -303,7 +304,7 @@
     font-size: 2rem;
   }
   .tech-grid {
-    grid-template-columns: repeat(3, 1fr); /* MODIFICATO: Forza 3 colonne per tablet */
+    grid-template-columns: repeat(3, 1fr); /* Forza 3 colonne per tablet */
   }
   .cta-section h2 {
     font-size: 2rem;
@@ -347,7 +348,7 @@
     font-size: 1.8rem;
   }
   .tech-grid {
-    grid-template-columns: repeat(2, 1fr); /* MODIFICATO: Forza 2 colonne per tablet e smartphone */
+    grid-template-columns: repeat(2, 1fr); /* Forza 2 colonne per tablet e smartphone */
   }
   .tech-tile {
     padding: 0.8rem;
@@ -371,31 +372,38 @@
   }
 }
 
-@media (max-width: 480px) {
+/* NUOVA MEDIA QUERY SPECIFICA PER SCHERMI MOLTO STRETTI (es. iPhone 10/X/XS/11 Pro in portrait) */
+@media (max-width: 400px) {
+  .tech-section {
+    .tech-grid {
+      grid-template-columns: repeat(2, 1fr); /* Forza 2 colonne anche per schermi ultra-piccoli */
+    }
+  }
+  // Puoi aggiungere altre regole specifiche per schermi molto piccoli qui, se necessario
   .hero-section {
     .hero-image-container {
-      width: 160px; // Riduci dimensione immagine per schermi molto piccoli
-      height: 160px;
+      width: 140px; // Riduci ancora per schermi molto piccoli
+      height: 140px;
     }
     .hero-content {
       h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
       }
     }
   }
   .section-title {
-    font-size: 1.5rem;
-  }
-  .tech-grid {
-    grid-template-columns: repeat(2, 1fr); /* MANTIENI: Forza 2 colonne per schermi molto piccoli */
+    font-size: 1.4rem;
   }
   .cta-section h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
   .cta-section p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
+
+/* RIMOSSA la precedente @media (max-width: 480px) per .tech-grid,
+   ora gestita dalla nuova @media (max-width: 400px) e dalla @media (max-width: vars.$breakpoint-md) */
