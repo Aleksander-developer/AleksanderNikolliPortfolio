@@ -1,9 +1,10 @@
 /* src/app/app.component.ts */
 
-import { Component, HostListener, Inject, PLATFORM_ID, AfterViewInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, HostListener, Inject, PLATFORM_ID, AfterViewInit, ViewChild, ElementRef, Renderer2, OnInit } from '@angular/core'; // Aggiunto OnInit
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
-import { LanguageService } from './shared/services/language.service'; // Importa il nuovo LanguageService
+import { LanguageService } from './shared/services/language.service';
+import { SeoService } from './core/services/seo.service'; // <--- Importa il SeoService
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,8 @@ import { LanguageService } from './shared/services/language.service'; // Importa
   styleUrls: ['./app.component.scss'],
   // ASSICURATI CHE NON CI SIANO standalone: true, O imports: [...] QUI
 })
-export class AppComponent implements AfterViewInit {
-  title = 'Aleksander Nikolli Developer';
+export class AppComponent implements OnInit, AfterViewInit { // Implementa OnInit
+  // title = 'Aleksander Nikolli Developer'; // Rimosso: gestito dal SeoService
   showScrollButton: boolean = false;
   scrollButtonBottom: number = 30; // Posizione iniziale dal basso
   isButtonOverFooter: boolean = false;
@@ -22,15 +23,14 @@ export class AppComponent implements AfterViewInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private renderer: Renderer2,
-    private router: Router, // Inietta Router
-    private languageService: LanguageService // Inietta LanguageService
-  ) {
-    // Rendi AppComponent accessibile globalmente per NavbarComponent (soluzione temporanea)
-    // Questa riga non è più strettamente necessaria se NavbarComponent inietta LanguageService direttamente
-    // ma può rimanere per compatibilità se altri componenti la usano.
-    if (isPlatformBrowser(this.platformId)) {
-      (window as any).appComponent = this;
-    }
+    private router: Router,
+    private languageService: LanguageService,
+    private seoService: SeoService // <--- Inietta il SeoService
+  ) {}
+
+  ngOnInit(): void {
+    // Inizializza gli aggiornamenti SEO all'avvio dell'applicazione
+    this.seoService.initSeoUpdates();
   }
 
   ngAfterViewInit(): void {
