@@ -1,0 +1,42 @@
+<!-- src/app/shared/components/reviews/reviews.component.html -->
+<section class="reviews-section">
+  <div class="reviews-header">
+    <h2 i18n="@@reviewsTitle">Cosa dicono i miei clienti</h2>
+    <!-- Badge "Verificato su Google" -->
+    <div *ngIf="isGoogleVerified" class="google-verified-badge" i18n="@@googleVerifiedBadge">
+      <mat-icon>verified</mat-icon> Verificato su Google
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <mat-card *ngFor="let review of displayedReviews" class="review-card">
+      <div class="reviewer-info">
+        <img [src]="review.reviewer.profilePhotoUrl" [alt]="review.reviewer.displayName" class="reviewer-avatar">
+        <div class="reviewer-details">
+          <h3>{{ review.reviewer.displayName }}</h3>
+          <div class="star-rating">
+            <mat-icon *ngFor="let star of getStars(review.starRatingNumber)" [class.filled]="star">star</mat-icon>
+            <mat-icon *ngFor="let star of getEmptyStars(review.starRatingNumber)">star_border</mat-icon>
+          </div>
+          <!-- Badge "Recensione Verificata" -->
+          <div *ngIf="review.reviewer.isVerified" class="review-verified-badge" i18n="@@reviewVerifiedBadge">
+            <mat-icon>check_circle</mat-icon> Recensione verificata
+          </div>
+        </div>
+      </div>
+      <p class="review-comment">{{ review.comment }}</p>
+      <div *ngIf="review.reviewReply" class="review-reply">
+        <p class="reply-text" i18n="@@reviewReplyPrefix">**La mia risposta:** {{ review.reviewReply.comment }}</p>
+      </div>
+      <span class="review-date">{{ review.createTime | date:'shortDate' }}</span>
+    </mat-card>
+  </div>
+
+  <div *ngIf="isLoading" class="loading-spinner">
+    <mat-spinner diameter="40"></mat-spinner>
+    <p i18n="@@reviewsLoading">Caricamento recensioni...</p>
+  </div>
+  <div *ngIf="!isLoading && reviews.length === 0" class="no-reviews-message">
+    <p i18n="@@noReviewsMessage">Nessuna recensione disponibile al momento.</p>
+  </div>
+</section>

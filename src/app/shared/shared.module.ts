@@ -13,6 +13,7 @@ import { QuoteBoxComponent } from './components/quote-box.component';
 // Importa il MaterialModule che si trova nella stessa sottocartella 'shared'
 import { MaterialModule } from './shared/material.module';
 import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
+import { ReviewsComponent } from './components/reviews/reviews.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CookieConsentComponent } from './components/cookie-consent/cookie-conse
     FooterComponent,
     WhyChoseMeComponent,
     QuoteBoxComponent,
-    CookieConsentComponent
+    CookieConsentComponent,
+    ReviewsComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { CookieConsentComponent } from './components/cookie-consent/cookie-conse
     WhyChoseMeComponent,
     QuoteBoxComponent,
     CookieConsentComponent,
+    ReviewsComponent,
     MaterialModule, // Esporta MaterialModule per renderlo disponibile agli importatori di SharedModule
     CommonModule,   // Utile esportare CommonModule per le direttive *ngIf, *ngFor
     RouterModule,    // Esporta RouterModule

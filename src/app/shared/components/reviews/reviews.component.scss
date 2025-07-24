@@ -1,0 +1,182 @@
+/* src/app/shared/components/reviews/reviews.component.scss */
+@use '../../../../styles/variables' as vars;
+
+.reviews-section {
+  padding: vars.$spacing-xl 0;
+  text-align: center;
+  background-color: vars.$light-bg; // Sfondo leggermente più chiaro per la sezione
+  color: vars.$text-color-dark; // Testo scuro su sfondo chiaro
+
+  .reviews-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: vars.$spacing-xl;
+
+    h2 {
+      font-size: 2.5rem;
+      color: vars.$primary-color;
+      margin-bottom: vars.$spacing-md;
+      font-weight: 700;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+
+      @media (max-width: vars.$breakpoint-md) {
+        font-size: 2rem;
+      }
+    }
+
+    .google-verified-badge {
+      display: inline-flex;
+      align-items: center;
+      background-color: vars.$accent-color; // Colore accento per il badge
+      color: vars.$dark-bg; // Testo scuro sul badge
+      padding: vars.$spacing-xs vars.$spacing-md;
+      border-radius: 20px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 2px 5px rgba(vars.$accent-color, 0.3);
+      mat-icon {
+        font-size: 1.1rem;
+        margin-right: vars.$spacing-xs;
+      }
+    }
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Responsive grid
+    gap: vars.$spacing-lg;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 vars.$spacing-lg;
+
+    .review-card {
+      background-color: vars.$dark-bg; // Sfondo scuro per le card
+      color: vars.$text-color; // Testo chiaro sulla card
+      padding: vars.$spacing-lg;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      }
+
+      .reviewer-info {
+        display: flex;
+        align-items: center;
+        margin-bottom: vars.$spacing-md;
+
+        .reviewer-avatar {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: vars.$spacing-md;
+          border: 2px solid vars.$accent-color; // Bordo colorato
+        }
+
+        .reviewer-details {
+          h3 {
+            margin: 0 0 vars.$spacing-xs 0;
+            font-size: 1.2rem;
+            color: vars.$primary-color;
+          }
+
+          .star-rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: vars.$spacing-xs;
+
+            mat-icon {
+              font-size: 1.1rem;
+              color: vars.$star-color; // Colore per le stelle piene
+              &.filled {
+                color: vars.$star-color;
+              }
+              &.star_border {
+                color: vars.$text-color-light; // Colore per le stelle vuote
+              }
+            }
+          }
+
+          .review-verified-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: vars.$success-color; // Colore verde per la verifica
+            color: vars.$dark-bg;
+            padding: 3px 8px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            mat-icon {
+              font-size: 0.9rem;
+              margin-right: 4px;
+            }
+          }
+        }
+      }
+
+      .review-comment {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: vars.$spacing-md;
+        flex-grow: 1; // Permette al commento di occupare spazio
+      }
+
+      .review-reply {
+        margin-top: vars.$spacing-sm;
+        padding-top: vars.$spacing-sm;
+        border-top: 1px solid rgba(vars.$text-color-light, 0.2); // Separatore per la risposta
+        .reply-text {
+          font-size: 0.9rem;
+          color: vars.$text-color-light;
+          font-style: italic;
+          strong {
+            color: vars.$accent-color;
+          }
+        }
+      }
+
+      .review-date {
+        font-size: 0.8rem;
+        color: vars.$text-color-light;
+        text-align: right;
+        margin-top: vars.$spacing-sm;
+      }
+    }
+  }
+
+  .loading-spinner, .no-reviews-message {
+    margin-top: vars.$spacing-xl;
+    p {
+      font-size: 1.1rem;
+      color: vars.$primary-color;
+      margin-top: vars.$spacing-md;
+    }
+  }
+}
+
+/* Responsive adjustments for grid columns */
+@media (min-width: vars.$breakpoint-lg) {
+  .reviews-grid {
+    grid-template-columns: repeat(3, 1fr); // 3 colonne su desktop
+  }
+}
+
+@media (min-width: vars.$breakpoint-md) and (max-width: vars.$breakpoint-lg) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr); // 2 colonne su tablet
+  }
+}
+
+@media (max-width: vars.$breakpoint-md) {
+  .reviews-grid {
+    grid-template-columns: 1fr; // 1 colonna su smartphone
+    padding: 0 vars.$spacing-md;
+  }
+}
