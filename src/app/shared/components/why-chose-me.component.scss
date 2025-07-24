@@ -38,21 +38,28 @@
     margin: vars.$spacing-md 0;
 
     li {
+      // Rimuovi display: flex e flex-wrap da qui
+      // display: flex; /* RIMOSSO */
+      // flex-wrap: wrap; /* RIMOSSO */
       margin-bottom: 0.5rem;
       font-weight: 500;
-      display: flex;
-      align-items: flex-start; /* MODIFICATO: allinea in alto se il testo va a capo */
-      // Aggiungi flex-wrap per permettere al testo di andare a capo
-      flex-wrap: wrap; /* NUOVO: Permette al contenuto di andare a capo */
+      position: relative; /* NUOVO: Necessario per posizionare l'icona in modo assoluto */
+      padding-left: 32px; /* NUOVO: Spazio per l'icona + margine */
+      text-align: left; /* Assicura che il testo sia allineato a sinistra */
     }
   }
 
   .negative-icon,
   .positive-icon {
-    flex-shrink: 0; /* Impedisce all'icona di rimpicciolirsi */
-    margin-right: 8px;
-    // Aggiungi un piccolo margine in basso per separare l'icona dalla riga successiva di testo se il testo è lungo
-    margin-bottom: 4px; /* NUOVO: Per allineamento migliore con testo multi-riga */
+    // flex-shrink: 0; /* RIMOSSO - non più necessario con position: absolute */
+    // margin-right: 8px; /* RIMOSSO - gestito da left + padding-left */
+    // margin-bottom: 4px; /* RIMOSSO */
+    position: absolute; /* NUOVO: Posiziona l'icona in modo assoluto */
+    left: 0; /* NUOVO: Allinea l'icona a sinistra del padding */
+    top: 0; /* NUOVO: Allinea l'icona con l'inizio del testo */
+    font-size: 24px; /* Assicurati che le icone abbiano una dimensione fissa */
+    width: 24px;
+    height: 24px;
   }
 
   .negative-icon {
@@ -70,17 +77,20 @@
   }
 
   .conclusione {
+    // Rimuovi display: flex e flex-wrap da qui
+    // display: flex; /* RIMOSSO */
+    // flex-wrap: wrap; /* RIMOSSO */
     font-size: 1.2rem;
     font-weight: bold;
     color: vars.$accent-color;
     margin-top: 1.5rem;
-    display: flex;
-    align-items: flex-start; /* MODIFICATO: allinea in alto se il testo va a capo */
-    flex-wrap: wrap; /* NUOVO: Permette al contenuto di andare a capo */
+    position: relative; /* NUOVO: Necessario per posizionare l'icona in modo assoluto */
+    padding-left: 32px; /* NUOVO: Spazio per l'icona + margine */
+    text-align: left; /* Assicura che il testo sia allineato a sinistra */
   }
 }
 
-// Responsive adjustments
+// Responsive adjustments (mantieni le tue media query esistenti)
 @media (max-width: vars.$breakpoint-md) {
   .why-choose-me-card {
     margin: vars.$spacing-md;
@@ -97,6 +107,16 @@
 
   .conclusione {
     font-size: 1.1rem;
+    padding-left: 28px; /* Adatta il padding per schermi più piccoli se l'icona è più piccola */
+  }
+  .negative-icon,
+  .positive-icon {
+    font-size: 20px; /* Riduci la dimensione dell'icona se necessario */
+    width: 20px;
+    height: 20px;
+  }
+  ul li {
+    padding-left: 28px; /* Adatta il padding per schermi più piccoli */
   }
 }
 
@@ -116,5 +136,15 @@
 
   .conclusione {
     font-size: 1rem;
+    padding-left: 24px; /* Adatta il padding per schermi molto piccoli */
+  }
+  .negative-icon,
+  .positive-icon {
+    font-size: 18px; /* Riduci la dimensione dell'icona */
+    width: 18px;
+    height: 18px;
+  }
+  ul li {
+    padding-left: 24px; /* Adatta il padding per schermi molto piccoli */
   }
 }

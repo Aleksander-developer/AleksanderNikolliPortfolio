@@ -390,7 +390,7 @@
     font-size: 1.5rem;
   }
   .tech-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr); /* MODIFICATO: Forza 2 colonne */
   }
   .cta-section h2 {
     font-size: 1.5rem;
