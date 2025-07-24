@@ -15,9 +15,20 @@ export class ProgettoDetailComponent implements OnInit {
   loading = true;
   errore = '';
 
-  // NUOVO: Proprietà per gestire lo stato "mostra di più/meno"
+  // Proprietà per gestire lo stato "mostra di più/meno" per la descrizione
   isDescriptionExpanded: boolean = false;
-  readonly DESCRIPTION_MAX_LINES: number = 5; // Limite di righe prima di mostrare i pulsanti
+  readonly DESCRIPTION_MAX_CHARS: number = 400; // Limite di caratteri per la descrizione
+
+  // NUOVO: Proprietà per gestire lo stato "mostra di più/meno" per le altre sezioni
+  isFeaturesExpanded: boolean = false;
+  isChallengesExpanded: boolean = false;
+  isSolutionsExpanded: boolean = false;
+  isResultsExpanded: boolean = false;
+  isArchitectureExpanded: boolean = false;
+
+  // NUOVO: Limiti per le liste e l'architettura
+  readonly LIST_MAX_ITEMS: number = 4; // Limite di elementi per le liste (es. funzionalità, sfide)
+  readonly ARCHITECTURE_MAX_CHARS: number = 300; // Limite di caratteri per il testo dell'architettura
 
   constructor(
     private route: ActivatedRoute,
@@ -44,7 +55,13 @@ export class ProgettoDetailComponent implements OnInit {
       next: (progetto) => {
         this.progettoData = progetto;
         this.loading = false;
-        this.isDescriptionExpanded = false; // Resetta lo stato quando un nuovo progetto viene caricato
+        // Resetta tutti gli stati di espansione quando un nuovo progetto viene caricato
+        this.isDescriptionExpanded = false;
+        this.isFeaturesExpanded = false;
+        this.isChallengesExpanded = false;
+        this.isSolutionsExpanded = false;
+        this.isResultsExpanded = false;
+        this.isArchitectureExpanded = false;
         console.log('Dettaglio progetto caricato:', this.progettoData);
       },
       error: (err) => {
@@ -55,22 +72,57 @@ export class ProgettoDetailComponent implements OnInit {
     });
   }
 
-  // NUOVO: Funzione per alternare lo stato di espansione
+  // Funzione per alternare lo stato di espansione della descrizione
   toggleDescription(): void {
     this.isDescriptionExpanded = !this.isDescriptionExpanded;
   }
 
-  // NUOVO: Funzione per verificare se la descrizione è lunga e necessita dei pulsanti
-  // Questo è un approccio euristico basato sul numero di caratteri.
-  // Un approccio più preciso (ma più complesso) sarebbe calcolare le righe renderizzate.
-  // Per ora, useremo una stima basata sui caratteri.
-  needsReadMore(): boolean {
+  // Funzione per verificare se la descrizione è lunga e necessita dei pulsanti
+  needsReadMoreDescription(): boolean {
     if (!this.progettoData || !this.progettoData.descrizione) {
       return false;
     }
-    // Stima approssimativa: 5 righe * 80 caratteri/riga (media)
-    const charLimit = this.DESCRIPTION_MAX_LINES * 80;
-    return this.progettoData.descrizione.length > charLimit;
+    return this.progettoData.descrizione.length > this.DESCRIPTION_MAX_CHARS;
+  }
+
+  // NUOVO: Funzioni per alternare lo stato di espansione delle liste
+  toggleFeatures(): void {
+    this.isFeaturesExpanded = !this.isFeaturesExpanded;
+  }
+  needsReadMoreFeatures(): boolean {
+    return (this.progettoData?.caratteristiche?.length || 0) > this.LIST_MAX_ITEMS;
+  }
+
+  toggleChallenges(): void {
+    this.isChallengesExpanded = !this.isChallengesExpanded;
+  }
+  needsReadMoreChallenges(): boolean {
+    return (this.progettoData?.sfideAffrontate?.length || 0) > this.LIST_MAX_ITEMS;
+  }
+
+  toggleSolutions(): void {
+    this.isSolutionsExpanded = !this.isSolutionsExpanded;
+  }
+  needsReadMoreSolutions(): boolean {
+    return (this.progettoData?.soluzioniImplementate?.length || 0) > this.LIST_MAX_ITEMS;
+  }
+
+  toggleResults(): void {
+    this.isResultsExpanded = !this.isResultsExpanded;
+  }
+  needsReadMoreResults(): boolean {
+    return (this.progettoData?.risultatiChiave?.length || 0) > this.LIST_MAX_ITEMS;
+  }
+
+  // NUOVO: Funzioni per alternare lo stato di espansione dell'architettura (testo)
+  toggleArchitecture(): void {
+    this.isArchitectureExpanded = !this.isArchitectureExpanded;
+  }
+  needsReadMoreArchitecture(): boolean {
+    if (!this.progettoData || !this.progettoData.architettura) {
+      return false;
+    }
+    return this.progettoData.architettura.length > this.ARCHITECTURE_MAX_CHARS;
   }
 
   // Questo metodo non è strettamente necessario se il backend restituisce testo puro,

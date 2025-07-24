@@ -8,13 +8,11 @@
     <img mat-card-image [src]="progettoData.immagine || 'https://placehold.co/800x500/1a1a2e/00bcd4?text=Dettaglio+Progetto'" [alt]="progettoData.titolo" i18n-alt="@@projectDetailImageAlt" class="project-image" />
 
     <mat-card-content>
-      <!-- NUOVO: Applica la classe 'expanded' o 'collapsed' e mostra solo una parte del testo -->
-      <p class="description" [class.expanded]="isDescriptionExpanded" [class.collapsed]="!isDescriptionExpanded">
-        {{ progettoData.descrizione }}
-      </p>
-
-      <!-- NUOVO: Pulsanti "Mostra di più/meno" -->
-      <div *ngIf="needsReadMore()" class="read-more-buttons">
+      <!-- Descrizione principale -->
+      <div class="collapsible-content" [class.expanded]="isDescriptionExpanded" [class.collapsed]="!isDescriptionExpanded">
+        <p class="description">{{ progettoData.descrizione }}</p>
+      </div>
+      <div *ngIf="needsReadMoreDescription()" class="read-more-buttons">
         <button mat-stroked-button color="primary" (click)="toggleDescription()">
           <span *ngIf="!isDescriptionExpanded" i18n="@@readMoreButton">Mostra di più</span>
           <span *ngIf="isDescriptionExpanded" i18n="@@readLessButton">Mostra di meno</span>
@@ -31,38 +29,82 @@
       <!-- Sezione per le funzionalità/caratteristiche -->
       <ng-container *ngIf="progettoData.caratteristiche && progettoData.caratteristiche.length > 0">
         <h3 i18n="@@projectDetailFeaturesTitle">Funzionalità Principali</h3>
-        <ul>
-          <li *ngFor="let feature of progettoData.caratteristiche">{{ feature }}</li>
-        </ul>
+        <div class="collapsible-content" [class.expanded]="isFeaturesExpanded" [class.collapsed]="!isFeaturesExpanded">
+          <ul>
+            <li *ngFor="let feature of progettoData.caratteristiche">{{ feature }}</li>
+          </ul>
+        </div>
+        <div *ngIf="needsReadMoreFeatures()" class="read-more-buttons">
+          <button mat-stroked-button color="primary" (click)="toggleFeatures()">
+            <span *ngIf="!isFeaturesExpanded" i18n="@@readMoreButton">Mostra di più</span>
+            <span *ngIf="isFeaturesExpanded" i18n="@@readLessButton">Mostra di meno</span>
+          </button>
+        </div>
       </ng-container>
 
-      <!-- NUOVI BLOCCHI PER I DETTAGLI AGGIUNTIVI -->
+      <!-- Sezione Sfide Affrontate -->
       <ng-container *ngIf="progettoData.sfideAffrontate && progettoData.sfideAffrontate.length > 0">
         <h3 i18n="@@projectDetailChallengesTitle">Sfide Affrontate</h3>
-        <ul>
-          <li *ngFor="let challenge of progettoData.sfideAffrontate">{{ challenge }}</li>
-        </ul>
+        <div class="collapsible-content" [class.expanded]="isChallengesExpanded" [class.collapsed]="!isChallengesExpanded">
+          <ul>
+            <li *ngFor="let challenge of progettoData.sfideAffrontate">{{ challenge }}</li>
+          </ul>
+        </div>
+        <div *ngIf="needsReadMoreChallenges()" class="read-more-buttons">
+          <button mat-stroked-button color="primary" (click)="toggleChallenges()">
+            <span *ngIf="!isChallengesExpanded" i18n="@@readMoreButton">Mostra di più</span>
+            <span *ngIf="isChallengesExpanded" i18n="@@readLessButton">Mostra di meno</span>
+          </button>
+        </div>
       </ng-container>
 
+      <!-- Sezione Soluzioni Implementate -->
       <ng-container *ngIf="progettoData.soluzioniImplementate && progettoData.soluzioniImplementate.length > 0">
         <h3 i18n="@@projectDetailSolutionsTitle">Soluzioni Implementate</h3>
-        <ul>
-          <li *ngFor="let solution of progettoData.soluzioniImplementate">{{ solution }}</li>
-        </ul>
+        <div class="collapsible-content" [class.expanded]="isSolutionsExpanded" [class.collapsed]="!isSolutionsExpanded">
+          <ul>
+            <li *ngFor="let solution of progettoData.soluzioniImplementate">{{ solution }}</li>
+          </ul>
+        </div>
+        <div *ngIf="needsReadMoreSolutions()" class="read-more-buttons">
+          <button mat-stroked-button color="primary" (click)="toggleSolutions()">
+            <span *ngIf="!isSolutionsExpanded" i18n="@@readMoreButton">Mostra di più</span>
+            <span *ngIf="isSolutionsExpanded" i18n="@@readLessButton">Mostra di meno</span>
+          </button>
+        </div>
       </ng-container>
 
+      <!-- Sezione Risultati Chiave -->
       <ng-container *ngIf="progettoData.risultatiChiave && progettoData.risultatiChiave.length > 0">
         <h3 i18n="@@projectDetailResultsTitle">Risultati Chiave</h3>
-        <ul>
-          <li *ngFor="let result of progettoData.risultatiChiave">{{ result }}</li>
-        </ul>
+        <div class="collapsible-content" [class.expanded]="isResultsExpanded" [class.collapsed]="!isResultsExpanded">
+          <ul>
+            <li *ngFor="let result of progettoData.risultatiChiave">{{ result }}</li>
+          </ul>
+        </div>
+        <div *ngIf="needsReadMoreResults()" class="read-more-buttons">
+          <button mat-stroked-button color="primary" (click)="toggleResults()">
+            <span *ngIf="!isResultsExpanded" i18n="@@readMoreButton">Mostra di più</span>
+            <span *ngIf="isResultsExpanded" i18n="@@readLessButton">Mostra di meno</span>
+          </button>
+        </div>
       </ng-container>
 
+      <!-- Sezione Architettura -->
       <ng-container *ngIf="progettoData.architettura">
         <h3 i18n="@@projectDetailArchitectureTitle">Architettura</h3>
-        <p>{{ progettoData.architettura }}</p>
+        <div class="collapsible-content" [class.expanded]="isArchitectureExpanded" [class.collapsed]="!isArchitectureExpanded">
+          <p>{{ progettoData.architettura }}</p>
+        </div>
+        <div *ngIf="needsReadMoreArchitecture()" class="read-more-buttons">
+          <button mat-stroked-button color="primary" (click)="toggleArchitecture()">
+            <span *ngIf="!isArchitectureExpanded" i18n="@@readMoreButton">Mostra di più</span>
+            <span *ngIf="isArchitectureExpanded" i18n="@@readLessButton">Mostra di meno</span>
+          </button>
+        </div>
       </ng-container>
 
+      <!-- Fasi di Sviluppo (non richiesta espansione) -->
       <ng-container *ngIf="progettoData.fasiDiSviluppo && progettoData.fasiDiSviluppo.length > 0">
         <h3 i18n="@@projectDetailDevelopmentPhasesTitle">Fasi di Sviluppo</h3>
         <ul>
@@ -70,11 +112,13 @@
         </ul>
       </ng-container>
 
+      <!-- Target Audience (non richiesta espansione) -->
       <ng-container *ngIf="progettoData.targetAudience">
         <h3 i18n="@@projectDetailTargetAudienceTitle">Target Audience</h3>
         <p>{{ progettoData.targetAudience }}</p>
       </ng-container>
 
+      <!-- Aspetti Coperti (non richiesta espansione) -->
       <ng-container *ngIf="progettoData.aspectsCovered && progettoData.aspectsCovered.length > 0">
         <h3 i18n="@@projectDetailAspectsCoveredTitle">Aspetti Coperti</h3>
         <ul>
