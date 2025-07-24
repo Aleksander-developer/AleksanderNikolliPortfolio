@@ -15,6 +15,10 @@ export class ProgettoDetailComponent implements OnInit {
   loading = true;
   errore = '';
 
+  // NUOVO: Proprietà per gestire lo stato "mostra di più/meno"
+  isDescriptionExpanded: boolean = false;
+  readonly DESCRIPTION_MAX_LINES: number = 5; // Limite di righe prima di mostrare i pulsanti
+
   constructor(
     private route: ActivatedRoute,
     private sharedService: SharedService,
@@ -40,6 +44,7 @@ export class ProgettoDetailComponent implements OnInit {
       next: (progetto) => {
         this.progettoData = progetto;
         this.loading = false;
+        this.isDescriptionExpanded = false; // Resetta lo stato quando un nuovo progetto viene caricato
         console.log('Dettaglio progetto caricato:', this.progettoData);
       },
       error: (err) => {
@@ -48,6 +53,24 @@ export class ProgettoDetailComponent implements OnInit {
         this.loading = false;
       }
     });
+  }
+
+  // NUOVO: Funzione per alternare lo stato di espansione
+  toggleDescription(): void {
+    this.isDescriptionExpanded = !this.isDescriptionExpanded;
+  }
+
+  // NUOVO: Funzione per verificare se la descrizione è lunga e necessita dei pulsanti
+  // Questo è un approccio euristico basato sul numero di caratteri.
+  // Un approccio più preciso (ma più complesso) sarebbe calcolare le righe renderizzate.
+  // Per ora, useremo una stima basata sui caratteri.
+  needsReadMore(): boolean {
+    if (!this.progettoData || !this.progettoData.descrizione) {
+      return false;
+    }
+    // Stima approssimativa: 5 righe * 80 caratteri/riga (media)
+    const charLimit = this.DESCRIPTION_MAX_LINES * 80;
+    return this.progettoData.descrizione.length > charLimit;
   }
 
   // Questo metodo non è strettamente necessario se il backend restituisce testo puro,

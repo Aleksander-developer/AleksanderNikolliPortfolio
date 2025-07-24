@@ -600,22 +600,6 @@
           <context context-type="linenumber">3,5</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="serviceCardTitle_{{servizio.id}}" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ servizio.title }}"/></source>
-        <target><x id="INTERPOLATION" equiv-text="{{ servizio.title }}"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.html</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="serviceCardDescription_{{servizio.id}}" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ servizio.description }}"/></source>
-        <target><x id="INTERPOLATION" equiv-text="{{ servizio.description }}"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="servicesContactButton" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contattami </source>
         <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contact Me </target>
@@ -623,270 +607,6 @@
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.html</context>
           <context context-type="linenumber">17,19</context>
         </context-group>
-      </trans-unit>
-
-      <!-- src/app/shared/components/footer.component.html -->
-      <trans-unit id="footerGithubAriaLabel" datatype="html">
-        <source>GitHub Profile</source>
-        <target>GitHub Profile</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerEmailAriaLabel" datatype="html">
-        <source>Send Email</source>
-        <target>Send Email</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerLinkedInAriaLabel" datatype="html">
-        <source>LinkedIn Profile</source>
-        <target>LinkedIn Profile</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerInstagramAriaLabel" datatype="html">
-        <source>Instagram Profile</source>
-        <target>Instagram Profile</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerFacebookAriaLabel" datatype="html">
-        <source>Facebook Profile</source>
-        <target>Facebook Profile</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerWhatsAppAriaLabel" datatype="html">
-        <source>WhatsApp Chat</source>
-        <target>WhatsApp Chat</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerPhoneAriaLabel" datatype="html">
-        <source>Call Phone</source>
-        <target>Call Phone</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">22</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerCopyright" datatype="html">
-        <source>© <x id="INTERPOLATION" equiv-text="{{ currentYear }}"/> Aleksander Nikolli</source>
-        <target>© <x id="INTERPOLATION" equiv-text="{{ currentYear }}"/> Aleksander Nikolli</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">31</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="footerBuiltWith" datatype="html">
-        <source>Built with:</source>
-        <target>Built with:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
-          <context context-type="linenumber">34</context>
-        </context-group>
-      </trans-unit>
-
-      <!-- src/app/shared/components/navbar.component.html -->
-      <trans-unit id="navbarHome" datatype="html">
-        <source>Home</source>
-        <target>Home</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarProjects" datatype="html">
-        <source>Progetti</source>
-        <target>Projects</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">12,15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarServices" datatype="html">
-        <source>Servizi</source>
-        <target>Services</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">17,18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarContact" datatype="html">
-        <source>Contatti</source>
-        <target>Contact</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">18,19</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarAboutMe" datatype="html">
-        <source>Chi sono</source>
-        <target>About Me</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">19,21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="changeLangItAriaLabel" datatype="html">
-        <source>Cambia lingua in italiano</source>
-        <target>Change language to Italian</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">23</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="changeLangEnAriaLabel" datatype="html">
-        <source>Change language to English</source>
-        <target>Change language to English</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarMenuAriaLabel" datatype="html">
-        <source>Open navigation menu</source>
-        <target>Open navigation menu</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarHomeMobile" datatype="html">
-        <source>Home</source>
-        <target>Home</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">44,45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarProjectsMobile" datatype="html">
-        <source>Progetti</source>
-        <target>Projects</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">45,46</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarServicesMobile" datatype="html">
-        <source>Servizi</source>
-        <target>Services</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">46,47</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarContactMobile" datatype="html">
-        <source>Contatti</source>
-        <target>Contact</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">47,48</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="navbarAboutMeMobile" datatype="html">
-        <source>Chi sono</source>
-        <target>About Me</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">48,50</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="changeLangItMobile" datatype="html">
-        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>Italiano<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>Italian<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">54,57</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="changeLangEnMobile" datatype="html">
-        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>English<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>English<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">59,62</context>
-        </context-group>
-      </trans-unit>
-
-      <!-- src/app/shared/components/why-chose-me.component.html -->
-      <trans-unit id="whyChooseMeTitle" datatype="html">
-        <source> Perché scegliere me? </source>
-        <target> Why choose me? </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">5,7</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="whyChooseMeIntro" datatype="html">
-        <source>A differenza delle grandi agenzie, con me non dovrai:</source>
-        <target>Unlike large agencies, with me you won't have to:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">10,12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="whyChooseMeNegative1" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>cancel<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Aspettare giorni per una semplice risposta</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>cancel<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Wait days for a simple answer</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">12,13</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="whyChooseMeNegative2" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>email<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Inviare decine di email per ogni richiesta</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>email<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Send dozens of emails for each request</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">13,14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="whyChooseMeNegative3" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Parlare con operatori diversi ogni volta</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Talk to different operators every time</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">14,17</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="whyChooseMePositive1" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>lightbulb<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Affidandoti a me, parli <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>direttamente<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con chi sviluppa il tuo progetto — sia frontend che backend. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> Hai un dubbio? Mi chiami. Serve una modifica? Mi scrivi. Ci vediamo di persona? Nessun problema. </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>lightbulb<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> By relying on me, you speak <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>directly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> with those who develop your project — both frontend and backend. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> Have a doubt? Call me. Need a change? Write to me. Meet in person? No problem. </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">18,21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="whyChooseMePositive2" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Supporto rapido, diretto, umano. </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Fast, direct, human support. </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">24,26</context>
-        </context-group>
-      </trans-unit>
-
-      <!-- src/app/pages/servizi/servizi.component.html -->
-      <trans-unit id="servicesPageTitle" datatype="html">
-        <source>I miei servizi</source>
-        <target>My Services</target>
-      </trans-unit>
-      <trans-unit id="servicesContactButton" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contattami </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contact Me </target>
       </trans-unit>
 
       <!-- Traduzioni specifiche per i servizi (da servizi.component.ts con $localize:@@id:) -->
@@ -957,7 +677,194 @@
         <source>Rifiuto</source>
         <target>Decline</target>
       </trans-unit>
-      
+
+      <!-- TRADUZIONI AGGIUNTE DA ULTIMI AGGIORNAMENTI (Reviews, Read More, Hero Image Alt, Google Verified Badge) -->
+      <trans-unit id="homeHeroImageAlt" datatype="html">
+        <source>Aleksander Nikolli Developer Portrait</source>
+        <target>Aleksander Nikolli Developer Portrait</target>
+      </trans-unit>
+
+      <trans-unit id="readMoreButton" datatype="html">
+        <source>Mostra di più</source>
+        <target>Read more</target>
+      </trans-unit>
+      <trans-unit id="readLessButton" datatype="html">
+        <source>Mostra di meno</source>
+        <target>Show less</target>
+      </trans-unit>
+
+      <trans-unit id="reviewsTitle" datatype="html">
+        <source>Cosa dicono i miei clienti</source>
+        <target>What my clients say</target>
+      </trans-unit>
+      <trans-unit id="googleVerifiedBadge" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>verified<x id="CLOSE_TAG_MAT_ICON"/> Verificato su Google</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>verified<x id="CLOSE_TAG_MAT_ICON"/> Verified on Google</target>
+      </trans-unit>
+      <trans-unit id="reviewVerifiedBadge" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>check_circle<x id="CLOSE_TAG_MAT_ICON"/> Recensione verificata</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>check_circle<x id="CLOSE_TAG_MAT_ICON"/> Verified review</target>
+      </trans-unit>
+      <trans-unit id="reviewReplyPrefix" datatype="html">
+        <source>**La mia risposta:** <x id="INTERPOLATION"/></source>
+        <target>**My reply:** <x id="INTERPOLATION"/></target>
+      </trans-unit>
+      <trans-unit id="reviewsLoading" datatype="html">
+        <source>Caricamento recensioni...</source>
+        <target>Loading reviews...</target>
+      </trans-unit>
+      <trans-unit id="noReviewsMessage" datatype="html">
+        <source>Nessuna recensione disponibile al momento.</source>
+        <target>No reviews available at the moment.</target>
+      </trans-unit>
+      <trans-unit id="prevReviewAriaLabel" datatype="html">
+        <source>Recensione precedente</source>
+        <target>Previous review</target>
+      </trans-unit>
+      <trans-unit id="nextReviewAriaLabel" datatype="html">
+        <source>Recensione successiva</source>
+        <target>Next review</target>
+      </trans-unit>
+      <trans-unit id="goToReviewAriaLabel" datatype="html">
+        <source>Vai alla recensione <x id="INTERPOLATION"/></source>
+        <target>Go to review <x id="INTERPOLATION"/></target>
+      </trans-unit>
+
+      <!-- TRADUZIONE SPECIFICA DEL BADGE GOOGLE BUSINESS VERIFIED (dal componente google-verified-badge) -->
+      <trans-unit id="googleBusinessVerifiedBadge" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>verified<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Verificato su Google Business Profile</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>verified<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Verified on Google Business Profile</target>
+      </trans-unit>
+
+      <!-- TRADUZIONI MANCANTI DAL TUO ULTIMO LOG DI WARNING -->
+      <trans-unit id="changeLangItAriaLabel" datatype="html">
+        <source>Cambia lingua in italiano</source>
+        <target>Change language to Italian</target>
+      </trans-unit>
+      <trans-unit id="changeLangEnAriaLabel" datatype="html">
+        <source>Change language to English</source>
+        <target>Change language to English</target>
+      </trans-unit>
+      <trans-unit id="navbarMenuAriaLabel" datatype="html">
+        <source>Open navigation menu</source>
+        <target>Open navigation menu</target>
+      </trans-unit>
+      <trans-unit id="navbarHome" datatype="html">
+        <source>Home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="navbarProjects" datatype="html">
+        <source>Progetti</source>
+        <target>Projects</target>
+      </trans-unit>
+      <trans-unit id="navbarServices" datatype="html">
+        <source>Servizi</source>
+        <target>Services</target>
+      </trans-unit>
+      <trans-unit id="navbarContact" datatype="html">
+        <source>Contatti</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="navbarAboutMe" datatype="html">
+        <source>Chi sono</source>
+        <target>About Me</target>
+      </trans-unit>
+      <trans-unit id="navbarHomeMobile" datatype="html">
+        <source>Home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="navbarProjectsMobile" datatype="html">
+        <source>Progetti</source>
+        <target>Projects</target>
+      </trans-unit>
+      <trans-unit id="navbarServicesMobile" datatype="html">
+        <source>Servizi</source>
+        <target>Services</target>
+      </trans-unit>
+      <trans-unit id="navbarContactMobile" datatype="html">
+        <source>Contatti</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="navbarAboutMeMobile" datatype="html">
+        <source>Chi sono</source>
+        <target>About Me</target>
+      </trans-unit>
+      <trans-unit id="changeLangItMobile" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>Italiano<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>Italian<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+      </trans-unit>
+      <trans-unit id="changeLangEnMobile" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>English<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>English<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+      </trans-unit>
+      <trans-unit id="footerGithubAriaLabel" datatype="html">
+        <source>GitHub Profile</source>
+        <target>GitHub Profile</target>
+      </trans-unit>
+      <trans-unit id="footerEmailAriaLabel" datatype="html">
+        <source>Send Email</source>
+        <target>Send Email</target>
+      </trans-unit>
+      <trans-unit id="footerLinkedInAriaLabel" datatype="html">
+        <source>LinkedIn Profile</source>
+        <target>LinkedIn Profile</target>
+      </trans-unit>
+      <trans-unit id="footerInstagramAriaLabel" datatype="html">
+        <source>Instagram Profile</source>
+        <target>Instagram Profile</target>
+      </trans-unit>
+      <trans-unit id="footerFacebookAriaLabel" datatype="html">
+        <source>Facebook Profile</source>
+        <target>Facebook Profile</target>
+      </trans-unit>
+      <trans-unit id="footerWhatsAppAriaLabel" datatype="html">
+        <source>WhatsApp Chat</source>
+        <target>WhatsApp Chat</target>
+      </trans-unit>
+      <trans-unit id="footerPhoneAriaLabel" datatype="html">
+        <source>Call Phone</source>
+        <target>Call Phone</target>
+      </trans-unit>
+      <trans-unit id="footerCopyright" datatype="html">
+        <source>© <x id="INTERPOLATION"/> Aleksander Nikolli</source>
+        <target>© <x id="INTERPOLATION"/> Aleksander Nikolli</target>
+      </trans-unit>
+      <trans-unit id="footerBuiltWith" datatype="html">
+        <source>Built with:</source>
+        <target>Built with:</target>
+      </trans-unit>
+      <trans-unit id="frontendCertCaption" datatype="html">
+        <source>Frontend Developer</source>
+        <target>Frontend Developer</target>
+      </trans-unit>
+      <trans-unit id="whyChooseMeTitle" datatype="html">
+        <source> Perché scegliere me? </source>
+        <target> Why choose me? </target>
+      </trans-unit>
+      <trans-unit id="whyChooseMeIntro" datatype="html">
+        <source>A differenza delle grandi agenzie, con me non dovrai:</source>
+        <target>Unlike large agencies, with me you won't have to:</target>
+      </trans-unit>
+      <trans-unit id="whyChooseMeNegative1" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>cancel<x id="CLOSE_TAG_MAT_ICON"/> Aspettare giorni per una semplice risposta</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>cancel<x id="CLOSE_TAG_MAT_ICON"/> Wait days for a simple answer</target>
+      </trans-unit>
+      <trans-unit id="whyChooseMeNegative2" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>email<x id="CLOSE_TAG_MAT_ICON"/> Inviare decine di email per ogni richiesta</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>email<x id="CLOSE_TAG_MAT_ICON"/> Send dozens of emails for each request</target>
+      </trans-unit>
+      <trans-unit id="whyChooseMeNegative3" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon"/> Parlare con operatori diversi ogni volta</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Talk to different operators every time</target>
+      </trans-unit>
+      <trans-unit id="whyChooseMePositive1" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>lightbulb<x id="CLOSE_TAG_MAT_ICON"/> Affidandoti a me, parli <x id="START_TAG_STRONG" ctype="x-strong"/>direttamente<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> con chi sviluppa il tuo progetto — sia frontend che backend. <x id="LINE_BREAK" ctype="lb"/> Hai un dubbio? Mi chiami. Serve una modifica? Mi scrivi. Ci vediamo di persona? Nessun problema. </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>lightbulb<x id="CLOSE_TAG_MAT_ICON"/> By relying on me, you speak <x id="START_TAG_STRONG" ctype="x-strong"/>directly<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> with those who develop your project — both frontend and backend. <x id="LINE_BREAK" ctype="lb"/> Have a doubt? Call me. Need a change? Write to me. Meet in person? No problem. </target>
+      </trans-unit>
+      <trans-unit id="whyChooseMePositive2" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON"/> Supporto rapido, diretto, umano. </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON"/> Fast, direct, human support. </target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

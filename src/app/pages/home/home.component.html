@@ -2,10 +2,15 @@
 
 <!-- HERO SECTION -->
 <section class="hero-section mat-elevation-z4">
-  <div class="hero-content">
-    <h1 i18n="@@homeHeroTitle">Ciao, sono Aleksander <span class="emoji-tech">👨‍💻</span></h1> <!-- AGGIUNTO i18n -->
-    <p i18n="@@homeHeroSubtitle">Frontend & Backend Developer appassionato di tecnologia e codice pulito.</p> <!-- AGGIUNTO i18n -->
-    <button mat-stroked-button color="primary" routerLink="/contatti" aria-label="Contattami" i18n-aria-label="@@homeHeroContactAriaLabel" i18n="@@homeHeroContactButton">Contattami</button> <!-- AGGIUNTO i18n e i18n-aria-label -->
+  <div class="hero-inner-container"> <!-- NUOVO: Container per immagine e contenuto -->
+    <div class="hero-image-container">
+      <img src="https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294688/sfondo_qzr5c7.png" alt="Aleksander Nikolli Developer Portrait" i18n-alt="@@homeHeroImageAlt" class="hero-image">
+    </div>
+    <div class="hero-content">
+      <h1 i18n="@@homeHeroTitle">Ciao, sono Aleksander <span class="emoji-tech">👨‍💻</span></h1>
+      <p i18n="@@homeHeroSubtitle">Frontend & Backend Developer e DBA appassionato di tecnologia e codice pulito.</p>
+      <button mat-stroked-button color="primary" routerLink="/contatti" aria-label="Contattami" i18n-aria-label="@@homeHeroContactAriaLabel" i18n="@@homeHeroContactButton">Contattami</button>
+    </div>
   </div>
 </section>
 
@@ -20,7 +25,7 @@
 
 <!-- TECH STACK SECTION -->
 <section class="tech-section">
-  <h2 class="section-title" i18n="@@techSkillsTitle">Competenze Tecnologiche</h2> <!-- AGGIUNTO i18n -->
+  <h2 class="section-title" i18n="@@techSkillsTitle">Competenze Tecnologiche</h2>
   <div class="tech-grid">
     <!-- Assicurati che techList sia definito in home.component.ts -->
     <!-- Nota: i valori dei chip sono statici per ora, se diventano dinamici dal backend, la traduzione è gestita dal backend -->
@@ -58,7 +63,7 @@
 
 <!-- CTA SECTION -->
 <section class="cta-section mat-elevation-z2">
-  <h2 i18n="@@ctaTitle">Hai un progetto in mente?</h2> <!-- AGGIUNTO i18n -->
-  <p i18n="@@ctaSubtitle">Parliamone! Posso aiutarti a costruirlo da zero.</p> <!-- AGGIUNTO i18n -->
-  <button mat-raised-button color="accent" routerLink="/contatti" i18n="@@ctaButton">Scrivimi ora</button> <!-- AGGIUNTO i18n -->
+  <h2 i18n="@@ctaTitle">Hai un progetto in mente?</h2>
+  <p i18n="@@ctaSubtitle">Parliamone! Posso aiutarti a costruirlo da zero.</p>
+  <button mat-raised-button color="accent" routerLink="/contatti" i18n="@@ctaButton">Scrivimi ora</button>
 </section>

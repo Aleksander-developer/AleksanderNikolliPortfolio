@@ -1,19 +1,21 @@
 // src/app/shared/components/reviews/reviews.component.ts
-import { Component, OnInit, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { ReviewsService, Review } from '../../services/reviews.service';
 import { isPlatformBrowser } from '@angular/common';
+import { interval, Subscription } from 'rxjs'; // Importa interval e Subscription per l'auto-scorrimento
 
 @Component({
   selector: 'app-reviews',
   templateUrl: './reviews.component.html',
   styleUrls: ['./reviews.component.scss']
-  // ASSICURATI CHE NON CI SIANO 'standalone: true' O 'imports: [...]' QUI
 })
-export class ReviewsComponent implements OnInit {
+export class ReviewsComponent implements OnInit, OnDestroy {
   reviews: Review[] = [];
-  displayedReviews: Review[] = [];
   isLoading: boolean = true;
   isGoogleVerified: boolean = true; // <--- Badge "Verificato su Google": IMPOSTA QUI TRUE/FALSE MANUALE
+
+  currentIndex: number = 0; // Indice della recensione attualmente visualizzata nel carosello
+  private autoSlideSubscription!: Subscription; // Per gestire la sottoscrizione all'intervallo
 
   constructor(
     private reviewsService: ReviewsService,
@@ -22,14 +24,15 @@ export class ReviewsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadReviews();
-    if (isPlatformBrowser(this.platformId)) {
-      window.addEventListener('resize', this.onResize.bind(this));
-    }
+    // Non è più necessario un listener per il resize per il numero di recensioni visualizzate,
+    // in quanto il carosello ne mostrerà sempre una alla volta.
+    // Il resize rimane utile se si vuole adattare la dimensione della card del carosello.
   }
 
   ngOnDestroy(): void {
-    if (isPlatformBrowser(this.platformId)) {
-      window.removeEventListener('resize', this.onResize.bind(this));
+    // Pulisci la sottoscrizione all'intervallo per evitare memory leaks
+    if (this.autoSlideSubscription) {
+      this.autoSlideSubscription.unsubscribe();
     }
   }
 
@@ -38,37 +41,61 @@ export class ReviewsComponent implements OnInit {
     this.reviewsService.getReviews().subscribe(data => {
       this.reviews = data;
       this.isLoading = false;
-      this.updateDisplayedReviews();
+      // Avvia l'auto-scorrimento solo se ci sono recensioni
+      if (this.reviews.length > 0) {
+        this.startAutoSlide();
+      }
     });
   }
 
-  onResize(): void {
-    this.updateDisplayedReviews();
+  // Avvia l'auto-scorrimento delle recensioni
+  startAutoSlide(): void {
+    // Pulisci qualsiasi sottoscrizione esistente prima di iniziarne una nuova
+    if (this.autoSlideSubscription) {
+      this.autoSlideSubscription.unsubscribe();
+    }
+    // Ogni 3 secondi, passa alla recensione successiva
+    this.autoSlideSubscription = interval(3000).subscribe(() => {
+      this.nextReview();
+    });
   }
 
-  updateDisplayedReviews(): void {
-    if (!isPlatformBrowser(this.platformId)) {
-      this.displayedReviews = this.reviews.slice(0, 3);
-      return;
-    }
-
-    const width = window.innerWidth;
-    let numToShow: number;
-
-    if (width >= 992) {
-      numToShow = 3;
-    } else if (width >= 768) {
-      numToShow = 2;
-    } else {
-      numToShow = 1;
-    }
-    this.displayedReviews = this.reviews.slice(0, numToShow);
+  // Passa alla recensione successiva
+  nextReview(): void {
+    if (this.reviews.length === 0) return;
+    this.currentIndex = (this.currentIndex + 1) % this.reviews.length;
+    this.resetAutoSlide(); // Resetta il timer dopo un'azione manuale
   }
 
+  // Passa alla recensione precedente
+  prevReview(): void {
+    if (this.reviews.length === 0) return;
+    this.currentIndex = (this.currentIndex - 1 + this.reviews.length) % this.reviews.length;
+    this.resetAutoSlide(); // Resetta il timer dopo un'azione manuale
+  }
+
+  // Vai a una recensione specifica tramite il suo indice
+  goToReview(index: number): void {
+    if (this.reviews.length === 0) return;
+    this.currentIndex = index;
+    this.resetAutoSlide(); // Resetta il timer dopo un'azione manuale
+  }
+
+  // Resetta il timer dell'auto-scorrimento
+  resetAutoSlide(): void {
+    // Pulisci l'intervallo esistente e riavvialo
+    if (this.autoSlideSubscription) {
+      this.autoSlideSubscription.unsubscribe();
+    }
+    this.startAutoSlide();
+  }
+
+  // Funzione per generare le stelle piene (mantieni la logica esistente)
   getStars(rating: number): boolean[] {
     return Array(rating).fill(true);
   }
 
+  // Funzione per generare le stelle vuote (mantieni la logica esistente)
   getEmptyStars(rating: number): boolean[] {
     return Array(5 - rating).fill(false);
   }

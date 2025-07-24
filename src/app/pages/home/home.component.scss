@@ -1,22 +1,15 @@
 /* src/app/pages/home/home.component.scss */
 
-// Rimuovi le definizioni delle variabili locali.
-// Rimuovi: @use '@angular/material' as mat; (non strettamente necessario qui se non usi mixin specifici di mat)
-
-// Importa le variabili globali dal tuo file _variables.scss
 @use '../../../styles/variables' as vars;
 
-// Se hai bisogno di funzioni SASS come darken/lighten, non richiedono l'import di Angular Material.
-// Sono funzioni native di Sass.
-
 .section-title {
-  font-family: 'Share Tech Mono', monospace; // Mantieni i font specifici se diversi dal globale
+  font-family: 'Share Tech Mono', monospace;
   font-size: 2.2rem;
-  color: vars.$accent-color; // Usa vars.$accent-color
+  color: vars.$accent-color;
   text-align: center;
-  margin-top: vars.$spacing-xl; // Usa la variabile globale per la spaziatura
-  margin-bottom: vars.$spacing-lg; // Usa la variabile globale per la spaziatura
-  text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5); /* Effetto luminoso tech */
+  margin-top: vars.$spacing-xl;
+  margin-bottom: vars.$spacing-lg;
+  text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5);
 }
 
 /* HERO SECTION */
@@ -25,48 +18,80 @@
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  // Gradiente scuro coerente con la vibe tech
-  background: linear-gradient(135deg, vars.$dark-bg 0%, darken(vars.$dark-bg, 5%) 100%); // Usa vars.$dark-bg
-  color: vars.$text-color; // Usa vars.$text-color
+  background: linear-gradient(135deg, vars.$dark-bg 0%, darken(vars.$dark-bg, 5%) 100%);
+  color: vars.$text-color;
   text-align: center;
   padding: 4rem 2rem;
-  border-bottom: 2px solid vars.$accent-color; // Usa vars.$accent-color
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6); // Ombra pronunciata
+  border-bottom: 2px solid vars.$accent-color;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
+
+  .hero-inner-container { // NUOVO: Container interno per layout flessibile
+    display: flex;
+    align-items: center;
+    justify-content: center; // Centra il contenuto orizzontalmente
+    max-width: 1200px; // Larghezza massima per il contenuto interno
+    width: 100%;
+    gap: vars.$spacing-xl; // Spazio tra immagine e testo
+    padding: vars.$spacing-md; // Padding interno per il container
+  }
+
+  .hero-image-container { // NUOVO: Container per l'immagine
+    flex-shrink: 0; // Impedisce all'immagine di restringersi
+    width: 350px; // Larghezza fissa per l'immagine su desktop/tablet
+    height: 350px; // Altezza fissa
+    border-radius: 50%; // Rendi l'immagine circolare
+    overflow: hidden; // Nasconde le parti che escono dal bordo circolare
+    border: 4px solid vars.$primary-color; // Bordo intorno all'immagine
+    box-shadow: 0 0 20px rgba(vars.$primary-color, 0.6); // Effetto glow
+    margin-right: vars.$spacing-xl; // Spazio a destra dell'immagine
+    display: flex; // Per centrare l'immagine all'interno del suo container
+    justify-content: center;
+    align-items: center;
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Assicurati che l'immagine copra il container senza distorsioni
+      display: block; // Rimuove eventuali spazi extra sotto l'immagine
+    }
+  }
 
   .hero-content {
-    max-width: 900px;
+    max-width: 600px; // Riduci la max-width per il testo per un migliore bilanciamento
+    text-align: left; // Allinea il testo a sinistra per desktop/tablet
+    flex-grow: 1; // Permette al contenuto di occupare lo spazio rimanente
   }
 
   h1 {
-    font-family: 'Fira Code', monospace; // Mantieni i font specifici
+    font-family: 'Fira Code', monospace;
     font-size: 3.5rem;
-    margin-bottom: vars.$spacing-md; // Usa la variabile globale per la spaziatura
-    color: vars.$accent-color; // Usa vars.$accent-color
+    margin-bottom: vars.$spacing-md;
+    color: vars.$accent-color;
     text-shadow: 0 0 10px rgba(vars.$accent-color, 0.7);
   }
 
   .emoji-tech {
     display: inline-block;
-    animation: bounce 2s infinite; // Animazione leggera per l'emoji
+    animation: bounce 2s infinite;
   }
 
   p {
     font-size: 1.5rem;
-    margin-bottom: vars.$spacing-lg; // Usa la variabile globale per la spaziatura
-    color: lighten(vars.$text-color, 10%); // Usa vars.$text-color
+    margin-bottom: vars.$spacing-lg;
+    color: lighten(vars.$text-color, 10%);
   }
 
   button {
     font-size: 1.2rem;
     padding: 0.8rem 2rem;
     border-radius: 0.5rem;
-    border: 2px solid vars.$primary-color; // Usa vars.$primary-color
-    color: vars.$primary-color; // Usa vars.$primary-color
+    border: 2px solid vars.$primary-color;
+    color: vars.$primary-color;
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: vars.$primary-color; // Usa vars.$primary-color
-      color: vars.$text-color; // Usa vars.$text-color
+      background-color: vars.$primary-color;
+      color: vars.$text-color;
       box-shadow: 0 0 15px rgba(vars.$primary-color, 0.7);
     }
   }
@@ -74,14 +99,14 @@
 
 /* TECH STACK SECTION */
 .tech-section {
-  padding: vars.$spacing-xl vars.$spacing-lg; // Usa le variabili globali per la spaziatura
-  background-color: vars.$dark-bg; // Usa vars.$dark-bg
+  padding: vars.$spacing-xl vars.$spacing-lg;
+  background-color: vars.$dark-bg;
   text-align: center;
 
   .tech-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: vars.$spacing-md;
     max-width: 1200px;
     margin: 0 auto;
     justify-content: center;
@@ -89,11 +114,11 @@
 
   .tech-tile {
     text-align: center;
-    background-color: vars.$card-bg !important; // Usa vars.$card-bg
-    color: vars.$accent-color; // Usa vars.$accent-color
-    padding: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+    background-color: vars.$card-bg !important;
+    color: vars.$accent-color;
+    padding: vars.$spacing-md;
     border-radius: 0.8rem;
-    border: 1px solid rgba(vars.$accent-color, 0.3); // Usa vars.$accent-color
+    border: 1px solid rgba(vars.$accent-color, 0.3);
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     cursor: pointer;
     height: 100%;
@@ -107,21 +132,20 @@
     }
 
     .tech-content {
-      font-family: 'Roboto Mono', monospace; // Mantieni i font specifici
+      font-family: 'Roboto Mono', monospace;
       font-size: 1.1rem;
       font-weight: bold;
       text-align: center;
       line-height: 1.4;
-      color: vars.$text-color; // Usa vars.$text-color
+      color: vars.$text-color;
       transition: color 0.3s ease, transform 0.3s ease;
       cursor: default;
-
       white-space: normal;
       word-wrap: break-word;
       overflow-wrap: break-word;
 
       &:hover {
-        color: vars.$accent-color; // Usa vars.$accent-color
+        color: vars.$accent-color;
         transform: scale(1.1);
       }
     }
@@ -130,15 +154,15 @@
 
 /* FEATURED PROJECTS SECTION */
 .featured-projects-section {
-  padding: vars.$spacing-xl vars.$spacing-lg; // Usa le variabili globali per la spaziatura
-  background-color: darken(vars.$dark-bg, 5%); // Usa vars.$dark-bg
+  padding: vars.$spacing-xl vars.$spacing-lg;
+  background-color: darken(vars.$dark-bg, 5%);
   text-align: center;
 
   .section-title {
     margin-bottom: 2.5rem;
     font-size: 2rem;
     font-family: 'Share Tech Mono', monospace;
-    color: vars.$accent-color; // Usa vars.$accent-color
+    color: vars.$accent-color;
   }
 
   .projects-grid {
@@ -152,14 +176,14 @@
   .project-card {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: vars.$card-bg !important; // Usa vars.$card-bg
-    color: vars.$text-color; // Usa vars.$text-color
+    background-color: vars.$card-bg !important;
+    color: vars.$text-color;
     border-radius: 1rem;
-    border: 1px solid rgba(vars.$primary-color, 0.3); // Usa vars.$primary-color
+    border: 1px solid rgba(vars.$primary-color, 0.3);
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(vars.$accent-color, 0.4); // Usa vars.$accent-color
+      box-shadow: 0 0 20px rgba(vars.$accent-color, 0.4);
     }
 
     img {
@@ -173,31 +197,31 @@
       font-weight: bold;
       font-size: 1.2rem;
       font-family: 'Share Tech Mono', monospace;
-      color: vars.$accent-color; // Usa vars.$accent-color
+      color: vars.$accent-color;
     }
 
     mat-card-subtitle {
-      color: lighten(vars.$text-color, 5%); // Usa vars.$text-color
+      color: lighten(vars.$text-color, 5%);
     }
 
     mat-card-content {
       p {
         font-size: 1rem;
         line-height: 1.5;
-        color: vars.$text-color; // Usa vars.$text-color
+        color: vars.$text-color;
       }
     }
     mat-card-actions {
-      padding: vars.$spacing-md; // Usa la variabile globale per la spaziatura
+      padding: vars.$spacing-md;
       button {
         font-size: 0.9rem;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
-        border: 1px solid vars.$primary-color; // Usa vars.$primary-color
-        color: vars.$primary-color; // Usa vars.$primary-color
+        border: 1px solid vars.$primary-color;
+        color: vars.$primary-color;
         &:hover {
-          background-color: vars.$primary-color; // Usa vars.$primary-color
-          color: vars.$text-color; // Usa vars.$text-color
+          background-color: vars.$primary-color;
+          color: vars.$text-color;
         }
       }
     }
@@ -206,12 +230,11 @@
 
 /* CTA SECTION */
 .cta-section {
-  // Gradiente accento per la CTA
-  background: linear-gradient(45deg, vars.$accent-color 0%, darken(vars.$accent-color, 20%) 100%); // Usa vars.$accent-color
-  color: vars.$dark-bg; // Usa vars.$dark-bg
+  background: linear-gradient(45deg, vars.$accent-color 0%, darken(vars.$accent-color, 20%) 100%);
+  color: vars.$dark-bg;
   text-align: center;
   padding: 4rem 2rem;
-  margin-top: vars.$spacing-xl; // Usa la variabile globale per la spaziatura
+  margin-top: vars.$spacing-xl;
   border-radius: 1rem;
   max-width: 1000px;
   margin-left: auto;
@@ -221,26 +244,26 @@
   h2 {
     font-family: 'Share Tech Mono', monospace;
     font-size: 2.5rem;
-    margin-bottom: vars.$spacing-md; // Usa la variabile globale per la spaziatura
-    color: vars.$dark-bg; // Usa vars.$dark-bg
+    margin-bottom: vars.$spacing-md;
+    color: vars.$dark-bg;
   }
   p {
     font-size: 1.3rem;
-    margin-bottom: vars.$spacing-lg; // Usa la variabile globale per la spaziatura
-    color: darken(vars.$dark-bg, 10%); // Usa vars.$dark-bg
+    margin-bottom: vars.$spacing-lg;
+    color: darken(vars.$dark-bg, 10%);
   }
   button {
     font-size: 1.3rem;
     padding: 1rem 3rem;
     border-radius: 0.5rem;
-    background-color: vars.$dark-bg; // Usa vars.$dark-bg
-    color: vars.$accent-color; // Usa vars.$accent-color
-    border: 2px solid vars.$dark-bg; // Usa vars.$dark-bg
+    background-color: vars.$dark-bg;
+    color: vars.$accent-color;
+    border: 2px solid vars.$dark-bg;
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: lighten(vars.$dark-bg, 10%); // Usa vars.$dark-bg
-      color: lighten(vars.$accent-color, 10%); // Usa vars.$accent-color
+      background-color: lighten(vars.$dark-bg, 10%);
+      color: lighten(vars.$accent-color, 10%);
       box-shadow: 0 0 20px rgba(vars.$dark-bg, 0.5);
     }
   }
@@ -262,17 +285,25 @@
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
-  .hero-section h1 {
-    font-size: 3rem;
-  }
-  .hero-section p {
-    font-size: 1.3rem;
+  .hero-section {
+    .hero-image-container {
+      width: 250px; // Riduci dimensione immagine per tablet
+      height: 250px;
+    }
+    .hero-content {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1.3rem;
+      }
+    }
   }
   .section-title {
     font-size: 2rem;
   }
   .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
   .cta-section h2 {
     font-size: 2rem;
@@ -282,25 +313,41 @@
   }
 }
 
-@media (max-width: vars.$breakpoint-md) { // Usa vars.$breakpoint-md
+@media (max-width: vars.$breakpoint-md) { // Per schermi più piccoli di 768px (smartphone)
   .hero-section {
     padding: 3rem 1rem;
-  }
-  .hero-section h1 {
-    font-size: 2.5rem;
-  }
-  .hero-section p {
-    font-size: 1.1rem;
-  }
-  .hero-section button {
-    font-size: 1rem;
-    padding: 0.6rem 1.5rem;
+    min-height: unset; // Rimuovi min-height per adattarsi al contenuto
+    .hero-inner-container {
+      flex-direction: column; // Impila immagine e testo
+      gap: vars.$spacing-lg; // Spazio tra immagine e testo impilati
+      text-align: center; // Centra il testo
+    }
+    .hero-image-container {
+      margin-right: 0; // Rimuovi margine a destra
+      margin-bottom: vars.$spacing-lg; // Aggiungi margine sotto l'immagine
+      width: 200px; // Dimensione immagine per smartphone
+      height: 200px;
+    }
+    .hero-content {
+      max-width: 100%; // Occupano tutta la larghezza disponibile
+      text-align: center; // Centra il testo
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+      button {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+      }
+    }
   }
   .section-title {
     font-size: 1.8rem;
   }
   .tech-grid {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   .tech-tile {
     padding: 0.8rem;
@@ -325,17 +372,25 @@
 }
 
 @media (max-width: 480px) {
-  .hero-section h1 {
-    font-size: 2rem;
-  }
-  .hero-section p {
-    font-size: 0.9rem;
+  .hero-section {
+    .hero-image-container {
+      width: 160px; // Riduci dimensione immagine per schermi molto piccoli
+      height: 160px;
+    }
+    .hero-content {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
   }
   .section-title {
     font-size: 1.5rem;
   }
   .tech-grid {
-    grid-template-columns: 1fr; /* Singola colonna su schermi molto piccoli */
+    grid-template-columns: 1fr;
   }
   .cta-section h2 {
     font-size: 1.5rem;

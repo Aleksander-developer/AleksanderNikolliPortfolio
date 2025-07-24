@@ -1,6 +1,5 @@
 /* src/app/pages/progetti/progetto-detail/progetto-detail.component.scss */
 
-// Importa le variabili globali dal tuo file _variables.scss
 @use '../../../../styles/variables' as vars;
 
 .project-detail-section {
@@ -59,34 +58,80 @@
       font-size: 1.15rem;
       line-height: 1.8;
       color: vars.$light-gray;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem; // Ridotto per fare spazio ai pulsanti
+      position: relative; // Necessario per l'effetto sfumatura
+      overflow: hidden; // Nasconde il testo in eccesso
+      transition: max-height 0.5s ease-in-out; // Animazione per l'espansione/collasso
+
+      &.collapsed {
+        max-height: calc(1.15rem * 1.8 * 5); // Altezza massima per 5 righe (font-size * line-height * num_lines)
+        // Effetto sfumatura per indicare che c'è più testo
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 3em; // Altezza della sfumatura
+          background: linear-gradient(to top, lighten(vars.$dark-bg, 3%), rgba(lighten(vars.$dark-bg, 3%), 0));
+          pointer-events: none; // Permette di cliccare sotto
+        }
+      }
+
+      &.expanded {
+        max-height: 2000px; // Un valore grande per mostrare tutto il contenuto
+        &::after {
+          content: none; // Rimuovi la sfumatura quando espanso
+        }
+      }
+    }
+
+    .read-more-buttons {
+      text-align: center;
+      margin-top: vars.$spacing-md;
+      margin-bottom: vars.$spacing-lg;
+
+      button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+        border-radius: 8px;
+        border: 2px solid vars.$primary-color;
+        color: vars.$primary-color;
+        transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          background-color: vars.$primary-color;
+          color: vars.$text-color;
+          box-shadow: 0 0 10px rgba(vars.$primary-color, 0.5);
+        }
+      }
     }
 
     h3 {
       font-size: 1.5rem;
       color: vars.$accent-color;
-      margin-top: 2rem; // Spazio sopra i nuovi titoli di sezione
+      margin-top: 2rem;
       margin-bottom: 1rem;
       text-shadow: 0 0 10px rgba(vars.$accent-color, 0.4);
       font-weight: 600;
     }
 
     ul {
-      list-style: none; // Rimuove i bullet point di default
+      list-style: none;
       padding-left: 0;
-      margin-bottom: 1.5rem; // Spazio sotto le liste
+      margin-bottom: 1.5rem;
 
       li {
         position: relative;
-        padding-left: 1.5rem; // Spazio per il bullet point personalizzato
+        padding-left: 1.5rem;
         margin-bottom: 0.5rem;
         font-size: 1.05rem;
         line-height: 1.6;
         color: vars.$text-color;
 
         &::before {
-          content: '•'; // Bullet point personalizzato
-          color: vars.$primary-color; // Colore del bullet point
+          content: '•';
+          color: vars.$primary-color;
           position: absolute;
           left: 0;
           top: 0;
@@ -97,14 +142,12 @@
       }
     }
 
-    // Stili per i blocchi di testo come architettura, targetAudience
-    p:not(.description) { // Applica a tutti i p tranne .description
+    p:not(.description) {
       font-size: 1.05rem;
       line-height: 1.6;
       color: vars.$text-color;
       margin-bottom: 1.5rem;
     }
-
 
     .tech-chips-container {
       display: flex;
@@ -265,10 +308,19 @@
     }
     .description {
       font-size: 1rem;
+      line-height: 1.6; // Adatta la line-height per il calcolo delle righe
+    }
+    .read-more-buttons {
+      margin-top: vars.$spacing-sm;
+      margin-bottom: vars.$spacing-md;
+      button {
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+      }
     }
     h3 {
       font-size: 1.3rem;
-      margin-top: 1.5rem; // Ridotto per schermi medi
+      margin-top: 1.5rem;
     }
     mat-card-content {
       padding: 0 0.5rem;
@@ -323,10 +375,19 @@
     }
     .description {
       font-size: 0.9rem;
+      line-height: 1.5; // Adatta la line-height per il calcolo delle righe
+    }
+    .read-more-buttons {
+      margin-top: vars.$spacing-xs;
+      margin-bottom: vars.$spacing-sm;
+      button {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+      }
     }
     h3 {
       font-size: 1.1rem;
-      margin-top: 1rem; // Ancora più ridotto per schermi piccoli
+      margin-top: 1rem;
     }
     mat-card-content {
       padding: 0 0.2rem;

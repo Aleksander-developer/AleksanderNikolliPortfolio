@@ -1,35 +1,63 @@
 <!-- src/app/shared/components/reviews/reviews.component.html -->
 <section class="reviews-section">
+  <h2 class="section-title" i18n="@@reviewsTitle">Cosa dicono i miei clienti</h2>
+
   <div class="reviews-header">
     <h2 i18n="@@reviewsTitle">Cosa dicono i miei clienti</h2>
     <!-- Badge "Verificato su Google" -->
-    <div *ngIf="isGoogleVerified" class="google-verified-badge" i18n="@@googleVerifiedBadge">
-      <mat-icon>verified</mat-icon> Verificato su Google
-    </div>
+    <!-- Questo badge è un componente separato, non viene gestito qui direttamente -->
+    <app-google-verified-badge [isVerified]="isGoogleVerified"></app-google-verified-badge>
   </div>
 
-  <div class="reviews-grid">
-    <mat-card *ngFor="let review of displayedReviews" class="review-card">
-      <div class="reviewer-info">
-        <img [src]="review.reviewer.profilePhotoUrl" [alt]="review.reviewer.displayName" class="reviewer-avatar">
-        <div class="reviewer-details">
-          <h3>{{ review.reviewer.displayName }}</h3>
-          <div class="star-rating">
-            <mat-icon *ngFor="let star of getStars(review.starRatingNumber)" [class.filled]="star">star</mat-icon>
-            <mat-icon *ngFor="let star of getEmptyStars(review.starRatingNumber)">star_border</mat-icon>
-          </div>
-          <!-- Badge "Recensione Verificata" -->
-          <div *ngIf="review.reviewer.isVerified" class="review-verified-badge" i18n="@@reviewVerifiedBadge">
-            <mat-icon>check_circle</mat-icon> Recensione verificata
-          </div>
-        </div>
+  <div class="carousel-container" *ngIf="!isLoading && reviews.length > 0">
+    <!-- Pulsante PRECEDENTE -->
+    <button mat-icon-button class="carousel-button prev" (click)="prevReview()" aria-label="Recensione precedente" i18n-aria-label="@@prevReviewAriaLabel">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+
+    <!-- Contenitore delle recensioni visibili (una alla volta) -->
+    <div class="reviews-wrapper">
+      <div class="review-card" [class.active]="i === currentIndex" *ngFor="let review of reviews; let i = index">
+        <mat-card class="mat-elevation-z4">
+          <mat-card-content>
+            <div class="reviewer-info">
+              <img [src]="review.reviewer.profilePhotoUrl || 'https://placehold.co/60x60/333333/FFFFFF?text=Anon'" [alt]="review.reviewer.displayName || 'Anonimo'" class="reviewer-avatar">
+              <div class="reviewer-details">
+                <h3>{{ review.reviewer.displayName }}</h3>
+                <div class="star-rating">
+                  <mat-icon *ngFor="let star of getStars(review.starRatingNumber)" [class.filled]="star">star</mat-icon>
+                  <mat-icon *ngFor="let star of getEmptyStars(review.starRatingNumber)">star_border</mat-icon>
+                </div>
+                <!-- Badge "Recensione Verificata" -->
+                <div *ngIf="review.reviewer.isVerified" class="review-verified-badge" i18n="@@reviewVerifiedBadge">
+                  <mat-icon>check_circle</mat-icon> Recensione verificata
+                </div>
+              </div>
+            </div>
+            <p class="review-comment">{{ review.comment }}</p>
+            <div *ngIf="review.reviewReply" class="review-reply">
+              <p class="reply-text" i18n="@@reviewReplyPrefix">**La mia risposta:** {{ review.reviewReply.comment }}</p>
+            </div>
+            <span class="review-date">{{ review.createTime | date:'shortDate' }}</span>
+          </mat-card-content>
+        </mat-card>
       </div>
-      <p class="review-comment">{{ review.comment }}</p>
-      <div *ngIf="review.reviewReply" class="review-reply">
-        <p class="reply-text" i18n="@@reviewReplyPrefix">**La mia risposta:** {{ review.reviewReply.comment }}</p>
-      </div>
-      <span class="review-date">{{ review.createTime | date:'shortDate' }}</span>
-    </mat-card>
+    </div>
+
+    <!-- Pulsante SUCCESSIVO -->
+    <button mat-icon-button class="carousel-button next" (click)="nextReview()" aria-label="Recensione successiva" i18n-aria-label="@@nextReviewAriaLabel">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+
+  <!-- Indicatori (dots) -->
+  <div class="carousel-indicators" *ngIf="!isLoading && reviews.length > 1">
+    <span *ngFor="let review of reviews; let i = index"
+          class="indicator-dot"
+          [class.active]="i === currentIndex"
+          (click)="goToReview(i)"
+          [attr.aria-label]="'Vai alla recensione ' + (i + 1)"
+          i18n-aria-label="@@goToReviewAriaLabel"></span> <!-- CORREZIONE: i18n-aria-label per la traduzione dell'attributo -->
   </div>
 
   <div *ngIf="isLoading" class="loading-spinner">

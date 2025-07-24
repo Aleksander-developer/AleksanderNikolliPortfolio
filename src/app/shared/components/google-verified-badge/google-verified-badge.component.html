@@ -1,0 +1,23 @@
+<!-- src/app/shared/components/google-verified-badge/google-verified-badge.component.html -->
+<!-- Il badge è ora un link se l'URL è fornito e verificato -->
+<a *ngIf="isVerified && googleProfileUrl"
+   [href]="googleProfileUrl"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="google-verified-badge"
+   i18n="@@googleBusinessVerifiedBadge"
+   aria-label="Visita il mio profilo Google Business"> <!-- NUOVO: aria-label per accessibilità -->
+  <mat-icon>verified</mat-icon> Verificato su Google Business Profile
+</a>
+
+<!-- Se non è verificato o l'URL non è fornito, mostra solo il testo (opzionale, o nascondi del tutto) -->
+<div *ngIf="isVerified && !googleProfileUrl"
+     class="google-verified-badge"
+     i18n="@@googleBusinessVerifiedBadge">
+  <mat-icon>verified</mat-icon> Verificato su Google Business Profile
+</div>
+
+<!-- Se non è verificato, non mostrare nulla (o un messaggio diverso) -->
+<ng-container *ngIf="!isVerified">
+  <!-- Potresti mettere qui un badge diverso o nessun badge se non verificato -->
+</ng-container>

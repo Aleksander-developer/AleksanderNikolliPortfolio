@@ -1,0 +1,33 @@
+/* src/app/shared/components/google-verified-badge/google-verified-badge.component.scss */
+@use '../../../../styles/variables' as vars;
+
+.google-verified-badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: vars.$accent-color; // Colore accento per il badge
+  color: vars.$dark-bg; // Testo scuro sul badge
+  padding: vars.$spacing-xs vars.$spacing-md;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 5px rgba(vars.$accent-color, 0.3);
+  margin-top: vars.$spacing-md; // Aggiungi un po' di margine se necessario
+
+  // NUOVO: Rimuovi la sottolineatura dal link
+  text-decoration: none; // Rimuove la sottolineatura dal link stesso
+  color: vars.$dark-bg; // Assicurati che il colore del testo rimanga quello desiderato
+
+  mat-icon {
+    font-size: 1.1rem;
+    margin-right: vars.$spacing-xs;
+  }
+
+  // Media query per schermi più piccoli se necessario
+  @media (max-width: vars.$breakpoint-md) {
+    font-size: 0.8rem;
+    padding: vars.$spacing-xs vars.$spacing-sm;
+    mat-icon {
+      font-size: 1rem;
+    }
+  }
+}

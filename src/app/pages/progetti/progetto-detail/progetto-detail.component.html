@@ -5,13 +5,24 @@
       <mat-card-title>{{ progettoData.titolo }}</mat-card-title>
     </mat-card-header>
 
-    <img mat-card-image [src]="progettoData.immagine || 'https://placehold.co/800x500/1a1a2e/00bcd4?text=Dettaglio+Progetto'" [alt]="progettoData.titolo" i18n-alt="@@projectDetailImageAlt" class="project-image" /> <!-- AGGIUNTO i18n-alt -->
+    <img mat-card-image [src]="progettoData.immagine || 'https://placehold.co/800x500/1a1a2e/00bcd4?text=Dettaglio+Progetto'" [alt]="progettoData.titolo" i18n-alt="@@projectDetailImageAlt" class="project-image" />
 
     <mat-card-content>
-      <p class="description">{{ progettoData.descrizione }}</p>
+      <!-- NUOVO: Applica la classe 'expanded' o 'collapsed' e mostra solo una parte del testo -->
+      <p class="description" [class.expanded]="isDescriptionExpanded" [class.collapsed]="!isDescriptionExpanded">
+        {{ progettoData.descrizione }}
+      </p>
 
-      <h3 i18n="@@projectDetailTechTitle">Tecnologie utilizzate</h3> <!-- AGGIUNTO i18n -->
-      <mat-chip-listbox aria-label="Tecnologie usate" i18n-aria-label="@@projectDetailTechAriaLabel"> <!-- AGGIUNTO i18n-aria-label -->
+      <!-- NUOVO: Pulsanti "Mostra di più/meno" -->
+      <div *ngIf="needsReadMore()" class="read-more-buttons">
+        <button mat-stroked-button color="primary" (click)="toggleDescription()">
+          <span *ngIf="!isDescriptionExpanded" i18n="@@readMoreButton">Mostra di più</span>
+          <span *ngIf="isDescriptionExpanded" i18n="@@readLessButton">Mostra di meno</span>
+        </button>
+      </div>
+
+      <h3 i18n="@@projectDetailTechTitle">Tecnologie utilizzate</h3>
+      <mat-chip-listbox aria-label="Tecnologie usate" i18n-aria-label="@@projectDetailTechAriaLabel">
         <mat-chip-row *ngFor="let tech of progettoData.tecnologie" color="accent">
           {{ tech }}
         </mat-chip-row>
@@ -19,7 +30,7 @@
 
       <!-- Sezione per le funzionalità/caratteristiche -->
       <ng-container *ngIf="progettoData.caratteristiche && progettoData.caratteristiche.length > 0">
-        <h3 i18n="@@projectDetailFeaturesTitle">Funzionalità Principali</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailFeaturesTitle">Funzionalità Principali</h3>
         <ul>
           <li *ngFor="let feature of progettoData.caratteristiche">{{ feature }}</li>
         </ul>
@@ -27,45 +38,45 @@
 
       <!-- NUOVI BLOCCHI PER I DETTAGLI AGGIUNTIVI -->
       <ng-container *ngIf="progettoData.sfideAffrontate && progettoData.sfideAffrontate.length > 0">
-        <h3 i18n="@@projectDetailChallengesTitle">Sfide Affrontate</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailChallengesTitle">Sfide Affrontate</h3>
         <ul>
           <li *ngFor="let challenge of progettoData.sfideAffrontate">{{ challenge }}</li>
         </ul>
       </ng-container>
 
       <ng-container *ngIf="progettoData.soluzioniImplementate && progettoData.soluzioniImplementate.length > 0">
-        <h3 i18n="@@projectDetailSolutionsTitle">Soluzioni Implementate</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailSolutionsTitle">Soluzioni Implementate</h3>
         <ul>
           <li *ngFor="let solution of progettoData.soluzioniImplementate">{{ solution }}</li>
         </ul>
       </ng-container>
 
       <ng-container *ngIf="progettoData.risultatiChiave && progettoData.risultatiChiave.length > 0">
-        <h3 i18n="@@projectDetailResultsTitle">Risultati Chiave</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailResultsTitle">Risultati Chiave</h3>
         <ul>
           <li *ngFor="let result of progettoData.risultatiChiave">{{ result }}</li>
         </ul>
       </ng-container>
 
       <ng-container *ngIf="progettoData.architettura">
-        <h3 i18n="@@projectDetailArchitectureTitle">Architettura</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailArchitectureTitle">Architettura</h3>
         <p>{{ progettoData.architettura }}</p>
       </ng-container>
 
       <ng-container *ngIf="progettoData.fasiDiSviluppo && progettoData.fasiDiSviluppo.length > 0">
-        <h3 i18n="@@projectDetailDevelopmentPhasesTitle">Fasi di Sviluppo</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailDevelopmentPhasesTitle">Fasi di Sviluppo</h3>
         <ul>
           <li *ngFor="let phase of progettoData.fasiDiSviluppo">{{ phase }}</li>
         </ul>
       </ng-container>
 
       <ng-container *ngIf="progettoData.targetAudience">
-        <h3 i18n="@@projectDetailTargetAudienceTitle">Target Audience</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailTargetAudienceTitle">Target Audience</h3>
         <p>{{ progettoData.targetAudience }}</p>
       </ng-container>
 
       <ng-container *ngIf="progettoData.aspectsCovered && progettoData.aspectsCovered.length > 0">
-        <h3 i18n="@@projectDetailAspectsCoveredTitle">Aspetti Coperti</h3> <!-- AGGIUNTO i18n -->
+        <h3 i18n="@@projectDetailAspectsCoveredTitle">Aspetti Coperti</h3>
         <ul>
           <li *ngFor="let aspect of progettoData.aspectsCovered">{{ aspect }}</li>
         </ul>
@@ -74,17 +85,17 @@
     </mat-card-content>
 
     <mat-card-actions class="project-links">
-      <a *ngIf="progettoData.linkDemo" mat-raised-button color="accent" [href]="progettoData.linkDemo" target="_blank" rel="noopener" i18n="@@projectDetailDemoButton"> <!-- AGGIUNTO i18n -->
+      <a *ngIf="progettoData.linkDemo" mat-raised-button color="accent" [href]="progettoData.linkDemo" target="_blank" rel="noopener" i18n="@@projectDetailDemoButton">
         <mat-icon>launch</mat-icon> Vai al progetto
       </a>
-      <a *ngIf="progettoData.linkRepo" mat-stroked-button color="primary" [href]="progettoData.linkRepo" target="_blank" rel="noopener" i18n="@@projectDetailRepoButton"> <!-- AGGIUNTO i18n -->
+      <a *ngIf="progettoData.linkRepo" mat-stroked-button color="primary" [href]="progettoData.linkRepo" target="_blank" rel="noopener" i18n="@@projectDetailRepoButton">
         <mat-icon>code</mat-icon> Codice sorgente
       </a>
     </mat-card-actions>
 
     <mat-divider class="mat-divider-margin"></mat-divider>
 
-    <button mat-button routerLink="/progetti" class="back-button" i18n="@@projectDetailBackButton"> <!-- AGGIUNTO i18n -->
+    <button mat-button routerLink="/progetti" class="back-button" i18n="@@projectDetailBackButton">
       <mat-icon>arrow_back</mat-icon> Torna ai Progetti
     </button>
   </mat-card>
@@ -92,12 +103,12 @@
   <ng-template #loadingOrError>
     <div *ngIf="loading" class="loading-spinner">
       <mat-spinner color="accent"></mat-spinner>
-      <p i18n="@@projectDetailLoadingMessage">Caricamento dettaglio progetto...</p> <!-- AGGIUNTO i18n -->
+      <p i18n="@@projectDetailLoadingMessage">Caricamento dettaglio progetto...</p>
     </div>
     <div *ngIf="errore" class="error-message mat-elevation-z2">
       <mat-icon color="warn">error_outline</mat-icon>
-      <p i18n="@@projectDetailErrorMessage">{{ errore }}</p> <!-- AGGIUNTO i18n -->
-      <button mat-button routerLink="/progetti" class="back-button" i18n="@@projectDetailErrorBackButton"> <!-- AGGIUNTO i18n -->
+      <p i18n="@@projectDetailErrorMessage">{{ errore }}</p>
+      <button mat-button routerLink="/progetti" class="back-button" i18n="@@projectDetailErrorBackButton">
         <mat-icon>arrow_back</mat-icon> Torna ai Progetti
       </button>
     </div>

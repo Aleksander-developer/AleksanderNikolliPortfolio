@@ -9,10 +9,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.5rem; // Spazio tra gli elementi principali del footer
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
   border-top: 1px solid rgba(vars.$accent-color, 0.2);
 }
+
+/* --- Stili per il badge Google Verified nel footer --- */
+.footer-google-badge {
+  margin-bottom: vars.$spacing-lg; // Spazio sotto il badge per separarlo
+  // Il componente stesso ha già display: inline-flex e allineamento,
+  // quindi basta centrarlo all'interno del footer-container che è flex column con align-items: center
+}
+
 
 /* --- Sezione Icone Social --- */
 .footer-socials {
@@ -67,7 +75,7 @@
   padding: 0.5rem;
 }
 
-/* --- NUOVI STILI PER IL TECH STACK --- */
+/* --- STILI PER IL TECH STACK --- */
 .footer-tech-stack {
   display: flex;
   align-items: center;
@@ -116,4 +124,3 @@
     justify-content: flex-end;
   }
 }
-
