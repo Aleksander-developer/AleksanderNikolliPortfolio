@@ -2,6 +2,7 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="it" datatype="plaintext" original="ng2.template">
     <body>
+    <!-- src/app/app.component.html -->
       <trans-unit id="scrollToTopButtonAriaLabel" datatype="html">
         <source>Scroll to top</source>
         <context-group purpose="location">
@@ -9,6 +10,8 @@
           <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/chi-sono/chi-sono.component.html -->
       <trans-unit id="aboutMeTitle" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;primary&quot;&gt;"/>person<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Chi sono </source>
         <context-group purpose="location">
@@ -135,6 +138,8 @@
           <context context-type="linenumber">71,74</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/contatti/contatti.component.html -->
       <trans-unit id="contactTitle" datatype="html">
         <source>📬 Contattami</source>
         <context-group purpose="location">
@@ -254,6 +259,8 @@
           <context context-type="linenumber">55,56</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/home/home.component.html -->
       <trans-unit id="homeHeroTitle" datatype="html">
         <source>Ciao, sono Aleksander <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;emoji-tech&quot;&gt;"/>👨‍💻<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
@@ -310,6 +317,8 @@
           <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/progetti/progetti.component.html -->
       <trans-unit id="projectsPageTitle" datatype="html">
         <source>Progetti</source>
         <context-group purpose="location">
@@ -402,6 +411,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailChallengesTitle" datatype="html">
+
+      <!-- src/app/pages/progetti/progetto-detail/progetto-detail.component.html -->
         <source>Sfide Affrontate</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
@@ -492,6 +503,8 @@
           <context context-type="linenumber">101,103</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/servizi/servizi.component.html -->
       <trans-unit id="servicesPageTitle" datatype="html">
         <source>I miei servizi</source>
         <context-group purpose="location">
@@ -520,6 +533,92 @@
           <context context-type="linenumber">17,19</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="servizio_creazione_software_title" datatype="html">
+        <source>Creazione Software / Siti Web Personalizzati</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_creazione_software_desc" datatype="html">
+        <source>Dall&apos;idea al lancio, creo soluzioni software su misura e siti web dinamici, responsive e ottimizzati per performance e user experience. Ogni linea di codice è pensata per il tuo successo digitale.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_manutenzione_title" datatype="html">
+        <source>Manutenzione &amp; Ottimizzazione Continua</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_manutenzione_desc" datatype="html">
+        <source>Assicuro che le tue piattaforme digitali siano sempre al top. Offro aggiornamenti costanti, risoluzione proattiva dei bug e ottimizzazioni continue per garantire sicurezza, velocità e funzionalità inalterate nel tempo.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_ads_title" datatype="html">
+        <source>Strategie Google Ads (PPC)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_ads_desc" datatype="html">
+        <source>Massimizza la tua visibilità online con campagne Google Ads mirate. Progetto e gestisco strategie Pay-Per-Click per attrarre il tuo pubblico ideale, aumentare il traffico qualificato e convertire i clic in risultati concreti.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_seo_title" datatype="html">
+        <source>Ottimizzazione SEO &amp; Contenuti</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_seo_desc" datatype="html">
+        <source>Rendi il tuo sito una calamita per i motori di ricerca. Implemento tecniche SEO avanzate e strategie di contenuto per migliorare il tuo posizionamento, aumentare il traffico organico e farti trovare dai tuoi clienti ideali.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_digitale_title" datatype="html">
+        <source>Consulenza Digitale &amp; Soluzioni per Imprese</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_digitale_desc" datatype="html">
+        <source>Hai un&apos;attività? La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software) per semplificare il lavoro e ottimizzare la tua operatività digitale.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_progetto_title" datatype="html">
+        <source>Consulenza &amp; Gestione Progetti Digitali</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_progetto_desc" datatype="html">
+        <source>Ti guido attraverso ogni fase del tuo progetto digitale, dalla concezione all&apos;implementazione. Offro consulenza strategica e gestione completa per trasformare le tue idee in realtà, garantendo un lancio fluido e di successo.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+
+      <!-- src/app/shared/components/footer.component.html -->
       <trans-unit id="footerGithubAriaLabel" datatype="html">
         <source>GitHub Profile</source>
         <context-group purpose="location">
@@ -583,6 +682,8 @@
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/shared/components/navbar.component.html -->
       <trans-unit id="navbarHome" datatype="html">
         <source>Home</source>
         <context-group purpose="location">
@@ -594,14 +695,14 @@
         <source>Progetti</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">12,15</context>
+          <context context-type="linenumber">12,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="navbarServices" datatype="html">
         <source>Servizi</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
-          <context context-type="linenumber">17,18</context>
+          <context context-type="linenumber">13,14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="navbarContact" datatype="html">
@@ -675,19 +776,21 @@
         </context-group>
       </trans-unit>
       <trans-unit id="changeLangItMobile" datatype="html">
-        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>Italiano<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>It<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
           <context context-type="linenumber">54,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="changeLangEnMobile" datatype="html">
-        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>English<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>En<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
           <context context-type="linenumber">59,62</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/shared/components/why-chose-me.component.html -->
       <trans-unit id="whyChooseMeTitle" datatype="html">
         <source> Perché scegliere me? </source>
         <context-group purpose="location">
@@ -737,6 +840,8 @@
           <context context-type="linenumber">24,26</context>
         </context-group>
       </trans-unit>
+
+      <!-- FINE -->
     </body>
   </file>
 </xliff>

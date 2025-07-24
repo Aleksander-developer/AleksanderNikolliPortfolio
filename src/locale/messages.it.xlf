@@ -2,6 +2,8 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="it" datatype="plaintext" original="ng2.template">
     <body>
+
+    <!-- src/app/app.component.html -->
       <trans-unit id="scrollToTopButtonAriaLabel" datatype="html">
         <source>Scroll to top</source>
         <target>Scroll to top</target>
@@ -10,6 +12,8 @@
           <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/chi-sono/chi-sono.component.html -->
       <trans-unit id="aboutMeTitle" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;primary&quot;&gt;"/>person<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Chi sono </source>
         <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;primary&quot;&gt;"/>person<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Chi sono </target>
@@ -154,6 +158,8 @@
           <context context-type="linenumber">71,74</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/contatti/contatti.component.html -->
       <trans-unit id="contactTitle" datatype="html">
         <source>📬 Contattami</source>
         <target>📬 Contattami</target>
@@ -290,6 +296,8 @@
           <context context-type="linenumber">55,56</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/home/home.component.html -->
       <trans-unit id="homeHeroTitle" datatype="html">
         <source>Ciao, sono Aleksander <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;emoji-tech&quot;&gt;"/>👨‍💻<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <target>Ciao, sono Aleksander <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;emoji-tech&quot;&gt;"/>👨‍💻<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
@@ -354,6 +362,8 @@
           <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/progetti/progetti.component.html -->
       <trans-unit id="projectsPageTitle" datatype="html">
         <source>Progetti</source>
         <target>Progetti</target>
@@ -442,6 +452,8 @@
           <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/progetti/progetto-detail/progetto-detail.component.html -->
       <trans-unit id="projectDetailImageAlt" datatype="html">
         <source>Dettaglio Progetto</source>
         <target>Dettaglio Progetto</target>
@@ -578,6 +590,8 @@
           <context context-type="linenumber">101,103</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/servizi/servizi.component.html -->
       <trans-unit id="servicesPageTitle" datatype="html">
         <source>I miei servizi</source>
         <target>I miei servizi</target>
@@ -610,6 +624,8 @@
           <context context-type="linenumber">17,19</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/shared/components/footer.component.html -->
       <trans-unit id="footerGithubAriaLabel" datatype="html">
         <source>GitHub Profile</source>
         <target>GitHub Profile</target>
@@ -682,6 +698,8 @@
           <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/shared/components/navbar.component.html -->
       <trans-unit id="navbarHome" datatype="html">
         <source>Home</source>
         <target>Home</target>
@@ -770,6 +788,8 @@
           <context context-type="linenumber">45,47</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/shared/components/why-chose-me.component.html -->
       <trans-unit id="whyChooseMeTitle" datatype="html">
         <source> Perché scegliere me? </source>
         <target> Perché scegliere me? </target>
@@ -826,6 +846,65 @@
           <context context-type="linenumber">24,26</context>
         </context-group>
       </trans-unit>
+
+      <!-- src/app/pages/servizi/servizi.component.html -->
+      <trans-unit id="servicesPageTitle" datatype="html">
+        <source>I miei servizi</source>
+        <target>I miei servizi</target>
+      </trans-unit>
+      <trans-unit id="serviceCardTitle_creazione-software" datatype="html">
+        <source>Creazione Software / Siti Web Personalizzati</source>
+        <target>Creazione Software / Siti Web Personalizzati</target>
+      </trans-unit>
+      <trans-unit id="serviceCardDescription_creazione-software" datatype="html">
+        <source>Dall'idea al lancio, creo soluzioni software su misura e siti web dinamici, responsive e ottimizzati per performance e user experience. Ogni linea di codice è pensata per il tuo successo digitale.</source>
+        <target>Dall'idea al lancio, creo soluzioni software su misura e siti web dinamici, responsive e ottimizzati per performance e user experience. Ogni linea di codice è pensata per il tuo successo digitale.</target>
+      </trans-unit>
+      <trans-unit id="serviceCardTitle_manutenzione-software" datatype="html">
+        <source>Manutenzione &amp; Ottimizzazione Continua</source>
+        <target>Manutenzione &amp; Ottimizzazione Continua</target>
+      </trans-unit>
+      <trans-unit id="serviceCardDescription_manutenzione-software" datatype="html">
+        <source>Assicuro che le tue piattaforme digitali siano sempre al top. Offro aggiornamenti costanti, risoluzione proattiva dei bug e ottimizzazioni continue per garantire sicurezza, velocità e funzionalità inalterate nel tempo.</source>
+        <target>Assicuro che le tue piattaforme digitali siano sempre al top. Offro aggiornamenti costanti, risoluzione proattiva dei bug e ottimizzazioni continue per garantire sicurezza, velocità e funzionalità inalterate nel tempo.</target>
+      </trans-unit>
+      <trans-unit id="serviceCardTitle_google-ads" datatype="html">
+        <source>Strategie Google Ads (PPC)</source>
+        <target>Strategie Google Ads (PPC)</target>
+      </trans-unit>
+      <trans-unit id="serviceCardDescription_google-ads" datatype="html">
+        <source>Massimizza la tua visibilità online con campagne Google Ads mirate. Progetto e gestisco strategie Pay-Per-Click per attrarre il tuo pubblico ideale, aumentare il traffico qualificato e convertire i clic in risultati concreti.</source>
+        <target>Massimizza la tua visibilità online con campagne Google Ads mirate. Progetto e gestisco strategie Pay-Per-Click per attrarre il tuo pubblico ideale, aumentare il traffico qualificato e convertire i clic in risultati concreti.</target>
+      </trans-unit>
+      <trans-unit id="serviceCardTitle_seo" datatype="html">
+        <source>Ottimizzazione SEO &amp; Contenuti</source>
+        <target>Ottimizzazione SEO &amp; Contenuti</target>
+      </trans-unit>
+      <trans-unit id="serviceCardDescription_seo" datatype="html">
+        <source>Rendi il tuo sito una calamita per i motori di ricerca. Implemento tecniche SEO avanzate e strategie di contenuto per migliorare il tuo posizionamento, aumentare il traffico organico e farti trovare dai tuoi clienti ideali.</source>
+        <target>Rendi il tuo sito una calamita per i motori di ricerca. Implemento tecniche SEO avanzate e strategie di contenuto per migliorare il tuo posizionamento, aumentare il traffico organico e farti trovare dai tuoi clienti ideali.</target>
+      </trans-unit>
+      <trans-unit id="serviceCardTitle_consulenza-digitale-imprese" datatype="html">
+        <source>Consulenza Digitale &amp; Soluzioni per Imprese</source>
+        <target>Consulenza Digitale &amp; Soluzioni per Imprese</target>
+      </trans-unit>
+      <trans-unit id="serviceCardDescription_consulenza-digitale-imprese" datatype="html">
+        <source>Hai un'attività? La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software) per semplificare il lavoro e ottimizzare la tua operatività digitale.</source>
+        <target>Hai un'attività? La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software) per semplificare il lavoro e ottimizzare la tua operatività digitale.</target>
+      </trans-unit>
+      <trans-unit id="serviceCardTitle_realizzazione-progetto" datatype="html">
+        <source>Consulenza &amp; Gestione Progetti Digitali</source>
+        <target>Consulenza &amp; Gestione Progetti Digitali</target>
+      </trans-unit>
+      <trans-unit id="serviceCardDescription_realizzazione-progetto" datatype="html">
+        <source>Ti guido attraverso ogni fase del tuo progetto digitale, dalla concezione all'implementazione. Offro consulenza strategica e gestione completa per trasformare le tue idee in realtà, garantendo un lancio fluido e di successo.</source>
+        <target>Ti guido attraverso ogni fase del tuo progetto digitale, dalla concezione all'implementazione. Offro consulenza strategica e gestione completa per trasformare le tue idee in realtà, garantendo un lancio fluido e di successo.</target>
+      </trans-unit>
+      <trans-unit id="servicesContactButton" datatype="html">
+        <source>Contattami</source>
+        <target>Contattami</target>
+      </trans-unit>
+
     </body>
   </file>
 </xliff>

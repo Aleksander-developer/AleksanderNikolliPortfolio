@@ -1,25 +1,28 @@
 <!-- src/app/pages/servizi/servizi.component.html -->
 <section class="servizi-section">
-  <h1 i18n="@@servicesPageTitle">I miei servizi</h1> <!-- AGGIUNTO i18n -->
+  <h1 i18n="@@servicesPageTitle">I miei servizi</h1>
 
   <!-- Griglia dei servizi -->
   <div class="servizi-grid">
     <mat-card *ngFor="let servizio of servizi" class="servizio-card">
       <mat-icon class="icon">{{ servizio.icon }}</mat-icon>
-      <h2 i18n="@@serviceCardTitle_{{servizio.id}}">{{ servizio.title }}</h2> <!-- AGGIUNTO i18n con ID dinamico -->
-      <p i18n="@@serviceCardDescription_{{servizio.id}}">{{ servizio.description }}</p> <!-- AGGIUNTO i18n con ID dinamico -->
+      
+      <!-- NON usare i18n nel template per valori dinamici -->
+      <!-- Titolo e descrizione sono già tradotti via $localize nel .ts -->
+      <h2>{{ servizio.title }}</h2>
+      <p>{{ servizio.description }}</p>
     </mat-card>
   </div>
 
-  <!-- Nuovo pulsante Contattami -->
+  <!-- Pulsante Contattami -->
   <div class="contact-button-container">
-    <button mat-raised-button color="accent" (click)="goToContatti()" i18n="@@servicesContactButton"> <!-- AGGIUNTO i18n -->
+    <button mat-raised-button color="accent" (click)="goToContatti()" i18n="@@servicesContactButton">
       <mat-icon>mail_outline</mat-icon> Contattami
     </button>
   </div>
-
 </section>
 
-<!-- Componenti condivisi aggiunti al template dei servizi -->
+<!-- Componenti condivisi -->
 <app-why-chose-me></app-why-chose-me>
 <app-quote-box></app-quote-box>
+
