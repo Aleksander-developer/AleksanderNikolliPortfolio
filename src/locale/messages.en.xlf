@@ -944,6 +944,20 @@
         <target>Contact Me</target>
       </trans-unit>
 
+      <!-- NUOVE TRADUZIONI PER COOKIE CONSENT -->
+      <trans-unit id="cookieConsentText" datatype="html">
+        <source>Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Continuando a navigare accetti la nostra <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
+        <target>We use cookies to improve your browsing experience. By continuing to browse, you accept our <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
+      </trans-unit>
+      <trans-unit id="cookieConsentAcceptButton" datatype="html">
+        <source>Accetto</source>
+        <target>Accept</target>
+      </trans-unit>
+      <trans-unit id="cookieConsentDeclineButton" datatype="html">
+        <source>Rifiuto</source>
+        <target>Decline</target>
+      </trans-unit>
+      
     </body>
   </file>
 </xliff>

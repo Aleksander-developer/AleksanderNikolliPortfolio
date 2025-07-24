@@ -1,0 +1,12 @@
+<!-- src/app/shared/components/cookie-consent/cookie-consent.component.html -->
+<div *ngIf="showBanner" class="cookie-consent-banner" role="dialog" aria-live="polite" aria-label="Consenso Cookie">
+  <div class="banner-content">
+    <p i18n="@@cookieConsentText">
+      Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Continuando a navigare accetti la nostra <a href="/privacy-policy">Privacy Policy</a>. <!-- <--- RIMOSSO i18n="@@cookieConsentPrivacyLink" QUI -->
+    </p>
+    <div class="banner-actions">
+      <button mat-flat-button color="accent" (click)="acceptCookies()" i18n="@@cookieConsentAcceptButton">Accetto</button>
+      <button mat-button (click)="declineCookies()" i18n="@@cookieConsentDeclineButton">Rifiuto</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+/* src/app/shared/components/cookie-consent/cookie-consent.component.scss */
+@use '../../../../styles/variables' as vars;
+
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: vars.$dark-bg; // Sfondo scuro
+  color: vars.$text-color; // Testo chiaro
+  padding: vars.$spacing-md vars.$spacing-lg;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  z-index: 2000; // Assicurati che sia sopra tutto
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(vars.$accent-color, 0.3); // Bordo superiore sottile
+
+  .banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 900px; // Larghezza massima per il contenuto
+    text-align: center;
+
+    p {
+      margin-bottom: vars.$spacing-md;
+      font-size: 0.95rem;
+      line-height: 1.5;
+
+      a {
+        color: vars.$accent-color; // Colore del link evidenziato
+        text-decoration: underline;
+        &:hover {
+          color: lighten(vars.$accent-color, 10%);
+        }
+      }
+    }
+
+    .banner-actions {
+      display: flex;
+      gap: vars.$spacing-sm; // Spazio tra i pulsanti
+
+      button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        border-radius: 8px; // Angoli arrotondati
+        transition: all 0.3s ease;
+
+        &.mat-flat-button.mat-accent {
+          background-color: vars.$accent-color;
+          color: vars.$dark-bg; // Testo scuro sul pulsante accent
+          &:hover {
+            background-color: lighten(vars.$accent-color, 10%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(vars.$accent-color, 0.4);
+          }
+        }
+
+        &.mat-button {
+          color: vars.$text-color;
+          border: 1px solid rgba(vars.$text-color, 0.5); // Bordo per il pulsante "Rifiuto"
+          &:hover {
+            background-color: rgba(vars.$text-color, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: vars.$breakpoint-md) {
+  .cookie-consent-banner {
+    padding: vars.$spacing-sm vars.$spacing-md;
+
+    .banner-content {
+      p {
+        font-size: 0.85rem;
+        margin-bottom: vars.$spacing-sm;
+      }
+      .banner-actions {
+        flex-direction: column; // Pulsanti impilati su mobile
+        width: 100%; // Occupano tutta la larghezza
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
