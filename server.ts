@@ -4,7 +4,7 @@ import { CommonEngine } from '@angular/ssr';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { LOCALE_ID } from '@angular/core'; // ✅ NUOVO: Importa LOCALE_ID
+import { LOCALE_ID } from '@angular/core';
 
 export async function app(): Promise<express.Express> {
   const server = express();
@@ -23,7 +23,9 @@ export async function app(): Promise<express.Express> {
   const commonEngine = new CommonEngine();
   server.set('view engine', 'html');
 
-  // Serve file statici
+  // ✅ CORREZIONE: Sposta la configurazione dei file statici PRIMA delle route SSR
+  // Questo assicura che Express serva i file .js, .css, .png, ecc. con il tipo MIME corretto
+  // prima che la route SSR tenti di intercettare la richiesta.
   supportedLocales.forEach((locale) => {
     const localePath = resolve(browserDistFolder, locale);
     server.get(`/${locale}/*.*`, express.static(localePath, {
@@ -46,7 +48,6 @@ export async function app(): Promise<express.Express> {
           publicPath: localePath,
           providers: [
             { provide: APP_BASE_HREF, useValue: `/${locale}/` },
-            // ✅ NUOVO: Fornisci esplicitamente LOCALE_ID basato sul locale della rotta
             { provide: LOCALE_ID, useValue: locale }
           ],
         });
@@ -67,7 +68,7 @@ export async function app(): Promise<express.Express> {
 }
 
 async function run(): Promise<void> {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] || 4000; // Render usa la porta 10000 per i servizi web
   const server = await app();
   server.listen(port, () => {
     console.log(`✅ Angular SSR multilingua avviato su http://localhost:${port}`);
