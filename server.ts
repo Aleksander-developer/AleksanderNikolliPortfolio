@@ -1,28 +1,19 @@
+// server.ts
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
 import express from 'express';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
+import { LOCALE_ID } from '@angular/core'; // ✅ NUOVO: Importa LOCALE_ID
 
 export async function app(): Promise<express.Express> {
   const server = express();
 
-  // ✅ Import dinamico corretto per Angular SSR
-  // Questo percorso è relativo al file server.ts (o main.js compilato)
   const { AppServerModule } = await import('./src/main.server');
 
-  // Questa riga risolve la directory del file che sta eseguendo il codice.
-  // Sui log di Render, questo è stato mostrato come /opt/render/project/src
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-
-  // MODIFICATO: Calcola browserDistFolder relativo alla radice del progetto
-  // Se serverDistFolder è /opt/render/project/src
-  // e i file del browser sono in /opt/render/project/src/dist/aleksander-nikolli-portfolio/browser
-  // allora il percorso deve essere costruito in questo modo.
   const browserDistFolder = resolve(serverDistFolder, 'dist', 'aleksander-nikolli-portfolio', 'browser');
 
-
-  // 🔍 Debug log (questi ora dovrebbero mostrare i percorsi corretti)
   console.log('📁 serverDistFolder:', serverDistFolder);
   console.log('📁 browserDistFolder:', browserDistFolder);
 
@@ -55,6 +46,8 @@ export async function app(): Promise<express.Express> {
           publicPath: localePath,
           providers: [
             { provide: APP_BASE_HREF, useValue: `/${locale}/` },
+            // ✅ NUOVO: Fornisci esplicitamente LOCALE_ID basato sul locale della rotta
+            { provide: LOCALE_ID, useValue: locale }
           ],
         });
         res.send(html);
