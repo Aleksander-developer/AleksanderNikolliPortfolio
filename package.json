@@ -9,8 +9,8 @@
     "postbuild": "cp src/favicon.ico dist/aleksander-nikolli-portfolio/browser/favicon.ico",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:ssr": "ng build && ng run aleksander-nikolli-portfolio:server",
-    "serve:ssr": "node dist/aleksander-nikolli-portfolio/server/server.mjs"
+    "build:ssr": "ng build --configuration=production --localize && ng run aleksander-nikolli-portfolio:server:production",
+    "serve:ssr": "node dist/aleksander-nikolli-portfolio/server/main.js"
   },
   "dependencies": {
     "@angular/animations": "^18.2.0",

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: angular-ssr-frontend
+    env: node
+    region: frankfurt
+    plan: free
+    branch: main
+    buildCommand: npm install && npm run build:ssr
+    startCommand: npm run serve:ssr
+    rootDir: .
+    autoDeploy: true
