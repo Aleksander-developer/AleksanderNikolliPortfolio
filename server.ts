@@ -23,9 +23,14 @@ export async function app(): Promise<express.Express> {
   const commonEngine = new CommonEngine();
   server.set('view engine', 'html');
 
-  // ✅ CORREZIONE: Usa server.use per servire file statici per l'intera sottocartella della lingua
-  // Questo assicura che Express gestisca correttamente i tipi MIME per tutti gli asset
-  // (es. .js, .css, .png, .woff2) prima che la route SSR venga considerata.
+  // ✅ CORREZIONE 1: Serve gli asset globali dalla root della cartella browser
+  // (es. /assets/sfondo.png, /favicon.ico)
+  server.use(express.static(browserDistFolder, {
+    maxAge: '1y',
+  }));
+
+  // ✅ CORREZIONE 2: Serve gli asset specifici della lingua (se presenti)
+  // (es. /it/assets/specifico.png, o i tuoi bundle JS/CSS che sono sotto /it/ o /en/)
   supportedLocales.forEach((locale) => {
     const localePath = resolve(browserDistFolder, locale);
     server.use(`/${locale}`, express.static(localePath, {
@@ -33,7 +38,7 @@ export async function app(): Promise<express.Express> {
     }));
   });
 
-  // SSR per ogni lingua (questa route ora intercetterà solo le richieste non gestite da express.static)
+  // SSR per ogni lingua
   supportedLocales.forEach((locale) => {
     const localePath = resolve(browserDistFolder, locale);
     const indexHtml = resolve(localePath, 'index.html');
@@ -45,7 +50,7 @@ export async function app(): Promise<express.Express> {
           bootstrap: AppServerModule,
           documentFilePath: indexHtml,
           url: req.originalUrl,
-          publicPath: localePath, // publicPath dovrebbe puntare alla cartella della lingua specifica
+          publicPath: localePath,
           providers: [
             { provide: APP_BASE_HREF, useValue: `/${locale}/` },
             { provide: LOCALE_ID, useValue: locale }
@@ -68,7 +73,7 @@ export async function app(): Promise<express.Express> {
 }
 
 async function run(): Promise<void> {
-  const port = process.env['PORT'] || 4000; // Render usa la porta 10000 per i servizi web
+  const port = process.env['PORT'] || 4000;
   const server = await app();
   server.listen(port, () => {
     console.log(`✅ Angular SSR multilingua avviato su http://localhost:${port}`);
