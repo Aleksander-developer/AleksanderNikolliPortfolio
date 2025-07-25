@@ -15,7 +15,7 @@ const routes: Routes = [
         title: 'Aleksander Nikolli - Sviluppatore Web & Software',
         description: 'Aleksander Nikolli è un Frontend/Backend Developer e Database Administrator che crea soluzioni software e siti web moderni, performanti e scalabili.',
         keywords: 'sviluppatore web, frontend, backend, angular, nodejs, mysql, mongodb, consulente IT, web developer Roma, sviluppo software personalizzato',
-        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294688/sfondo_qzr5c7.png', // Immagine per la condivisione social
+        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg', // Immagine per la condivisione social
         type: 'website'
       }
     }
@@ -41,7 +41,7 @@ const routes: Routes = [
         title: 'Servizi - Aleksander Nikolli | Web Design & Sviluppo Software',
         description: 'Offro servizi di creazione software e siti web personalizzati, manutenzione, ottimizzazione SEO, strategie Google Ads e consulenza digitale. Soluzioni su misura per le tue esigenze.',
         keywords: 'servizi web, sviluppo software, web design, SEO, Google Ads, manutenzione siti, consulenza digitale, sviluppo app, freelance developer',
-        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294688/sfondo_qzr5c7.png',
+        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg',
         type: 'website'
       }
     }
@@ -54,7 +54,7 @@ const routes: Routes = [
         title: 'Progetti - Aleksander Nikolli | Portfolio Sviluppatore Web',
         description: 'Esplora il portfolio di Aleksander Nikolli: progetti di sviluppo web frontend e backend, applicazioni personalizzate e soluzioni innovative. Vedi i miei lavori recenti.',
         keywords: 'portfolio, progetti web, sviluppo frontend, sviluppo backend, applicazioni web, case study, lavori developer',
-        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294688/sfondo_qzr5c7.png',
+        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg',
         type: 'website'
       }
     }
@@ -68,7 +68,7 @@ const routes: Routes = [
         title: 'Dettaglio Progetto - Aleksander Nikolli',
         description: 'Dettagli approfonditi di un progetto di sviluppo web di Aleksander Nikolli. Scopri le tecnologie, le sfide e le soluzioni implementate.',
         keywords: 'dettaglio progetto, case study, progetto web, sviluppo software, tecnologie',
-        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294688/sfondo_qzr5c7.png',
+        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg',
         type: 'article' // Tipo specifico per un articolo/progetto
       }
     }
@@ -81,7 +81,7 @@ const routes: Routes = [
         title: 'Contatti - Aleksander Nikolli | Richiedi una Consulenza',
         description: 'Contatta Aleksander Nikolli per una consulenza gratuita o per discutere il tuo prossimo progetto. Invia un messaggio o richiedi un preventivo per sviluppo web e software.',
         keywords: 'contatti, preventivo, consulenza, sviluppatore, email, telefono, richiesta informazioni',
-        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294688/sfondo_qzr5c7.png',
+        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg',
         type: 'website'
       }
     }
