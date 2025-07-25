@@ -11,7 +11,7 @@ export class GoogleVerifiedBadgeComponent implements OnInit {
   @Input() isVerified: boolean = true; // Impostalo su 'true' manualmente quando la verifica GMB è completa.
 
   // NUOVO: Input per l'URL del profilo Google Business
-  @Input() googleProfileUrl: string = ''; // L'URL della tua attività su Google Business Profile
+  @Input() googleProfileUrl: string = 'https://g.co/kgs/H1dR6qk'; // L'URL della tua attività su Google Business Profile
 
   constructor() { }
 

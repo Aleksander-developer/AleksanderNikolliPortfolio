@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
     data: {
       seo: {
-        title: 'Aleksander Nikolli - Sviluppatore Web Full Stack',
+        title: 'Aleksander Nikolli - Sviluppatore Web & Software',
         description: 'Aleksander Nikolli è un Frontend/Backend Developer e Database Administrator che crea soluzioni software e siti web moderni, performanti e scalabili.',
         keywords: 'sviluppatore web, frontend, backend, angular, nodejs, mysql, mongodb, consulente IT, web developer Roma, sviluppo software personalizzato',
         imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294688/sfondo_qzr5c7.png', // Immagine per la condivisione social
