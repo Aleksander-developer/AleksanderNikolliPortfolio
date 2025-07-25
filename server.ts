@@ -8,19 +8,23 @@ export async function app(): Promise<express.Express> {
   const server = express();
 
   // ✅ Import dinamico corretto per Angular SSR
+  // Questo percorso è relativo al file server.ts (o main.js compilato)
   const { AppServerModule } = await import('./src/main.server');
 
+  // Questa riga risolve la directory del file che sta eseguendo il codice.
+  // Sui log di Render, questo è stato mostrato come /opt/render/project/src
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  // serverDistFolder sarà qualcosa come: /home/alexdev/AleksanderNikolliPortfolio/dist/aleksander-nikolli-portfolio/server
 
-  // MODIFICATO: Risolvi il percorso risalendo di un livello e poi scendendo in 'browser'
-  const browserDistFolder = resolve(serverDistFolder, '../browser');
-  // browserDistFolder sarà ora: /home/alexdev/AleksanderNikolliPortfolio/dist/aleksander-nikolli-portfolio/browser
+  // MODIFICATO: Calcola browserDistFolder relativo alla radice del progetto
+  // Se serverDistFolder è /opt/render/project/src
+  // e i file del browser sono in /opt/render/project/src/dist/aleksander-nikolli-portfolio/browser
+  // allora il percorso deve essere costruito in questo modo.
+  const browserDistFolder = resolve(serverDistFolder, 'dist', 'aleksander-nikolli-portfolio', 'browser');
 
 
-  // 🔍 Debug log
+  // 🔍 Debug log (questi ora dovrebbero mostrare i percorsi corretti)
   console.log('📁 serverDistFolder:', serverDistFolder);
-  console.log('📁 browserDistFolder:', browserDistFolder); // Questo ora dovrebbe essere corretto
+  console.log('📁 browserDistFolder:', browserDistFolder);
 
   const supportedLocales = ['it', 'en'];
   const defaultLocale = 'it';
@@ -48,7 +52,7 @@ export async function app(): Promise<express.Express> {
           bootstrap: AppServerModule,
           documentFilePath: indexHtml,
           url: req.originalUrl,
-          publicPath: localePath, // publicPath dovrebbe puntare alla cartella della lingua specifica
+          publicPath: localePath,
           providers: [
             { provide: APP_BASE_HREF, useValue: `/${locale}/` },
           ],
@@ -78,4 +82,3 @@ async function run(): Promise<void> {
 }
 
 run();
-
