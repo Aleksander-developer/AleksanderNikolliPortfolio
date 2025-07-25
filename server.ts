@@ -23,17 +23,17 @@ export async function app(): Promise<express.Express> {
   const commonEngine = new CommonEngine();
   server.set('view engine', 'html');
 
-  // ✅ CORREZIONE: Sposta la configurazione dei file statici PRIMA delle route SSR
-  // Questo assicura che Express serva i file .js, .css, .png, ecc. con il tipo MIME corretto
-  // prima che la route SSR tenti di intercettare la richiesta.
+  // ✅ CORREZIONE: Usa server.use per servire file statici per l'intera sottocartella della lingua
+  // Questo assicura che Express gestisca correttamente i tipi MIME per tutti gli asset
+  // (es. .js, .css, .png, .woff2) prima che la route SSR venga considerata.
   supportedLocales.forEach((locale) => {
     const localePath = resolve(browserDistFolder, locale);
-    server.get(`/${locale}/*.*`, express.static(localePath, {
+    server.use(`/${locale}`, express.static(localePath, {
       maxAge: '1y',
     }));
   });
 
-  // SSR per ogni lingua
+  // SSR per ogni lingua (questa route ora intercetterà solo le richieste non gestite da express.static)
   supportedLocales.forEach((locale) => {
     const localePath = resolve(browserDistFolder, locale);
     const indexHtml = resolve(localePath, 'index.html');
@@ -45,7 +45,7 @@ export async function app(): Promise<express.Express> {
           bootstrap: AppServerModule,
           documentFilePath: indexHtml,
           url: req.originalUrl,
-          publicPath: localePath,
+          publicPath: localePath, // publicPath dovrebbe puntare alla cartella della lingua specifica
           providers: [
             { provide: APP_BASE_HREF, useValue: `/${locale}/` },
             { provide: LOCALE_ID, useValue: locale }
