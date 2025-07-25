@@ -1,3 +1,10 @@
+// src/main.server.ts
+
+// ✅ CORREZIONE $localize: Importa il polyfill $localize all'inizio
+// Questo assicura che la funzione $localize sia disponibile nell'ambiente Node.js
+// prima che l'applicazione Angular tenti di utilizzarla per il rendering SSR.
+import '@angular/localize/init';
+
 import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
 
@@ -5,6 +12,4 @@ if (environment.production) {
   enableProdMode();
 }
 
-// ⚠️ NON usare default export: deve essere nominato
-export { AppServerModule } from './app/app.module.server';
-
+export { AppServerModule } from './app/app.module.server'; // Assicurati che questo percorso sia corretto
