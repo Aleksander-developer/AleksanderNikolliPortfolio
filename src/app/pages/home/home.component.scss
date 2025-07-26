@@ -373,7 +373,7 @@
 }
 
 /* NUOVA MEDIA QUERY SPECIFICA PER SCHERMI MOLTO STRETTI (es. iPhone 10/X/XS/11 Pro in portrait) */
-@media (max-width: 400px) {
+@media (max-width: 528px) {
   .tech-section {
     .tech-grid {
       grid-template-columns: repeat(2, 1fr); /* Forza 2 colonne anche per schermi ultra-piccoli */
