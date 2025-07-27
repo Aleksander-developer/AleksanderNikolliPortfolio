@@ -2,8 +2,9 @@
 import { APP_BASE_HREF } from '@angular/common';
 import { CommonEngine } from '@angular/ssr';
 import express from 'express';
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
+// Non useremo più fileURLToPath e dirname direttamente per i percorsi di build
+// import { fileURLToPath } from 'node:url';
+import { join } from 'node:path'; // Usiamo solo join
 import { LOCALE_ID } from '@angular/core';
 
 export async function app(): Promise<express.Express> {
@@ -11,11 +12,18 @@ export async function app(): Promise<express.Express> {
 
   const { AppServerModule } = await import('./src/main.server');
 
-  const serverDistFolder = dirname(fileURLToPath(import.meta.url));
-  const browserDistFolder = resolve(serverDistFolder, 'dist', 'aleksander-nikolli-portfolio', 'browser');
+  // ***** MODIFICHE QUI: Percorsi per Cloud Run *****
+  // Cloud Run esegue il server da /usr/src/app (come definito nel Dockerfile)
+  // I file del browser sono in /usr/src/app/browser
+  // I file del server sono in /usr/src/app/server
+  const currentDir = process.cwd(); // Ottiene la directory di lavoro corrente del processo Node.js
+  const browserDistFolder = join(currentDir, 'browser'); // Il tuo Dockerfile copia in /usr/src/app/browser
+  const serverDistFolder = join(currentDir, 'server');   // Il tuo Dockerfile copia in /usr/src/app/server
 
+  console.log('📁 currentDir:', currentDir);
   console.log('📁 serverDistFolder:', serverDistFolder);
   console.log('📁 browserDistFolder:', browserDistFolder);
+  // *************************************************
 
   const supportedLocales = ['it', 'en'];
   const defaultLocale = 'it';
@@ -23,16 +31,14 @@ export async function app(): Promise<express.Express> {
   const commonEngine = new CommonEngine();
   server.set('view engine', 'html');
 
-  // ✅ CORREZIONE 1: Serve gli asset globali dalla root della cartella browser
-  // (es. /assets/sfondo.png, /favicon.ico)
+  // Serve gli asset globali dalla root della cartella browser
   server.use(express.static(browserDistFolder, {
     maxAge: '1y',
   }));
 
-  // ✅ CORREZIONE 2: Serve gli asset specifici della lingua (se presenti)
-  // (es. /it/assets/specifico.png, o i tuoi bundle JS/CSS che sono sotto /it/ o /en/)
+  // Serve gli asset specifici della lingua
   supportedLocales.forEach((locale) => {
-    const localePath = resolve(browserDistFolder, locale);
+    const localePath = join(browserDistFolder, locale); // Usiamo join qui
     server.use(`/${locale}`, express.static(localePath, {
       maxAge: '1y',
     }));
@@ -40,8 +46,8 @@ export async function app(): Promise<express.Express> {
 
   // SSR per ogni lingua
   supportedLocales.forEach((locale) => {
-    const localePath = resolve(browserDistFolder, locale);
-    const indexHtml = resolve(localePath, 'index.html');
+    const localePath = join(browserDistFolder, locale); // Usiamo join qui
+    const indexHtml = join(localePath, 'index.html'); // Usiamo join qui
 
     server.get(`/${locale}*`, async (req, res, next) => {
       try {
@@ -73,7 +79,7 @@ export async function app(): Promise<express.Express> {
 }
 
 async function run(): Promise<void> {
-  const port = process.env['PORT'] || 4000;
+  const port = process.env['PORT'] || 8080;
   const server = await app();
   server.listen(port, () => {
     console.log(`✅ Angular SSR multilingua avviato su http://localhost:${port}`);
