@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from '../../../environments/environment'; // ✅ NUOVO: Importa l'ambiente per coerenza
 
 // Interfaccia per la struttura di una singola recensione (deve corrispondere al backend)
 export interface Review {
@@ -27,9 +28,10 @@ export interface Review {
 @Injectable({
   providedIn: 'root'
 })
+
 export class ReviewsService {
-  private apiUrl = 'https://alex-backend-api.onrender.com/api/reviews'; 
-  // Se stai testando in locale, puoi usare: private apiUrl = 'http://localhost:5000/api/reviews';
+  // ✅ CORREZIONE: Usa environment.apiUrl per coerenza e gestibilità
+  private apiUrl = `${environment.apiUrl}/reviews`; 
 
   constructor(private http: HttpClient) { }
 
