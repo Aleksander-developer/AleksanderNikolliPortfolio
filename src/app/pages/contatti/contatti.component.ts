@@ -3,7 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { environment } from '../../../environments/environment'; // CORRETTO: Percorso dell'ambiente
+import { environment } from '../../../environments/environment';
+
+// Dichiara la funzione gtag per renderla disponibile a TypeScript
+declare let gtag: Function;
 
 @Component({
   selector: 'app-contatti',
@@ -36,7 +39,7 @@ export class ContattiComponent implements OnInit {
     this.errorMessage = '';
 
     if (this.contactForm.valid) {
-      this.isLoading = true; // Imposta isLoading a true all'inizio della richiesta
+      this.isLoading = true;
       const formData = this.contactForm.value;
 
       console.log('Invio dati:', formData);
@@ -45,8 +48,12 @@ export class ContattiComponent implements OnInit {
         next: () => {
           this.successMessage = 'Messaggio inviato con successo!';
 
+          // CODICE FINALE: Invia l'evento di conversione a Google Ads
+          gtag('event', 'conversion', {
+              'send_to': 'AW-17435609575/CNQ4CLSR8I4BEoeT-f1h'
+          });
+
           // --- LOGICA DI RESET DEFINITIVA E FORZATA ---
-          // Resetta il form a valori vuoti
           this.contactForm.reset({
             nome: '',
             email: '',
@@ -54,35 +61,30 @@ export class ContattiComponent implements OnInit {
             messaggio: ''
           });
 
-          // Forza il reset dello stato di validazione e aggiornamento della UI
-          // Usiamo un piccolo setTimeout per dare tempo ad Angular di processare il reset iniziale
-          // e poi forzare un nuovo ciclo di change detection.
           setTimeout(() => {
             Object.keys(this.contactForm.controls).forEach(key => {
               const control = this.contactForm.get(key);
-              control?.markAsPristine(); // Imposta il controllo come "pulito"
-              control?.markAsUntouched(); // Imposta il controllo come "non toccato"
-              control?.updateValueAndValidity({ emitEvent: false }); // Forza la ri-validazione senza emettere eventi
+              control?.markAsPristine();
+              control?.markAsUntouched();
+              control?.updateValueAndValidity({ emitEvent: false });
             });
-            // Marca l'intero form come pristine e untouched
             this.contactForm.markAsPristine();
             this.contactForm.markAsUntouched();
             this.contactForm.updateValueAndValidity({ emitEvent: false });
-          }, 0); // Un timeout di 0ms mette la funzione in coda d'evento, dopo il ciclo corrente.
+          }, 0);
 
           setTimeout(() => this.successMessage = '', 5000);
         },
         error: (error) => {
           console.error('Errore invio messaggio:', error);
-          this.errorMessage = 'Errore durante l\'invio del messaggio. Riprova.'; // Messaggio per la UI
+          this.errorMessage = 'Errore durante l\'invio del messaggio. Riprova.';
           this.snackBar.open('Errore durante l\'invio. Riprova.', 'Chiudi', { duration: 5000 });
         },
         complete: () => {
-          this.isLoading = false; // Imposta isLoading a false alla fine della richiesta (successo o errore)
+          this.isLoading = false;
         }
       });
     } else {
-      // Se il form non è valido al submit, marca tutti i campi come touched per mostrare gli errori
       this.contactForm.markAllAsTouched();
     }
   }
