@@ -86,6 +86,7 @@ const routes: Routes = [
       }
     }
   },
+  { path: 'background', loadChildren: () => import('./pages/background/background.module').then(m => m.BackgroundModule) },
   {
     path: '**', // Rotta wildcard per gestire URL non trovati
     redirectTo: 'home', // Reindirizza alla home page

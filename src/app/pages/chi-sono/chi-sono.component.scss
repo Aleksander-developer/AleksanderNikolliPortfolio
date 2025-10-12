@@ -1,15 +1,26 @@
+// src/app/pages/chi-sono/chi-sono.component.scss
+
 @use '../../../styles/variables' as vars;
 
+/* === CARD PRINCIPALE === */
 .chi-sono-card {
   margin: vars.$spacing-lg auto;
   max-width: 900px;
   padding: 1.5rem;
-  background: lighten(vars.$dark-bg, 3%);
+  position: relative;
+  z-index: 5;
+
+  /* ✅ Sfondo traslucido per mostrare il background animato */
+  background: rgba(vars.$dark-bg, 0.75);
+  backdrop-filter: blur(6px);
   color: vars.$text-color;
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(vars.$accent-color, 0.5);
-  border: 1px solid rgba(vars.$accent-color, 0.2);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(vars.$accent-color, 0.4);
+  border: 1px solid rgba(vars.$accent-color, 0.25);
 
+  /* === TITOLI === */
   mat-card-title {
     font-size: 1.6rem;
     margin-bottom: 1rem;
@@ -17,18 +28,23 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5);
 
     mat-icon {
       font-size: 28px;
       width: 28px;
       height: 28px;
+      filter: drop-shadow(0 0 4px rgba(vars.$accent-color, 0.5));
     }
   }
 
+  /* === CONTENUTO TESTO === */
   mat-card-content {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: vars.$light-gray;
+    color: lighten(vars.$text-color, 5%);
+    position: relative;
+    z-index: 2;
 
     p {
       margin-bottom: 1rem;
@@ -41,11 +57,13 @@
 
     ul {
       padding-left: 1.5rem;
+      list-style: none;
+
       li {
         margin-bottom: 0.7rem;
         position: relative;
         &::before {
-          content: '•';
+          content: '▹';
           color: vars.$accent-color;
           position: absolute;
           left: -1rem;
@@ -56,6 +74,7 @@
     }
   }
 
+  /* === CHIP DI COMPETENZE === */
   mat-chip-listbox {
     display: flex;
     flex-wrap: wrap;
@@ -66,45 +85,46 @@
       padding: 0.5rem 1rem;
       font-size: 0.95rem;
       border-radius: 20px;
-      background-color: rgba(vars.$accent-color, 0.2);
+      background-color: rgba(vars.$accent-color, 0.15);
       border: 1px solid rgba(vars.$accent-color, 0.4);
-      transition: all 0.2s ease-in-out;
+      box-shadow: 0 0 10px rgba(vars.$accent-color, 0.2);
+      transition: all 0.25s ease-in-out;
 
-      // ::ng-deep è deprecato, ma spesso necessario per sovrascrivere stili interni di Material.
-      // Se riscontri problemi in futuro, questa potrebbe essere un'area da rivedere.
       ::ng-deep .mat-mdc-chip-action-label,
       ::ng-deep .mdc-evolution-chip__text-content {
-          color: vars.$text-color;
+        color: vars.$text-color;
       }
 
       &.mdc-evolution-chip--selected {
         background-color: vars.$accent-color;
+        box-shadow: 0 0 12px rgba(vars.$accent-color, 0.8);
         ::ng-deep .mat-mdc-chip-action-label,
         ::ng-deep .mdc-evolution-chip__text-content {
-            color: vars.$dark-bg;
+          color: vars.$dark-bg;
         }
-        font-weight: 600;
-        box-shadow: 0 0 12px rgba(vars.$accent-color, 0.8);
       }
 
       &:hover {
         transform: translateY(-3px);
-        background-color: rgba(vars.$accent-color, 0.3);
-        box-shadow: 0 5px 15px rgba(vars.$accent-color, 0.4);
+        background-color: rgba(vars.$accent-color, 0.25);
+        box-shadow: 0 5px 15px rgba(vars.$accent-color, 0.5);
       }
     }
   }
 
+  /* === DIVISORI === */
   .mat-divider-margin {
     margin: vars.$spacing-lg 0;
     background-color: rgba(vars.$accent-color, 0.3);
   }
 
+  /* === SEZIONE ATTESTATI === */
   .attestati-intro {
     text-align: center;
     margin-bottom: 1.5rem;
     color: vars.$text-color;
     font-size: 1.05rem;
+    text-shadow: 0 0 6px rgba(0, 188, 212, 0.3);
   }
 
   .attestati-grid {
@@ -116,14 +136,14 @@
   }
 
   .attestato-item {
-    background-color: lighten(vars.$dark-bg, 5%);
+    background: rgba(vars.$dark-bg, 0.7);
+    backdrop-filter: blur(4px);
     border-radius: 10px;
     overflow: hidden;
     text-align: center;
     padding-bottom: 1rem;
     border: 1px solid rgba(vars.$accent-color, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(vars.$accent-color, 0.4);
 
     &:hover {
@@ -154,11 +174,13 @@
     text-shadow: 0 0 8px rgba(vars.$accent-color, 0.3);
   }
 
+  /* === NOTA FINALE === */
   .final-note {
     margin-top: 2.5rem;
     padding: 1.5rem;
-    background-color: lighten(vars.$dark-bg, 5%);
-    border: 1px solid rgba(vars.$accent-color, 0.4);
+    background: rgba(vars.$dark-bg, 0.8);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(vars.$accent-color, 0.3);
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(vars.$accent-color, 0.4);
@@ -189,7 +211,7 @@
           height: 2px;
           background-color: vars.$primary-color;
           transform: translateX(-50%);
-          animation: animated-underline 2s infinite ease-in-out; // Riapplica l'animazione
+          animation: animated-underline 2s infinite ease-in-out;
         }
 
         &:hover {
@@ -199,16 +221,11 @@
           background-color: rgba(vars.$accent-color, 0.1);
         }
       }
-
-      strong {
-        color: vars.$accent-color;
-        text-shadow: 0 0 10px rgba(vars.$accent-color, 0.5);
-      }
     }
   }
 }
 
-// Media Query per la responsività
+/* === RESPONSIVE === */
 @media (max-width: vars.$breakpoint-md) {
   .chi-sono-card {
     margin: 1.5rem 1rem;
@@ -216,10 +233,9 @@
 
     mat-card-title {
       font-size: 1.4rem;
+
       mat-icon {
         font-size: 24px;
-        width: 24px;
-        height: 24px;
       }
     }
 
@@ -233,14 +249,6 @@
     mat-chip-listbox mat-chip-row {
       font-size: 0.85rem;
       padding: 0.4rem 0.8rem;
-      ::ng-deep .mat-mdc-chip-action-label,
-      ::ng-deep .mdc-evolution-chip__text-content {
-        color: vars.$text-color;
-      }
-    }
-
-    .mat-divider-margin {
-      margin: 1.5rem 0;
     }
 
     .attestati-grid {
@@ -250,6 +258,7 @@
 
     .attestato-item {
       padding-bottom: 0.8rem;
+
       .attestato-caption {
         font-size: 1rem;
       }
@@ -259,16 +268,7 @@
       margin-top: 2rem;
       padding: 1.2rem;
       font-size: 1rem;
-
-      p {
-        .contact-link {
-          &:hover {
-            transform: none;
-            background-color: transparent;
-            text-shadow: 0 0 15px rgba(vars.$accent-color, 0.8);
-          }
-        }
-      }
     }
   }
 }
+

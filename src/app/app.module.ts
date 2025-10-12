@@ -17,7 +17,8 @@ import { SharedModule } from './shared/shared.module'; // Importa il tuo SharedM
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SharedModule // Importa SharedModule qui
+    SharedModule, // Importa SharedModule qui
+    
   ],
   providers: [
     provideClientHydration(),

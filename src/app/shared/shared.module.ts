@@ -15,6 +15,7 @@ import { MaterialModule } from './shared/material.module';
 import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { GoogleVerifiedBadgeComponent } from './components/google-verified-badge/google-verified-badge.component';
+import { BackgroundComponent } from '../pages/background/background.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { GoogleVerifiedBadgeComponent } from './components/google-verified-badge
     QuoteBoxComponent,
     CookieConsentComponent,
     ReviewsComponent,
-    GoogleVerifiedBadgeComponent
+    GoogleVerifiedBadgeComponent,
+    BackgroundComponent
   ],
   imports: [
     CommonModule,
@@ -41,6 +43,7 @@ import { GoogleVerifiedBadgeComponent } from './components/google-verified-badge
     CookieConsentComponent,
     ReviewsComponent,
     GoogleVerifiedBadgeComponent,
+    BackgroundComponent,
     MaterialModule, // Esporta MaterialModule per renderlo disponibile agli importatori di SharedModule
     CommonModule,   // Utile esportare CommonModule per le direttive *ngIf, *ngFor
     RouterModule,    // Esporta RouterModule

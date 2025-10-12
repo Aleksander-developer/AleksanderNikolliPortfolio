@@ -5,61 +5,104 @@
       <mat-icon color="accent">lock</mat-icon>
       <mat-card-title i18n="@@projectsPageTitle">Progetti</mat-card-title>
     </mat-card-header>
+
     <mat-card-content>
-      <!-- Mostra i progetti solo se l'array 'progetti' non è vuoto e non c'è un errore -->
       <div *ngIf="progetti.length > 0 && !loading && !errore; else noProjectsOrLoading">
-        <p i18n="@@projectsListIntro">Ecco alcuni dei miei progetti più recenti:</p>
+        <p i18n="@@projectsListIntro">
+          Ecco alcuni dei miei progetti più recenti:
+        </p>
+
         <div class="projects-grid">
-          <!-- Itera su ogni progetto e crea una card -->
-          <mat-card *ngFor="let progetto of progetti" class="project-item mat-elevation-z2" [routerLink]="['/progetti', progetto._id]">
-            <!-- Immagine del progetto con fallback -->
-            <img mat-card-image [src]="progetto.immagine || 'https://placehold.co/400x250/1a1a2e/00bcd4?text=Progetto'" [alt]="progetto.titolo" i18n-alt="@@projectCardImageAlt" />
+          <mat-card
+            *ngFor="let progetto of progetti"
+            class="project-item mat-elevation-z2"
+            [routerLink]="['/progetti', progetto._id]"
+          >
+            <img
+              mat-card-image
+              [src]="progetto.immagine || 'https://placehold.co/400x250/1a1a2e/00bcd4?text=Progetto'"
+              [alt]="progetto.titolo"
+              i18n-alt="@@projectCardImageAlt"
+            />
             <mat-card-title>{{ progetto.titolo }}</mat-card-title>
             <mat-card-content>
-              <!-- Descrizione troncata per la lista -->
-              <p>{{ progetto.descrizione | slice:0:100 }}...</p>
-              <mat-chip-listbox aria-label="Tecnologie usate" i18n-aria-label="@@projectCardTechAriaLabel">
-                <ng-container *ngIf="progetto.tecnologie && progetto.tecnologie.length > 0">
-                  <mat-chip-row *ngFor="let tech of progetto.tecnologie | slice:0:3" color="primary">
+              <p>{{ progetto.descrizione | slice: 0:100 }}...</p>
+              <mat-chip-listbox
+                aria-label="Tecnologie usate"
+                i18n-aria-label="@@projectCardTechAriaLabel"
+              >
+                <ng-container *ngIf="progetto.tecnologie?.length">
+                  <mat-chip-row
+                    *ngFor="let tech of progetto.tecnologie | slice: 0:3"
+                    color="primary"
+                  >
                     {{ tech }}
                   </mat-chip-row>
-                  <mat-chip-row *ngIf="progetto.tecnologie.length > 3" color="primary">
+                  <mat-chip-row
+                    *ngIf="progetto.tecnologie.length > 3"
+                    color="primary"
+                  >
                     +{{ progetto.tecnologie.length - 3 }}
                   </mat-chip-row>
                 </ng-container>
               </mat-chip-listbox>
             </mat-card-content>
+
             <mat-card-actions>
-              <!-- MODIFICATO: routerLink senza prefisso lingua -->
-              <button mat-button color="primary" [routerLink]="['/progetti', progetto._id]" i18n="@@projectCardDetailsButton">Vedi Dettagli</button>
+              <button
+                mat-button
+                color="primary"
+                [routerLink]="['/progetti', progetto._id]"
+                i18n="@@projectCardDetailsButton"
+              >
+                Vedi Dettagli
+              </button>
             </mat-card-actions>
           </mat-card>
         </div>
       </div>
 
-      <!-- Template per il caricamento, l'errore o nessun progetto -->
       <ng-template #noProjectsOrLoading>
         <div *ngIf="loading" class="loading-spinner">
           <mat-spinner color="accent"></mat-spinner>
           <p i18n="@@projectsLoadingMessage">Caricamento progetti...</p>
         </div>
+
         <div *ngIf="errore" class="error-message mat-elevation-z2">
           <mat-icon color="warn">error_outline</mat-icon>
           <p i18n="@@projectsErrorMessage">{{ errore }}</p>
         </div>
+
         <div *ngIf="!loading && !errore && progetti.length === 0">
-          <p i18n="@@projectsNoPublicProjects1"> Alcuni dei progetti su cui sto lavorando attualmente non sono ancora pubblici. <br> Alcuni sono in fase di lancio, altri sotto NDA o in ambienti di test. </p>
-          <p i18n="@@projectsNoPublicProjects2"> Presto potrò condividere approfondimenti tecnici, mockup e risultati concreti – con focus su sviluppo <strong>frontend/backend</strong>, UX e automazioni. </p>
-          <p i18n="@@projectsNoPublicProjects3"><strong>🔒 La qualità c’è, anche se per ora resta dietro le quinte.</strong></p>
+          <p i18n="@@projectsNoPublicProjects1">
+            Alcuni dei progetti su cui sto lavorando attualmente non sono ancora
+            pubblici. <br />
+            Alcuni sono in fase di lancio, altri sotto NDA o in ambienti di
+            test.
+          </p>
+          <p i18n="@@projectsNoPublicProjects2">
+            Presto potrò condividere approfondimenti tecnici, mockup e risultati
+            concreti – con focus su sviluppo
+            <strong>frontend/backend</strong>, UX e automazioni.
+          </p>
+          <p i18n="@@projectsNoPublicProjects3">
+            <strong>🔒 La qualità c’è, anche se per ora resta dietro le
+              quinte.</strong>
+          </p>
         </div>
       </ng-template>
     </mat-card-content>
   </mat-card>
 
-  <!-- Nuovo pulsante Contattami -->
   <div class="contact-button-container">
-    <button mat-raised-button color="accent" (click)="goToContatti()" i18n="@@projectsContactButton">
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="goToContatti()"
+      i18n="@@projectsContactButton"
+    >
       <mat-icon>mail_outline</mat-icon> Contattami
     </button>
   </div>
 </section>
+

@@ -1,7 +1,9 @@
+// src/app/pages/servizi/servizi.component.ts
+
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-declare const $localize: any; // <-- IMPORTANTE
+declare const $localize: any; // Necessario per l'i18n locale-based
 
 interface Servizio {
   id: string;
@@ -25,6 +27,12 @@ export class ServiziComponent implements OnInit {
       icon: 'code'
     },
     {
+      id: 'sviluppo-app',
+      title: $localize`:@@servizio_sviluppo_app_title:Sviluppo App Mobile & PWA`,
+      description: $localize`:@@servizio_sviluppo_app_desc:Progetto e sviluppo applicazioni mobile native e progressive web app (PWA) moderne, performanti e intuitive, compatibili con Android e iOS, per garantire la massima esperienza utente ovunque.`,
+      icon: 'smartphone'
+    },
+    {
       id: 'manutenzione-software',
       title: $localize`:@@servizio_manutenzione_title:Manutenzione & Ottimizzazione Continua`,
       description: $localize`:@@servizio_manutenzione_desc:Assicuro che le tue piattaforme digitali siano sempre al top. Offro aggiornamenti costanti, risoluzione proattiva dei bug e ottimizzazioni continue per garantire sicurezza, velocità e funzionalità inalterate nel tempo.`,
@@ -45,7 +53,7 @@ export class ServiziComponent implements OnInit {
     {
       id: 'consulenza-digitale-imprese',
       title: $localize`:@@servizio_digitale_title:Consulenza Digitale & Soluzioni per Imprese`,
-      description: $localize`:@@servizio_digitale_desc:Hai un'attività? La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software) per semplificare il lavoro e ottimizzare la tua operatività digitale.`,
+      description: $localize`:@@servizio_digitale_desc:Hai un'attività? La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software, app) per semplificare il lavoro e ottimizzare la tua operatività digitale.`,
       icon: 'business'
     },
     {

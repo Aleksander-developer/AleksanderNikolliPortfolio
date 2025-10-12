@@ -1,59 +1,106 @@
 <!-- src/app/pages/contatti/contatti.component.html -->
 
 <section class="contatti-container mat-elevation-z4">
-  <h1 i18n="@@contactTitle">📬 Contattami</h1> <!-- AGGIUNTO i18n -->
+  <!-- 🔹 Tolta la seconda emoji, resta solo quella inline -->
+  <h1 i18n="@@contactTitle">📬 Contattami</h1>
 
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
-    <mat-form-field appearance="outline">
-      <mat-label i18n="@@contactNameLabel">Nome</mat-label> <!-- AGGIUNTO i18n -->
-      <input matInput placeholder="Il tuo nome" i18n-placeholder="@@contactNamePlaceholder" formControlName="nome" /> <!-- AGGIUNTO i18n-placeholder -->
-      <mat-error *ngIf="contactForm.get('nome')?.invalid && contactForm.get('nome')?.touched" i18n="@@contactNameError"> <!-- AGGIUNTO i18n -->
-        Inserisci un nome valido
-      </mat-error>
-    </mat-form-field>
+  <!-- ✅ CARD DEL FORM CON EFFETTO VETRO -->
+  <div class="form-wrapper">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+      <mat-form-field appearance="outline">
+        <mat-label i18n="@@contactNameLabel">Nome</mat-label>
+        <input
+          matInput
+          placeholder="Il tuo nome"
+          i18n-placeholder="@@contactNamePlaceholder"
+          formControlName="nome"
+        />
+        <mat-error
+          *ngIf="contactForm.get('nome')?.invalid && contactForm.get('nome')?.touched"
+          i18n="@@contactNameError"
+        >
+          Inserisci un nome valido
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label i18n="@@contactEmailLabel">Email</mat-label> <!-- AGGIUNTO i18n -->
-      <input matInput type="email" placeholder="email@example.com" i18n-placeholder="@@contactEmailPlaceholder" formControlName="email" /> <!-- AGGIUNTO i18n-placeholder -->
-      <mat-error *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" i18n="@@contactEmailError"> <!-- AGGIUNTO i18n -->
-        Email non valida
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label i18n="@@contactEmailLabel">Email</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="email@example.com"
+          i18n-placeholder="@@contactEmailPlaceholder"
+          formControlName="email"
+        />
+        <mat-error
+          *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched"
+          i18n="@@contactEmailError"
+        >
+          Email non valida
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label i18n="@@contactPhoneLabel">Cellulare (opzionale)</mat-label> <!-- AGGIUNTO i18n -->
-      <input matInput type="tel" placeholder="+39 345 1234567" i18n-placeholder="@@contactPhonePlaceholder" formControlName="cellulare" /> <!-- AGGIUNTO i18n-placeholder -->
-      <mat-error *ngIf="contactForm.get('cellulare')?.invalid && contactForm.get('cellulare')?.touched" i18n="@@contactPhoneError"> <!-- AGGIUNTO i18n -->
-        Inserisci un numero di cellulare valido
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label i18n="@@contactPhoneLabel">Cellulare (opzionale)</mat-label>
+        <input
+          matInput
+          type="tel"
+          placeholder="+39 345 1234567"
+          i18n-placeholder="@@contactPhonePlaceholder"
+          formControlName="cellulare"
+        />
+        <mat-error
+          *ngIf="contactForm.get('cellulare')?.invalid && contactForm.get('cellulare')?.touched"
+          i18n="@@contactPhoneError"
+        >
+          Inserisci un numero di cellulare valido
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field appearance="outline">
-      <mat-label i18n="@@contactMessageLabel">Messaggio</mat-label> <!-- AGGIUNTO i18n -->
-      <textarea matInput rows="6" placeholder="Scrivi qui il tuo messaggio" i18n-placeholder="@@contactMessagePlaceholder" formControlName="messaggio"></textarea> <!-- AGGIUNTO i18n-placeholder -->
-      <mat-error *ngIf="contactForm.get('messaggio')?.invalid && contactForm.get('messaggio')?.touched" i18n="@@contactMessageError"> <!-- AGGIUNTO i18n -->
-        Messaggio troppo breve
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label i18n="@@contactMessageLabel">Messaggio</mat-label>
+        <textarea
+          matInput
+          rows="6"
+          placeholder="Scrivi qui il tuo messaggio"
+          i18n-placeholder="@@contactMessagePlaceholder"
+          formControlName="messaggio"
+        ></textarea>
+        <mat-error
+          *ngIf="contactForm.get('messaggio')?.invalid && contactForm.get('messaggio')?.touched"
+          i18n="@@contactMessageError"
+        >
+          Messaggio troppo breve
+        </mat-error>
+      </mat-form-field>
 
-    <!-- Messaggio di successo -->
-    <div *ngIf="successMessage" class="success-message">
-      <mat-icon>check_circle_outline</mat-icon> <span i18n="@@contactSuccessMessage">{{ successMessage }}</span> <!-- AGGIUNTO i18n -->
-    </div>
-
-    <!-- Messaggio di errore (se presente) -->
-    <div *ngIf="errorMessage" class="error-message-ui">
-      <mat-icon>error_outline</mat-icon> <span i18n="@@contactErrorMessage">{{ errorMessage }}</span> <!-- AGGIUNTO i18n -->
-    </div>
-
-    <button mat-raised-button color="primary" type="submit" [disabled]="contactForm.invalid || isLoading">
-      <div *ngIf="isLoading" class="button-loading-content">
-        <mat-spinner diameter="20"></mat-spinner>
-        <span i18n="@@contactSending">Invio in corso...</span> <!-- AGGIUNTO i18n -->
+      <!-- Messaggio di successo -->
+      <div *ngIf="successMessage" class="success-message">
+        <mat-icon>check_circle_outline</mat-icon>
+        <span i18n="@@contactSuccessMessage">{{ successMessage }}</span>
       </div>
-      <ng-container *ngIf="!isLoading">
-        <span i18n="@@contactSendButton">Invia</span> <!-- AGGIUNTO i18n -->
-      </ng-container>
-    </button>
-  </form>
+
+      <!-- Messaggio di errore -->
+      <div *ngIf="errorMessage" class="error-message-ui">
+        <mat-icon>error_outline</mat-icon>
+        <span i18n="@@contactErrorMessage">{{ errorMessage }}</span>
+      </div>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="contactForm.invalid || isLoading"
+      >
+        <div *ngIf="isLoading" class="button-loading-content">
+          <mat-spinner diameter="20"></mat-spinner>
+          <span i18n="@@contactSending">Invio in corso...</span>
+        </div>
+        <ng-container *ngIf="!isLoading">
+          <span i18n="@@contactSendButton">Invia</span>
+        </ng-container>
+      </button>
+    </form>
+  </div>
 </section>
+

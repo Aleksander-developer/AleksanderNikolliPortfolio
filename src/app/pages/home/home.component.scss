@@ -18,7 +18,8 @@
   justify-content: center;
   align-items: center;
   min-height: 60vh;
-  background: linear-gradient(135deg, vars.$dark-bg 0%, darken(vars.$dark-bg, 5%) 100%);
+  background: rgba(vars.$dark-bg, 0.75); /* Semitrasparente */
+  backdrop-filter: blur(3px); /* Effetto vetro */
   color: vars.$text-color;
   text-align: center;
   padding: 4rem 2rem;
@@ -100,7 +101,7 @@
 /* TECH STACK SECTION */
 .tech-section {
   padding: vars.$spacing-xl vars.$spacing-lg;
-  background-color: vars.$dark-bg;
+  background-color: rgba(vars.$dark-bg, 0.8);
   text-align: center;
 
   .tech-grid {
@@ -156,7 +157,7 @@
 /* FEATURED PROJECTS SECTION */
 .featured-projects-section {
   padding: vars.$spacing-xl vars.$spacing-lg;
-  background-color: darken(vars.$dark-bg, 5%);
+   background-color: rgba(darken(vars.$dark-bg, 5%), 0.8);
   text-align: center;
 
   .section-title {

@@ -20,11 +20,13 @@ export class HomeComponent implements OnInit {
     'Bootstrap',
     'GIT',
     'Angular',
-    'Angular Avanzato',
     'Node.js',
     'Express',
-    'MongoDB Atlas',
-    'DataBase MySQL'
+    'MongoDB',
+    'DataBase MySQL',
+    'REST API',
+    'Ionic Framework',
+    'Capacitor'
   ];
 
   // Variabile 'cols' per MatGridList.

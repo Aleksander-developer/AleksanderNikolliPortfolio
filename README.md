@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+# lavorare sul frontend con hot-reload (senza SSR):
+npm start
+
+# Modalità SSR (Angular Universal + Express)
+# Step 1 – Compila tutto
+npm run build:ssr
+# Step 2 – Avvia il server SSR
+npm run serve:ssr
+

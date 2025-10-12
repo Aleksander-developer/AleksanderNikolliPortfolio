@@ -2,178 +2,192 @@
 
 @use '../../../styles/variables' as vars;
 
+/* === SEZIONE SERVIZI === */
 .servizi-section {
-  padding: vars.$spacing-xl vars.$spacing-lg;
+  position: relative;
+  z-index: 5;
+  padding: calc(64px + 2rem) vars.$spacing-lg vars.$spacing-xl;
   text-align: center;
   font-family: vars.$font-family-base;
-  min-height: calc(100vh - 120px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     margin-bottom: vars.$spacing-xl;
     color: vars.$accent-color;
-    text-shadow: 0 0 15px rgba(vars.$accent-color, 0.6);
+    font-family: 'Share Tech Mono', monospace;
     font-weight: 700;
+    text-shadow: 0 0 12px rgba(vars.$accent-color, 0.7);
+    animation: pulseGlow 4s infinite ease-in-out;
   }
 
+  /* === GRIGLIA === */
   .servizi-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: vars.$spacing-lg;
+    gap: vars.$spacing-xl;
     max-width: 1200px;
     width: 100%;
     margin-bottom: vars.$spacing-xl;
   }
 
+  /* === CARD SERVIZIO === */
   .servizio-card {
-    background: lighten(vars.$dark-bg, 3%);
+    background: rgba(vars.$dark-bg, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(vars.$accent-color, 0.25);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
     color: vars.$text-color;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(vars.$accent-color, 0.5);
-    border: 1px solid rgba(vars.$accent-color, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow:
+      0 8px 25px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba(vars.$accent-color, 0.3);
+    transition: all 0.3s ease-in-out;
+    cursor: default;
+    text-align: center;
 
     &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(vars.$accent-color, 0.6);
+      transform: translateY(-6px);
+      box-shadow: 0 0 25px rgba(vars.$accent-color, 0.5);
     }
 
-    .icon {
-      font-size: 3rem;
-      width: 3rem;   /* Aggiunto per correggere il taglio */
-      height: 3rem;  /* Aggiunto per correggere il taglio */
-      color: vars.$accent-color;
-      margin-bottom: 0.5rem;
+    .icon-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      height: 4.5rem;
+      overflow: visible;
+
+        .icon {
+          font-size: 3.5rem;
+          width: 3.5rem;
+          height: 3.5rem;
+          line-height: 3.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: vars.$accent-color;
+          filter: drop-shadow(0 0 12px rgba(vars.$accent-color, 0.6));
+          transition: transform 0.4s ease, filter 0.4s ease;
+        }
+    }
+
+
+    .servizio-card:hover .icon {
+      transform: scale(1.15);
+      filter: drop-shadow(0 0 20px rgba(vars.$accent-color, 0.9));
     }
 
     h2 {
       font-size: 1.4rem;
-      margin-bottom: 0.5rem;
       color: vars.$accent-color;
+      margin-bottom: 0.6rem;
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     p {
       font-size: 1rem;
-      opacity: 0.9;
+      line-height: 1.6;
       color: vars.$light-gray;
+      opacity: 0.9;
     }
   }
 
-  /* --- Stili per il pulsante Contattami --- */
+  /* === PULSANTE CONTATTAMI === */
   .contact-button-container {
     margin-top: vars.$spacing-xl;
-    margin-bottom: vars.$spacing-xl;
+    text-align: center;
 
     button {
       font-size: 1.2rem;
       padding: 0.8rem 2rem;
-      border-radius: 0.5rem;
+      border-radius: 8px;
       font-weight: 600;
       letter-spacing: 1px;
-      transition: all 0.3s ease;
-
       background-color: vars.$primary-color;
       color: vars.$text-color;
-      box-shadow: 0 5px 15px rgba(vars.$primary-color, 0.4);
       border: 1px solid rgba(vars.$primary-color, 0.6);
+      box-shadow: 0 5px 15px rgba(vars.$primary-color, 0.4);
+      transition: all 0.3s ease;
 
       mat-icon {
         margin-right: 8px;
-        font-size: 24px;
-        width: 24px;
-        height: 24px;
+        font-size: 22px;
       }
 
       &:hover {
         background-color: darken(vars.$primary-color, 10%);
-        box-shadow: 0 8px 25px rgba(vars.$primary-color, 0.6);
         transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(vars.$primary-color, 0.6);
       }
     }
   }
 }
 
-// Responsive adjustments
+/* === ANIMAZIONE NEON === */
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.6);
+  }
+  50% {
+    text-shadow: 0 0 18px rgba(vars.$accent-color, 0.9);
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.6);
+  }
+}
+
+/* === RESPONSIVE === */
 @media (max-width: vars.$breakpoint-md) {
   .servizi-section {
     padding: vars.$spacing-lg vars.$spacing-md;
+
     h1 {
       font-size: 2rem;
       margin-bottom: vars.$spacing-lg;
     }
-    .servizi-grid {
-      grid-template-columns: 1fr;
-      gap: vars.$spacing-md;
-    }
+
     .servizio-card {
-      padding: 1rem;
+      padding: 1.5rem;
       .icon {
         font-size: 2.5rem;
-        width: 2.5rem;  /* Aggiunto per correggere il taglio */
-        height: 2.5rem; /* Aggiunto per correggere il taglio */
-      }
-      h2 {
-        font-size: 1.2rem;
-      }
-      p {
-        font-size: 0.9rem;
       }
     }
+
     .contact-button-container button {
       font-size: 1rem;
-      padding: 0.7rem 1.5rem;
-      mat-icon {
-        font-size: 20px;
-        width: 20px;
-        height: 20px;
-      }
+      padding: 0.7rem 1.4rem;
     }
   }
 }
 
-// Media query per schermi piccoli (fino a vars.$breakpoint-sm)
 @media (max-width: vars.$breakpoint-sm) {
   .servizi-section {
     padding: vars.$spacing-md vars.$spacing-sm;
     h1 {
-      font-size: 1.8rem;
-      margin-bottom: vars.$spacing-md;
+      font-size: 1.7rem;
     }
-    .servizi-grid {
-      gap: vars.$spacing-sm;
-    }
+
     .servizio-card {
-      padding: 0.8rem;
+      padding: 1.2rem;
       .icon {
-        font-size: 2rem;
-        width: 2rem;   /* Aggiunto per correggere il taglio */
-        height: 2rem;  /* Aggiunto per correggere il taglio */
+        font-size: 2.3rem;
       }
       h2 {
         font-size: 1.1rem;
       }
       p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
       }
     }
-    .contact-button-container {
-      margin-top: vars.$spacing-lg;
-      margin-bottom: vars.$spacing-lg;
-      button {
-        font-size: 0.9rem;
-        padding: 0.6rem 1.2rem;
-        mat-icon {
-          font-size: 18px;
-          width: 18px;
-          height: 18px;
-        }
-      }
+
+    .contact-button-container button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
     }
   }
 }

@@ -2,29 +2,56 @@
 
 @use '../../../styles/variables' as vars;
 
+/* === CONTAINER PRINCIPALE === */
 .contatti-container {
-  max-width: 700px;
-  margin: vars.$spacing-xl auto;
-  padding: 2.5rem;
-  background: lighten(vars.$dark-bg, 3%);
-  color: vars.$text-color;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(vars.$accent-color, 0.5);
-  border: 1px solid rgba(vars.$accent-color, 0.2);
-  font-family: vars.$font-family-base;
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  background: none;
+  box-shadow: none;
+  border: none;
+
+  /* ✅ Spazio sotto la navbar per far respirare il background */
+  padding: calc(64px + 2rem) 1.5rem 3rem; /* lascia spazio per la navbar */
+  margin: 0 auto;
+
+  /* === TITOLO === */
+  h1 {
+    font-family: 'Share Tech Mono', monospace;
+    color: vars.$accent-color;
+    font-size: 2.5rem;
+    text-shadow: 0 0 12px rgba(vars.$accent-color, 0.8);
+    margin-bottom: vars.$spacing-lg;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    /* 🔹 Rimosso &::before per evitare la seconda emoji */
+  }
+
+  /* === CARD DEL FORM (EFFETTO VETRO) === */
+  .form-wrapper {
+    max-width: 700px;
+    width: 100%;
+    padding: 2.5rem;
+    background: rgba(vars.$dark-bg, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(vars.$accent-color, 0.25);
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.7),
+      0 0 25px rgba(vars.$accent-color, 0.4);
+  }
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: vars.$spacing-lg;
-  font-family: vars.$font-family-base;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: vars.$accent-color;
-  text-shadow: 0 0 15px rgba(vars.$accent-color, 0.6);
-  font-size: 2.2rem;
-}
-
+/* === FORM === */
 form.contact-form {
   display: flex;
   flex-direction: column;
@@ -33,125 +60,103 @@ form.contact-form {
   mat-form-field {
     width: 100%;
 
-    // Colore del bordo non focalizzato (outline)
-    // Targettizziamo le parti interne dell'outline MDC
     .mat-mdc-form-field-outline-start,
     .mat-mdc-form-field-outline-gap,
     .mat-mdc-form-field-outline-end {
-      border-color: rgba(vars.$text-color-white, 0.7) !important; // Più bianco, più visibile, con !important
+      border-color: rgba(vars.$text-color-white, 0.6) !important;
     }
 
-    // Colore del bordo quando focalizzato
     &.mat-focused {
       .mat-mdc-form-field-outline-start,
       .mat-mdc-form-field-outline-gap,
       .mat-mdc-form-field-outline-end {
-        border-color: vars.$accent-color !important; // Mantiene il colore accent, con !important
+        border-color: vars.$accent-color !important;
       }
     }
 
-    // Colore dell'etichetta (placeholder)
     .mat-form-field-label {
-      color: vars.$text-color-white !important; // Usa text-color-white per l'etichetta, con !important
-      font-family: vars.$font-family-base;
+      color: rgba(vars.$text-color-white, 0.9) !important;
       font-size: 1.05rem;
+      font-family: vars.$font-family-base;
+      text-shadow: 0 0 5px rgba(vars.$accent-color, 0.3);
     }
 
-    // Colore del testo digitato nell'input/textarea
-    // Targettizziamo l'elemento input/textarea stesso
-    .mat-mdc-form-field-input-control { // Questa è la classe per l'input/textarea reale
-      color: vars.$text-color-white !important; // Usa text-color-white per il testo digitato, con !important
-      background-color: transparent; // Assicurati che lo sfondo sia trasparente
+    .mat-mdc-form-field-input-control {
+      color: vars.$text-color-white !important;
+      background-color: transparent;
       font-family: vars.$font-family-base;
       caret-color: vars.$accent-color;
       font-size: 1.1rem;
     }
 
-    // Per il placeholder text (quando il campo è vuoto e non focalizzato)
     .mat-mdc-form-field-input-control::placeholder {
-      color: rgba(vars.$text-color-white, 0.8) !important; // Rendi anche il placeholder più visibile
+      color: rgba(vars.$text-color-white, 0.8) !important;
     }
-
 
     .mat-error {
       font-size: 0.9rem;
       color: vars.$error-color;
-      font-family: vars.$font-family-base;
       margin-top: 0.5rem;
     }
   }
 
-  .success-message {
-    margin: 1.5rem 0;
-    padding: 15px 25px;
-    background-color: rgba(vars.$success-color, 0.2);
-    color: vars.$success-color;
-    font-weight: 700;
-    font-family: vars.$font-family-base;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(vars.$success-color, 0.5);
-    text-align: center;
-    font-size: 1.2rem;
-    border: 1px solid vars.$success-color;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    mat-icon {
-      font-size: 28px;
-      width: 28px;
-      height: 28px;
-    }
-  }
-
+  /* === FEEDBACK MESSAGGI === */
+  .success-message,
   .error-message-ui {
     margin: 1.5rem 0;
     padding: 15px 25px;
-    background-color: rgba(vars.$error-color, 0.2);
-    color: vars.$error-color;
+    border-radius: 8px;
     font-weight: 700;
     font-family: vars.$font-family-base;
-    border-radius: 8px;
-    box-shadow: 0 5px 20px rgba(vars.$error-color, 0.5);
     text-align: center;
-    font-size: 1.2rem;
-    border: 1px solid vars.$error-color;
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    backdrop-filter: blur(4px);
 
     mat-icon {
-      font-size: 28px;
-      width: 28px;
-      height: 28px;
+      font-size: 26px;
+      width: 26px;
+      height: 26px;
     }
   }
 
+  .success-message {
+    background: rgba(vars.$success-color, 0.15);
+    color: vars.$success-color;
+    box-shadow: 0 0 15px rgba(vars.$success-color, 0.5);
+    border: 1px solid rgba(vars.$success-color, 0.6);
+  }
+
+  .error-message-ui {
+    background: rgba(vars.$error-color, 0.15);
+    color: vars.$error-color;
+    box-shadow: 0 0 15px rgba(vars.$error-color, 0.5);
+    border: 1px solid rgba(vars.$error-color, 0.6);
+  }
+
+  /* === BOTTONE === */
   button {
     align-self: center;
-    width: 180px;
+    width: 200px;
     height: 50px;
     font-weight: 700;
     letter-spacing: 1.5px;
-    font-family: vars.$font-family-base;
     border-radius: 8px;
     text-transform: uppercase;
-
     background-color: vars.$primary-color;
+    color: vars.$text-color;
     box-shadow: 0 5px 20px rgba(vars.$primary-color, 0.4);
+    transition: all 0.3s ease;
 
     &[disabled] {
-      background-color: vars.$light-gray;
+      background-color: rgba(vars.$light-gray, 0.5);
       color: darken(vars.$light-gray, 30%);
       cursor: not-allowed;
       box-shadow: none;
       opacity: 0.7;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .button-loading-content {
@@ -159,59 +164,46 @@ form.contact-form {
       align-items: center;
       justify-content: center;
       gap: 10px;
-      width: 100%;
-      height: 100%;
-
-      mat-spinner {
-        margin: 0;
-        flex-shrink: 0;
-      }
-
-      span {
-        flex-grow: 1;
-        text-align: center;
-      }
     }
 
     &:hover:not(:disabled) {
       background-color: darken(vars.$primary-color, 10%);
       box-shadow: 0 8px 30px rgba(vars.$primary-color, 0.7);
       transform: translateY(-3px);
-      transition: all 0.3s ease;
     }
   }
 }
 
-// Media query per schermi di media dimensione (fino a vars.$breakpoint-md)
+/* === RESPONSIVE === */
 @media (max-width: vars.$breakpoint-md) {
   .contatti-container {
-    margin: 1.5rem;
-    padding: 1.5rem;
+    padding: 4rem 1rem 2rem;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
 
-    form.contact-form {
-      gap: 1.2rem;
+    .form-wrapper {
+      padding: 1.5rem;
+    }
+  }
 
-      button {
-        width: 100%;
-        height: 45px;
-      }
+  form.contact-form {
+    gap: 1.2rem;
+    button {
+      width: 100%;
+      height: 45px;
     }
   }
 }
 
-// Media query per schermi piccoli (fino a vars.$breakpoint-sm)
 @media (max-width: vars.$breakpoint-sm) {
   .contatti-container {
-    margin: vars.$spacing-sm;
-    padding: vars.$spacing-sm;
+    padding: 3rem 1rem;
   }
 
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
   }
 
   form.contact-form {
@@ -229,16 +221,6 @@ form.contact-form {
       height: 40px;
       font-size: 0.9rem;
     }
-
-    .success-message,
-    .error-message-ui {
-      font-size: 1rem;
-      padding: 10px 15px;
-      mat-icon {
-        font-size: 24px;
-        width: 24px;
-        height: 24px;
-      }
-    }
   }
 }
+

@@ -1,14 +1,16 @@
 <!-- src/app/pages/servizi/servizi.component.html -->
+
 <section class="servizi-section">
   <h1 i18n="@@servicesPageTitle">I miei servizi</h1>
 
   <!-- Griglia dei servizi -->
   <div class="servizi-grid">
-    <mat-card *ngFor="let servizio of servizi" class="servizio-card">
-      <mat-icon class="icon">{{ servizio.icon }}</mat-icon>
-      
-      <!-- NON usare i18n nel template per valori dinamici -->
-      <!-- Titolo e descrizione sono già tradotti via $localize nel .ts -->
+    <mat-card *ngFor="let servizio of servizi" class="servizio-card mat-elevation-z4">
+      <div class="icon-wrapper">
+        <mat-icon class="icon">{{ servizio.icon }}</mat-icon>
+      </div>
+
+      <!-- Titolo e descrizione (già tradotti via $localize nel .ts) -->
       <h2>{{ servizio.title }}</h2>
       <p>{{ servizio.description }}</p>
     </mat-card>
@@ -17,12 +19,13 @@
   <!-- Pulsante Contattami -->
   <div class="contact-button-container">
     <button mat-raised-button color="accent" (click)="goToContatti()" i18n="@@servicesContactButton">
-      <mat-icon>mail_outline</mat-icon> Contattami
+      <mat-icon>mail_outline</mat-icon>
+      Contattami
     </button>
   </div>
 </section>
 
-<!-- Componenti condivisi -->
+<!-- Sezioni extra -->
 <app-why-chose-me></app-why-chose-me>
 <app-quote-box></app-quote-box>
 
