@@ -6,9 +6,12 @@ import express from 'express';
 // import { fileURLToPath } from 'node:url';
 import { join } from 'node:path'; // Usiamo solo join
 import { LOCALE_ID } from '@angular/core';
+import { existsSync } from 'node:fs';
 
 export async function app(): Promise<express.Express> {
   const server = express();
+
+  const projectName = 'aleksander-nikolli-portfolio';
 
   const { AppServerModule } = await import('./src/main.server');
 
@@ -17,10 +20,33 @@ export async function app(): Promise<express.Express> {
   // I file del browser sono in /usr/src/app/browser
   // I file del server sono in /usr/src/app/server
   const currentDir = process.cwd(); // Ottiene la directory di lavoro corrente del processo Node.js
-  const browserDistFolder = join(currentDir, 'browser'); // Il tuo Dockerfile copia in /usr/src/app/browser
-  const serverDistFolder = join(currentDir, 'server');   // Il tuo Dockerfile copia in /usr/src/app/server
+  let browserDistFolder = join(process.cwd(), 'browser'); // Il tuo Dockerfile copia in /usr/src/app/browser
+  let serverDistFolder  = join(process.cwd(), 'server');  // Il tuo Dockerfile copia in /usr/src/app/server
 
-  console.log('📁 currentDir:', currentDir);
+  // 2️⃣ fallback per locale
+  if (!existsSync(browserDistFolder)) {
+    browserDistFolder = join(
+      process.cwd(),
+      'dist',
+      projectName,
+      'browser'
+    );
+    serverDistFolder = join(
+      process.cwd(),
+      'dist',
+      projectName,
+      'server'
+    );
+  }
+
+  console.log('📁 browserDistFolder:', browserDistFolder);
+  console.log('📁 serverDistFolder:', serverDistFolder);
+
+  if (!existsSync(browserDistFolder)) {
+    throw new Error(`❌ browserDistFolder NOT FOUND: ${browserDistFolder}`);
+  }
+
+    console.log('📁 currentDir:', currentDir);
   console.log('📁 serverDistFolder:', serverDistFolder);
   console.log('📁 browserDistFolder:', browserDistFolder);
   // *************************************************

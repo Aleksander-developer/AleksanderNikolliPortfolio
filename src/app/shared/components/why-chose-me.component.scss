@@ -1,150 +1,233 @@
-// Importa le variabili globali dal tuo file _variables.scss
+
 @use '../../../styles/variables' as vars;
 
+/* =============================================== */
+/*    SEZIONE PRINCIPALE                          */
+/* =============================================== */
+
 .why-choose-me-card {
-  background-color: vars.$card-bg !important;
+  background: linear-gradient(135deg, vars.$card-bg, darken(vars.$card-bg, 4%));
   color: vars.$text-color;
   font-family: vars.$font-family-base;
-  margin: vars.$spacing-lg auto;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  max-width: 800px;
-  border: 1px solid rgba(vars.$accent-color, 0.3);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  margin: vars.$spacing-xl auto;
+  padding: 2rem;
+  border-radius: 18px;
+  max-width: 860px;
 
-  mat-card-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: vars.$spacing-md;
-  }
+  border: 1px solid rgba(vars.$accent-color, 0.25);
+  box-shadow:
+    0 0 25px rgba(vars.$accent-color, 0.15),
+    0 0 60px rgba(vars.$accent-color, 0.05);
 
-  .header-icon {
-    color: vars.$accent-color;
-    margin-right: 10px;
-    font-size: 32px;
-    width: 32px;
-    height: 32px;
-  }
+  /* ✨ Entrata animata */
+  opacity: 0;
+  transform: translateY(40px) scale(0.97);
+  animation: fadeUp 0.9s ease-out forwards;
+}
 
-  mat-card-title {
-    font-size: 1.8rem;
-    color: vars.$accent-color;
-    font-family: vars.$font-family-heading;
-  }
+/* =============================================== */
+/*    HEADER                                      */
+/* =============================================== */
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: vars.$spacing-md 0;
+mat-card-header {
+  display: flex;
+  align-items: center;
+  gap: vars.$spacing-sm;
+  margin-bottom: vars.$spacing-lg;
+}
 
-    li {
-      // Rimuovi display: flex e flex-wrap da qui
-      // display: flex; /* RIMOSSO */
-      // flex-wrap: wrap; /* RIMOSSO */
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-      position: relative; /* NUOVO: Necessario per posizionare l'icona in modo assoluto */
-      padding-left: 32px; /* NUOVO: Spazio per l'icona + margine */
-      text-align: left; /* Assicura che il testo sia allineato a sinistra */
-    }
-  }
+.header-icon {
+  color: vars.$accent-color;
+  font-size: 36px !important;
+  filter: drop-shadow(0 0 6px rgba(vars.$accent-color, 0.5));
+  transition: 0.3s ease;
+}
 
-  .negative-icon,
-  .positive-icon {
-    // flex-shrink: 0; /* RIMOSSO - non più necessario con position: absolute */
-    // margin-right: 8px; /* RIMOSSO - gestito da left + padding-left */
-    // margin-bottom: 4px; /* RIMOSSO */
-    position: absolute; /* NUOVO: Posiziona l'icona in modo assoluto */
-    left: 0; /* NUOVO: Allinea l'icona a sinistra del padding */
-    top: 0; /* NUOVO: Allinea l'icona con l'inizio del testo */
-    font-size: 24px; /* Assicurati che le icone abbiano una dimensione fissa */
-    width: 24px;
-    height: 24px;
-  }
+mat-card-title {
+  font-size: 2rem;
+  color: vars.$accent-color;
+  font-family: vars.$font-family-heading;
+  text-shadow: 0 0 12px rgba(vars.$accent-color, 0.35);
+}
 
-  .negative-icon {
-    color: vars.$error-color;
-  }
+/* =============================================== */
+/*    LISTA PUNTI NEGATIVI                        */
+/* =============================================== */
 
-  .positive-icon {
-    color: vars.$success-color;
-  }
+ul {
+  list-style: none;
+  padding: 0;
+  margin: vars.$spacing-md 0;
+}
 
-  p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: vars.$spacing-md;
-  }
+ul li {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: vars.$spacing-sm;
+  font-size: 1.05rem;
+  font-weight: 500;
 
-  .conclusione {
-    // Rimuovi display: flex e flex-wrap da qui
-    // display: flex; /* RIMOSSO */
-    // flex-wrap: wrap; /* RIMOSSO */
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: vars.$accent-color;
-    margin-top: 1.5rem;
-    position: relative; /* NUOVO: Necessario per posizionare l'icona in modo assoluto */
-    padding-left: 32px; /* NUOVO: Spazio per l'icona + margine */
-    text-align: left; /* Assicura che il testo sia allineato a sinistra */
+  transition: 0.25s ease;
+  cursor: default;
+
+  &:hover {
+    color: lighten(vars.$text-color, 10%);
+    text-shadow: 0 0 5px rgba(vars.$error-color, 0.4);
   }
 }
 
-// Responsive adjustments (mantieni le tue media query esistenti)
+/* Icone negative */
+.negative-icon {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 24px;
+  color: vars.$error-color;
+  filter: drop-shadow(0 0 6px rgba(vars.$error-color, 0.5));
+}
+
+/* =============================================== */
+/*    FRASI CONCLUSIVE POSITIVE                   */
+/* =============================================== */
+
+.conclusione {
+  position: relative;
+  padding-left: 40px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: vars.$spacing-lg;
+  color: vars.$accent-color;
+
+  text-shadow: 0 0 10px rgba(vars.$accent-color, 0.5);
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateX(4px);
+    text-shadow: 0 0 14px rgba(vars.$accent-color, 0.7);
+  }
+}
+
+/* Icone positive */
+.positive-icon {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-size: 26px;
+  color: vars.$success-color;
+  filter: drop-shadow(0 0 6px rgba(vars.$success-color, 0.4));
+}
+
+/* =============================================== */
+/*    ANIMAZIONE ENTRATA CARD                     */
+/* =============================================== */
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =============================================== */
+/* RESPONSIVE                                     */
+/* =============================================== */
+
 @media (max-width: vars.$breakpoint-md) {
   .why-choose-me-card {
-    margin: vars.$spacing-md;
     padding: vars.$spacing-md;
+    border-radius: 14px;
   }
 
   mat-card-title {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
+    font-size: 1.7rem;
   }
 
   .conclusione {
-    font-size: 1.1rem;
-    padding-left: 28px; /* Adatta il padding per schermi più piccoli se l'icona è più piccola */
+    font-size: 1.15rem;
   }
-  .negative-icon,
-  .positive-icon {
-    font-size: 20px; /* Riduci la dimensione dell'icona se necessario */
-    width: 20px;
-    height: 20px;
-  }
+
   ul li {
-    padding-left: 28px; /* Adatta il padding per schermi più piccoli */
+    padding-left: 34px;
   }
 }
 
 @media (max-width: vars.$breakpoint-sm) {
-  .why-choose-me-card {
-    margin: vars.$spacing-sm;
-    padding: vars.$spacing-sm;
-  }
-
   mat-card-title {
-    font-size: 1.3rem;
-  }
-
-  p {
-    font-size: 0.95rem;
+    font-size: 1.4rem;
   }
 
   .conclusione {
     font-size: 1rem;
-    padding-left: 24px; /* Adatta il padding per schermi molto piccoli */
+    padding-left: 30px;
   }
-  .negative-icon,
-  .positive-icon {
-    font-size: 18px; /* Riduci la dimensione dell'icona */
-    width: 18px;
-    height: 18px;
-  }
+
   ul li {
-    padding-left: 24px; /* Adatta il padding per schermi molto piccoli */
+    padding-left: 30px;
   }
 }
+
+/* ======================================================= */
+/*       EFFETTO DIGITAZIONE STILE TERMINALE               */
+/* ======================================================= */
+
+/* base: nessuna animazione di default */
+.typing-title {
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
+  position: relative;
+}
+
+/* quando parte la digitazione */
+.typing-title.start-typing {
+  animation: typing 1.8s steps(25, end) forwards;
+}
+
+/* cursore lampeggiante creato con ::after */
+.typing-title.start-typing::after {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 1.2em;
+  margin-left: 4px;
+  background: vars.$accent-color;
+  animation: cursorBlink 0.7s step-end infinite;
+}
+
+/* quando la digitazione è finita → ferma il cursore */
+.typing-title.typing-done::after {
+  animation: none;
+  background: transparent;
+}
+
+/* ----- Animazione digitazione ------- */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ----- Blink del cursore ------- */
+@keyframes cursorBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

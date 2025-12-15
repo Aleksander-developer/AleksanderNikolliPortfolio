@@ -1,0 +1,13 @@
+
+.icon {
+  width: 28px;
+  height: 28px;
+  stroke: currentColor;
+  fill: currentColor; // minimal flat
+  transition: opacity .25s ease;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+

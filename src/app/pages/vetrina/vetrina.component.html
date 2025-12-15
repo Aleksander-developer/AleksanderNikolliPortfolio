@@ -1,0 +1,40 @@
+
+<section class="vetrina-section">
+
+  <h2 class="section-title">Software Professionali</h2>
+  <p class="section-subtitle">
+    Strumenti avanzati creati da me per sviluppatori, grafici e creators.
+  </p>
+
+  <div class="software-grid">
+
+    <mat-card class="software-card" *ngFor="let item of software" (click)="openPreview(item)">
+
+      <div class="image-wrapper">
+        <img [src]="item.image" [alt]="item.title" />
+      </div>
+
+      <mat-card-title>{{ item.title }}</mat-card-title>
+
+      <p class="description">
+        {{ item.description }}
+      </p>
+
+      <div class="card-actions">
+        <a class="btn-primary"
+           (click)="contatta(item.id); $event.stopPropagation()">
+          Contattami
+        </a>
+
+        <button mat-button class="btn-secondary"
+                (click)="openPreview(item); $event.stopPropagation()">
+          Dettagli
+        </button>
+      </div>
+
+    </mat-card>
+
+  </div>
+
+</section>
+

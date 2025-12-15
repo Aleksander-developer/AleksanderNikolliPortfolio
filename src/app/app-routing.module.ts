@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -87,11 +88,33 @@ const routes: Routes = [
     }
   },
   { path: 'background', loadChildren: () => import('./pages/background/background.module').then(m => m.BackgroundModule) },
+  { path: 'logo', loadChildren: () => import('./pages/logo/logo.module').then(m => m.LogoModule) },
   {
-    path: '**', // Rotta wildcard per gestire URL non trovati
-    redirectTo: 'home', // Reindirizza alla home page
-    pathMatch: 'full'
-  }
+    path: 'vetrina',
+    loadChildren: () => import('./pages/vetrina/vetrina.module').then(m => m.VetrinaModule),
+    data: {
+      seo: {
+        title: 'Vetrina Software – Aleksander Nikolli',
+        description: 'Scopri i software originali sviluppati da Aleksander Nikolli. Demo, anteprime e possibilità di acquisto tramite contatto diretto.',
+        keywords: 'software, vetrina, demo software, app personalizzate, vendita software',
+        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg',
+        type: 'website'
+      }
+    }
+  },
+
+    {
+      path: '',
+      redirectTo: 'home',
+      pathMatch: 'full'
+    },
+  // { path: 'social-icons', loadChildren: () => import('./shared/components/social-icons/social-icons.module').then(m => m.SocialIconsModule) },
+
+  // {
+  //   path: '**', // Rotta wildcard per gestire URL non trovati
+  //   redirectTo: 'home', // Reindirizza alla home page
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({
@@ -99,3 +122,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

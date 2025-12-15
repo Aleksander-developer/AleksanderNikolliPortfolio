@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="it" datatype="plaintext" original="ng2.template">
+  <file source-language="it" target-language="en" datatype="plaintext" original="ng2.template">
     <body>
-
-    <!-- src/app/app.component.html -->
       <trans-unit id="scrollToTopButtonAriaLabel" datatype="html">
         <source>Scroll to top</source>
         <target>Scroll to top</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/app.component.html</context>
-          <context context-type="linenumber">25,26</context>
+          <context context-type="linenumber">27,28</context>
         </context-group>
       </trans-unit>
-
-      <!-- src/app/pages/chi-sono/chi-sono.component.html -->
       <trans-unit id="aboutMeTitle" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;primary&quot;&gt;"/>person<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Chi sono </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;primary&quot;&gt;"/>person<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> About Me </target>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;primary&quot;&gt;"/>person<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Who I am </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
           <context context-type="linenumber">5,7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeParagraph1" datatype="html">
-        <source> Sono <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Aleksander Nikolli<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Frontend / Backend Developer / Database Administrator<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con passione per lo sviluppo web moderno e accessibile. Unisco creatività e tecnologia per creare interfacce dinamiche e intuitive. </source>
-        <target> I am <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Aleksander Nikolli<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, a <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Frontend / Backend Developer / Database Administrator<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> with a passion for modern and accessible web development. I combine creativity and technology to create dynamic and intuitive interfaces. </target>
+        <source> Sono <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Aleksander Nikolli<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Frontend / Backend Developer / Database Administrator<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con passione per lo sviluppo web moderno e accessibile.
+ Unisco creatività e tecnologia per creare interfacce dinamiche e intuitive.
+ </source>
+        <target> I am <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Aleksander Nikolli<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Frontend / Backend Developer / Database Administrator<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> with a passion for modern and accessible web development.
+ I combine creativity and technology to build dynamic and intuitive interfaces.
+ </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
           <context context-type="linenumber">9,11</context>
@@ -39,8 +39,10 @@
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeParagraph3" datatype="html">
-        <source> Opero da <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Roma<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, ma sono disponibile per progetti da remoto in tutta Italia e anche all’estero. Cerco collaborazioni in ambienti tech dinamici. </source>
-        <target> I operate from <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Rome<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, but I am available for remote projects throughout Italy and abroad. I seek collaborations in dynamic tech environments. </target>
+        <source> Opero da <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Roma<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, ma sono disponibile per progetti da remoto in tutta Italia e anche all’estero.
+ Cerco collaborazioni in ambienti tech dinamici. </source>
+        <target> I work from <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Rome<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, but I am available for remote projects throughout Italy and abroad.
+ I seek collaborations in dynamic tech environments. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
           <context context-type="linenumber">15,17</context>
@@ -88,7 +90,7 @@
       </trans-unit>
       <trans-unit id="softSkill3" datatype="html">
         <source>Leadership &amp; lavoro di squadra</source>
-        <target>Leadership &amp; teamwork</target>
+        <target>Leadership &amp; Teamwork</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
           <context context-type="linenumber">44</context>
@@ -111,8 +113,12 @@
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeCertificatesIntro" datatype="html">
-        <source> La mia formazione è comprovata da attestati e certificazioni, che garantiscono la solidità delle mie competenze. </source>
-        <target> My training is proven by diplomas and certifications, which guarantee the solidity of my skills. </target>
+        <source> La mia 
+formazione è comprovata da attestati e certificazioni, che garantiscono la solidità delle mie competenze.
+ </source>
+        <target> My 
+training is proven by certificates and certifications, which guarantee the solidity of my skills.
+ </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
           <context context-type="linenumber">56,58</context>
@@ -151,21 +157,21 @@
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeFinalNote" datatype="html">
-        <source> Se cerchi un giovane sviluppatore motivato e orientato ai risultati, <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/contatti&quot; class=&quot;contact-link&quot;&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>contattami<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>! Sono pronto a dare valore al tuo progetto digitale. </source>
-        <target> If you are looking for a young, motivated, and results-oriented developer, <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/contatti&quot; class=&quot;contact-link&quot;&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>contact me<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>! I am ready to add value to your digital project. </target>
+        <source> Se cerchi un giovane sviluppatore motivato e orientato ai risultati, <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/contatti&quot;
+class=&quot;contact-link&quot;&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>contattami<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>! Sono pronto a dare valore al tuo progetto digitale. </source>
+        <target> If you are looking for a young, motivated, and results-oriented developer, <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/contatti&quot;
+class=&quot;contact-link&quot;&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>contact me<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>! I am ready to add value to your digital project. </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
           <context context-type="linenumber">71,74</context>
         </context-group>
       </trans-unit>
-
-      <!-- src/app/pages/contatti/contatti.component.html -->
       <trans-unit id="contactTitle" datatype="html">
         <source>📬 Contattami</source>
         <target>📬 Contact Me</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">5,7</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactNameLabel" datatype="html">
@@ -173,7 +179,7 @@
         <target>Name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactNamePlaceholder" datatype="html">
@@ -181,15 +187,15 @@
         <target>Your name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactNameError" datatype="html">
         <source> Inserisci un nome valido </source>
-        <target> Please enter a valid name </target>
+        <target> Enter a valid name </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">11,13</context>
+          <context context-type="linenumber">22,23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactEmailLabel" datatype="html">
@@ -197,7 +203,7 @@
         <target>Email</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">27,29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactEmailPlaceholder" datatype="html">
@@ -205,15 +211,15 @@
         <target>email@example.com</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">31,32</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactEmailError" datatype="html">
         <source> Email non valida </source>
-        <target> Invalid email </target>
+        <target> Invalid Email </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">19,21</context>
+          <context context-type="linenumber">39,40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactPhoneLabel" datatype="html">
@@ -221,7 +227,7 @@
         <target>Phone (optional)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">44,46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactPhonePlaceholder" datatype="html">
@@ -229,15 +235,15 @@
         <target>+39 345 1234567</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">48,49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactPhoneError" datatype="html">
         <source> Inserisci un numero di cellulare valido </source>
-        <target> Please enter a valid phone number </target>
+        <target> Enter a valid phone number </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">27,29</context>
+          <context context-type="linenumber">56,57</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactMessageLabel" datatype="html">
@@ -245,7 +251,7 @@
         <target>Message</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">61,63</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactMessagePlaceholder" datatype="html">
@@ -253,15 +259,15 @@
         <target>Write your message here</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">65,66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactMessageError" datatype="html">
         <source> Messaggio troppo breve </source>
-        <target> Message too short </target>
+        <target> Message is too short </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">35,37</context>
+          <context context-type="linenumber">73,75</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactSuccessMessage" datatype="html">
@@ -269,7 +275,7 @@
         <target><x id="INTERPOLATION" equiv-text="{{ successMessage }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">80,81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactErrorMessage" datatype="html">
@@ -277,7 +283,7 @@
         <target><x id="INTERPOLATION" equiv-text="{{ errorMessage }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">46</context>
+          <context context-type="linenumber">86,87</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactSending" datatype="html">
@@ -285,7 +291,7 @@
         <target>Sending...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">97,99</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactSendButton" datatype="html">
@@ -293,41 +299,43 @@
         <target>Send</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">55,56</context>
+          <context context-type="linenumber">100,101</context>
         </context-group>
       </trans-unit>
-
-      <!-- src/app/pages/home/home.component.html -->
       <trans-unit id="homeHeroTitle" datatype="html">
         <source>Ciao, sono Aleksander <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;emoji-tech&quot;&gt;"/>👨‍💻<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <target>Hi, I'm Aleksander <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;emoji-tech&quot;&gt;"/>👨‍💻<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">11,12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="homeHeroSubtitle" datatype="html">
-        <source>Frontend &amp; Backend Developer appassionato di tecnologia e codice pulito.</source>
-        <target>Frontend &amp; Backend Developer passionate about technology and clean code.</target>
+        <source>Full-Stack Developer, appassionato di tecnologia e codice pulito.
+Creo App, Software, Web App e Siti Web su misura.
+</source>
+        <target>Full-Stack Developer, passionate about technology and clean code.
+I create custom Apps, Software, Web Apps, and Websites.
+</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">12,15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="homeHeroContactAriaLabel" datatype="html">
         <source>Contattami</source>
-        <target>Contact Me</target>
+        <target>Contact me</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="homeHeroContactButton" datatype="html">
         <source>Contattami</source>
-        <target>Contact Me</target>
+        <target>Contact me</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">15,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="techSkillsTitle" datatype="html">
@@ -335,7 +343,7 @@
         <target>Technological Skills</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="linenumber">31,33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ctaTitle" datatype="html">
@@ -343,15 +351,17 @@
         <target>Have a project in mind?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">70,71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ctaSubtitle" datatype="html">
-        <source>Parliamone! Posso aiutarti a costruirlo da zero.</source>
-        <target>Let's talk about it! I can help you build it from scratch.</target>
+        <source>Parliamone!
+Posso aiutarti a costruirlo da zero.</source>
+        <target>Let's talk about it!
+I can help you build it from scratch.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">59</context>
+          <context context-type="linenumber">71,72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ctaButton" datatype="html">
@@ -359,81 +369,23 @@
         <target>Write me now</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">72,74</context>
         </context-group>
       </trans-unit>
-
-      <!-- src/app/pages/progetti/progetti.component.html -->
       <trans-unit id="projectsPageTitle" datatype="html">
-        <source>Progetti</source>
-        <target>Projects</target>
+        <source> Progetti </source>
+        <target> Projects </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">6,7</context>
+          <context context-type="linenumber">7,8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectsListIntro" datatype="html">
-        <source>Ecco alcuni dei miei progetti più recenti:</source>
-        <target>Here are some of my recent projects:</target>
+        <source> Ecco alcuni dei miei progetti più recenti: </source>
+        <target> Here are some of my most recent projects: </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">11,12</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projectCardTechAriaLabel" datatype="html">
-        <source>Tecnologie usate</source>
-        <target>Technologies used</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projectCardDetailsButton" datatype="html">
-        <source>Vedi Dettagli</source>
-        <target>View Details</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">34,35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projectsLoadingMessage" datatype="html">
-        <source>Caricamento progetti...</source>
-        <target>Loading projects...</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">44,46</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projectsErrorMessage" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ errore }}"/></source>
-        <target><x id="INTERPOLATION" equiv-text="{{ errore }}"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">48,49</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projectsNoPublicProjects1" datatype="html">
-        <source> Alcuni dei progetti su cui sto lavorando attualmente non sono ancora pubblici. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Alcuni sono in fase di lancio, altri sotto NDA o in ambienti di test. </source>
-        <target> Some of the projects I am currently working on are not yet public. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> Some are in the launch phase, others under NDA or in test environments. </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">51,52</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projectsNoPublicProjects2" datatype="html">
-        <source> Presto potrò condividere approfondimenti tecnici, mockup e risultati concreti – con focus su sviluppo <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>frontend/backend<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, UX e automazioni. </source>
-        <target> Soon I will be able to share technical insights, mockups, and concrete results – focusing on <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>frontend/backend<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> development, UX, and automations. </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">52,53</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="projectsNoPublicProjects3" datatype="html">
-        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>🔒 La qualità c’è, anche se per ora resta dietro le quinte.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
-        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>🔒 Quality is there, even if for now it remains behind the scenes.<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">53,55</context>
+          <context context-type="linenumber">13,16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectsContactButton" datatype="html">
@@ -441,33 +393,71 @@
         <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contact Me </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">62,64</context>
+          <context context-type="linenumber">71,73</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectCardImageAlt" datatype="html">
-        <source>Progetto</source>
-        <target>Project</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-      </trans-unit>
-
-      <!-- src/app/pages/progetti/progetto-detail/progetto-detail.component.html -->
-      <trans-unit id="projectDetailImageAlt" datatype="html">
-        <source>Dettaglio Progetto</source>
-        <target>Project Detail</target>
+      <trans-unit id="readMoreButton" datatype="html">
+        <source>Mostra di più</source>
+        <target>Show more</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">89,90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">103,104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="readLessButton" datatype="html">
+        <source>Mostra di meno</source>
+        <target>Show less</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">20,22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">58,59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">74,75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">90,91</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
+          <context context-type="linenumber">104,105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailTechTitle" datatype="html">
         <source>Tecnologie utilizzate</source>
-        <target>Technologies Used</target>
+        <target>Technologies used</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">13,14</context>
+          <context context-type="linenumber">24,25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailTechAriaLabel" datatype="html">
@@ -475,7 +465,7 @@
         <target>Technologies used</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailFeaturesTitle" datatype="html">
@@ -483,7 +473,7 @@
         <target>Main Features</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="linenumber">33,34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailChallengesTitle" datatype="html">
@@ -491,7 +481,7 @@
         <target>Challenges Faced</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">30,32</context>
+          <context context-type="linenumber">49,50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailSolutionsTitle" datatype="html">
@@ -499,7 +489,7 @@
         <target>Solutions Implemented</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">37,39</context>
+          <context context-type="linenumber">65,66</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailResultsTitle" datatype="html">
@@ -507,7 +497,7 @@
         <target>Key Results</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">44,45</context>
+          <context context-type="linenumber">81,82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailArchitectureTitle" datatype="html">
@@ -515,7 +505,7 @@
         <target>Architecture</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">51,52</context>
+          <context context-type="linenumber">97,98</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailDevelopmentPhasesTitle" datatype="html">
@@ -523,7 +513,7 @@
         <target>Development Phases</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">56,58</context>
+          <context context-type="linenumber">111,113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailTargetAudienceTitle" datatype="html">
@@ -531,7 +521,7 @@
         <target>Target Audience</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">63,64</context>
+          <context context-type="linenumber">119,120</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailAspectsCoveredTitle" datatype="html">
@@ -539,7 +529,7 @@
         <target>Aspects Covered</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">68,70</context>
+          <context context-type="linenumber">125,127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailDemoButton" datatype="html">
@@ -547,15 +537,15 @@
         <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>launch<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Go to project </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">78,80</context>
+          <context context-type="linenumber">135,137</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailRepoButton" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>code<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Codice sorgente </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>code<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Source Code </target>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>code<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Source code </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">81,83</context>
+          <context context-type="linenumber">138,140</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailBackButton" datatype="html">
@@ -563,7 +553,7 @@
         <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>arrow_back<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Back to Projects </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">88,90</context>
+          <context context-type="linenumber">145,147</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailLoadingMessage" datatype="html">
@@ -571,15 +561,15 @@
         <target>Loading project details...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">95,97</context>
+          <context context-type="linenumber">152,154</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailErrorMessage" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ errore }}"/></source>
-        <target><x id="INTERPOLATION" equiv-text="{{ errore }}"/></target>
+        <target><x id="INTERPOLATION" equiv-text="{{ error }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">99</context>
+          <context context-type="linenumber">156,157</context>
         </context-group>
       </trans-unit>
       <trans-unit id="projectDetailErrorBackButton" datatype="html">
@@ -587,17 +577,15 @@
         <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>arrow_back<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Back to Projects </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">101,103</context>
+          <context context-type="linenumber">158,160</context>
         </context-group>
       </trans-unit>
-
-      <!-- src/app/pages/servizi/servizi.component.html -->
       <trans-unit id="servicesPageTitle" datatype="html">
         <source>I miei servizi</source>
-        <target>My Services</target>
+        <target>My services</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.html</context>
-          <context context-type="linenumber">3,5</context>
+          <context context-type="linenumber">4,6</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servicesContactButton" datatype="html">
@@ -605,265 +593,466 @@
         <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contact Me </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.html</context>
-          <context context-type="linenumber">17,19</context>
+          <context context-type="linenumber">22,24</context>
         </context-group>
       </trans-unit>
-
-      <!-- Traduzioni specifiche per i servizi (da servizi.component.ts con $localize:@@id:) -->
       <trans-unit id="servizio_creazione_software_title" datatype="html">
         <source>Creazione Software / Siti Web Personalizzati</source>
-        <target>Custom Software / Websites</target>
+        <target>Custom Software / Website Creation</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_creazione_software_desc" datatype="html">
-        <source>Dall'idea al lancio, creo soluzioni software su misura e siti web dinamici, responsive e ottimizzati per performance e user experience. Ogni linea di codice è pensata per il tuo successo digitale.</source>
-        <target>From concept to launch, I build custom software solutions and dynamic, responsive websites optimized for performance and user experience. Every line of code is crafted for your digital success.</target>
+        <source>Dall&apos;idea al lancio, creo soluzioni software su misura e siti web dinamici, responsive e ottimizzati per performance e user experience.
+Ogni linea di codice è pensata per il tuo successo digitale.</source>
+        <target>From idea to launch, I create custom software solutions and dynamic, responsive websites optimized for performance and user experience.
+Every line of code is designed for your digital success.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_sviluppo_app_title" datatype="html">
+        <source>Sviluppo App Mobile &amp;
+PWA</source>
+        <target>Mobile App &amp;
+PWA Development</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_sviluppo_app_desc" datatype="html">
+        <source>Progetto e sviluppo applicazioni mobile native e progressive web app (PWA) moderne, performanti e intuitive, compatibili con Android e iOS, per garantire la massima esperienza utente ovunque.</source>
+        <target>I design and develop modern, high-performance, and intuitive native mobile and progressive web applications (PWAs), compatible with Android and iOS, to ensure the best user experience everywhere.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_manutenzione_title" datatype="html">
-        <source>Manutenzione &amp; Ottimizzazione Continua</source>
-        <target>Maintenance &amp; Continuous Optimization</target>
+        <source>Manutenzione &amp;
+Ottimizzazione Continua</source>
+        <target>Maintenance &amp;
+Continuous Optimization</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_manutenzione_desc" datatype="html">
-        <source>Assicuro che le tue piattaforme digitali siano sempre al top. Offro aggiornamenti costanti, risoluzione proattiva dei bug e ottimizzazioni continue per garantire sicurezza, velocità e funzionalità inalterate nel tempo.</source>
-        <target>I ensure your digital platforms are always at their best. I offer regular updates, proactive bug fixing, and ongoing optimization to guarantee long-term security, speed, and functionality.</target>
+        <source>Assicuro che le tue piattaforme digitali siano sempre al top.
+Offro aggiornamenti costanti, risoluzione proattiva dei bug e ottimizzazioni continue per garantire sicurezza, velocità e funzionalità inalterate nel tempo.</source>
+        <target>I ensure your digital platforms are always at their best.
+I offer constant updates, proactive bug resolution, and continuous optimizations to guarantee security, speed, and functionality remain unaltered over time.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_ads_title" datatype="html">
         <source>Strategie Google Ads (PPC)</source>
-        <target>Google Ads Strategies (PPC)</target>
+        <target>Google Ads (PPC) Strategies</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_ads_desc" datatype="html">
-        <source>Massimizza la tua visibilità online con campagne Google Ads mirate. Progetto e gestisco strategie Pay-Per-Click per attrarre il tuo pubblico ideale, aumentare il traffico qualificato e convertire i clic in risultati concreti.</source>
-        <target>Maximize your online visibility with targeted Google Ads campaigns. I design and manage PPC strategies to attract your ideal audience, increase qualified traffic, and turn clicks into real results.</target>
+        <source>Massimizza la tua visibilità online con campagne Google Ads mirate.
+Progetto e gestisco strategie Pay-Per-Click per attrarre il tuo pubblico ideale, aumentare il traffico qualificato e convertire i clic in risultati concreti.</source>
+        <target>Maximize your online visibility with targeted Google Ads campaigns.
+I design and manage Pay-Per-Click strategies to attract your ideal audience, increase qualified traffic, and convert clicks into concrete results.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_seo_title" datatype="html">
-        <source>Ottimizzazione SEO &amp; Contenuti</source>
-        <target>SEO &amp; Content Optimization</target>
+        <source>Ottimizzazione SEO &amp;
+Contenuti</source>
+        <target>SEO Optimization &amp;
+Content</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_seo_desc" datatype="html">
-        <source>Rendi il tuo sito una calamita per i motori di ricerca. Implemento tecniche SEO avanzate e strategie di contenuto per migliorare il tuo posizionamento, aumentare il traffico organico e farti trovare dai tuoi clienti ideali.</source>
-        <target>Make your website a magnet for search engines. I apply advanced SEO techniques and content strategies to improve your ranking, boost organic traffic, and help your ideal customers find you.</target>
+        <source>Rendi il tuo sito una calamita per i motori di ricerca.
+Implemento tecniche SEO avanzate e strategie di contenuto per migliorare il tuo posizionamento, aumentare il traffico organico e farti trovare dai tuoi clienti ideali.</source>
+        <target>Make your site a magnet for search engines.
+I implement advanced SEO techniques and content strategies to improve your ranking, increase organic traffic, and get you found by your ideal customers.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_digitale_title" datatype="html">
-        <source>Consulenza Digitale &amp; Soluzioni per Imprese</source>
-        <target>Digital Consulting &amp; Business Solutions</target>
+        <source>Consulenza Digitale &amp;
+Soluzioni per Imprese</source>
+        <target>Digital Consulting &amp;
+Solutions for Businesses</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_digitale_desc" datatype="html">
-        <source>Hai un&apos;attività? La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software) per semplificare il lavoro e ottimizzare la tua operatività digitale.</source>
-        <target>Do you run a business? Your online presence is crucial. I provide strategic consulting and custom-built solutions (websites, software) to simplify your work and optimize your digital operations.</target>
+        <source>Hai un&apos;attività?
+La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software, app) per semplificare il lavoro e ottimizzare la tua operatività digitale.</source>
+        <target>Do you have a business?
+Your online presence is essential. I offer strategic consulting and develop tailor-made solutions (websites, software, apps) to simplify work and optimize your digital operations.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_progetto_title" datatype="html">
-        <source>Consulenza &amp; Gestione Progetti Digitali</source>
-        <target>Consulting &amp; Digital Project Management</target>
+        <source>Consulenza &amp;
+Gestione Progetti Digitali</source>
+        <target>Consulting &amp;
+Digital Project Management</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="servizio_progetto_desc" datatype="html">
-        <source>Ti guido attraverso ogni fase del tuo progetto digitale, dalla concezione all&apos;implementazione. Offro consulenza strategica e gestione completa per trasformare le tue idee in realtà, garantendo un lancio fluido e di successo.</source>
-        <target>I guide you through every stage of your digital project, from concept to implementation. I offer strategic consulting and full management to turn your ideas into reality with a smooth and successful launch.</target>
+        <source>Ti guido attraverso ogni fase del tuo progetto digitale, dalla concezione all&apos;implementazione.
+Offro consulenza strategica e gestione completa per trasformare le tue idee in realtà, garantendo un lancio fluido e di successo.</source>
+        <target>I guide you through every phase of your digital project, from conception to implementation.
+I offer strategic consulting and complete management to turn your ideas into reality, ensuring a smooth and successful launch.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
       </trans-unit>
-
-      <trans-unit id="servicesContactButton" datatype="html">
-        <source>Contattami</source>
-        <target>Contact Me</target>
-      </trans-unit>
-
-      <!-- NUOVE TRADUZIONI PER COOKIE CONSENT -->
       <trans-unit id="cookieConsentText" datatype="html">
-        <source>Utilizziamo i cookie per migliorare la tua esperienza di navigazione. Continuando a navigare accetti la nostra <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</source>
-        <target>We use cookies to improve your browsing experience. By continuing to browse, you accept our <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.</target>
+        <source> Utilizziamo i cookie per migliorare la tua esperienza di navigazione.
+ Continuando a navigare accetti la nostra <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+ </source>
+        <target> We use cookies to improve your browsing experience.
+ By continuing to browse, you accept our <x id="START_LINK" ctype="x-a" equiv-text="&lt;a href=&quot;/privacy-policy&quot;&gt;"/>Privacy Policy<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>.
+ </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/cookie-consent/cookie-consent.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="cookieConsentAcceptButton" datatype="html">
         <source>Accetto</source>
         <target>Accept</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/cookie-consent/cookie-consent.component.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="cookieConsentDeclineButton" datatype="html">
         <source>Rifiuto</source>
         <target>Decline</target>
-      </trans-unit>
-
-      <!-- TRADUZIONI AGGIUNTE DA ULTIMI AGGIORNAMENTI (Reviews, Read More, Hero Image Alt, Google Verified Badge) -->
-      <trans-unit id="homeHeroImageAlt" datatype="html">
-        <source>Aleksander Nikolli Developer Portrait</source>
-        <target>Aleksander Nikolli Developer Portrait</target>
-      </trans-unit>
-
-      <trans-unit id="readMoreButton" datatype="html">
-        <source>Mostra di più</source>
-        <target>Read more</target>
-      </trans-unit>
-      <trans-unit id="readLessButton" datatype="html">
-        <source>Mostra di meno</source>
-        <target>Show less</target>
-      </trans-unit>
-
-      <trans-unit id="reviewsTitle" datatype="html">
-        <source>Cosa dicono i miei clienti</source>
-        <target>What my clients say</target>
-      </trans-unit>
-      <trans-unit id="googleVerifiedBadge" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>verified<x id="CLOSE_TAG_MAT_ICON"/> Verificato su Google</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>verified<x id="CLOSE_TAG_MAT_ICON"/> Verified on Google</target>
-      </trans-unit>
-      <trans-unit id="reviewVerifiedBadge" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>check_circle<x id="CLOSE_TAG_MAT_ICON"/> Recensione verificata</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>check_circle<x id="CLOSE_TAG_MAT_ICON"/> Verified review</target>
-      </trans-unit>
-      <trans-unit id="reviewReplyPrefix" datatype="html">
-        <source>**La mia risposta:** <x id="INTERPOLATION"/></source>
-        <target>**My reply:** <x id="INTERPOLATION"/></target>
-      </trans-unit>
-      <trans-unit id="reviewsLoading" datatype="html">
-        <source>Caricamento recensioni...</source>
-        <target>Loading reviews...</target>
-      </trans-unit>
-      <trans-unit id="noReviewsMessage" datatype="html">
-        <source>Nessuna recensione disponibile al momento.</source>
-        <target>No reviews available at the moment.</target>
-      </trans-unit>
-      <trans-unit id="prevReviewAriaLabel" datatype="html">
-        <source>Recensione precedente</source>
-        <target>Previous review</target>
-      </trans-unit>
-      <trans-unit id="nextReviewAriaLabel" datatype="html">
-        <source>Recensione successiva</source>
-        <target>Next review</target>
-      </trans-unit>
-      <trans-unit id="goToReviewAriaLabel" datatype="html">
-        <source>Vai alla recensione <x id="INTERPOLATION"/></source>
-        <target>Go to review <x id="INTERPOLATION"/></target>
-      </trans-unit>
-
-      <!-- TRADUZIONE SPECIFICA DEL BADGE GOOGLE BUSINESS VERIFIED (dal componente google-verified-badge) -->
-      <trans-unit id="googleBusinessVerifiedBadge" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>verified<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Verificato su Google Business Profile</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>verified<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Verified on Google Business Profile</target>
-      </trans-unit>
-
-      <!-- TRADUZIONI MANCANTI DAL TUO ULTIMO LOG DI WARNING -->
-      <trans-unit id="changeLangItAriaLabel" datatype="html">
-        <source>Cambia lingua in italiano</source>
-        <target>Change language to Italian</target>
-      </trans-unit>
-      <trans-unit id="changeLangEnAriaLabel" datatype="html">
-        <source>Change language to English</source>
-        <target>Change language to English</target>
-      </trans-unit>
-      <trans-unit id="navbarMenuAriaLabel" datatype="html">
-        <source>Open navigation menu</source>
-        <target>Open navigation menu</target>
-      </trans-unit>
-      <trans-unit id="navbarHome" datatype="html">
-        <source>Home</source>
-        <target>Home</target>
-      </trans-unit>
-      <trans-unit id="navbarProjects" datatype="html">
-        <source>Progetti</source>
-        <target>Projects</target>
-      </trans-unit>
-      <trans-unit id="navbarServices" datatype="html">
-        <source>Servizi</source>
-        <target>Services</target>
-      </trans-unit>
-      <trans-unit id="navbarContact" datatype="html">
-        <source>Contatti</source>
-        <target>Contact</target>
-      </trans-unit>
-      <trans-unit id="navbarAboutMe" datatype="html">
-        <source>Chi sono</source>
-        <target>About Me</target>
-      </trans-unit>
-      <trans-unit id="navbarHomeMobile" datatype="html">
-        <source>Home</source>
-        <target>Home</target>
-      </trans-unit>
-      <trans-unit id="navbarProjectsMobile" datatype="html">
-        <source>Progetti</source>
-        <target>Projects</target>
-      </trans-unit>
-      <trans-unit id="navbarServicesMobile" datatype="html">
-        <source>Servizi</source>
-        <target>Services</target>
-      </trans-unit>
-      <trans-unit id="navbarContactMobile" datatype="html">
-        <source>Contatti</source>
-        <target>Contact</target>
-      </trans-unit>
-      <trans-unit id="navbarAboutMeMobile" datatype="html">
-        <source>Chi sono</source>
-        <target>About Me</target>
-      </trans-unit>
-      <trans-unit id="changeLangItMobile" datatype="html">
-        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>Italiano<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>Italian<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
-      </trans-unit>
-      <trans-unit id="changeLangEnMobile" datatype="html">
-        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>English<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
-        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot; alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>English<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
-      </trans-unit>
-      <trans-unit id="footerGithubAriaLabel" datatype="html">
-        <source>GitHub Profile</source>
-        <target>GitHub Profile</target>
-      </trans-unit>
-      <trans-unit id="footerEmailAriaLabel" datatype="html">
-        <source>Send Email</source>
-        <target>Send Email</target>
-      </trans-unit>
-      <trans-unit id="footerLinkedInAriaLabel" datatype="html">
-        <source>LinkedIn Profile</source>
-        <target>LinkedIn Profile</target>
-      </trans-unit>
-      <trans-unit id="footerInstagramAriaLabel" datatype="html">
-        <source>Instagram Profile</source>
-        <target>Instagram Profile</target>
-      </trans-unit>
-      <trans-unit id="footerFacebookAriaLabel" datatype="html">
-        <source>Facebook Profile</source>
-        <target>Facebook Profile</target>
-      </trans-unit>
-      <trans-unit id="footerWhatsAppAriaLabel" datatype="html">
-        <source>WhatsApp Chat</source>
-        <target>WhatsApp Chat</target>
-      </trans-unit>
-      <trans-unit id="footerPhoneAriaLabel" datatype="html">
-        <source>Call Phone</source>
-        <target>Call Phone</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/cookie-consent/cookie-consent.component.html</context>
+          <context context-type="linenumber">9,13</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="footerCopyright" datatype="html">
-        <source>© <x id="INTERPOLATION"/> Aleksander Nikolli</source>
-        <target>© <x id="INTERPOLATION"/> Aleksander Nikolli</target>
+        <source>© <x id="INTERPOLATION" equiv-text="{{ currentYear }}"/> Aleksander Nikolli</source>
+        <target>© <x id="INTERPOLATION" equiv-text="{{ currentYear }}"/> Aleksander Nikolli</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="footerBuiltWith" datatype="html">
         <source>Built with:</source>
         <target>Built with:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/footer.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
       </trans-unit>
-      <trans-unit id="frontendCertCaption" datatype="html">
-        <source>Frontend Developer</source>
-        <target>Frontend Developer</target>
+      <trans-unit id="googleBusinessVerifiedBadge" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>verified<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Verificato su Google Business Profile
+</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>verified<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Verified on Google Business Profile
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/google-verified-badge/google-verified-badge.component.html</context>
+          <context context-type="linenumber">10,13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/google-verified-badge/google-verified-badge.component.html</context>
+          <context context-type="linenumber">17,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarShowcase" datatype="html">
+        <source>Vetrina</source>
+        <target>Showcase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarProjects" datatype="html">
+        <source>Progetti</source>
+        <target>Projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarServices" datatype="html">
+        <source>Servizi</source>
+        <target>Services</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">16,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarContact" datatype="html">
+        <source>Contatti</source>
+        <target>Contact</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarAboutMe" datatype="html">
+        <source>Chi sono</source>
+        <target>About Me</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changeLangItAriaLabel" datatype="html">
+        <source>Cambia lingua in italiano</source>
+        <target>Change language to Italian</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changeLangEnAriaLabel" datatype="html">
+        <source>Change language to English</source>
+        <target>Change language to English</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarMenuAriaLabel" datatype="html">
+        <source>Open navigation menu</source>
+        <target>Open navigation menu</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarShowcaseMobile" datatype="html">
+        <source>Vetrina</source>
+        <target>Showcase</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">47,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarProjectsMobile" datatype="html">
+        <source>Progetti</source>
+        <target>Projects</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarServicesMobile" datatype="html">
+        <source>Servizi</source>
+        <target>Services</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarContactMobile" datatype="html">
+        <source>Contatti</source>
+        <target>Contact</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">51,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="navbarAboutMeMobile" datatype="html">
+        <source>Chi sono</source>
+        <target>About Me</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">52,54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changeLangItMobile" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot;
+alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>It<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot;
+alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>It<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">57,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="changeLangEnMobile" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot;
+alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>En<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <target><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/en.png&quot;
+alt=&quot;UK Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>En<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/navbar.component.html</context>
+          <context context-type="linenumber">61,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reviewsTitle" datatype="html">
+        <source>Cosa dicono i miei clienti</source>
+        <target>What my clients say</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="prevReviewAriaLabel" datatype="html">
+        <source>Recensione precedente</source>
+        <target>Previous review</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reviewVerifiedBadge" datatype="html">
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>check_circle<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Recensione verificata </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>check_circle<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Verified review </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reviewReplyPrefix" datatype="html">
+        <source>**La mia risposta:** <x id="INTERPOLATION" equiv-text="{{ review.reviewReply.comment }}"/></source>
+        <target>**My reply:** <x id="INTERPOLATION" equiv-text="{{ review.reviewReply.comment }}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="nextReviewAriaLabel" datatype="html">
+        <source>Recensione successiva</source>
+        <target>Next review</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="reviewsLoading" datatype="html">
+        <source>Caricamento recensioni...</source>
+        <target>Loading reviews...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">65,67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="noReviewsMessage" datatype="html">
+        <source>Nessuna recensione 
+disponibile al momento.</source>
+        <target>No reviews 
+available at the moment.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/reviews/reviews.component.html</context>
+          <context context-type="linenumber">68,71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="closeBtn" datatype="html">
+        <source>Chiudi</source>
+        <target>Close</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/software-preview-modal/software-preview-modal.component.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="openDemoBtn" datatype="html">
+        <source> Apri Demo → </source>
+        <target> Open Demo → </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/software-preview-modal/software-preview-modal.component.html</context>
+          <context context-type="linenumber">19,21</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeTitle" datatype="html">
-        <source> Perché scegliere me? </source>
-        <target> Why choose me? </target>
+        <source> Perché scegliere me?
+ </source>
+        <target> Why choose me?
+ </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeIntro" datatype="html">
         <source>A differenza delle grandi agenzie, con me non dovrai:</source>
         <target>Unlike large agencies, with me you won't have to:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
+          <context context-type="linenumber">11,13</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeNegative1" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>cancel<x id="CLOSE_TAG_MAT_ICON"/> Aspettare giorni per una semplice risposta</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>cancel<x id="CLOSE_TAG_MAT_ICON"/> Wait days for a simple answer</target>
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>cancel<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Aspettare giorni per una semplice risposta </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>cancel<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Wait days for a simple answer </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
+          <context context-type="linenumber">14,16</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeNegative2" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>email<x id="CLOSE_TAG_MAT_ICON"/> Inviare decine di email per ogni richiesta</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>email<x id="CLOSE_TAG_MAT_ICON"/> Send dozens of emails for each request</target>
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>email<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Inviare decine di email per ogni richiesta </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>email<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Send dozens of emails for every request </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
+          <context context-type="linenumber">18,20</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeNegative3" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon"/> Parlare con operatori diversi ogni volta</source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Talk to different operators every time</target>
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Parlare con operatori diversi ogni volta </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Talk to different operators every time </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
+          <context context-type="linenumber">22,24</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMePositive1" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>lightbulb<x id="CLOSE_TAG_MAT_ICON"/> Affidandoti a me, parli <x id="START_TAG_STRONG" ctype="x-strong"/>direttamente<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> con chi sviluppa il tuo progetto — sia frontend che backend. <x id="LINE_BREAK" ctype="lb"/> Hai un dubbio? Mi chiami. Serve una modifica? Mi scrivi. Ci vediamo di persona? Nessun problema. </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>lightbulb<x id="CLOSE_TAG_MAT_ICON"/> By relying on me, you speak <x id="START_TAG_STRONG" ctype="x-strong"/>directly<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> with those who develop your project — both frontend and backend. <x id="LINE_BREAK" ctype="lb"/> Have a doubt? Call me. Need a change? Write to me. Meet in person? No problem. </target>
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>lightbulb<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Affidandoti a me, parli <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>direttamente<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con chi sviluppa il tuo progetto — sia frontend, backend che database.
+<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> Hai un dubbio? Mi chiami. Serve una modifica? Mi scrivi. Ci vediamo di persona?
+Nessun problema. </source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>lightbulb<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> By relying on me, you talk <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>directly<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> with the person who develops your project — be it frontend, backend, or database.
+<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> Got a doubt? Call me. Need a change? Write to me. Meet in person?
+No problem. </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
+          <context context-type="linenumber">28,32</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMePositive2" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON"/> Supporto rapido, diretto, umano. </source>
-        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON"/> Fast, direct, human support. </target>
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Supporto rapido, diretto, umano.
+</source>
+        <target><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Fast, direct, human support.
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
+          <context context-type="linenumber">35,38</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

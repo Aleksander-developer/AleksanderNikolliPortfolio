@@ -1,0 +1,19 @@
+
+@use "../../../../styles/variables" as vars;
+
+.social-list {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  a {
+    color: vars.$light-gray;
+    display: inline-flex;
+    transition: color .25s ease;
+
+    &:hover {
+      color: vars.$accent-color;
+    }
+  }
+}
+

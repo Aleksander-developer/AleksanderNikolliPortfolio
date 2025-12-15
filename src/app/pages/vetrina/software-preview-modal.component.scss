@@ -1,0 +1,81 @@
+
+@use '../../../styles/variables' as vars;
+
+.modal-container {
+  background: vars.$dialog-bg;
+  padding: vars.$spacing-lg;
+  border-radius: vars.$card-radius;
+  border: vars.$dialog-border;
+  box-shadow: vars.$dialog-shadow;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  margin-bottom: vars.$spacing-md;
+  color: vars.$accent-color;
+}
+
+.modal-description {
+  color: vars.$text-color-light;
+  margin-bottom: vars.$spacing-md;
+}
+
+.slideshow {
+  position: relative;
+
+  .shot {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: vars.$spacing-md;
+  }
+
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(vars.$accent-color, 0.2);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: vars.$accent-color;
+
+    &:hover {
+      background: rgba(vars.$accent-color, 0.35);
+    }
+  }
+
+  .prev { left: 0; }
+  .next { right: 0; }
+}
+
+.modal-actions {
+  display: flex;
+  gap: vars.$spacing-md;
+  justify-content: center;
+  margin-top: vars.$spacing-md;
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    border-radius: vars.$btn-radius;
+    cursor: pointer;
+    border: vars.$btn-border;
+  }
+
+  .btn-primary {
+    background: vars.$accent-color;
+    color: vars.$dark-bg;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: vars.$accent-color;
+
+    &:hover {
+      background: rgba(vars.$accent-color, 0.15);
+    }
+  }
+}
+

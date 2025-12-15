@@ -1,0 +1,142 @@
+
+@use "sass:math";
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+}
+
+/* CERCHIO PRINCIPALE */
+.logo-circle {
+  position: relative;
+  width: min(280px, 70vmin);
+  height: min(280px, 70vmin);
+  border-radius: 50%;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow:
+    0 0 25px rgba(0, 238, 255, 0.5),
+    0 0 80px rgba(0, 238, 255, 0.25);
+}
+
+/* SFONDO ANIMATO */
+.circle-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 0%, #1b89a7, transparent 60%),
+    linear-gradient(140deg, #071525, #0b273b, #05101b);
+  background-size: 200% 200%;
+  animation: bgShift 18s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* GRIGLIA TECH */
+.tech-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.23;
+  z-index: 2;
+}
+
+/* CHIP CENTRALE */
+.tech-chip {
+  position: absolute;
+  top: 34%;
+  left: 34%;
+  width: 32%;
+  height: 32%;
+  border-radius: 12%;
+  border: 2px solid rgba(0, 238, 255, 0.6);
+  box-shadow:
+    0 0 12px rgba(0, 238, 255, 0.4),
+    inset 0 0 8px rgba(0, 238, 255, 0.5);
+  z-index: 2;
+}
+
+/* CERCHIO CIRCUITO */
+.tech-circuit {
+  position: absolute;
+  inset: 16%;
+  border: 1px dashed rgba(0, 238, 255, 0.35);
+  border-radius: 50%;
+  animation: pulseCircuit 6s ease-in-out infinite;
+  z-index: 2;
+}
+
+/* TESTO CENTRALE */
+.logo-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fira Code", monospace;
+  font-size: 1.1rem;
+  color: #eaffff;
+  z-index: 5;
+  text-shadow: 0 0 10px rgba(0, 238, 255, 0.8);
+}
+
+/* BADGE SOLO SUL BORDO */
+.tech-badges {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* STILE BADGE */
+.tech-badges .badge {
+  position: absolute;
+  font-family: "Fira Code", monospace;
+  font-size: 0.44rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+
+  background: rgba(0, 255, 255, 0.07);
+  border: 1px solid rgba(0, 255, 255, 0.35);
+  color: rgba(0, 255, 255, 0.8);
+
+  text-shadow: 0 0 4px rgba(0, 255, 255, 0.4);
+
+  /* Effetto LED continuo */
+  animation: flicker 2.4s infinite ease-in-out alternate;
+}
+
+/* DISPOSIZIONE CIRCOLARE */
+@for $i from 1 through 18 {
+  $angle: math.div($i, 18) * 360deg;
+  .tech-badges .badge:nth-child(#{$i}) {
+    top: calc(50% + 43% * sin(#{$angle}) - 8px);
+    left: calc(50% + 43% * cos(#{$angle}) - 20px);
+    animation-delay: #{math.div(random(2000), 1000)}s;
+  }
+}
+
+/* ==================== ANIMAZIONI ==================== */
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseCircuit {
+  0%, 100% { opacity: 0.22; }
+  50% { opacity: 0.45; }
+}
+
+@keyframes flicker {
+  0%   { opacity: 0.15; transform: scale(0.92); }
+  50%  { opacity: 0.80; transform: scale(1); }
+  100% { opacity: 0.25; transform: scale(0.95); }
+}
+

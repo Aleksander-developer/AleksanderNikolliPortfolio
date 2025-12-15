@@ -1,7 +1,6 @@
-// src/app/shared/components/footer/footer.component.ts
 
+// src/app/shared/components/footer/footer.component.ts
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-footer',
@@ -16,17 +15,12 @@ export class FooterComponent implements OnInit {
   instagramUrl: string = 'https://www.instagram.com/aleksander_nikolli_developer?igsh=Y2oxczZ1c2doajE1&utm_source=qr';
   facebookUrl: string = 'https://www.facebook.com/share/1AgfrE24jU/?mibextid=wwXIfr';
 
-  whatsappNumber: string = '393463515173'; // Numero WhatsApp senza il '+'
+  whatsappNumber: string = '393463515173';
   phoneNumber: string = '393463515173';
   emailAddress: string = 'aleksandernikollibusiness@gmail.com';
 
-  whatsappLink: SafeResourceUrl;
+  whatsappLink: string = `https://wa.me/${this.whatsappNumber}`;
 
-  constructor(private sanitizer: DomSanitizer) {
-    this.whatsappLink = this.sanitizer.bypassSecurityTrustResourceUrl(`https://wa.me/${this.whatsappNumber}`);
-  }
-
-  ngOnInit(): void {
-    // In altre logiche è pronto
-  }
+  ngOnInit(): void {}
 }
+

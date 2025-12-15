@@ -10,7 +10,8 @@
   <!-- Sezione sinistra (solo desktop) - Spostata per un layout più pulito -->
   <div class="nav-links-container desktop-links left-section">
     <!-- MODIFICATO: routerLink a stringa vuota per la Home -->
-    <a mat-button routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" i18n="@@navbarHome">Home</a>
+    <a mat-button routerLink="/vetrina" routerLinkActive="active" i18n="@@navbarShowcase">Vetrina</a>
+
     <a mat-button routerLink="/progetti" routerLinkActive="active" i18n="@@navbarProjects">Progetti</a>
     <a mat-button routerLink="/servizi" routerLinkActive="active" i18n="@@navbarServices">Servizi</a>
   </div>
@@ -43,7 +44,8 @@
 <!-- Menu mobile -->
 <mat-menu #menu="matMenu">
   <!-- MODIFICATO: routerLink a stringa vuota per la Home -->
-  <button mat-menu-item routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" i18n="@@navbarHomeMobile">Home</button>
+  <button mat-menu-item routerLink="/vetrina" routerLinkActive="active" i18n="@@navbarShowcaseMobile">Vetrina</button>
+
   <button mat-menu-item routerLink="/progetti" routerLinkActive="active" i18n="@@navbarProjectsMobile">Progetti</button>
   <button mat-menu-item routerLink="/servizi" routerLinkActive="active" i18n="@@navbarServicesMobile">Servizi</button>
   <button mat-menu-item routerLink="/contatti" routerLinkActive="active" i18n="@@navbarContactMobile">Contatti</button>
@@ -61,3 +63,4 @@
     </button>
   </div>
 </mat-menu>
+

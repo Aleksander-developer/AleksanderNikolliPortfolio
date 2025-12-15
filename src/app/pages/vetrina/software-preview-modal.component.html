@@ -1,0 +1,26 @@
+
+<div class="modal-container">
+
+  <h2 class="modal-title">{{ data.title }}</h2>
+
+  <p class="modal-description">{{ data.description }}</p>
+
+  <div class="slideshow">
+    <button class="nav prev" (click)="prev()">❮</button>
+
+    <img [src]="data.screenshots![currentIndex]" alt="Screenshot" class="shot" />
+
+    <button class="nav next" (click)="next()">❯</button>
+  </div>
+
+  <div class="modal-actions">
+    <button class="btn-primary" (click)="contatta()">Contattami</button>
+
+    <a [href]="data.externalUrl"
+       target="_blank"
+       class="btn-secondary">
+      Apri Software
+    </a>
+  </div>
+</div>
+

@@ -1,3 +1,4 @@
+
 <!-- src/app/shared/components/footer/footer.component.html -->
 <footer #footerRef class="footer-container">
   <!-- NUOVO: Badge di verifica di Google posizionato all'inizio e al centro del footer -->
@@ -9,27 +10,17 @@
   <!-- Puoi impostare isVerified="true" quando la tua attività GMB è verificata -->
 
   <div class="footer-socials">
-    <a [href]="githubUrl" target="_blank" aria-label="GitHub Profile" i18n-aria-label="@@footerGithubAriaLabel" mat-icon-button>
-      <i class="fab fa-github"></i>
-    </a>
-    <a [href]="'mailto:' + emailAddress" aria-label="Send Email" i18n-aria-label="@@footerEmailAriaLabel" mat-icon-button>
-      <mat-icon>email</mat-icon>
-    </a>
-    <a [href]="linkedinUrl" target="_blank" aria-label="LinkedIn Profile" i18n-aria-label="@@footerLinkedInAriaLabel" mat-icon-button>
-      <i class="fab fa-linkedin"></i>
-    </a>
-    <a [href]="instagramUrl" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" i18n-aria-label="@@footerInstagramAriaLabel" mat-icon-button>
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a [href]="facebookUrl" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile" i18n-aria-label="@@footerFacebookAriaLabel" mat-icon-button>
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a [href]="whatsappLink" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Chat" i18n-aria-label="@@footerWhatsAppAriaLabel" mat-icon-button>
-      <i class="fab fa-whatsapp"></i>
-    </a>
-    <a [href]="'tel:' + phoneNumber" aria-label="Call Phone" i18n-aria-label="@@footerPhoneAriaLabel" mat-icon-button>
-      <mat-icon>phone</mat-icon>
-    </a>
+
+      <app-social-icons
+        [github]="githubUrl"
+        [linkedin]="linkedinUrl"
+        [instagram]="instagramUrl"
+        [facebook]="facebookUrl"
+        [whatsapp]="whatsappLink"
+        [email]="emailAddress"
+        [phone]="phoneNumber">
+      </app-social-icons>
+      
   </div>
 
   <div class="footer-separator"></div>
@@ -63,3 +54,4 @@
     </div>
   </div>
 </footer>
+

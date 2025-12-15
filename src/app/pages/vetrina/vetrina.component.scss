@@ -1,0 +1,99 @@
+
+@use '../../../styles/variables' as vars;
+
+.vetrina-section {
+  padding: vars.$spacing-xl vars.$spacing-lg;
+  text-align: center;
+  color: vars.$text-color;
+}
+
+.section-title {
+  font-family: vars.$font-family-heading;
+  font-size: 2.3rem;
+  color: vars.$accent-color;
+  margin-bottom: vars.$spacing-md;
+  text-shadow: 0 0 12px rgba(vars.$accent-color, 0.5);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto vars.$spacing-xl;
+  color: vars.$text-color-light;
+}
+
+.software-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: vars.$spacing-lg;
+}
+
+.software-card {
+  background: vars.$vetrina-card-bg !important;
+  border: vars.$card-border;
+  border-radius: vars.$card-radius;
+  padding-bottom: vars.$spacing-md;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: vars.$shadow-soft;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: vars.$vetrina-card-hover-shadow;
+  }
+
+  img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-top-left-radius: vars.$card-radius;
+    border-top-right-radius: vars.$card-radius;
+  }
+
+  mat-card-title {
+    color: vars.$accent-color;
+    margin: vars.$spacing-md 0 vars.$spacing-sm;
+    font-family: vars.$font-family-heading;
+    font-size: 1.3rem;
+  }
+
+  .description {
+    padding: 0 vars.$spacing-md;
+    color: vars.$text-color-light;
+    font-size: 1rem;
+    min-height: 70px;
+  }
+
+  .card-actions {
+    display: flex;
+    padding: 0 vars.$spacing-md;
+    gap: vars.$spacing-sm;
+
+    .btn-primary {
+      flex: 1;
+      padding: 10px;
+      border-radius: vars.$btn-radius;
+      border: vars.$btn-border;
+      color: vars.$accent-color;
+      text-align: center;
+      transition: 0.3s;
+
+      &:hover {
+        background: vars.$btn-hover-bg;
+        color: vars.$btn-hover-color;
+      }
+    }
+
+    .btn-secondary {
+      flex: 1;
+      border-radius: vars.$btn-radius;
+      border: 1px solid vars.$accent-color;
+      color: vars.$accent-color;
+
+      &:hover {
+        background: rgba(vars.$accent-color, 0.15);
+      }
+    }
+  }
+}
+

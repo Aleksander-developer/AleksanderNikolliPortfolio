@@ -15,11 +15,11 @@ export class LanguageService {
     private router: Router,
     @Inject(LOCALE_ID) private activeLocale: string
   ) {
-    console.log('LanguageService initialized. Active Locale (from Angular):', this.activeLocale);
+    // console.log('LanguageService initialized. Active Locale (from Angular):', this.activeLocale);
   }
 
   getCurrentLanguage(): string {
-    console.log('getCurrentLanguage called. Returning:', this.activeLocale);
+    // console.log('getCurrentLanguage called. Returning:', this.activeLocale);
     return this.activeLocale;
   }
 

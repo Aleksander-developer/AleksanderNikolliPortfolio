@@ -1,3 +1,4 @@
+
 // src/app/shared/shared.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,6 +17,8 @@ import { CookieConsentComponent } from './components/cookie-consent/cookie-conse
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { GoogleVerifiedBadgeComponent } from './components/google-verified-badge/google-verified-badge.component';
 import { BackgroundComponent } from '../pages/background/background.component';
+import { LogoComponent } from '../pages/logo/logo.component';
+import { SocialIconsModule } from './components/social-icons/social-icons.module';
 
 
 @NgModule({
@@ -27,13 +30,16 @@ import { BackgroundComponent } from '../pages/background/background.component';
     CookieConsentComponent,
     ReviewsComponent,
     GoogleVerifiedBadgeComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    LogoComponent
   ],
   imports: [
     CommonModule,
     RouterModule, // Necessario per routerLink
     ReactiveFormsModule, // Necessario per form reattivi
-    MaterialModule // Importa MaterialModule
+    MaterialModule, // Importa MaterialModule
+    SocialIconsModule
+
   ],
   exports: [
     NavbarComponent,
@@ -47,7 +53,11 @@ import { BackgroundComponent } from '../pages/background/background.component';
     MaterialModule, // Esporta MaterialModule per renderlo disponibile agli importatori di SharedModule
     CommonModule,   // Utile esportare CommonModule per le direttive *ngIf, *ngFor
     RouterModule,    // Esporta RouterModule
-    ReactiveFormsModule // Esporta ReactiveFormsModule
+    ReactiveFormsModule, // Esporta ReactiveFormsModule
+    LogoComponent,
+    SocialIconsModule
+
   ]
 })
 export class SharedModule { }
+

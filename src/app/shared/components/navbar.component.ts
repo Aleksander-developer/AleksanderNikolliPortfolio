@@ -28,3 +28,4 @@ export class NavbarComponent implements OnInit {
     return this.languageService.getCurrentLanguage();
   }
 }
+

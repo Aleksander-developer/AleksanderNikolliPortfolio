@@ -1,3 +1,5 @@
+
+// src/app/pages/home/home.componet.ts
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,26 +10,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   // Lista delle competenze tecnologiche (come da tua richiesta)
-  techList: string[] = [
-    'HTML5',
-    'CSS3',
-    'JavaScript',
-    'AJAX',
-    'TypeScript',
-    'ECMAScript 6+',
-    'Responsive Design',
-    'jQuery',
-    'Bootstrap',
-    'GIT',
-    'Angular',
-    'Node.js',
-    'Express',
-    'MongoDB',
-    'DataBase MySQL',
-    'REST API',
-    'Ionic Framework',
-    'Capacitor'
+  techList = [
+  { name: 'HTML5', category: 'frontend' },
+  { name: 'CSS3', category: 'frontend' },
+  { name: 'JavaScript', category: 'frontend' },
+  { name: 'AJAX', category: 'frontend' },
+  { name: 'TypeScript', category: 'frontend' },
+  { name: 'ECMAScript 6+', category: 'frontend' },
+  { name: 'Responsive Design', category: 'frontend' },
+  { name: 'jQuery', category: 'frontend' },
+  { name: 'Bootstrap', category: 'frontend' },
+  { name: 'GIT', category: 'tool' },
+  { name: 'Angular', category: 'framework' },
+  { name: 'Node.js', category: 'backend' },
+  { name: 'Express', category: 'backend' },
+  { name: 'MongoDB', category: 'database' },
+  { name: 'DataBase MySQL', category: 'database' },
+  { name: 'REST API', category: 'backend' },
+  { name: 'Ionic Framework', category: 'mobile' },
+  { name: 'Capacitor', category: 'mobile' }
   ];
+
 
   // Variabile 'cols' per MatGridList.
   // Nota: Nel tuo home.component.html attuale, la griglia delle tech usa CSS Grid direttamente.
@@ -80,3 +83,4 @@ export class HomeComponent implements OnInit {
   //   }
   // ];
 }
+

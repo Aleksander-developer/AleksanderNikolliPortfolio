@@ -1,7 +1,11 @@
+
 /* src/app/pages/home/home.component.scss */
 
 @use '../../../styles/variables' as vars;
 
+/* -------------------------------------------------------
+   SECTION TITLE
+-------------------------------------------------------- */
 .section-title {
   font-family: 'Share Tech Mono', monospace;
   font-size: 2.2rem;
@@ -12,55 +16,57 @@
   text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5);
 }
 
-/* HERO SECTION */
+/* -------------------------------------------------------
+   HERO SECTION
+-------------------------------------------------------- */
 .hero-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   min-height: 60vh;
-  background: rgba(vars.$dark-bg, 0.75); /* Semitrasparente */
-  backdrop-filter: blur(3px); /* Effetto vetro */
+  background: rgba(vars.$dark-bg, 0.75);
+  backdrop-filter: blur(3px);
   color: vars.$text-color;
   text-align: center;
   padding: 4rem 2rem;
   border-bottom: 2px solid vars.$accent-color;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
 
-  .hero-inner-container { // NUOVO: Container interno per layout flessibile
+  .hero-inner-container {
     display: flex;
     align-items: center;
-    justify-content: center; // Centra il contenuto orizzontalmente
-    max-width: 1200px; // Larghezza massima per il contenuto interno
+    justify-content: center;
+    max-width: 1200px;
     width: 100%;
-    gap: vars.$spacing-xl; // Spazio tra immagine e testo
-    padding: vars.$spacing-md; // Padding interno per il container
+    gap: vars.$spacing-xl;
+    padding: vars.$spacing-md;
   }
 
-  .hero-image-container { // NUOVO: Container per l'immagine
-    flex-shrink: 0; // Impedisce all'immagine di restringersi
-    width: 350px; // Larghezza fissa per l'immagine su desktop/tablet
-    height: 350px; // Altezza fissa
-    border-radius: 50%; // Rendi l'immagine circolare
-    overflow: hidden; // Nasconde le parti che escono dal bordo circolare
-    border: 4px solid vars.$primary-color; // Bordo intorno all'immagine
-    box-shadow: 0 0 20px rgba(vars.$primary-color, 0.6); // Effetto glow
-    margin-right: vars.$spacing-xl; // Spazio a destra dell'immagine
-    display: flex; // Per centrare l'immagine all'interno del suo container
+  .hero-image-container {
+    flex-shrink: 0;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid vars.$primary-color;
+    box-shadow: 0 0 20px rgba(vars.$primary-color, 0.6);
+    margin-right: vars.$spacing-xl;
+    display: flex;
     justify-content: center;
     align-items: center;
 
     .hero-image {
       width: 100%;
       height: 100%;
-      object-fit: cover; // Assicurati che l'immagine copra il container senza distorsioni
-      display: block; // Rimuove eventuali spazi extra sotto l'immagine
+      object-fit: cover;
+      display: block;
     }
   }
 
   .hero-content {
-    max-width: 600px; // Riduci la max-width per il testo per un migliore bilanciamento
-    text-align: left; // Allinea il testo a sinistra per desktop/tablet
-    flex-grow: 1; // Permette al contenuto di occupare lo spazio rimanente
+    max-width: 600px;
+    text-align: left;
+    flex-grow: 1;
   }
 
   h1 {
@@ -98,7 +104,9 @@
   }
 }
 
-/* TECH STACK SECTION */
+/* -------------------------------------------------------
+   TECH STACK SECTION — ANIMATED LED STYLE
+-------------------------------------------------------- */
 .tech-section {
   padding: vars.$spacing-xl vars.$spacing-lg;
   background-color: rgba(vars.$dark-bg, 0.8);
@@ -106,58 +114,97 @@
 
   .tech-grid {
     display: grid;
-    // MODIFICATO: Aumentato il minmax per il default (desktop)
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Default per schermi più grandi */
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     gap: vars.$spacing-md;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    justify-content: center;
   }
 
   .tech-tile {
-    text-align: center;
-    background-color: vars.$card-bg !important;
-    color: vars.$accent-color;
-    padding: vars.$spacing-md;
+    position: relative;
+    background: rgba(0, 20, 30, 0.7) !important;
+    border: 1px solid rgba(0, 255, 255, 0.25);
     border-radius: 0.8rem;
-    border: 1px solid rgba(vars.$accent-color, 0.3);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    cursor: pointer;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: vars.$spacing-md;
+    overflow: hidden;
+    cursor: default;
 
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 6px 15px rgba(vars.$accent-color, 0.3);
+    /* Glow interno */
+    box-shadow:
+      inset 0 0 12px rgba(0, 255, 255, 0.18),
+      0 0 10px rgba(0, 255, 255, 0.12);
+
+    /* Flicker tipo LED */
+    animation: tileFlicker 3s infinite ease-in-out alternate;
+    animation-delay: calc((var(--i) * 0.25s));
+
+    /* Bordo neon che appare al passaggio */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(0, 255, 255, 0.45);
+      opacity: 0;
+      filter: blur(10px);
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    /* Scanning cyber line */
+    &::after {
+      content: "";
+      position: absolute;
+      top: -150%;
+      left: 0;
+      width: 100%;
+      height: 300%;
+      background: linear-gradient(
+        120deg,
+        transparent 0%,
+        rgba(0, 255, 255, 0.18) 40%,
+        transparent 80%
+      );
+      transform: rotate(12deg);
+      animation: scanMove 4s infinite linear;
+      pointer-events: none;
     }
 
     .tech-content {
-      font-family: 'Roboto Mono', monospace;
-      font-size: 1.1rem;
-      font-weight: bold;
-      text-align: center;
-      line-height: 1.4;
-      color: vars.$text-color;
-      transition: color 0.3s ease, transform 0.3s ease;
-      cursor: default;
-      white-space: normal;
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-
-      &:hover {
-        color: vars.$accent-color;
-        transform: scale(1.1);
-      }
+      font-family: "Share Tech Mono", monospace;
+      color: vars.$accent-color;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
+      z-index: 2;
+      position: relative;
     }
   }
 }
 
-/* FEATURED PROJECTS SECTION */
+/* -------------------------------------------------------
+   TECH ANIMATIONS
+-------------------------------------------------------- */
+@keyframes tileFlicker {
+  0%   { opacity: 0.85; filter: brightness(0.8); }
+  50%  { opacity: 1;    filter: brightness(1); }
+  100% { opacity: 0.75; filter: brightness(0.9); }
+}
+
+@keyframes scanMove {
+  0%   { transform: translateY(0) rotate(12deg); }
+  100% { transform: translateY(100%) rotate(12deg); }
+}
+
+/* -------------------------------------------------------
+   FEATURED PROJECTS
+-------------------------------------------------------- */
 .featured-projects-section {
   padding: vars.$spacing-xl vars.$spacing-lg;
-   background-color: rgba(darken(vars.$dark-bg, 5%), 0.8);
+  background-color: rgba(darken(vars.$dark-bg, 5%), 0.8);
   text-align: center;
 
   .section-title {
@@ -213,14 +260,17 @@
         color: vars.$text-color;
       }
     }
+
     mat-card-actions {
       padding: vars.$spacing-md;
+
       button {
         font-size: 0.9rem;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
         border: 1px solid vars.$primary-color;
         color: vars.$primary-color;
+
         &:hover {
           background-color: vars.$primary-color;
           color: vars.$text-color;
@@ -230,7 +280,9 @@
   }
 }
 
-/* CTA SECTION */
+/* -------------------------------------------------------
+   CTA SECTION
+-------------------------------------------------------- */
 .cta-section {
   background: linear-gradient(45deg, vars.$accent-color 0%, darken(vars.$accent-color, 20%) 100%);
   color: vars.$dark-bg;
@@ -249,11 +301,13 @@
     margin-bottom: vars.$spacing-md;
     color: vars.$dark-bg;
   }
+
   p {
     font-size: 1.3rem;
     margin-bottom: vars.$spacing-lg;
     color: darken(vars.$dark-bg, 10%);
   }
+
   button {
     font-size: 1.3rem;
     padding: 1rem 3rem;
@@ -271,140 +325,85 @@
   }
 }
 
-/* Animazione per l'emoji */
+/* -------------------------------------------------------
+   ANIMAZIONE EMOJI
+-------------------------------------------------------- */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40%  { transform: translateY(-10px); }
+  60%  { transform: translateY(-5px); }
 }
 
-
-/* Responsive adjustments */
+/* -------------------------------------------------------
+   RESPONSIVE
+-------------------------------------------------------- */
 @media (max-width: 1024px) {
   .hero-section {
     .hero-image-container {
-      width: 250px; // Riduci dimensione immagine per tablet
+      width: 250px;
       height: 250px;
     }
     .hero-content {
-      h1 {
-        font-size: 3rem;
-      }
-      p {
-        font-size: 1.3rem;
-      }
+      h1 { font-size: 3rem; }
+      p { font-size: 1.3rem; }
     }
   }
-  .section-title {
-    font-size: 2rem;
-  }
   .tech-grid {
-    grid-template-columns: repeat(3, 1fr); /* Forza 3 colonne per tablet */
-  }
-  .cta-section h2 {
-    font-size: 2rem;
-  }
-  .cta-section p {
-    font-size: 1.1rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (max-width: vars.$breakpoint-md) { // Per schermi più piccoli di 768px (smartphone e tablet piccoli)
+@media (max-width: vars.$breakpoint-md) {
   .hero-section {
     padding: 3rem 1rem;
-    min-height: unset; // Rimuovi min-height per adattarsi al contenuto
+    min-height: unset;
+
     .hero-inner-container {
-      flex-direction: column; // Impila immagine e testo
-      gap: vars.$spacing-lg; // Spazio tra immagine e testo impilati
-      text-align: center; // Centra il testo
+      flex-direction: column;
+      gap: vars.$spacing-lg;
+      text-align: center;
     }
+
     .hero-image-container {
-      margin-right: 0; // Rimuovi margine a destra
-      margin-bottom: vars.$spacing-lg; // Aggiungi margine sotto l'immagine
-      width: 200px; // Dimensione immagine per smartphone
+      margin-right: 0;
+      margin-bottom: vars.$spacing-lg;
+      width: 200px;
       height: 200px;
     }
+
     .hero-content {
-      max-width: 100%; // Occupano tutta la larghezza disponibile
-      text-align: center; // Centra il testo
-      h1 {
-        font-size: 2.5rem;
-      }
-      p {
-        font-size: 1.1rem;
-      }
+      max-width: 100%;
+      text-align: center;
+
+      h1 { font-size: 2.5rem; }
+      p  { font-size: 1.1rem; }
+
       button {
         font-size: 1rem;
         padding: 0.6rem 1.5rem;
       }
     }
   }
-  .section-title {
-    font-size: 1.8rem;
-  }
+
   .tech-grid {
-    grid-template-columns: repeat(2, 1fr); /* Forza 2 colonne per tablet e smartphone */
-  }
-  .tech-tile {
-    padding: 0.8rem;
-    .tech-content {
-      font-size: 0.9rem;
-    }
-  }
-  .cta-section {
-    padding: 3rem 1rem;
-    margin: 2rem 1rem;
-  }
-  .cta-section h2 {
-    font-size: 1.8rem;
-  }
-  .cta-section p {
-    font-size: 1rem;
-  }
-  .cta-section button {
-    font-size: 1.1rem;
-    padding: 0.8rem 2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* NUOVA MEDIA QUERY SPECIFICA PER SCHERMI MOLTO STRETTI (es. iPhone 10/X/XS/11 Pro in portrait) */
 @media (max-width: 528px) {
-  .tech-section {
-    .tech-grid {
-      grid-template-columns: repeat(2, 1fr); /* Forza 2 colonne anche per schermi ultra-piccoli */
-    }
-  }
-  // Puoi aggiungere altre regole specifiche per schermi molto piccoli qui, se necessario
   .hero-section {
     .hero-image-container {
-      width: 140px; // Riduci ancora per schermi molto piccoli
+      width: 140px;
       height: 140px;
     }
     .hero-content {
-      h1 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 0.85rem;
-      }
+      h1 { font-size: 1.8rem; }
+      p  { font-size: 0.85rem; }
     }
   }
-  .section-title {
-    font-size: 1.4rem;
-  }
-  .cta-section h2 {
-    font-size: 1.4rem;
-  }
-  .cta-section p {
-    font-size: 0.85rem;
+
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* RIMOSSA la precedente @media (max-width: 480px) per .tech-grid,
-   ora gestita dalla nuova @media (max-width: 400px) e dalla @media (max-width: vars.$breakpoint-md) */

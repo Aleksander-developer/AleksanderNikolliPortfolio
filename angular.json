@@ -1,3 +1,4 @@
+
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
@@ -29,7 +30,7 @@
             "assets": [
               {
                 "glob": "favicon.ico",
-                "input": "src/public",
+                "input": "src",
                 "output": "/"
               },
               "src/assets"
@@ -138,3 +139,4 @@
     "analytics": false
   }
 }
+

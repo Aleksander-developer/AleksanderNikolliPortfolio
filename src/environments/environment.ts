@@ -2,5 +2,6 @@
 export const environment = {
   production: false,
   // apiUrl: 'https://alex-backend-api-1046780610179.europe-west1.run.app/api',
-  apiUrl: 'http://localhost:5000/api' // ✅ NUOVO: URL del backend LOCALE per lo sviluppo
+  apiUrl: 'http://localhost:3000/api'
 };
+

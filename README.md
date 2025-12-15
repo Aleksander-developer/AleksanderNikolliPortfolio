@@ -35,3 +35,30 @@ npm run build:ssr
 # Step 2 – Avvia il server SSR
 npm run serve:ssr
 
+
+
+ng g module pages/logo --route logo --module app.module
+
+
+
+ng g module pages/vetrina --routing
+ng g component pages/vetrina
+ng g service services/vetrina
+
+
+ng g module shared/components/social-icons
+ng g c shared/components/social-icons --standalone=false
+
+
+ng g c shared/components/social-icons/svg-github --standalone=false
+ng g c shared/components/social-icons/svg-linkedin --standalone=false
+ng g c shared/components/social-icons/svg-instagram --standalone=false
+ng g c shared/components/social-icons/svg-facebook --standalone=false
+ng g c shared/components/social-icons/svg-whatsapp --standalone=false
+
+ng extract-i18n --output-path src/locale
+
+Ogni volta che fai modifiche Angular → devi rifare:
+    npm run build:ssr
+Avvia il server SSR in modalità produzione
+    npm run serve:ssr

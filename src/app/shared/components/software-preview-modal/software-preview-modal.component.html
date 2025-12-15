@@ -1,0 +1,23 @@
+
+<div class="modal-container">
+  <h2 class="modal-title">{{ data.title }}</h2>
+
+  <div class="modal-image-wrapper">
+    <img [src]="data.image" alt="{{ data.title }}">
+  </div>
+
+  <p class="modal-description">{{ data.description }}</p>
+
+  <div class="modal-actions">
+    <button mat-button class="cyber-btn" (click)="close()" i18n="@@closeBtn">Chiudi</button>
+
+    <a mat-button class="cyber-btn accent"
+       [href]="data.externalUrl"
+       target="_blank"
+       rel="noopener"
+       i18n="@@openDemoBtn">
+      Apri Demo →
+    </a>
+  </div>
+</div>
+
