@@ -1,0 +1,25 @@
+
+@use 'colors' as *;
+@use 'spacing' as *;
+
+/* CARD */
+$card-radius: 16px;
+$card-padding: space(5);
+$card-border: 1px solid rgba(color(accent), 0.35);
+$card-bg: linear-gradient(
+  135deg,
+  color(card-bg),
+  darken(color(card-bg), 6%)
+);
+
+/* BUTTON */
+$btn-radius: 10px;
+$btn-border: 2px solid color(accent);
+$btn-hover-bg: color(accent);
+$btn-hover-color: color(white);
+
+/* DIALOG */
+$dialog-bg: #1d1d2f;
+$dialog-border: 1px solid rgba(color(accent), 0.5);
+$dialog-shadow: 0 0 35px rgba(color(accent), 0.4);
+

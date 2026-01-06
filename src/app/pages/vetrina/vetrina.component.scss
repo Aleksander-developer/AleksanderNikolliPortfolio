@@ -1,99 +1,124 @@
 
-@use '../../../styles/variables' as vars;
+@use 'theme/theme' as *;
 
+/* =====================================================
+   SEZIONE VETRINA
+===================================================== */
 .vetrina-section {
-  padding: vars.$spacing-xl vars.$spacing-lg;
-  text-align: center;
-  color: vars.$text-color;
+  padding: space(7) space(6);
+  color: color(text);
 }
 
+/* CONTENITORE CENTRALE */
+.vetrina-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =====================================================
+   TITOLI
+===================================================== */
 .section-title {
-  font-family: vars.$font-family-heading;
+  font-family: $font-family-heading;
   font-size: 2.3rem;
-  color: vars.$accent-color;
-  margin-bottom: vars.$spacing-md;
-  text-shadow: 0 0 12px rgba(vars.$accent-color, 0.5);
+  color: color(accent);
+  margin-bottom: space(4);
+  text-shadow: 0 0 12px rgba(color(accent), 0.5);
 }
 
 .section-subtitle {
   font-size: 1.1rem;
   max-width: 700px;
-  margin: 0 auto vars.$spacing-xl;
-  color: vars.$text-color-light;
-}
 
+  /* 🔥 CENTRATURA REALE */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: space(6);
+
+  padding-left: 0;
+  padding-right: 0;
+
+  color: color(text-light);
+  line-height: 1.6;
+  text-align: center;
+}
+/* =====================================================
+   GRID SOFTWARE
+===================================================== */
 .software-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: vars.$spacing-lg;
+  gap: space(6);
+  justify-items: center;
 }
 
-.software-card {
-  background: vars.$vetrina-card-bg !important;
-  border: vars.$card-border;
-  border-radius: vars.$card-radius;
-  padding-bottom: vars.$spacing-md;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: vars.$shadow-soft;
+/* DEFAULT → più software */
+.software-grid:not(.single) {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
 
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: vars.$vetrina-card-hover-shadow;
+/* SOLO UN SOFTWARE → SEMPRE CENTRALE */
+.software-grid.single {
+  grid-template-columns: 1fr;
+  justify-content: center;
+}
+
+/* =====================================================
+   COMING SOON
+===================================================== */
+.coming-soon {
+  margin-top: space(6);
+  font-size: 0.95rem;
+  color: color(text-light);
+  opacity: 0.75;
+  text-align: center;
+}
+
+/* =====================================================
+   RESPONSIVE (SOLO SPAZI E FONT, MAI GRID!)
+===================================================== */
+
+/* XL */
+@include up(xl) {
+  .vetrina-inner {
+    max-width: 1400px;
+  }
+}
+
+/* MD */
+@media (max-width: bp(md)) {
+  .vetrina-section {
+    padding: space(6) space(4);
   }
 
-  img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-top-left-radius: vars.$card-radius;
-    border-top-right-radius: vars.$card-radius;
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* SM */
+@media (max-width: bp(sm)) {
+  .section-title {
+    font-size: 1.7rem;
   }
 
-  mat-card-title {
-    color: vars.$accent-color;
-    margin: vars.$spacing-md 0 vars.$spacing-sm;
-    font-family: vars.$font-family-heading;
-    font-size: 1.3rem;
-  }
-
-  .description {
-    padding: 0 vars.$spacing-md;
-    color: vars.$text-color-light;
+  .section-subtitle {
     font-size: 1rem;
-    min-height: 70px;
+  }
+}
+
+/* XS */
+@media (max-width: bp(xs)) {
+  .vetrina-section {
+    padding: space(5) space(3);
   }
 
-  .card-actions {
-    display: flex;
-    padding: 0 vars.$spacing-md;
-    gap: vars.$spacing-sm;
+  .section-title {
+    font-size: 1.5rem;
+  }
 
-    .btn-primary {
-      flex: 1;
-      padding: 10px;
-      border-radius: vars.$btn-radius;
-      border: vars.$btn-border;
-      color: vars.$accent-color;
-      text-align: center;
-      transition: 0.3s;
-
-      &:hover {
-        background: vars.$btn-hover-bg;
-        color: vars.$btn-hover-color;
-      }
-    }
-
-    .btn-secondary {
-      flex: 1;
-      border-radius: vars.$btn-radius;
-      border: 1px solid vars.$accent-color;
-      color: vars.$accent-color;
-
-      &:hover {
-        background: rgba(vars.$accent-color, 0.15);
-      }
-    }
+  .coming-soon {
+    font-size: 0.85rem;
   }
 }
 

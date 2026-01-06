@@ -19,6 +19,8 @@ import { GoogleVerifiedBadgeComponent } from './components/google-verified-badge
 import { BackgroundComponent } from '../pages/background/background.component';
 import { LogoComponent } from '../pages/logo/logo.component';
 import { SocialIconsModule } from './components/social-icons/social-icons.module';
+import { VetrinaSoftwareModule } from './vetrina-software/vetrina-software.module';
+import { SkillsBoxComponent } from './components/skills-box/skills-box.component';
 
 
 @NgModule({
@@ -31,14 +33,16 @@ import { SocialIconsModule } from './components/social-icons/social-icons.module
     ReviewsComponent,
     GoogleVerifiedBadgeComponent,
     BackgroundComponent,
-    LogoComponent
+    LogoComponent,
+    SkillsBoxComponent
   ],
   imports: [
     CommonModule,
     RouterModule, // Necessario per routerLink
     ReactiveFormsModule, // Necessario per form reattivi
     MaterialModule, // Importa MaterialModule
-    SocialIconsModule
+    SocialIconsModule,
+    VetrinaSoftwareModule
 
   ],
   exports: [
@@ -55,7 +59,9 @@ import { SocialIconsModule } from './components/social-icons/social-icons.module
     RouterModule,    // Esporta RouterModule
     ReactiveFormsModule, // Esporta ReactiveFormsModule
     LogoComponent,
-    SocialIconsModule
+    SocialIconsModule,
+    VetrinaSoftwareModule,
+    SkillsBoxComponent
 
   ]
 })

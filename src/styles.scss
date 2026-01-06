@@ -1,21 +1,20 @@
-// src/styles.scss
 
-// 1. Regole @use DEVONO essere le primissime righe
-@use './styles/variables' as vars;
-@use './styles/mixins' as mixins;
+/* src/styles.scss */
 
-// 2. Poi le regole @import
-@import '@angular/material/prebuilt-themes/azure-blue.css'; // CORRETTO: rimosso il ".2"
+/* 1) @use devono essere le primissime righe */
+@use 'theme/theme' as *;
+
+/* 2) poi eventuali @import */
+@import '@angular/material/prebuilt-themes/azure-blue.css';
 
 /* Puoi aggiungere qui stili globali, e anche importare altri file di stile */
 
-// Stili globali per il body, font, ecc.
+/* Stili globali per il body, font, ecc. */
 html, body {
   height: 100%;
   margin: 0;
-  font-family: vars.$font-family-base; // Usa la variabile globale
-  // background-color: vars.$dark-bg; // Usa la variabile globale
-  color: vars.$text-color; // Usa la variabile globale
+  font-family: $font-family-base;
+  color: color(text);
 }
 
 /* Stili per il pulsante scroll-to-top (dal tuo app.component.html) */
@@ -37,7 +36,7 @@ html, body {
 
 .scroll-to-top-button.over-footer {
   /* Stili aggiuntivi se il pulsante è sopra il footer */
-  box-shadow: 0 0 15px vars.$shadow-glow-color; /* Esempio di glow */
+  box-shadow: 0 0 15px rgba(color(accent), 0.6);
 }
 
 /* Stili per il contenitore principale dell'app */
@@ -80,3 +79,4 @@ app-footer {
     opacity: 0;
   }
 }
+

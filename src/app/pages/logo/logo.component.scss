@@ -1,5 +1,8 @@
 
+/* src/app/shared/components/logo-animated/logo-animated.component.scss */
+
 @use "sass:math";
+@use "theme/theme" as *;
 
 :host {
   display: flex;
@@ -10,7 +13,9 @@
   min-height: 260px;
 }
 
-/* CERCHIO PRINCIPALE */
+/* =====================================================
+   CERCHIO PRINCIPALE
+===================================================== */
 .logo-circle {
   position: relative;
   width: min(280px, 70vmin);
@@ -19,35 +24,46 @@
   overflow: hidden;
   isolation: isolate;
   box-shadow:
-    0 0 25px rgba(0, 238, 255, 0.5),
-    0 0 80px rgba(0, 238, 255, 0.25);
+    0 0 25px rgba(color(accent), 0.5),
+    0 0 80px rgba(color(accent), 0.25);
 }
 
-/* SFONDO ANIMATO */
+/* =====================================================
+   SFONDO ANIMATO
+===================================================== */
 .circle-bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 20% 0%, #1b89a7, transparent 60%),
-    linear-gradient(140deg, #071525, #0b273b, #05101b);
+    radial-gradient(circle at 20% 0%, lighten(color(primary), 15%), transparent 60%),
+    linear-gradient(
+      140deg,
+      darken(color(dark-bg), 10%),
+      color(dark-bg),
+      darken(color(dark-bg), 15%)
+    );
   background-size: 200% 200%;
   animation: bgShift 18s ease-in-out infinite;
   z-index: 1;
 }
 
-/* GRIGLIA TECH */
+/* =====================================================
+   GRIGLIA TECH
+===================================================== */
 .tech-lines {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(color(accent), 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(color(accent), 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
   opacity: 0.23;
   z-index: 2;
 }
 
-/* CHIP CENTRALE */
+/* =====================================================
+   CHIP CENTRALE
+===================================================== */
 .tech-chip {
   position: absolute;
   top: 34%;
@@ -55,24 +71,28 @@
   width: 32%;
   height: 32%;
   border-radius: 12%;
-  border: 2px solid rgba(0, 238, 255, 0.6);
+  border: 2px solid rgba(color(accent), 0.6);
   box-shadow:
-    0 0 12px rgba(0, 238, 255, 0.4),
-    inset 0 0 8px rgba(0, 238, 255, 0.5);
+    0 0 12px rgba(color(accent), 0.4),
+    inset 0 0 8px rgba(color(accent), 0.5);
   z-index: 2;
 }
 
-/* CERCHIO CIRCUITO */
+/* =====================================================
+   CERCHIO CIRCUITO
+===================================================== */
 .tech-circuit {
   position: absolute;
   inset: 16%;
-  border: 1px dashed rgba(0, 238, 255, 0.35);
+  border: 1px dashed rgba(color(accent), 0.35);
   border-radius: 50%;
   animation: pulseCircuit 6s ease-in-out infinite;
   z-index: 2;
 }
 
-/* TESTO CENTRALE */
+/* =====================================================
+   TESTO CENTRALE
+===================================================== */
 .logo-text {
   position: absolute;
   inset: 0;
@@ -81,12 +101,14 @@
   align-items: center;
   font-family: "Fira Code", monospace;
   font-size: 1.1rem;
-  color: #eaffff;
+  color: color(text);
   z-index: 5;
-  text-shadow: 0 0 10px rgba(0, 238, 255, 0.8);
+  text-shadow: 0 0 10px rgba(color(accent), 0.8);
 }
 
-/* BADGE SOLO SUL BORDO */
+/* =====================================================
+   BADGE SUL BORDO
+===================================================== */
 .tech-badges {
   position: absolute;
   inset: 0;
@@ -94,7 +116,6 @@
   pointer-events: none;
 }
 
-/* STILE BADGE */
 .tech-badges .badge {
   position: absolute;
   font-family: "Fira Code", monospace;
@@ -102,19 +123,21 @@
   padding: 3px 6px;
   border-radius: 4px;
 
-  background: rgba(0, 255, 255, 0.07);
-  border: 1px solid rgba(0, 255, 255, 0.35);
-  color: rgba(0, 255, 255, 0.8);
+  background: rgba(color(accent), 0.07);
+  border: 1px solid rgba(color(accent), 0.35);
+  color: rgba(color(accent), 0.8);
 
-  text-shadow: 0 0 4px rgba(0, 255, 255, 0.4);
+  text-shadow: 0 0 4px rgba(color(accent), 0.4);
 
-  /* Effetto LED continuo */
   animation: flicker 2.4s infinite ease-in-out alternate;
 }
 
-/* DISPOSIZIONE CIRCOLARE */
+/* =====================================================
+   DISPOSIZIONE CIRCOLARE BADGE
+===================================================== */
 @for $i from 1 through 18 {
   $angle: math.div($i, 18) * 360deg;
+
   .tech-badges .badge:nth-child(#{$i}) {
     top: calc(50% + 43% * sin(#{$angle}) - 8px);
     left: calc(50% + 43% * cos(#{$angle}) - 20px);
@@ -122,7 +145,9 @@
   }
 }
 
-/* ==================== ANIMAZIONI ==================== */
+/* =====================================================
+   ANIMAZIONI
+===================================================== */
 @keyframes bgShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -138,5 +163,61 @@
   0%   { opacity: 0.15; transform: scale(0.92); }
   50%  { opacity: 0.80; transform: scale(1); }
   100% { opacity: 0.25; transform: scale(0.95); }
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+/* LG */
+@include between(md, lg) {
+  .logo-circle {
+    width: min(240px, 65vmin);
+    height: min(240px, 65vmin);
+  }
+}
+
+/* MD */
+@media (max-width: bp(md)) {
+  .logo-circle {
+    width: min(220px, 70vmin);
+    height: min(220px, 70vmin);
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+}
+
+/* SM */
+@media (max-width: bp(sm)) {
+  .logo-circle {
+    width: min(190px, 75vmin);
+    height: min(190px, 75vmin);
+  }
+
+  .logo-text {
+    font-size: 0.95rem;
+  }
+
+  .tech-badges .badge {
+    font-size: 0.4rem;
+  }
+}
+
+/* XS */
+@media (max-width: bp(xs)) {
+  .logo-circle {
+    width: min(160px, 80vmin);
+    height: min(160px, 80vmin);
+  }
+
+  .logo-text {
+    font-size: 0.85rem;
+  }
+
+  .tech-badges .badge {
+    font-size: 0.36rem;
+  }
 }
 

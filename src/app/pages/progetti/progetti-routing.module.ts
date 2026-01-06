@@ -4,8 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProgettiComponent } from './progetti.component';
 
 const routes: Routes = [
-  { path: '', component: ProgettiComponent },
-  { path: ':id', loadChildren: () => import('./progetto-detail/progetto-detail.module').then(m => m.ProgettoDetailModule) }
+  { path: '', component: ProgettiComponent }
 ];
 
 @NgModule({

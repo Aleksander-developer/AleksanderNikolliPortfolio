@@ -1,18 +1,38 @@
 
+/* src/app/shared/components/modal/modal.component.scss */
+
+@use 'theme/theme' as *;
+
+/* ===================================================== */
+/* MODAL CONTAINER – CYBERPUNK                           */
+/* ===================================================== */
+
 .modal-container {
-  background: #0a0a14;
+  background: color(dark-bg-2);
   padding: 2rem;
-  border: 1px solid rgba(255, 0, 200, 0.3);
-  box-shadow: 0 0 25px rgba(255, 0, 180, 0.6);
+  border: 1px solid rgba(color(accent), 0.3);
+  box-shadow: 0 0 25px rgba(color(accent), 0.6);
   border-radius: 12px;
   text-align: center;
   animation: neonGlow 2s infinite alternate;
 }
 
+/* ===================================================== */
+/* ANIMAZIONE NEON                                       */
+/* ===================================================== */
+
 @keyframes neonGlow {
-  0% { box-shadow: 0 0 15px rgba(255, 0, 180, 0.5); }
-  100% { box-shadow: 0 0 35px rgba(255, 0, 180, 1); }
+  0% {
+    box-shadow: 0 0 15px rgba(color(accent), 0.5);
+  }
+  100% {
+    box-shadow: 0 0 35px rgba(color(accent), 1);
+  }
 }
+
+/* ===================================================== */
+/* IMAGE WRAPPER                                         */
+/* ===================================================== */
 
 .modal-image-wrapper {
   overflow: hidden;
@@ -22,25 +42,90 @@
   img {
     width: 100%;
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.4);
+    box-shadow: 0 0 20px rgba(color(accent), 0.4);
   }
 }
 
+/* ===================================================== */
+/* CYBER BUTTON                                          */
+/* ===================================================== */
+
 .cyber-btn {
-  background: #111;
-  color: #fff;
-  border: 1px solid #ff00aa;
+  background: color(dark-bg);
+  color: color(white);
+  border: 1px solid color(accent);
   padding: 0.7rem 1.2rem;
   border-radius: 8px;
   transition: 0.3s;
 
   &.accent {
-    background: #ff00aa;
+    background: color(accent);
+    color: color(dark-bg);
   }
 
   &:hover {
-    box-shadow: 0 0 15px #ff00aa;
+    box-shadow: 0 0 15px color(accent);
     transform: translateY(-2px);
+  }
+}
+
+/* ===================================================== */
+/* RESPONSIVE                                            */
+/* ===================================================== */
+
+/* XS – smartphone piccoli */
+@media (max-width: bp(xs)) {
+  .modal-container {
+    padding: space(3);
+    border-radius: 10px;
+  }
+
+  .cyber-btn {
+    width: 100%;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* SM – smartphone */
+@media (min-width: bp(xs)) and (max-width: bp(sm)) {
+  .modal-container {
+    padding: space(4);
+  }
+
+  .cyber-btn {
+    padding: 0.65rem 1.1rem;
+  }
+}
+
+/* MD – tablet / mobile landscape */
+@media (max-width: bp(md)) {
+  .modal-container {
+    padding: space(4);
+  }
+
+  .modal-image-wrapper {
+    margin-bottom: space(3);
+  }
+}
+
+/* LG – desktop piccoli */
+@include between(md, lg) {
+  .modal-container {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+}
+
+/* XL – desktop grandi */
+@include up(xl) {
+  .modal-container {
+    max-width: 860px;
+    padding: space(5);
+  }
+
+  .cyber-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.4rem;
   }
 }
 

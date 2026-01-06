@@ -1,274 +1,65 @@
-// src/app/pages/chi-sono/chi-sono.component.scss
 
-@use '../../../styles/variables' as vars;
+@use 'theme/theme' as *;
 
-/* === CARD PRINCIPALE === */
+:host {
+  display: block;
+  width: 100%;
+}
+
+.chi-sono-section {
+  width: 100%;
+  margin: 0 auto;
+  padding: calc(64px + 2rem) 16px 48px;
+  box-sizing: border-box;
+}
+
+
+.chi-sono-inner {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+
 .chi-sono-card {
-  margin: vars.$spacing-lg auto;
+  width: 100%;
   max-width: 900px;
+  margin: 48px auto;
   padding: 1.5rem;
-  position: relative;
-  z-index: 5;
+  box-sizing: border-box;
 
-  /* ✅ Sfondo traslucido per mostrare il background animato */
-  background: rgba(vars.$dark-bg, 0.75);
+  background: rgba(color(dark-bg), 0.75);
   backdrop-filter: blur(6px);
-  color: vars.$text-color;
   border-radius: 12px;
+
+  border: 1px solid rgba(color(accent), 0.25);
   box-shadow:
     0 10px 30px rgba(0, 0, 0, 0.7),
-    0 0 25px rgba(vars.$accent-color, 0.4);
-  border: 1px solid rgba(vars.$accent-color, 0.25);
+    0 0 25px rgba(color(accent), 0.4);
+}
 
-  /* === TITOLI === */
-  mat-card-title {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: vars.$accent-color;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5);
+.why-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 48px auto 0;
+  box-sizing: border-box;
+}
 
-    mat-icon {
-      font-size: 28px;
-      width: 28px;
-      height: 28px;
-      filter: drop-shadow(0 0 4px rgba(vars.$accent-color, 0.5));
-    }
-  }
-
-  /* === CONTENUTO TESTO === */
-  mat-card-content {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: lighten(vars.$text-color, 5%);
-    position: relative;
-    z-index: 2;
-
-    p {
-      margin-bottom: 1rem;
-    }
-
-    strong {
-      color: vars.$accent-color;
-      font-weight: 700;
-    }
-
-    ul {
-      padding-left: 1.5rem;
-      list-style: none;
-
-      li {
-        margin-bottom: 0.7rem;
-        position: relative;
-        &::before {
-          content: '▹';
-          color: vars.$accent-color;
-          position: absolute;
-          left: -1rem;
-          top: 0;
-          font-weight: bold;
-        }
-      }
-    }
-  }
-
-  /* === CHIP DI COMPETENZE === */
-  mat-chip-listbox {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1rem;
-
-    mat-chip-row {
-      padding: 0.5rem 1rem;
-      font-size: 0.95rem;
-      border-radius: 20px;
-      background-color: rgba(vars.$accent-color, 0.15);
-      border: 1px solid rgba(vars.$accent-color, 0.4);
-      box-shadow: 0 0 10px rgba(vars.$accent-color, 0.2);
-      transition: all 0.25s ease-in-out;
-
-      ::ng-deep .mat-mdc-chip-action-label,
-      ::ng-deep .mdc-evolution-chip__text-content {
-        color: vars.$text-color;
-      }
-
-      &.mdc-evolution-chip--selected {
-        background-color: vars.$accent-color;
-        box-shadow: 0 0 12px rgba(vars.$accent-color, 0.8);
-        ::ng-deep .mat-mdc-chip-action-label,
-        ::ng-deep .mdc-evolution-chip__text-content {
-          color: vars.$dark-bg;
-        }
-      }
-
-      &:hover {
-        transform: translateY(-3px);
-        background-color: rgba(vars.$accent-color, 0.25);
-        box-shadow: 0 5px 15px rgba(vars.$accent-color, 0.5);
-      }
-    }
-  }
-
-  /* === DIVISORI === */
-  .mat-divider-margin {
-    margin: vars.$spacing-lg 0;
-    background-color: rgba(vars.$accent-color, 0.3);
-  }
-
-  /* === SEZIONE ATTESTATI === */
-  .attestati-intro {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: vars.$text-color;
-    font-size: 1.05rem;
-    text-shadow: 0 0 6px rgba(0, 188, 212, 0.3);
-  }
-
-  .attestati-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: vars.$spacing-lg;
-    justify-content: center;
-    margin-top: 1.5rem;
-  }
-
-  .attestato-item {
-    background: rgba(vars.$dark-bg, 0.7);
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    overflow: hidden;
-    text-align: center;
-    padding-bottom: 1rem;
-    border: 1px solid rgba(vars.$accent-color, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(vars.$accent-color, 0.4);
-
-    &:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.8), 0 0 30px vars.$shadow-glow-color;
-    }
-  }
-
-  .attestato-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px 10px 0 0;
-    filter: brightness(0.9) contrast(1.1);
-    transition: filter 0.3s ease;
-
-    &:hover {
-      filter: brightness(1) contrast(1.2);
-    }
-  }
-
-  .attestato-caption {
-    display: block;
-    margin-top: 1rem;
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: vars.$accent-color;
-    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.3);
-  }
-
-  /* === NOTA FINALE === */
-  .final-note {
-    margin-top: 2.5rem;
-    padding: 1.5rem;
-    background: rgba(vars.$dark-bg, 0.8);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(vars.$accent-color, 0.3);
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6), 0 0 15px rgba(vars.$accent-color, 0.4);
-
-    p {
-      font-weight: 500;
-      color: vars.$text-color;
-      font-size: 1.1rem;
-
-      .contact-link {
-        color: vars.$accent-color;
-        text-decoration: none;
-        font-weight: 700;
-        text-shadow: 0 0 15px rgba(vars.$accent-color, 0.8);
-        transition: all 0.3s ease-in-out;
-        display: inline-block;
-        padding: 0.2em 0.4em;
-        border-radius: 4px;
-        position: relative;
-        overflow: hidden;
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          bottom: 0;
-          width: 0;
-          height: 2px;
-          background-color: vars.$primary-color;
-          transform: translateX(-50%);
-          animation: animated-underline 2s infinite ease-in-out;
-        }
-
-        &:hover {
-          text-shadow: 0 0 25px rgba(vars.$accent-color, 1);
-          transform: scale(1.07);
-          cursor: pointer;
-          background-color: rgba(vars.$accent-color, 0.1);
-        }
-      }
-    }
+@media (max-width: bp(md)) {
+  .chi-sono-card {
+    padding: 1.25rem;
   }
 }
 
-/* === RESPONSIVE === */
-@media (max-width: vars.$breakpoint-md) {
+@media (max-width: bp(sm)) {
+  .chi-sono-section {
+    padding: calc(64px + 1.5rem) 12px 32px;
+  }
+
   .chi-sono-card {
-    margin: 1.5rem 1rem;
     padding: 1rem;
-
-    mat-card-title {
-      font-size: 1.4rem;
-
-      mat-icon {
-        font-size: 24px;
-      }
-    }
-
-    mat-card-content {
-      font-size: 1rem;
-      ul li {
-        margin-bottom: 0.5rem;
-      }
-    }
-
-    mat-chip-listbox mat-chip-row {
-      font-size: 0.85rem;
-      padding: 0.4rem 0.8rem;
-    }
-
-    .attestati-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-
-    .attestato-item {
-      padding-bottom: 0.8rem;
-
-      .attestato-caption {
-        font-size: 1rem;
-      }
-    }
-
-    .final-note {
-      margin-top: 2rem;
-      padding: 1.2rem;
-      font-size: 1rem;
-    }
   }
 }
 

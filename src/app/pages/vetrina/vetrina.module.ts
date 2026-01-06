@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { VetrinaRoutingModule } from './vetrina-routing.module';
 import { MaterialModule } from '../../shared/shared/material.module';
 import { VetrinaComponent } from './vetrina.component';
+import { VetrinaSoftwareModule } from '../../shared/vetrina-software/vetrina-software.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { VetrinaComponent } from './vetrina.component';
   imports: [
     CommonModule,
     VetrinaRoutingModule,
-    MaterialModule
+    MaterialModule,
+    VetrinaSoftwareModule
   ]
 })
 export class VetrinaModule { }

@@ -1,3 +1,5 @@
+
+// src/app/shared/components/social-icons/social-icons.module.ts
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SvgGithubComponent } from './svg-github/svg-github.component';
@@ -22,7 +24,9 @@ import { SocialIconsComponent } from './social-icons.component';
     CommonModule
   ],
   exports: [
-    SocialIconsComponent
+    SocialIconsComponent,
+    SvgWhatsappComponent
   ]
 })
 export class SocialIconsModule { }
+

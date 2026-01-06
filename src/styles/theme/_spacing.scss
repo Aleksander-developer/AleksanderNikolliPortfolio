@@ -1,0 +1,19 @@
+
+@use 'fluid' as *;
+
+$space: (
+  0: 0,
+  1: fluid(0.25rem, 0.5rem),
+  2: fluid(0.5rem, 0.75rem),
+  3: fluid(0.75rem, 1rem),
+  4: fluid(1rem, 1.5rem),
+  5: fluid(1.5rem, 2rem),
+  6: fluid(2rem, 3rem),
+  7: fluid(3rem, 4rem),
+  8: fluid(4rem, 6rem)
+);
+
+@function space($key) {
+  @return map-get($space, $key);
+}
+

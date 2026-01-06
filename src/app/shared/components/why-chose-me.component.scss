@@ -1,233 +1,273 @@
 
-@use '../../../styles/variables' as vars;
+@use 'theme/theme' as *;
 
-/* =============================================== */
-/*    SEZIONE PRINCIPALE                          */
-/* =============================================== */
+/* ===============================
+   WRAPPER CENTRANTE
+================================ */
+.why-choose-me-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* ===============================
+   CARD
+================================ */
 .why-choose-me-card {
-  background: linear-gradient(135deg, vars.$card-bg, darken(vars.$card-bg, 4%));
-  color: vars.$text-color;
-  font-family: vars.$font-family-base;
-  margin: vars.$spacing-xl auto;
+  background: linear-gradient(
+    135deg,
+    color(card-bg),
+    darken(color(card-bg), 4%)
+  );
+  color: color(text);
+  font-family: $font-family-base;
+  margin: space(6) auto;
   padding: 2rem;
   border-radius: 18px;
   max-width: 860px;
 
-  border: 1px solid rgba(vars.$accent-color, 0.25);
+  border: 1px solid rgba(color(accent), 0.25);
   box-shadow:
-    0 0 25px rgba(vars.$accent-color, 0.15),
-    0 0 60px rgba(vars.$accent-color, 0.05);
+    0 0 25px rgba(color(accent), 0.15),
+    0 0 60px rgba(color(accent), 0.05);
 
-  /* ✨ Entrata animata */
   opacity: 0;
-  transform: translateY(40px) scale(0.97);
-  animation: fadeUp 0.9s ease-out forwards;
+  transform: translateY(40px);
+  animation: cardEnter 0.8s ease forwards;
 }
 
-/* =============================================== */
-/*    HEADER                                      */
-/* =============================================== */
-
+/* ===============================
+   HEADER
+================================ */
 mat-card-header {
   display: flex;
   align-items: center;
-  gap: vars.$spacing-sm;
-  margin-bottom: vars.$spacing-lg;
+  gap: space(2);
+  margin-bottom: space(5);
 }
 
 .header-icon {
-  color: vars.$accent-color;
-  font-size: 36px !important;
-  filter: drop-shadow(0 0 6px rgba(vars.$accent-color, 0.5));
-  transition: 0.3s ease;
+  font-size: 36px;
+  color: color(accent);
+  filter: drop-shadow(0 0 6px rgba(color(accent), 0.5));
 }
 
 mat-card-title {
   font-size: 2rem;
-  color: vars.$accent-color;
-  font-family: vars.$font-family-heading;
-  text-shadow: 0 0 12px rgba(vars.$accent-color, 0.35);
+  font-family: $font-family-heading;
+  color: color(accent);
+  text-shadow: 0 0 12px rgba(color(accent), 0.35);
 }
 
-/* =============================================== */
-/*    LISTA PUNTI NEGATIVI                        */
-/* =============================================== */
+/* ===============================
+   TYPING TITLE
+================================ */
+.typing-title {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+}
 
-ul {
+.typing-title.start-typing {
+  animation: typing 1.8s steps(26, end) forwards;
+}
+
+/* ===============================
+   INTRO (fade)
+================================ */
+.fade-step {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+  animation-delay: 1.9s;
+}
+
+/* ===============================
+   LISTA STEP-BY-STEP
+================================ */
+.step-list {
   list-style: none;
   padding: 0;
-  margin: vars.$spacing-md 0;
+  margin: space(4) 0;
 }
 
-ul li {
+.step {
   position: relative;
   padding-left: 40px;
-  margin-bottom: vars.$spacing-sm;
+  margin-bottom: space(2);
   font-size: 1.05rem;
-  font-weight: 500;
-
-  transition: 0.25s ease;
-  cursor: default;
-
-  &:hover {
-    color: lighten(vars.$text-color, 10%);
-    text-shadow: 0 0 5px rgba(vars.$error-color, 0.4);
-  }
+  opacity: 0;
+  transform: translateX(-12px);
+  animation: stepIn 0.5s ease forwards;
 }
 
-/* Icone negative */
+.step:nth-child(1) { animation-delay: 2.6s; }
+.step:nth-child(2) { animation-delay: 3.2s; }
+.step:nth-child(3) { animation-delay: 3.8s; }
+
 .negative-icon {
   position: absolute;
   left: 0;
   top: 2px;
   font-size: 24px;
-  color: vars.$error-color;
-  filter: drop-shadow(0 0 6px rgba(vars.$error-color, 0.5));
+  color: color(error);
 }
 
-/* =============================================== */
-/*    FRASI CONCLUSIVE POSITIVE                   */
-/* =============================================== */
-
+/* ===============================
+   CONCLUSIONE (highlight)
+================================ */
 .conclusione {
   position: relative;
   padding-left: 40px;
   font-size: 1.25rem;
-  font-weight: bold;
-  margin-top: vars.$spacing-lg;
-  color: vars.$accent-color;
-
-  text-shadow: 0 0 10px rgba(vars.$accent-color, 0.5);
-  transition: 0.3s ease;
-
-  &:hover {
-    transform: translateX(4px);
-    text-shadow: 0 0 14px rgba(vars.$accent-color, 0.7);
-  }
+  font-weight: 600;
+  margin-top: space(5);
+  color: color(accent);
+  opacity: 0;
+  transform: translateY(10px);
 }
 
-/* Icone positive */
+.final-step {
+  animation: finalReveal 0.8s ease forwards;
+  animation-delay: 4.6s;
+}
+
+.final-step.delay-2 {
+  animation-delay: 5.2s;
+}
+
 .positive-icon {
   position: absolute;
   left: 0;
   top: 2px;
   font-size: 26px;
-  color: vars.$success-color;
-  filter: drop-shadow(0 0 6px rgba(vars.$success-color, 0.4));
+  color: color(success);
 }
 
-/* =============================================== */
-/*    ANIMAZIONE ENTRATA CARD                     */
-/* =============================================== */
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.96);
-  }
-  60% {
+/* ===============================
+   ANIMAZIONI
+================================ */
+@keyframes cardEnter {
+  to {
     opacity: 1;
-    transform: translateY(0) scale(1.01);
+    transform: translateY(0);
   }
-  100% {
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes stepIn {
+  to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(0);
   }
 }
 
-/* =============================================== */
-/* RESPONSIVE                                     */
-/* =============================================== */
-
-@media (max-width: vars.$breakpoint-md) {
-  .why-choose-me-card {
-    padding: vars.$spacing-md;
-    border-radius: 14px;
-  }
-
-  mat-card-title {
-    font-size: 1.7rem;
-  }
-
-  .conclusione {
-    font-size: 1.15rem;
-  }
-
-  ul li {
-    padding-left: 34px;
+@keyframes finalReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    text-shadow: 0 0 18px rgba(color(accent), 0.8);
   }
 }
 
-@media (max-width: vars.$breakpoint-sm) {
-  mat-card-title {
-    font-size: 1.4rem;
+/* ===============================================
+   CTA — RETURN VALUE
+=============================================== */
+
+.contact-cta {
+  margin-top: space(5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(2);
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(12px);
+  animation: ctaReveal 0.6s ease forwards;
+  animation-delay: 5.8s; // dopo l’ultimo final-step
+}
+
+@keyframes ctaReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-text {
+  font-size: 1rem;
+  color: color(text-light);
+  opacity: 0.85;
+}
+
+/* WhatsApp button */
+.whatsapp-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+
+  background: rgba(color(success), 0.15);
+  border: 1px solid rgba(color(success), 0.4);
+
+  color: color(success);
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 0 12px rgba(color(success), 0.25);
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: rgba(color(success), 0.25);
+    box-shadow: 0 0 20px rgba(color(success), 0.5);
+    transform: translateY(-2px);
   }
 
+  span {
+    white-space: nowrap;
+  }
+}
+
+/* Responsive */
+@media (max-width: bp(sm)) {
+  .cta-text {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-button {
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (max-width: bp(md)) {
+  mat-card-title { font-size: 1.7rem; }
+  .conclusione { font-size: 1.1rem; }
+}
+
+@media (max-width: bp(sm)) {
+  mat-card-title { font-size: 1.4rem; }
   .conclusione {
     font-size: 1rem;
     padding-left: 30px;
   }
-
-  ul li {
+  .step {
     padding-left: 30px;
-  }
-}
-
-/* ======================================================= */
-/*       EFFETTO DIGITAZIONE STILE TERMINALE               */
-/* ======================================================= */
-
-/* base: nessuna animazione di default */
-.typing-title {
-  overflow: hidden;
-  white-space: nowrap;
-  width: fit-content;
-  position: relative;
-}
-
-/* quando parte la digitazione */
-.typing-title.start-typing {
-  animation: typing 1.8s steps(25, end) forwards;
-}
-
-/* cursore lampeggiante creato con ::after */
-.typing-title.start-typing::after {
-  content: '';
-  display: inline-block;
-  width: 3px;
-  height: 1.2em;
-  margin-left: 4px;
-  background: vars.$accent-color;
-  animation: cursorBlink 0.7s step-end infinite;
-}
-
-/* quando la digitazione è finita → ferma il cursore */
-.typing-title.typing-done::after {
-  animation: none;
-  background: transparent;
-}
-
-/* ----- Animazione digitazione ------- */
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-/* ----- Blink del cursore ------- */
-@keyframes cursorBlink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
 

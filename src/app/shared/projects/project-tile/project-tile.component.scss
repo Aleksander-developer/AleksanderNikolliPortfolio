@@ -1,0 +1,152 @@
+
+@use 'theme/theme' as *;
+
+/* =====================================================
+   PROJECT TILE
+===================================================== */
+.project-tile {
+  width: 260px; // 🔥 larghezza fissa (obbligatoria per scroll orizzontale)
+
+  padding: space(4);
+  border-radius: radius(card);
+
+  background: rgba(color(card-bg), 0.55);
+  border: 1px solid rgba(color(accent), 0.25);
+
+  box-shadow: shadow(soft);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: space(3);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: shadow(vetrina-card-hover);
+  }
+}
+
+/* =====================================================
+   LOGO
+===================================================== */
+.project-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: auto;
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 12px rgba(color(accent), 0.35));
+  }
+
+  &.sm img {
+    width: 80px;
+  }
+
+  &.md img {
+    width: 120px;
+  }
+
+  &.lg img {
+    width: 160px; // progetto hero (Azzurra)
+  }
+}
+
+/* =====================================================
+   TITOLO
+===================================================== */
+.project-title {
+  font-family: $font-family-heading;
+  font-size: 1.1rem;
+  color: color(accent);
+  text-align: center;
+  letter-spacing: 0.4px;
+  margin-top: space(2);
+}
+
+/* =====================================================
+   AZIONI
+===================================================== */
+.project-actions {
+  display: flex;
+  gap: space(2);
+}
+
+/* Base bottone */
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: all 0.25s ease;
+}
+
+/* Bottone principale */
+.action-btn.primary {
+  color: color(accent);
+  border: 1px solid rgba(color(accent), 0.6);
+  background: rgba(color(accent), 0.12);
+  box-shadow: 0 0 10px rgba(color(accent), 0.25);
+
+  &:hover {
+    background: rgba(color(accent), 0.22);
+    box-shadow: 0 0 18px rgba(color(accent), 0.5);
+    transform: translateY(-1px);
+  }
+}
+
+/* Bottone ghost */
+.action-btn.ghost {
+  color: color(text-light);
+  border: 1px solid rgba(color(text-light), 0.35);
+  background: transparent;
+
+  &:hover {
+    color: color(accent);
+    border-color: rgba(color(accent), 0.6);
+    background: rgba(color(accent), 0.08);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE (SCALA, MAI FULL WIDTH)
+===================================================== */
+@include between(md, lg) {
+  .project-tile {
+    width: 240px;
+  }
+}
+
+@media (max-width: bp(md)) {
+  .project-tile {
+    width: 220px;
+  }
+}
+
+@media (max-width: bp(sm)) {
+  .project-tile {
+    width: 210px;
+  }
+
+  .project-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: bp(xs)) {
+  .project-title {
+    font-size: 1rem;
+  }
+}
+

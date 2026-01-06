@@ -1,5 +1,7 @@
 
-@use "../../../../styles/variables" as vars;
+/* src/app/shared/components/social-icons/social-icons.component.scss */
+
+@use 'theme/theme' as *;
 
 .social-list {
   display: flex;
@@ -7,13 +9,57 @@
   align-items: center;
 
   a {
-    color: vars.$light-gray;
+    color: color(text-light);
     display: inline-flex;
-    transition: color .25s ease;
+    transition: color 0.25s ease, transform 0.25s ease;
 
     &:hover {
-      color: vars.$accent-color;
+      color: color(accent);
+      transform: translateY(-2px);
     }
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — SOCIAL ICONS LIST
+===================================================== */
+
+/* XL */
+@include up(xl) {
+  .social-list {
+    gap: 1.2rem;
+  }
+}
+
+/* LG */
+@include between(md, lg) {
+  .social-list {
+    gap: 1rem;
+  }
+}
+
+/* MD */
+@media (max-width: bp(md)) {
+  .social-list {
+    gap: 0.85rem;
+
+    a {
+      transform: none; // evita micro-movimenti su touch
+    }
+  }
+}
+
+/* SM */
+@media (max-width: bp(sm)) {
+  .social-list {
+    gap: 0.75rem;
+  }
+}
+
+/* XS */
+@media (max-width: bp(xs)) {
+  .social-list {
+    gap: 0.6rem;
   }
 }
 

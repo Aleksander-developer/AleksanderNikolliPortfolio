@@ -1,0 +1,13 @@
+
+<mat-chip-listbox
+  aria-label="Competenze principali"
+  i18n-aria-label="@@aboutMeSkillsAriaLabel"
+>
+  <mat-chip-row
+    *ngFor="let skill of skills"
+    [ngClass]="{ 'highlight': skill.highlight }"
+  >
+    {{ skill.label }}
+  </mat-chip-row>
+</mat-chip-listbox>
+

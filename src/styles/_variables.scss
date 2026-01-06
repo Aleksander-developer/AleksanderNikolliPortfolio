@@ -1,9 +1,11 @@
 
+
 @use '@angular/material' as mat;
 
 /* ============================================================
    COLORI BASE TEMA
 ============================================================ */
+/*
 $dark-bg: #1a1a2e;
 $dark-bg-2: #131322;             // nuovo: utile per contrasti
 $light-bg: #F5F5F5;
@@ -11,44 +13,52 @@ $light-bg: #F5F5F5;
 $accent-color: #00bcd4;
 $primary-color: #1976d2;
 $card-bg: #2e2e4a;
-
+*/
 /* Glow e neon */
+/* 
 $neon-cyan: rgba(0, 188, 212, 0.65);
 $neon-strong: rgba(0, 255, 255, 0.9);
+*/
 
 /* Ombre */
+/* 
 $shadow-glow-color: rgba($accent-color, 0.6);
 $shadow-strong: 0 0 20px rgba($accent-color, 0.7);
 $shadow-soft: 0 0 12px rgba($accent-color, 0.3);
+*/
 
 /* ============================================================
    TESTO
 ============================================================ */
+/* 
 $text-color: #e0e0e0;
 $text-color-white: white;
 $text-color-light: #B0B0B0;
 $text-color-dark: #333333;
 $light-gray: #a0a0a0;
-
+*/
 /* ============================================================
    STATI UI
 ============================================================ */
+/*
 $error-color: #ff5252;
 $error-dark-color: darken($error-color, 20%);
 $success-color: #4CAF50;
 $star-color: #FFD700;
-
+*/
 /* ============================================================
    TIPOGRAFIA
 ============================================================ */
+/*
 $font-family-base: 'Roboto Mono', monospace;
 $font-family-heading: 'Roboto Mono', monospace;
+/*
 
 /* ============================================================
    SPACING
 ============================================================ */
 
-
+/*
 $spacing-xl: 48px;
 $spacing-lg: 24px;
 $spacing-md: 16px;
@@ -60,14 +70,14 @@ $spacing-xxxxs: 0.5px;
 $spacing-xxxxxs: 0.25px;
 $spacing-xxxxxxs: 0.1px;
 $spacing-xxxxxxxs: 0.05px;
-
+/*
 
 /* ============================================================
    BREAKPOINTS
 ============================================================ */
 
 
-
+/*
 $breakpoint-xl: 1200px;
 $breakpoint-lg: 992px;
 $breakpoint-md: 768px;
@@ -80,34 +90,44 @@ $breakpoint-xxxxxs: 240px;
 $breakpoint-xxxxxxs: 200px;
 $breakpoint-xxxxxxxs: 160px;
 $breakpoint-xxxxxxxxs: 120px;
-
+/*
 /* ============================================================
    VARIABILI VETRINA SOFTWARE (NEW)
 ============================================================ */
+/*
 $card-radius: 16px;
 $card-padding: 24px;
 $card-border: 1px solid rgba($accent-color, 0.35);
-
+*/
 /* card effetto vetrina */
+/*
 $vetrina-card-bg: linear-gradient(135deg, $card-bg, darken($card-bg, 6%));
+*/
 
 /* card hover */
+/*
 $vetrina-card-hover-shadow: 0 0 25px rgba($accent-color, 0.45);
+*/
 
 /* bottoni */
+/*
 $btn-radius: 10px;
 $btn-border: 2px solid $accent-color;
 $btn-hover-bg: $accent-color;
 $btn-hover-color: $text-color-white;
+*/
 
 /* ============================================================
    DIALOG CYBERPUNK (per panelClass: 'cyberpunk-dialog')
 ============================================================ */
+/*
 $dialog-bg: #1d1d2f;
 $dialog-border: 1px solid rgba($accent-color, 0.5);
 $dialog-shadow: 0 0 35px rgba($accent-color, 0.4);
+*/
 
 /* eventuale neon */
+/*
 $neon-border: 0 0 12px rgba($accent-color, 0.8);
 $neon-border-soft: 0 0 6px rgba($accent-color, 0.4);
-
+*/

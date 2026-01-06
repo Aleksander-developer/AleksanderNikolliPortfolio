@@ -21,6 +21,13 @@
             "outputPath": "dist/aleksander-nikolli-portfolio",
             "index": "src/index.html",
             "browser": "src/main.ts",
+
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/styles"
+              ]
+            },
+
             "polyfills": [
               "zone.js",
               "@angular/localize/init"

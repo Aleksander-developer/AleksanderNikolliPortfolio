@@ -1,38 +1,26 @@
 
 <section class="vetrina-section">
 
-  <h2 class="section-title">Software Professionali</h2>
-  <p class="section-subtitle">
-    Strumenti avanzati creati da me per sviluppatori, grafici e creators.
-  </p>
+  <div class="vetrina-inner">
 
-  <div class="software-grid">
+    <h2 class="section-title">Software Professionali</h2>
 
-    <mat-card class="software-card" *ngFor="let item of software" (click)="openPreview(item)">
+    <p class="section-subtitle">
+      Strumenti avanzati creati da me per sviluppatori, grafici e creators.
+    </p>
 
-      <div class="image-wrapper">
-        <img [src]="item.image" [alt]="item.title" />
-      </div>
+    <!-- GRID SOFTWARE -->
+    <div class="software-grid single">
 
-      <mat-card-title>{{ item.title }}</mat-card-title>
+      <app-crea-logo-software></app-crea-logo-software>
 
-      <p class="description">
-        {{ item.description }}
-      </p>
+    </div>
 
-      <div class="card-actions">
-        <a class="btn-primary"
-           (click)="contatta(item.id); $event.stopPropagation()">
-          Contattami
-        </a>
-
-        <button mat-button class="btn-secondary"
-                (click)="openPreview(item); $event.stopPropagation()">
-          Dettagli
-        </button>
-      </div>
-
-    </mat-card>
+    <!-- COMING SOON -->
+    <p class="coming-soon">
+      Altri software sono in sviluppo 👨‍💻  
+      Questa vetrina crescerà nel tempo.
+    </p>
 
   </div>
 

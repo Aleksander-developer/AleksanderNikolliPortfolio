@@ -1,33 +1,92 @@
+
 /* src/app/shared/components/google-verified-badge/google-verified-badge.component.scss */
-@use '../../../../styles/variables' as vars;
+
+@use 'theme/theme' as *;
 
 .google-verified-badge {
   display: inline-flex;
   align-items: center;
-  background-color: vars.$accent-color; // Colore accento per il badge
-  color: vars.$dark-bg; // Testo scuro sul badge
-  padding: vars.$spacing-xs vars.$spacing-md;
+  background-color: color(accent); // Colore accento per il badge
+  color: color(dark-bg); // Testo scuro sul badge
+  padding: space(1) space(4);
   border-radius: 20px;
   font-weight: 600;
   font-size: 0.9rem;
-  box-shadow: 0 2px 5px rgba(vars.$accent-color, 0.3);
-  margin-top: vars.$spacing-md; // Aggiungi un po' di margine se necessario
+  box-shadow: 0 2px 5px rgba(color(accent), 0.3);
+  margin-top: space(4); // Margine superiore
 
-  // NUOVO: Rimuovi la sottolineatura dal link
-  text-decoration: none; // Rimuove la sottolineatura dal link stesso
-  color: vars.$dark-bg; // Assicurati che il colore del testo rimanga quello desiderato
+  /* Rimuove la sottolineatura dal link */
+  text-decoration: none;
+  color: color(dark-bg);
 
   mat-icon {
     font-size: 1.1rem;
-    margin-right: vars.$spacing-xs;
+    margin-right: space(1);
   }
+}
 
-  // Media query per schermi più piccoli se necessario
-  @media (max-width: vars.$breakpoint-md) {
+/* =========================================================
+   XS – smartphone piccoli
+========================================================= */
+@media (max-width: bp(xs)) {
+  .google-verified-badge {
+    font-size: 0.75rem;
+    padding: space(1) space(3);
+
+    mat-icon {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+/* =========================================================
+   SM – smartphone standard
+========================================================= */
+@media (min-width: bp(xs)) and (max-width: bp(sm)) {
+  .google-verified-badge {
     font-size: 0.8rem;
-    padding: vars.$spacing-xs vars.$spacing-sm;
+    padding: space(1) space(3);
+
     mat-icon {
       font-size: 1rem;
     }
   }
 }
+
+/* =========================================================
+   MD – tablet / mobile landscape
+========================================================= */
+@media (max-width: bp(md)) {
+  .google-verified-badge {
+    font-size: 0.8rem;
+    padding: space(1) space(2);
+
+    mat-icon {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* =========================================================
+   LG – desktop piccoli
+========================================================= */
+@include between(md, lg) {
+  .google-verified-badge {
+    font-size: 0.9rem;
+  }
+}
+
+/* =========================================================
+   XL – desktop grandi
+========================================================= */
+@include up(xl) {
+  .google-verified-badge {
+    font-size: 1rem;
+    padding: space(2) space(5);
+
+    mat-icon {
+      font-size: 1.2rem;
+    }
+  }
+}
+

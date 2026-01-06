@@ -1,0 +1,19 @@
+
+@use 'fluid' as *;
+
+$font-family-base: 'Roboto Mono', monospace;
+$font-family-heading: 'Share Tech Mono', 'Fira Code', monospace;
+
+$font-sizes: (
+  xs: fluid(0.75rem, 0.875rem),
+  sm: fluid(0.875rem, 1rem),
+  base: fluid(1rem, 1.125rem),
+  md: fluid(1.125rem, 1.25rem),
+  lg: fluid(1.25rem, 1.5rem),
+  xl: fluid(1.5rem, 2rem)
+);
+
+@function font($key) {
+  @return map-get($font-sizes, $key);
+}
+

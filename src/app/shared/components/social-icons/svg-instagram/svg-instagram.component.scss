@@ -1,13 +1,61 @@
 
+/* src/app/shared/components/social-icons/svg-instagram/svg-instagram.component.scss */
+
+@use 'theme/theme' as *;
+
 .icon {
   width: 28px;
   height: 28px;
   stroke: currentColor;
   fill: currentColor; // minimal flat
-  transition: opacity .25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — SVG INSTAGRAM ICON
+===================================================== */
+
+/* XL */
+@include up(xl) {
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* LG */
+@include between(md, lg) {
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* MD */
+@media (max-width: bp(md)) {
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* SM */
+@media (max-width: bp(sm)) {
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* XS */
+@media (max-width: bp(xs)) {
+  .icon {
+    width: 22px;
+    height: 22px;
   }
 }
 

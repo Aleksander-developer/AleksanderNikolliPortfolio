@@ -1,7 +1,7 @@
 
 /* src/app/pages/home/home.component.scss */
 
-@use '../../../styles/variables' as vars;
+@use 'theme/theme' as *;
 
 /* -------------------------------------------------------
    SECTION TITLE
@@ -9,11 +9,11 @@
 .section-title {
   font-family: 'Share Tech Mono', monospace;
   font-size: 2.2rem;
-  color: vars.$accent-color;
+  color: color(accent);
   text-align: center;
-  margin-top: vars.$spacing-xl;
-  margin-bottom: vars.$spacing-lg;
-  text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5);
+  margin-top: space(6);
+  margin-bottom: space(5);
+  text-shadow: 0 0 8px rgba(color(accent), 0.5);
 }
 
 /* -------------------------------------------------------
@@ -24,12 +24,12 @@
   justify-content: flex-start;
   align-items: flex-start;
   min-height: 60vh;
-  background: rgba(vars.$dark-bg, 0.75);
+  background: rgba(color(dark-bg), 0.75);
   backdrop-filter: blur(3px);
-  color: vars.$text-color;
+  color: color(text);
   text-align: center;
   padding: 4rem 2rem;
-  border-bottom: 2px solid vars.$accent-color;
+  border-bottom: 2px solid color(accent);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
 
   .hero-inner-container {
@@ -38,8 +38,8 @@
     justify-content: center;
     max-width: 1200px;
     width: 100%;
-    gap: vars.$spacing-xl;
-    padding: vars.$spacing-md;
+    gap: space(6);
+    padding: space(4);
   }
 
   .hero-image-container {
@@ -48,9 +48,9 @@
     height: 350px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid vars.$primary-color;
-    box-shadow: 0 0 20px rgba(vars.$primary-color, 0.6);
-    margin-right: vars.$spacing-xl;
+    border: 4px solid color(primary);
+    box-shadow: 0 0 20px rgba(color(primary), 0.6);
+    margin-right: space(6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,9 +72,9 @@
   h1 {
     font-family: 'Fira Code', monospace;
     font-size: 3.5rem;
-    margin-bottom: vars.$spacing-md;
-    color: vars.$accent-color;
-    text-shadow: 0 0 10px rgba(vars.$accent-color, 0.7);
+    margin-bottom: space(4);
+    color: color(accent);
+    text-shadow: 0 0 10px rgba(color(accent), 0.7);
   }
 
   .emoji-tech {
@@ -84,22 +84,22 @@
 
   p {
     font-size: 1.5rem;
-    margin-bottom: vars.$spacing-lg;
-    color: lighten(vars.$text-color, 10%);
+    margin-bottom: space(5);
+    color: lighten(color(text), 10%);
   }
 
   button {
     font-size: 1.2rem;
     padding: 0.8rem 2rem;
     border-radius: 0.5rem;
-    border: 2px solid vars.$primary-color;
-    color: vars.$primary-color;
+    border: 2px solid color(primary);
+    color: color(primary);
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-      background-color: vars.$primary-color;
-      color: vars.$text-color;
-      box-shadow: 0 0 15px rgba(vars.$primary-color, 0.7);
+      background-color: color(primary);
+      color: color(text);
+      box-shadow: 0 0 15px rgba(color(primary), 0.7);
     }
   }
 }
@@ -108,14 +108,14 @@
    TECH STACK SECTION — ANIMATED LED STYLE
 -------------------------------------------------------- */
 .tech-section {
-  padding: vars.$spacing-xl vars.$spacing-lg;
-  background-color: rgba(vars.$dark-bg, 0.8);
+  padding: space(6) space(5);
+  background-color: rgba(color(dark-bg), 0.8);
   text-align: center;
 
   .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    gap: vars.$spacing-md;
+    gap: space(4);
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -123,28 +123,24 @@
   .tech-tile {
     position: relative;
     background: rgba(0, 20, 30, 0.7) !important;
-    border: 1px solid rgba(0, 255, 255, 0.25);
+    border: 1px solid rgba(color(accent), 0.25);
     border-radius: 0.8rem;
-    padding: vars.$spacing-md;
+    padding: space(4);
     overflow: hidden;
-    cursor: default;
 
-    /* Glow interno */
     box-shadow:
-      inset 0 0 12px rgba(0, 255, 255, 0.18),
-      0 0 10px rgba(0, 255, 255, 0.12);
+      inset 0 0 12px rgba(color(accent), 0.18),
+      0 0 10px rgba(color(accent), 0.12);
 
-    /* Flicker tipo LED */
     animation: tileFlicker 3s infinite ease-in-out alternate;
     animation-delay: calc((var(--i) * 0.25s));
 
-    /* Bordo neon che appare al passaggio */
     &::before {
       content: "";
       position: absolute;
       inset: 0;
       border-radius: inherit;
-      border: 1px solid rgba(0, 255, 255, 0.45);
+      border: 1px solid rgba(color(accent), 0.45);
       opacity: 0;
       filter: blur(10px);
       transition: opacity 0.3s ease;
@@ -154,7 +150,6 @@
       opacity: 1;
     }
 
-    /* Scanning cyber line */
     &::after {
       content: "";
       position: absolute;
@@ -165,7 +160,7 @@
       background: linear-gradient(
         120deg,
         transparent 0%,
-        rgba(0, 255, 255, 0.18) 40%,
+        rgba(color(accent), 0.18) 40%,
         transparent 80%
       );
       transform: rotate(12deg);
@@ -175,43 +170,29 @@
 
     .tech-content {
       font-family: "Share Tech Mono", monospace;
-      color: vars.$accent-color;
+      color: color(accent);
       font-size: 1rem;
       letter-spacing: 0.5px;
-      text-shadow: 0 0 6px rgba(0, 255, 255, 0.6);
-      z-index: 2;
+      text-shadow: 0 0 6px rgba(color(accent), 0.6);
       position: relative;
+      z-index: 2;
     }
   }
-}
-
-/* -------------------------------------------------------
-   TECH ANIMATIONS
--------------------------------------------------------- */
-@keyframes tileFlicker {
-  0%   { opacity: 0.85; filter: brightness(0.8); }
-  50%  { opacity: 1;    filter: brightness(1); }
-  100% { opacity: 0.75; filter: brightness(0.9); }
-}
-
-@keyframes scanMove {
-  0%   { transform: translateY(0) rotate(12deg); }
-  100% { transform: translateY(100%) rotate(12deg); }
 }
 
 /* -------------------------------------------------------
    FEATURED PROJECTS
 -------------------------------------------------------- */
 .featured-projects-section {
-  padding: vars.$spacing-xl vars.$spacing-lg;
-  background-color: rgba(darken(vars.$dark-bg, 5%), 0.8);
+  padding: space(6) space(5);
+  background-color: rgba(darken(color(dark-bg), 5%), 0.8);
   text-align: center;
 
   .section-title {
     margin-bottom: 2.5rem;
     font-size: 2rem;
     font-family: 'Share Tech Mono', monospace;
-    color: vars.$accent-color;
+    color: color(accent);
   }
 
   .projects-grid {
@@ -225,14 +206,14 @@
   .project-card {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: vars.$card-bg !important;
-    color: vars.$text-color;
+    background-color: color(card-bg) !important;
+    color: color(text);
     border-radius: 1rem;
-    border: 1px solid rgba(vars.$primary-color, 0.3);
+    border: 1px solid rgba(color(primary), 0.3);
 
     &:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(vars.$accent-color, 0.4);
+      box-shadow: 0 0 20px rgba(color(accent), 0.4);
     }
 
     img {
@@ -246,34 +227,31 @@
       font-weight: bold;
       font-size: 1.2rem;
       font-family: 'Share Tech Mono', monospace;
-      color: vars.$accent-color;
+      color: color(accent);
     }
 
     mat-card-subtitle {
-      color: lighten(vars.$text-color, 5%);
+      color: lighten(color(text), 5%);
     }
 
-    mat-card-content {
-      p {
-        font-size: 1rem;
-        line-height: 1.5;
-        color: vars.$text-color;
-      }
+    mat-card-content p {
+      font-size: 1rem;
+      line-height: 1.5;
     }
 
     mat-card-actions {
-      padding: vars.$spacing-md;
+      padding: space(4);
 
       button {
         font-size: 0.9rem;
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;
-        border: 1px solid vars.$primary-color;
-        color: vars.$primary-color;
+        border: 1px solid color(primary);
+        color: color(primary);
 
         &:hover {
-          background-color: vars.$primary-color;
-          color: vars.$text-color;
+          background-color: color(primary);
+          color: color(text);
         }
       }
     }
@@ -284,95 +262,97 @@
    CTA SECTION
 -------------------------------------------------------- */
 .cta-section {
-  background: linear-gradient(45deg, vars.$accent-color 0%, darken(vars.$accent-color, 20%) 100%);
-  color: vars.$dark-bg;
+  background: linear-gradient(
+    45deg,
+    color(accent) 0%,
+    darken(color(accent), 20%) 100%
+  );
+  color: color(dark-bg);
   text-align: center;
   padding: 4rem 2rem;
-  margin-top: vars.$spacing-xl;
+  margin-top: space(6);
   border-radius: 1rem;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-inline: auto;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
 
   h2 {
     font-family: 'Share Tech Mono', monospace;
     font-size: 2.5rem;
-    margin-bottom: vars.$spacing-md;
-    color: vars.$dark-bg;
+    margin-bottom: space(4);
   }
 
   p {
     font-size: 1.3rem;
-    margin-bottom: vars.$spacing-lg;
-    color: darken(vars.$dark-bg, 10%);
+    margin-bottom: space(5);
+    color: darken(color(dark-bg), 10%);
   }
 
   button {
     font-size: 1.3rem;
     padding: 1rem 3rem;
     border-radius: 0.5rem;
-    background-color: vars.$dark-bg;
-    color: vars.$accent-color;
-    border: 2px solid vars.$dark-bg;
+    background-color: color(dark-bg);
+    color: color(accent);
+    border: 2px solid color(dark-bg);
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: lighten(vars.$dark-bg, 10%);
-      color: lighten(vars.$accent-color, 10%);
-      box-shadow: 0 0 20px rgba(vars.$dark-bg, 0.5);
+      background-color: lighten(color(dark-bg), 10%);
+      color: lighten(color(accent), 10%);
+      box-shadow: 0 0 20px rgba(color(dark-bg), 0.5);
     }
   }
 }
 
 /* -------------------------------------------------------
-   ANIMAZIONE EMOJI
+   ANIMATIONS
 -------------------------------------------------------- */
+@keyframes tileFlicker {
+  0%   { opacity: 0.85; filter: brightness(0.8); }
+  50%  { opacity: 1;    filter: brightness(1); }
+  100% { opacity: 0.75; filter: brightness(0.9); }
+}
+
+@keyframes scanMove {
+  0%   { transform: translateY(0) rotate(12deg); }
+  100% { transform: translateY(100%) rotate(12deg); }
+}
+
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40%  { transform: translateY(-10px); }
-  60%  { transform: translateY(-5px); }
+  0%,20%,50%,80%,100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
 }
 
 /* -------------------------------------------------------
    RESPONSIVE
 -------------------------------------------------------- */
-@media (max-width: 1024px) {
-  .hero-section {
-    .hero-image-container {
-      width: 250px;
-      height: 250px;
-    }
-    .hero-content {
-      h1 { font-size: 3rem; }
-      p { font-size: 1.3rem; }
-    }
-  }
-  .tech-grid {
-    grid-template-columns: repeat(3, 1fr);
+
+@include between(lg, xl) {
+  .hero-image-container {
+    width: 300px;
+    height: 300px;
   }
 }
 
-@media (max-width: vars.$breakpoint-md) {
+@media (max-width: bp(md)) {
   .hero-section {
     padding: 3rem 1rem;
-    min-height: unset;
 
     .hero-inner-container {
       flex-direction: column;
-      gap: vars.$spacing-lg;
+      gap: space(5);
       text-align: center;
     }
 
     .hero-image-container {
       margin-right: 0;
-      margin-bottom: vars.$spacing-lg;
       width: 200px;
       height: 200px;
     }
 
     .hero-content {
-      max-width: 100%;
       text-align: center;
 
       h1 { font-size: 2.5rem; }
@@ -384,26 +364,28 @@
       }
     }
   }
+}
 
-  .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: bp(sm)) {
+  .hero-image-container {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-content {
+    h1 { font-size: 2rem; }
+    p  { font-size: 0.95rem; }
   }
 }
 
-@media (max-width: 528px) {
-  .hero-section {
-    .hero-image-container {
-      width: 140px;
-      height: 140px;
-    }
-    .hero-content {
-      h1 { font-size: 1.8rem; }
-      p  { font-size: 0.85rem; }
-    }
+@media (max-width: bp(xs)) {
+  .hero-image-container {
+    width: 130px;
+    height: 130px;
   }
 
-  .tech-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-content h1 {
+    font-size: 1.7rem;
   }
 }
 

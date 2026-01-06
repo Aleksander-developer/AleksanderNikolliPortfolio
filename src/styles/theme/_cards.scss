@@ -1,0 +1,15 @@
+
+@use '../tokens' as *;
+
+.vetrina-card {
+  border-radius: $card-radius;
+  padding: $card-padding;
+  background: $card-bg;
+  border: $card-border;
+  transition: box-shadow .3s ease;
+
+  &:hover {
+    box-shadow: 0 0 25px rgba(0, 188, 212, 0.45);
+  }
+}
+

@@ -1,27 +1,28 @@
 
-@use '../../../styles/variables' as vars;
+/* src/app/shared/components/footer/footer.component.scss */
+
+@use 'theme/theme' as *;
 
 /* --- Layout Principale del Footer --- */
 .footer-container {
-  background: vars.$dark-bg;
-  color: vars.$text-color;
-  font-family: vars.$font-family-base;
-  padding: vars.$spacing-lg vars.$spacing-md;
+  background: color(dark-bg);
+  color: color(text);
+  font-family: $font-family-base;
+  padding: space(5) space(4);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem; // Spazio tra gli elementi principali del footer
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.25);
-  border-top: 1px solid rgba(vars.$accent-color, 0.2);
+  border-top: 1px solid rgba(color(accent), 0.2);
 }
 
 /* --- Stili per il badge Google Verified nel footer --- */
 .footer-google-badge {
-  margin-bottom: vars.$spacing-lg; // Spazio sotto il badge per separarlo
+  margin-bottom: space(5); // Spazio sotto il badge per separarlo
   // Il componente stesso ha già display: inline-flex e allineamento,
   // quindi basta centrarlo all'interno del footer-container che è flex column con align-items: center
 }
-
 
 /* --- Sezione Icone Social --- */
 .footer-socials {
@@ -31,23 +32,24 @@
   gap: 0.75rem;
 
   a {
-    color: vars.$light-gray;
+    color: color(text-light);
     font-size: 26px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 
-    i, mat-icon { /* Questo selettore catturerà anche la nuova mat-icon per il telefono */
+    i,
+    mat-icon { /* Questo selettore catturerà anche la nuova mat-icon per il telefono */
       font-size: 26px;
       width: 26px;
       height: 26px;
     }
 
     &:hover {
-      color: vars.$accent-color;
+      color: color(accent);
       transform: translateY(-4px);
-      text-shadow: 0 0 12px vars.$shadow-glow-color;
+      text-shadow: 0 0 12px rgba(color(accent), 0.6);
     }
   }
 }
@@ -57,7 +59,12 @@
   height: 1px;
   width: 80%;
   max-width: 500px;
-  background: linear-gradient(to right, transparent, rgba(vars.$accent-color, 0.4), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(color(accent), 0.4),
+    transparent
+  );
 }
 
 /* --- Barra Inferiore (Copyright & Tech) --- */
@@ -69,7 +76,7 @@
   align-items: center;
   flex-wrap: wrap;
   font-size: 0.8rem;
-  color: vars.$light-gray;
+  color: color(text-light);
 }
 
 .footer-copyright {
@@ -100,18 +107,18 @@
   font-size: 20px;
   width: 20px;
   height: 20px;
-  color: vars.$accent-color;
+  color: color(accent);
   opacity: 0.9;
 }
 
 .tech-name {
   font-size: 0.8rem;
-  color: vars.$light-gray;
+  color: color(text-light);
   white-space: nowrap;
 }
 
 /* --- Media Query per Responsività --- */
-@media (max-width: vars.$breakpoint-md) {
+@media (max-width: bp(md)) {
   .footer-bottom-bar {
     flex-direction: column;
     justify-content: center;

@@ -1,78 +1,76 @@
 <!-- src/app/pages/chi-sono/chi-sono.component.html -->
-<mat-card class="chi-sono-card">
+<section class="chi-sono-section">
+  <div class="chi-sono-inner">
+    <mat-card class="chi-sono-card">
 
-  <mat-card-title i18n="@@aboutMeTitle"> <!-- AGGIUNTO i18n -->
-    <mat-icon color="primary">person</mat-icon> Chi sono
-  </mat-card-title>
-  <mat-card-content>
-    <p i18n="@@aboutMeParagraph1"> <!-- AGGIUNTO i18n -->
-      Sono <strong>Aleksander Nikolli</strong>, <strong>Frontend / Backend Developer / Database Administrator</strong> con passione per lo sviluppo web moderno e accessibile. Unisco creatività e tecnologia per creare interfacce dinamiche e intuitive.
-    </p>
-    <p i18n="@@aboutMeParagraph2"> <!-- AGGIUNTO i18n -->
-      Mi sono formato con un corso intensivo di <strong>550+ ore</strong> in Frontend / Backend Developer / Database Administrator Development (HTML, CSS, JavaScript, Angular, MySQL) e continuo i miei studi in <strong>Sistemi Informatici</strong> all’Università Roma Tre.
-    </p>
-    <p i18n="@@aboutMeParagraph3"> <!-- AGGIUNTO i18n -->
-      Opero da <strong>Roma</strong>, ma sono disponibile per progetti da remoto in tutta Italia e anche all’estero. Cerco collaborazioni in ambienti tech dinamici.
-    </p>
-  </mat-card-content>
+      <mat-card-title i18n="@@aboutMeTitle"> <!-- AGGIUNTO i18n -->
+        <mat-icon color="primary">person</mat-icon> Chi sono
+      </mat-card-title>
+      <mat-card-content>
+        <p i18n="@@aboutMeParagraph1"> <!-- AGGIUNTO i18n -->
+          Sono <strong>Aleksander Nikolli</strong>, <strong>Frontend / Backend Developer / Database Administrator</strong> con passione per lo sviluppo web moderno e accessibile. Unisco creatività e tecnologia per creare interfacce dinamiche e intuitive.
+        </p>
+        <p i18n="@@aboutMeParagraph2"> <!-- AGGIUNTO i18n -->
+          Mi sono formato con un corso intensivo di <strong>550+ ore</strong> in Frontend / Backend Developer / Database Administrator Development (HTML, CSS, JavaScript, Angular, MySQL) e continuo i miei studi in <strong>Sistemi Informatici</strong> all’Università Roma Tre.
+        </p>
+        <p i18n="@@aboutMeParagraph3"> <!-- AGGIUNTO i18n -->
+          Opero da <strong>Roma</strong>, ma sono disponibile per progetti da remoto in tutta Italia e anche all’estero. Cerco collaborazioni in ambienti tech dinamici.
+        </p>
+      </mat-card-content>
 
-  <mat-divider class="mat-divider-margin"></mat-divider>
+      <mat-divider class="mat-divider-margin"></mat-divider>
 
-  <mat-card-title i18n="@@aboutMeSkillsTitle">🎯 Competenze principali</mat-card-title> <!-- AGGIUNTO i18n -->
-  <mat-card-content>
-    <mat-chip-listbox aria-label="Competenze principali" i18n-aria-label="@@aboutMeSkillsAriaLabel"> <!-- AGGIUNTO i18n-aria-label -->
-      <mat-chip-row color="accent" selected>Angular</mat-chip-row>
-      <mat-chip-row>JavaScript ES6+</mat-chip-row>
-      <mat-chip-row>HTML/CSS3</mat-chip-row>
-      <mat-chip-row>Responsive Design</mat-chip-row>
-      <mat-chip-row>Node.js / Express</mat-chip-row>
-      <mat-chip-row>GIT</mat-chip-row>
-      <mat-chip-row>MySQL</mat-chip-row>
-      <mat-chip-row>MongoDB</mat-chip-row>
-      <mat-chip-row>Wordpress</mat-chip-row>
-      <mat-chip-row>SEO / Analytics</mat-chip-row>
-    </mat-chip-listbox>
-  </mat-card-content>
+      <mat-card-title i18n="@@aboutMeSkillsTitle">🎯 Competenze principali</mat-card-title> <!-- AGGIUNTO i18n -->
+      <mat-card-content>
+        <app-skills-box></app-skills-box>
+      </mat-card-content>
 
-  <mat-divider class="mat-divider-margin"></mat-divider>
+      <mat-divider class="mat-divider-margin"></mat-divider>
 
-  <mat-card-title i18n="@@aboutMeSoftSkillsTitle">💡 Soft Skills</mat-card-title> <!-- AGGIUNTO i18n -->
-  <mat-card-content>
-    <ul>
-      <li i18n="@@softSkill1">Problem Solving e adattabilità</li> <!-- AGGIUNTO i18n -->
-      <li i18n="@@softSkill2">Creatività e innovazione</li> <!-- AGGIUNTO i18n -->
-      <li i18n="@@softSkill3">Leadership & lavoro di squadra</li> <!-- AGGIUNTO i18n -->
-      <li i18n="@@softSkill4">Apprendimento continuo</li> <!-- AGGIUNTO i18n -->
-    </ul>
-  </mat-card-content>
+      <mat-card-title i18n="@@aboutMeSoftSkillsTitle">💡 Soft Skills</mat-card-title> <!-- AGGIUNTO i18n -->
+      <mat-card-content>
+        <ul>
+          <li i18n="@@softSkill1">Problem Solving e adattabilità</li> <!-- AGGIUNTO i18n -->
+          <li i18n="@@softSkill2">Creatività e innovazione</li> <!-- AGGIUNTO i18n -->
+          <li i18n="@@softSkill3">Leadership & lavoro di squadra</li> <!-- AGGIUNTO i18n -->
+          <li i18n="@@softSkill4">Apprendimento continuo</li> <!-- AGGIUNTO i18n -->
+        </ul>
+      </mat-card-content>
 
-  <mat-divider class="mat-divider-margin"></mat-divider>
+      <mat-divider class="mat-divider-margin"></mat-divider>
 
-  <mat-card-title i18n="@@aboutMeCertificatesTitle"> <!-- AGGIUNTO i18n -->
-    <mat-icon color="accent">school</mat-icon> I miei Attestati
-  </mat-card-title>
-  <mat-card-content>
-    <p class="attestati-intro" i18n="@@aboutMeCertificatesIntro"> <!-- AGGIUNTO i18n -->
-      La mia formazione è comprovata da attestati e certificazioni, che garantiscono la solidità delle mie competenze.
-    </p>
-    <div class="attestati-grid">
-      <div class="attestato-item mat-elevation-z4">
-        <img src="https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg" alt="Attestato Frontend Developer" i18n-alt="@@frontendCertAlt" class="attestato-img"> <!-- AGGIUNTO i18n-alt -->
-        <span class="attestato-caption" i18n="@@frontendCertCaption">Frontend Developer</span> <!-- AGGIUNTO i18n -->
+      <mat-card-title i18n="@@aboutMeCertificatesTitle"> <!-- AGGIUNTO i18n -->
+        <mat-icon color="accent">school</mat-icon> I miei Attestati
+      </mat-card-title>
+      <mat-card-content>
+        <p class="attestati-intro" i18n="@@aboutMeCertificatesIntro"> <!-- AGGIUNTO i18n -->
+          La mia formazione è comprovata da attestati e certificazioni, che garantiscono la solidità delle mie competenze.
+        </p>
+        <div class="attestati-grid">
+          <div class="attestato-item mat-elevation-z4">
+            <img src="https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg" alt="Attestato Frontend Developer" i18n-alt="@@frontendCertAlt" class="attestato-img"> <!-- AGGIUNTO i18n-alt -->
+            <span class="attestato-caption" i18n="@@frontendCertCaption">Frontend Developer</span> <!-- AGGIUNTO i18n -->
+          </div>
+          <div class="attestato-item mat-elevation-z4">
+            <img src="https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294725/attestato-dba_w7iedq.jpg" alt="Attestato Database Administrator" i18n-alt="@@dbaCertAlt" class="attestato-img"> <!-- AGGIUNTO i18n-alt -->
+            <span class="attestato-caption" i18n="@@dbaCertCaption">Database Administrator</span> <!-- AGGIUNTO i18n -->
+          </div>
+        </div>
+      </mat-card-content>
+      <div class="final-note mat-elevation-z4">
+        <p i18n="@@aboutMeFinalNote"> <!-- AGGIUNTO i18n -->
+          Se cerchi un giovane sviluppatore motivato e orientato ai risultati,
+          <a routerLink="/contatti" class="contact-link"><strong>contattami</strong></a>!
+          Sono pronto a dare valore al tuo progetto digitale.
+        </p>
       </div>
-      <div class="attestato-item mat-elevation-z4">
-        <img src="https://res.cloudinary.com/dxz4eti2e/image/upload/v1753294725/attestato-dba_w7iedq.jpg" alt="Attestato Database Administrator" i18n-alt="@@dbaCertAlt" class="attestato-img"> <!-- AGGIUNTO i18n-alt -->
-        <span class="attestato-caption" i18n="@@dbaCertCaption">Database Administrator</span> <!-- AGGIUNTO i18n -->
-      </div>
+    </mat-card>
+
+        <!-- 🔥 WRAPPER DEDICATO -->
+    <div class="why-wrapper">
+      <app-why-chose-me></app-why-chose-me>
     </div>
-  </mat-card-content>
-  <div class="final-note mat-elevation-z4">
-    <p i18n="@@aboutMeFinalNote"> <!-- AGGIUNTO i18n -->
-      Se cerchi un giovane sviluppatore motivato e orientato ai risultati,
-      <a routerLink="/contatti" class="contact-link"><strong>contattami</strong></a>!
-      Sono pronto a dare valore al tuo progetto digitale.
-    </p>
-  </div>
-</mat-card>
 
-<app-why-chose-me></app-why-chose-me>
+  </div>
+</section>
+

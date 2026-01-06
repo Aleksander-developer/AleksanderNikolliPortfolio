@@ -49,6 +49,25 @@ ng g service services/vetrina
 ng g module shared/components/social-icons
 ng g c shared/components/social-icons --standalone=false
 
+ng g c shared/vetrina-software/crea-logo-software --standalone=false
+
+ng g m shared/vetrina-software
+
+
+ng g module shared/projects
+
+ng g c shared/projects/project-tile --standalone=false
+ng g c shared/projects/azzurra-makeup --standalone=false
+
+ng g c shared/projects/sharing-tv-europa --standalone=false
+
+ng g c shared/projects/fondazione-gea --standalone=false
+
+ng g c shared/projects/universita-crea --standalone=false
+
+
+ng g c shared/components/skills-box --standalone=false
+
 
 ng g c shared/components/social-icons/svg-github --standalone=false
 ng g c shared/components/social-icons/svg-linkedin --standalone=false

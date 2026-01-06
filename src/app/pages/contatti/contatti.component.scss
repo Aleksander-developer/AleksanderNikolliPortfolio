@@ -1,8 +1,12 @@
+
 /* src/app/pages/contatti/contatti.component.scss */
 
-@use '../../../styles/variables' as vars;
+@use 'theme/theme' as *;
 
-/* === CONTAINER PRINCIPALE === */
+/* ===================================================== */
+/* === CONTAINER PRINCIPALE ============================ */
+/* ===================================================== */
+
 .contatti-container {
   position: relative;
   z-index: 5;
@@ -16,42 +20,49 @@
   box-shadow: none;
   border: none;
 
-  /* ✅ Spazio sotto la navbar per far respirare il background */
-  padding: calc(64px + 2rem) 1.5rem 3rem; /* lascia spazio per la navbar */
+  /* Spazio sotto la navbar */
+  padding: calc(64px + 2rem) 1.5rem 3rem;
   margin: 0 auto;
 
-  /* === TITOLO === */
+  /* =================================================== */
+  /* TITOLO                                             */
+  /* =================================================== */
+
   h1 {
     font-family: 'Share Tech Mono', monospace;
-    color: vars.$accent-color;
+    color: color(accent);
     font-size: 2.5rem;
-    text-shadow: 0 0 12px rgba(vars.$accent-color, 0.8);
-    margin-bottom: vars.$spacing-lg;
+    text-shadow: 0 0 12px rgba(color(accent), 0.8);
+    margin-bottom: space(5);
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-
-    /* 🔹 Rimosso &::before per evitare la seconda emoji */
   }
 
-  /* === CARD DEL FORM (EFFETTO VETRO) === */
+  /* =================================================== */
+  /* CARD FORM – EFFETTO VETRO                           */
+  /* =================================================== */
+
   .form-wrapper {
     max-width: 700px;
     width: 100%;
     padding: 2.5rem;
-    background: rgba(vars.$dark-bg, 0.75);
+    background: rgba(color(dark-bg), 0.75);
     backdrop-filter: blur(8px);
     border-radius: 12px;
-    border: 1px solid rgba(vars.$accent-color, 0.25);
+    border: 1px solid rgba(color(accent), 0.25);
     box-shadow:
       0 10px 30px rgba(0, 0, 0, 0.7),
-      0 0 25px rgba(vars.$accent-color, 0.4);
+      0 0 25px rgba(color(accent), 0.4);
   }
 }
 
-/* === FORM === */
+/* ===================================================== */
+/* === FORM ============================================ */
+/* ===================================================== */
+
 form.contact-form {
   display: flex;
   flex-direction: column;
@@ -63,51 +74,54 @@ form.contact-form {
     .mat-mdc-form-field-outline-start,
     .mat-mdc-form-field-outline-gap,
     .mat-mdc-form-field-outline-end {
-      border-color: rgba(vars.$text-color-white, 0.6) !important;
+      border-color: rgba(color(white), 0.6) !important;
     }
 
     &.mat-focused {
       .mat-mdc-form-field-outline-start,
       .mat-mdc-form-field-outline-gap,
       .mat-mdc-form-field-outline-end {
-        border-color: vars.$accent-color !important;
+        border-color: color(accent) !important;
       }
     }
 
     .mat-form-field-label {
-      color: rgba(vars.$text-color-white, 0.9) !important;
+      color: rgba(color(white), 0.9) !important;
       font-size: 1.05rem;
-      font-family: vars.$font-family-base;
-      text-shadow: 0 0 5px rgba(vars.$accent-color, 0.3);
+      font-family: $font-family-base;
+      text-shadow: 0 0 5px rgba(color(accent), 0.3);
     }
 
     .mat-mdc-form-field-input-control {
-      color: vars.$text-color-white !important;
+      color: color(white) !important;
       background-color: transparent;
-      font-family: vars.$font-family-base;
-      caret-color: vars.$accent-color;
+      font-family: $font-family-base;
+      caret-color: color(accent);
       font-size: 1.1rem;
     }
 
     .mat-mdc-form-field-input-control::placeholder {
-      color: rgba(vars.$text-color-white, 0.8) !important;
+      color: rgba(color(white), 0.8) !important;
     }
 
     .mat-error {
       font-size: 0.9rem;
-      color: vars.$error-color;
+      color: color(error);
       margin-top: 0.5rem;
     }
   }
 
-  /* === FEEDBACK MESSAGGI === */
+  /* =================================================== */
+  /* FEEDBACK UI                                        */
+  /* =================================================== */
+
   .success-message,
   .error-message-ui {
     margin: 1.5rem 0;
     padding: 15px 25px;
     border-radius: 8px;
     font-weight: 700;
-    font-family: vars.$font-family-base;
+    font-family: $font-family-base;
     text-align: center;
     font-size: 1.1rem;
     display: flex;
@@ -124,20 +138,23 @@ form.contact-form {
   }
 
   .success-message {
-    background: rgba(vars.$success-color, 0.15);
-    color: vars.$success-color;
-    box-shadow: 0 0 15px rgba(vars.$success-color, 0.5);
-    border: 1px solid rgba(vars.$success-color, 0.6);
+    background: rgba(color(success), 0.15);
+    color: color(success);
+    box-shadow: 0 0 15px rgba(color(success), 0.5);
+    border: 1px solid rgba(color(success), 0.6);
   }
 
   .error-message-ui {
-    background: rgba(vars.$error-color, 0.15);
-    color: vars.$error-color;
-    box-shadow: 0 0 15px rgba(vars.$error-color, 0.5);
-    border: 1px solid rgba(vars.$error-color, 0.6);
+    background: rgba(color(error), 0.15);
+    color: color(error);
+    box-shadow: 0 0 15px rgba(color(error), 0.5);
+    border: 1px solid rgba(color(error), 0.6);
   }
 
-  /* === BOTTONE === */
+  /* =================================================== */
+  /* BOTTONE                                            */
+  /* =================================================== */
+
   button {
     align-self: center;
     width: 200px;
@@ -146,14 +163,14 @@ form.contact-form {
     letter-spacing: 1.5px;
     border-radius: 8px;
     text-transform: uppercase;
-    background-color: vars.$primary-color;
-    color: vars.$text-color;
-    box-shadow: 0 5px 20px rgba(vars.$primary-color, 0.4);
+    background-color: color(primary);
+    color: color(text);
+    box-shadow: 0 5px 20px rgba(color(primary), 0.4);
     transition: all 0.3s ease;
 
     &[disabled] {
-      background-color: rgba(vars.$light-gray, 0.5);
-      color: darken(vars.$light-gray, 30%);
+      background-color: rgba(color(text-light), 0.5);
+      color: darken(color(text-light), 30%);
       cursor: not-allowed;
       box-shadow: none;
       opacity: 0.7;
@@ -167,15 +184,19 @@ form.contact-form {
     }
 
     &:hover:not(:disabled) {
-      background-color: darken(vars.$primary-color, 10%);
-      box-shadow: 0 8px 30px rgba(vars.$primary-color, 0.7);
+      background-color: darken(color(primary), 10%);
+      box-shadow: 0 8px 30px rgba(color(primary), 0.7);
       transform: translateY(-3px);
     }
   }
 }
 
-/* === RESPONSIVE === */
-@media (max-width: vars.$breakpoint-md) {
+/* ===================================================== */
+/* === RESPONSIVE ====================================== */
+/* ===================================================== */
+
+/* MD – tablet */
+@media (max-width: bp(md)) {
   .contatti-container {
     padding: 4rem 1rem 2rem;
 
@@ -190,6 +211,7 @@ form.contact-form {
 
   form.contact-form {
     gap: 1.2rem;
+
     button {
       width: 100%;
       height: 45px;
@@ -197,13 +219,14 @@ form.contact-form {
   }
 }
 
-@media (max-width: vars.$breakpoint-sm) {
+/* SM – smartphone */
+@media (max-width: bp(sm)) {
   .contatti-container {
     padding: 3rem 1rem;
-  }
 
-  h1 {
-    font-size: 1.6rem;
+    h1 {
+      font-size: 1.6rem;
+    }
   }
 
   form.contact-form {
@@ -220,6 +243,31 @@ form.contact-form {
     button {
       height: 40px;
       font-size: 0.9rem;
+    }
+  }
+}
+
+/* XS – piccoli smartphone */
+@media (max-width: bp(xs)) {
+  .contatti-container {
+    padding: 2.5rem 0.75rem;
+  }
+}
+
+/* LG – desktop piccoli */
+@include between(md, lg) {
+  .contatti-container {
+    max-width: 960px;
+  }
+}
+
+/* XL – desktop grandi */
+@include up(xl) {
+  .contatti-container {
+    max-width: 1100px;
+
+    h1 {
+      font-size: 2.8rem;
     }
   }
 }

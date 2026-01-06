@@ -1,76 +1,31 @@
 
-<section class="progetti-section">
-  <mat-card class="progetti-card mat-elevation-z4">
-    <mat-card-header>
-      <mat-icon color="accent">auto_awesome</mat-icon>
-      <mat-card-title i18n="@@projectsPageTitle">
-        Progetti
-      </mat-card-title>
-    </mat-card-header>
+<!-- src/app/pages/progetti/progetti.component.html -->
+<section class="vetrina-section">
+  <div class="vetrina-inner">
 
-    <mat-card-content>
-      <p i18n="@@projectsListIntro">
-        Ecco alcuni dei miei progetti più recenti:
-      </p>
+    <h2 class="section-title" i18n="@@projectsTitle">
+      Progetti
+    </h2>
 
-      <div class="projects-grid">
-        <mat-card
-          *ngFor="let progetto of progetti"
-          class="project-item mat-elevation-z2"
-          [routerLink]="['/progetti', progetto.id]"
-        >
-          <img
-            mat-card-image
-            [src]="progetto.immagine"
-            [alt]="progetto.titolo"
-          />
+    <p class="section-subtitle" i18n="@@projectsSubtitle">
+      Alcuni progetti reali sviluppati e portati in produzione.
+    </p>
 
-          <mat-card-title>{{ progetto.titolo }}</mat-card-title>
+    <div class="projects-grid">
+      <app-azzurra-makeup></app-azzurra-makeup>
 
-          <mat-card-content>
-            <p>{{ progetto.descrizione | slice: 0:100 }}...</p>
+      <app-sharing-tv-europa></app-sharing-tv-europa>
+      
+      <app-fondazione-gea></app-fondazione-gea>
+      
+      <app-universita-crea></app-universita-crea>
 
-            <mat-chip-listbox aria-label="Tecnologie usate">
-              <mat-chip-row
-                *ngFor="let tech of progetto.tecnologie | slice: 0:3"
-                color="primary"
-              >
-                {{ tech }}
-              </mat-chip-row>
+    </div>
 
-              <mat-chip-row
-                *ngIf="progetto.tecnologie.length > 3"
-                color="primary"
-              >
-                +{{ progetto.tecnologie.length - 3 }}
-              </mat-chip-row>
-            </mat-chip-listbox>
-          </mat-card-content>
+    <p class="coming-soon" i18n="@@projectsComingSoon">
+      Altri progetti sono in arrivo 🚀
+    </p>
 
-          <mat-card-actions>
-            <button
-              mat-button
-              color="primary"
-              [routerLink]="['/progetti', progetto.id]"
-            >
-              Vedi Dettagli
-            </button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-    </mat-card-content>
-  </mat-card>
-
-  <div class="contact-button-container">
-    <button
-      mat-raised-button
-      color="accent"
-      (click)="goToContatti()"
-      i18n="@@projectsContactButton"
-    >
-      <mat-icon>mail_outline</mat-icon>
-      Contattami
-    </button>
   </div>
 </section>
 

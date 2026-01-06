@@ -1,0 +1,44 @@
+
+<!-- src/app/shared/projects/project-tile/project-tile.component.html -->
+<div class="project-tile">
+
+  <!-- LOGO -->
+  <div class="project-logo" [ngClass]="logoSize">
+    <img
+      [src]="image"
+      [alt]="title"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- TITOLO -->
+  <div class="project-title">
+    {{ title }}
+  </div>
+
+  <!-- AZIONI -->
+  <div class="project-actions">
+
+    <a
+      *ngIf="demoUrl"
+      class="action-btn primary"
+      [href]="demoUrl"
+      target="_blank"
+      rel="noopener"
+    >
+      <span i18n="@@projectVisit">Visita</span>
+    </a>
+
+    <a
+      *ngIf="contactUrl"
+      class="action-btn ghost"
+      [routerLink]="contactUrl"
+    >
+      <span i18n="@@projectContact">Contattami</span>
+    </a>
+
+  </div>
+
+</div>
+
+

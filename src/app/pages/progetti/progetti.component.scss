@@ -1,228 +1,145 @@
-/* src/app/pages/progetti/progetti.component.scss */
 
-@use '../../../styles/variables' as vars;
+/* src/app/pages/progetti/progetti.component.scss*/
+@use 'theme/theme' as *;
 
-/* === SEZIONE PRINCIPALE === */
+/* =====================================================
+   SEZIONE PROGETTI — STILE VETRINA
+===================================================== */
 .progetti-section {
-  position: relative;
-  z-index: 5;
-  padding: calc(64px + 2rem) vars.$spacing-md vars.$spacing-xl;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  min-height: 100vh;
-  justify-content: flex-start;
-  font-family: vars.$font-family-base;
+  padding: space(7) space(6);
+  color: color(text);
 }
 
-/* === CARD PRINCIPALE === */
-.progetti-card {
-  max-width: 1000px;
-  width: 100%;
-  padding: 2.5rem;
-  background: rgba(vars.$dark-bg, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  border: 1px solid rgba(vars.$accent-color, 0.25);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.6),
-    0 0 25px rgba(vars.$accent-color, 0.35);
-  color: vars.$text-color;
+/* =====================================================
+   CONTENITORE CENTRATO
+===================================================== */
+.progetti-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center; // 🔥 forza centratura testo
+}
+
+/* =====================================================
+   TITOLI (SEMPRE CENTRALI)
+===================================================== */
+.section-title {
+  font-family: $font-family-heading;
+  font-size: 2.3rem;
+  color: color(accent);
+  margin-bottom: space(4);
   text-align: center;
-  transition: all 0.3s ease-in-out;
-
-  mat-card-header {
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.8rem;
-
-    mat-icon {
-      font-size: 42px;
-      width: 42px;
-      height: 42px;
-      margin-right: 0.8rem;
-      color: vars.$accent-color;
-      filter: drop-shadow(0 0 10px rgba(vars.$accent-color, 0.8));
-    }
-
-    mat-card-title {
-      font-size: 2.5rem;
-      font-weight: 700;
-      font-family: 'Share Tech Mono', monospace;
-      color: vars.$accent-color;
-      text-shadow: 0 0 12px rgba(vars.$accent-color, 0.7);
-      animation: pulseGlow 4s infinite ease-in-out;
-    }
-  }
-
-  mat-card-content {
-    p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: vars.$light-gray;
-      margin-bottom: 1.5rem;
-    }
-
-    strong {
-      color: vars.$accent-color;
-      font-weight: 700;
-    }
-  }
+  text-shadow: 0 0 12px rgba(color(accent), 0.5);
 }
 
-/* === GRIGLIA PROGETTI === */
+.section-subtitle {
+  font-size: 1.1rem;
+  max-width: 720px;
+  margin-left: auto;   // 🔥 centratura reale
+  margin-right: auto;
+  margin-bottom: space(6);
+  color: color(text-light);
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =====================================================
+   GRID PROGETTI — 2 RIGHE × 2 COLONNE
+===================================================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: vars.$spacing-lg;
-  margin-top: vars.$spacing-lg;
+
+  grid-template-columns: repeat(2, 260px); // 🔥 2 colonne fisse
+  grid-auto-rows: auto;                    // righe automatiche
+
+  gap: space(6);
+  justify-content: center;                 // 🔥 griglia centrata
+  align-items: stretch;
 }
 
-.project-item {
-  background: rgba(vars.$card-bg, 0.85);
-  backdrop-filter: blur(6px);
-  border-radius: 1rem;
-  overflow: hidden;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(vars.$primary-color, 0.3);
-  box-shadow: 0 0 10px rgba(vars.$accent-color, 0.15);
-
-  &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px rgba(vars.$accent-color, 0.5);
-  }
-
-  img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-
-  mat-card-title {
-    padding: 1rem vars.$spacing-md 0;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 1.3rem;
-    color: vars.$accent-color;
-  }
-
-  mat-card-content {
-    padding: 0 vars.$spacing-md vars.$spacing-md;
-
-    p {
-      font-size: 0.95rem;
-      color: vars.$text-color;
-    }
-
-    mat-chip-row {
-      margin-top: 0.3rem;
-      background-color: rgba(vars.$primary-color, 0.2);
-      border: 1px solid rgba(vars.$primary-color, 0.4);
-      border-radius: 14px;
-      padding: 0.3rem 0.8rem;
-      font-size: 0.85rem;
-      ::ng-deep .mdc-evolution-chip__text-label {
-        color: vars.$text-color;
-      }
-    }
-  }
-
-  mat-card-actions {
-    padding: vars.$spacing-sm vars.$spacing-md vars.$spacing-md;
-    display: flex;
-    justify-content: flex-end;
-
-    button {
-      border: 1px solid vars.$primary-color;
-      border-radius: 0.5rem;
-      color: vars.$primary-color;
-      transition: all 0.3s ease;
-      &:hover {
-        background-color: vars.$primary-color;
-        color: vars.$text-color;
-      }
-    }
-  }
-}
-
-/* === PULSANTE CONTATTAMI === */
-.contact-button-container {
+/* =====================================================
+   COMING SOON
+===================================================== */
+.coming-soon {
+  margin-top: space(6);
+  font-size: 0.95rem;
+  color: color(text-light);
+  opacity: 0.75;
   text-align: center;
-  margin-bottom: vars.$spacing-xl;
-
-  button {
-    font-size: 1.1rem;
-    padding: 0.8rem 2rem;
-    font-weight: 600;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(vars.$accent-color, 0.6);
-    background-color: vars.$accent-color;
-    color: vars.$text-color;
-    box-shadow: 0 0 20px rgba(vars.$accent-color, 0.4);
-    transition: all 0.3s ease;
-
-    mat-icon {
-      margin-right: 8px;
-    }
-
-    &:hover {
-      background-color: darken(vars.$accent-color, 8%);
-      transform: translateY(-3px);
-      box-shadow: 0 0 25px rgba(vars.$accent-color, 0.6);
-    }
-  }
 }
 
-/* === LOADING & ERROR === */
-.loading-spinner,
-.error-message {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  padding: 2rem;
-  border-radius: 12px;
-  background: rgba(vars.$dark-bg, 0.6);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  color: vars.$text-color;
-
-  mat-icon {
-    font-size: 48px;
-    color: vars.$accent-color;
-  }
-
-  p {
-    font-size: 1.1rem;
-  }
-}
-
-/* === ANIMAZIONE NEON === */
-@keyframes pulseGlow {
-  0% {
-    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.6);
-  }
-  50% {
-    text-shadow: 0 0 18px rgba(vars.$accent-color, 0.9);
-  }
-  100% {
-    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.6);
-  }
-}
-
-/* === RESPONSIVE === */
-@media (max-width: vars.$breakpoint-md) {
-  .progetti-card {
-    padding: 1.8rem;
-    mat-card-title {
-      font-size: 2rem;
-    }
+/* =====================================================
+   RESPONSIVE — XL
+===================================================== */
+@include up(xl) {
+  .progetti-inner {
+    max-width: 1400px;
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 280px);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — LG / MD
+===================================================== */
+@include between(md, lg) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 250px);
+    gap: space(5);
+  }
+}
+
+@media (max-width: bp(md)) {
+  .progetti-section {
+    padding: space(6) space(4);
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 240px);
+    gap: space(4);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — SM
+===================================================== */
+@media (max-width: bp(sm)) {
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 220px);
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — XS
+===================================================== */
+@media (max-width: bp(xs)) {
+  .progetti-section {
+    padding: space(5) space(3);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; // 🔥 fallback pulito mobile
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .coming-soon {
+    font-size: 0.85rem;
   }
 }
 

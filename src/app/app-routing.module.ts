@@ -61,20 +61,6 @@ const routes: Routes = [
     }
   },
   {
-    path: 'progetti/:id',
-    loadChildren: () => import('./pages/progetti/progetto-detail/progetto-detail.module').then(m => m.ProgettoDetailModule),
-    data: {
-      seo: {
-        // Questi valori verranno sovrascritti dal componente ProgettoDetailComponent se ha dati specifici
-        title: 'Dettaglio Progetto - Aleksander Nikolli',
-        description: 'Dettagli approfonditi di un progetto di sviluppo web di Aleksander Nikolli. Scopri le tecnologie, le sfide e le soluzioni implementate.',
-        keywords: 'dettaglio progetto, case study, progetto web, sviluppo software, tecnologie',
-        imageUrl: 'https://res.cloudinary.com/dxz4eti2e/image/upload/v1753295350/attestato-frontend_i4cpmv.jpg',
-        type: 'article' // Tipo specifico per un articolo/progetto
-      }
-    }
-  },
-  {
     path: 'contatti',
     loadChildren: () => import('./pages/contatti/contatti.module').then(m => m.ContattiModule),
     data: {

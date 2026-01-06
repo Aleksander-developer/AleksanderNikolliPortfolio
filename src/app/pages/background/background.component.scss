@@ -1,4 +1,7 @@
-@use '../../../styles/variables' as vars;
+
+/* src/app/shared/components/background-animated/background-animated.component.scss */
+
+@use 'theme/theme' as *;
 
 :host {
   position: fixed;
@@ -9,28 +12,44 @@
   overflow: hidden;
 }
 
-/* === LAYER BASE === */
+/* ===================================================== */
+/* === LAYER BASE ====================================== */
+/* ===================================================== */
+
 .background {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(to bottom, darken(vars.$dark-bg, 10%), #0c2a3f 40%, #092238 100%);
+  background: linear-gradient(
+    to bottom,
+    darken(color(dark-bg), 10%),
+    color(primary) 40%,
+    darken(color(primary), 10%) 100%
+  );
+
   &::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(-45deg, #0d1b2a, #183661, #0d1b2a, #142850);
+    background: linear-gradient(
+      -45deg,
+      darken(color(primary), 20%),
+      color(primary),
+      darken(color(primary), 20%),
+      lighten(color(primary), 10%)
+    );
     background-size: 400% 400%;
     animation: moveGradient 25s ease infinite;
     opacity: 0.5;
   }
+
   &::after {
     content: "";
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(0deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      linear-gradient(90deg, rgba(color(white), 0.05) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(color(white), 0.05) 1px, transparent 1px);
     background-size: 50px 50px;
     animation: pulseGrid 8s ease-in-out infinite alternate;
     opacity: 0.3;
@@ -38,29 +57,46 @@
   }
 }
 
-/* === LUCE MOBILE === */
+/* ===================================================== */
+/* === LUCE MOBILE ===================================== */
+/* ===================================================== */
+
 .light {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 60% 70%, rgba(vars.$accent-color, 0.25), transparent 70%);
+  background: radial-gradient(
+    circle at 60% 70%,
+    rgba(color(accent), 0.25),
+    transparent 70%
+  );
   animation: moveLight 18s linear infinite alternate;
   z-index: 2;
 }
 
-/* === CITTA SFUMATA === */
+/* ===================================================== */
+/* === CITTA SFUMATA =================================== */
+/* ===================================================== */
+
 .city {
   position: absolute;
   bottom: 0;
   width: 200%;
   height: 40%;
-  background: linear-gradient(to top, rgba(6, 15, 25, 0.95), rgba(10, 35, 60, 0.3));
+  background: linear-gradient(
+    to top,
+    rgba(6, 15, 25, 0.95),
+    rgba(10, 35, 60, 0.3)
+  );
   border-radius: 50% / 10%;
   transform: translateX(-25%) scaleY(1.3);
   filter: blur(8px);
   z-index: 3;
 }
 
-/* === BADGES “PLANETARI” === */
+/* ===================================================== */
+/* === BADGES PLANETARI ================================ */
+/* ===================================================== */
+
 .tech-badges {
   position: absolute;
   inset: 0;
@@ -70,25 +106,28 @@
   overflow: hidden;
 }
 
-/* Stile base badge */
+/* Base badge */
 .badge {
   position: absolute;
-  background: rgba(vars.$accent-color, 0.1);
-  border: 1px solid rgba(vars.$accent-color, 0.4);
-  color: vars.$accent-color;
+  background: rgba(color(accent), 0.1);
+  border: 1px solid rgba(color(accent), 0.4);
+  color: color(accent);
   font-family: 'Fira Code', monospace;
   font-size: 0.8rem;
   padding: 6px 10px;
   border-radius: 8px;
-  text-shadow: 0 0 6px rgba(vars.$accent-color, 0.8);
-  box-shadow: 0 0 20px rgba(vars.$accent-color, 0.2);
+  text-shadow: 0 0 6px rgba(color(accent), 0.8);
+  box-shadow: 0 0 20px rgba(color(accent), 0.2);
   user-select: none;
   animation: orbit 20s linear infinite;
   transform-origin: center;
   opacity: 0.8;
 }
 
-/* Orbite con diverse ampiezze e velocità */
+/* ===================================================== */
+/* === ORBITE (INALTERATE) ============================= */
+/* ===================================================== */
+
 .badge:nth-child(1) { top: 45%; left: 50%; animation: orbit1 28s linear infinite; }
 .badge:nth-child(2) { top: 40%; left: 60%; animation: orbit2 32s linear infinite reverse; }
 .badge:nth-child(3) { top: 60%; left: 55%; animation: orbit3 40s linear infinite; }
@@ -108,7 +147,8 @@
 .badge:nth-child(17){ top: 10%; left: 25%; animation: orbit17 42s linear infinite; }
 .badge:nth-child(18){ top: 85%; left: 55%; animation: orbit18 56s linear infinite reverse; }
 
-/* === ANIMAZIONI ORBITALI === */
+/* === KEYFRAMES ORBITE (INALTERATE) === */
+/* ⚠️ NON TOCCATI */
 @keyframes orbit1 { 0% { transform: rotate(0deg) translateX(40px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(40px) rotate(-360deg); } }
 @keyframes orbit2 { 0% { transform: rotate(0deg) translateX(60px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); } }
 @keyframes orbit3 { 0% { transform: rotate(0deg) translateX(90px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(90px) rotate(-360deg); } }
@@ -128,7 +168,10 @@
 @keyframes orbit17{ 0% { transform: rotate(0deg) translateX(65px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(65px) rotate(-360deg); } }
 @keyframes orbit18{ 0% { transform: rotate(0deg) translateX(140px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); } }
 
-/* === ANIMAZIONI SFONDO === */
+/* ===================================================== */
+/* === SFONDO ========================================== */
+/* ===================================================== */
+
 @keyframes moveGradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -146,11 +189,23 @@
   100% { background-position: 40% 70%; }
 }
 
-/* === RESPONSIVE === */
-@media (max-width: vars.$breakpoint-md) {
+/* ===================================================== */
+/* === RESPONSIVE ====================================== */
+/* ===================================================== */
+
+@media (max-width: bp(md)) {
   .badge { font-size: 0.7rem; }
 }
-@media (max-width: vars.$breakpoint-sm) {
+
+@media (max-width: bp(sm)) {
   .badge { font-size: 0.65rem; }
+}
+
+@media (max-width: bp(xs)) {
+  .badge { font-size: 0.6rem; }
+}
+
+@include up(xl) {
+  .badge { font-size: 0.85rem; }
 }
 

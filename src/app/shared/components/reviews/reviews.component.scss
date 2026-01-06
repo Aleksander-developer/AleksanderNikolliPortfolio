@@ -1,9 +1,11 @@
+
 /* src/app/shared/components/reviews/reviews.component.scss */
-@use '../../../../styles/variables' as vars;
+
+@use 'theme/theme' as *;
 
 .reviews-section {
-  padding: vars.$spacing-xl vars.$spacing-md;
-  background-color: vars.$dark-bg;
+  padding: space(6) space(4);
+  background-color: color(dark-bg);
   text-align: center;
   position: relative; // Necessario per posizionare il loading/no-reviews sopra
 }
@@ -12,28 +14,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: vars.$spacing-lg;
+  margin-bottom: space(5);
 }
 
 .section-title {
   font-family: 'Share Tech Mono', monospace;
   font-size: 2.2rem;
-  color: vars.$accent-color;
-  margin-bottom: vars.$spacing-sm; // Spazio tra titolo e badge
-  text-shadow: 0 0 8px rgba(vars.$accent-color, 0.5);
+  color: color(accent);
+  margin-bottom: space(2);
+  text-shadow: 0 0 8px rgba(color(accent), 0.5);
 }
 
-// Stili per il badge Google Verified (se non è un componente separato con stili propri)
+/* Badge Google Verified (locale) */
 .google-verified-badge {
   display: inline-flex;
   align-items: center;
-  background-color: vars.$primary-color;
-  color: vars.$dark-bg;
+  background-color: color(primary);
+  color: color(dark-bg);
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
-  box-shadow: 0 2px 5px rgba(vars.$primary-color, 0.3);
+  box-shadow: 0 2px 5px rgba(color(primary), 0.3);
+
   mat-icon {
     font-size: 1rem;
     width: 1rem;
@@ -47,67 +50,66 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  max-width: 800px; // Larghezza massima del carosello
+  max-width: 800px;
   margin: 0 auto;
-  padding: 0 vars.$spacing-lg; // Padding per i pulsanti laterali
-  min-height: 250px; // Altezza minima per il carosello per evitare salti di layout
+  padding: 0 space(5);
+  min-height: 250px;
 }
 
 .reviews-wrapper {
   display: flex;
-  overflow: hidden; // Nasconde le recensioni non attive
+  overflow: hidden;
   width: 100%;
   position: relative;
-  height: auto; // Altezza flessibile basata sul contenuto
-  min-height: 250px; // Assicurati che il wrapper abbia un'altezza minima
+  height: auto;
+  min-height: 250px;
 }
 
 .review-card {
-  flex: 0 0 100%; // Ogni card occupa il 100% della larghezza del wrapper
-  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; // Animazione di scorrimento e dissolvenza
-  opacity: 0; // Inizialmente nascosto
-  position: absolute; // Posiziona le card una sopra l'altra
+  flex: 0 0 100%;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+  opacity: 0;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; // Assicurati che occupino l'altezza completa
-  display: flex; // Per centrare il contenuto della card
+  height: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
 
   &.active {
-    opacity: 1; // Mostra solo la card attiva
-    position: relative; // Riporta in flusso per occupare spazio
+    opacity: 1;
+    position: relative;
     transform: translateX(0);
   }
 
-  // Stili per le card non attive (per animazione off-screen)
   &:not(.active) {
-    transform: translateX(100%); // Sposta le card non attive fuori dallo schermo a destra
+    transform: translateX(100%);
   }
 }
 
 mat-card {
-  background-color: vars.$card-bg !important;
-  color: vars.$text-color;
+  background-color: color(card-bg) !important;
+  color: color(text);
   border-radius: 12px;
-  padding: vars.$spacing-lg;
-  min-height: 200px; // Altezza minima per le card
+  padding: space(5);
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(vars.$accent-color, 0.1);
-  width: 100%; // La card deve occupare tutta la larghezza disponibile
-  max-width: 700px; // Limita la larghezza della card all'interno del carosello
+  border: 1px solid rgba(color(accent), 0.1);
+  width: 100%;
+  max-width: 700px;
 }
 
 .reviewer-info {
   display: flex;
   align-items: center;
-  margin-bottom: vars.$spacing-md;
-  width: 100%; // Occupa tutta la larghezza per allineamento
+  margin-bottom: space(4);
+  width: 100%;
 }
 
 .reviewer-avatar {
@@ -115,24 +117,26 @@ mat-card {
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: vars.$spacing-md;
-  border: 2px solid vars.$primary-color;
-  box-shadow: 0 0 8px rgba(vars.$primary-color, 0.5);
+  margin-right: space(4);
+  border: 2px solid color(primary);
+  box-shadow: 0 0 8px rgba(color(primary), 0.5);
 }
 
 .reviewer-details {
   text-align: left;
   flex-grow: 1;
+
   h3 {
     font-size: 1.2rem;
     margin: 0;
-    color: vars.$accent-color;
+    color: color(accent);
   }
 }
 
 .star-rating {
-  color: vars.$primary-color;
+  color: color(primary);
   margin-top: 0.2rem;
+
   mat-icon {
     font-size: 1.2rem;
     width: 1.2rem;
@@ -143,13 +147,14 @@ mat-card {
 .review-verified-badge {
   display: inline-flex;
   align-items: center;
-  background-color: rgba(vars.$success-color, 0.2);
-  color: vars.$success-color;
+  background-color: rgba(color(success), 0.2);
+  color: color(success);
   padding: 0.2rem 0.5rem;
   border-radius: 10px;
   font-size: 0.7rem;
   font-weight: 500;
   margin-top: 0.5rem;
+
   mat-icon {
     font-size: 0.8rem;
     width: 0.8rem;
@@ -161,24 +166,25 @@ mat-card {
 .review-comment {
   font-size: 1.1rem;
   line-height: 1.6;
-  margin-bottom: vars.$spacing-md;
+  margin-bottom: space(4);
   font-style: italic;
-  color: vars.$light-gray;
-  text-align: left; // Assicurati che il commento sia allineato a sinistra
-  width: 100%; // Occupa tutta la larghezza
+  color: color(text-light);
+  text-align: left;
+  width: 100%;
 }
 
 .review-reply {
-  background-color: rgba(vars.$primary-color, 0.1);
-  border-left: 3px solid vars.$primary-color;
-  padding: vars.$spacing-sm;
-  margin-top: vars.$spacing-md;
+  background-color: rgba(color(primary), 0.1);
+  border-left: 3px solid color(primary);
+  padding: space(2);
+  margin-top: space(4);
   border-radius: 4px;
   width: 100%;
+
   .reply-text {
     font-size: 0.95rem;
     line-height: 1.5;
-    color: vars.$text-color;
+    color: color(text);
     margin: 0;
     text-align: left;
   }
@@ -186,10 +192,10 @@ mat-card {
 
 .review-date {
   font-size: 0.85rem;
-  color: vars.$text-color-light;
-  margin-top: vars.$spacing-sm;
-  display: block; // Assicurati che sia su una nuova riga
-  text-align: right; // Allinea la data a destra
+  color: color(text-light);
+  margin-top: space(2);
+  display: block;
+  text-align: right;
   width: 100%;
 }
 
@@ -197,12 +203,12 @@ mat-card {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(vars.$primary-color, 0.7); // Pulsanti semi-trasparenti
-  color: vars.$dark-bg;
+  background-color: rgba(color(primary), 0.7);
+  color: color(dark-bg);
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  z-index: 10; // Assicurati che siano sopra le recensioni
+  z-index: 10;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease, transform 0.3s ease;
 
@@ -213,7 +219,7 @@ mat-card {
   }
 
   &:hover {
-    background-color: vars.$primary-color;
+    background-color: color(primary);
     transform: translateY(-50%) scale(1.1);
   }
 
@@ -229,135 +235,183 @@ mat-card {
 .carousel-indicators {
   display: flex;
   justify-content: center;
-  margin-top: vars.$spacing-lg;
-  gap: vars.$spacing-sm;
+  margin-top: space(5);
+  gap: space(2);
 }
 
 .indicator-dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgba(vars.$text-color-light, 0.4);
+  background-color: rgba(color(text-light), 0.4);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 
   &.active {
-    background-color: vars.$primary-color;
+    background-color: color(primary);
     transform: scale(1.2);
   }
 
   &:hover {
-    background-color: vars.$primary-color;
+    background-color: color(primary);
   }
 }
 
-.loading-spinner, .no-reviews-message {
+.loading-spinner,
+.no-reviews-message {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   padding: 2rem;
-  background-color: lighten(vars.$dark-bg, 5%);
+  background-color: lighten(color(dark-bg), 5%);
   border-radius: 12px;
   max-width: 500px;
   width: 100%;
-  margin: 2rem auto; // Centra il messaggio
+  margin: 2rem auto;
   text-align: center;
-  color: vars.$text-color;
+  color: color(text);
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-  min-height: 200px; // Altezza minima per i messaggi di stato
+  min-height: 200px;
 }
 
-/* Responsive adjustments */
-@media (max-width: vars.$breakpoint-md) {
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* MD – tablet / mobile landscape */
+@media (max-width: bp(md)) {
   .section-title {
     font-size: 2rem;
   }
+
   .carousel-container {
-    padding: 0 vars.$spacing-sm;
+    padding: 0 space(2);
     min-height: 220px;
   }
+
   .reviews-wrapper {
     min-height: 220px;
   }
+
   mat-card {
-    padding: vars.$spacing-md;
+    padding: space(4);
     min-height: 180px;
   }
+
   .reviewer-avatar {
     width: 50px;
     height: 50px;
   }
+
   .reviewer-details h3 {
     font-size: 1.1rem;
   }
+
   .star-rating mat-icon {
     font-size: 1.1rem;
     width: 1.1rem;
     height: 1.1rem;
   }
+
   .review-comment {
     font-size: 1rem;
   }
+
   .carousel-button {
     width: 40px;
     height: 40px;
+
     mat-icon {
       font-size: 28px;
       width: 28px;
       height: 28px;
     }
   }
+
   .indicator-dot {
     width: 10px;
     height: 10px;
   }
-  .loading-spinner, .no-reviews-message {
+
+  .loading-spinner,
+  .no-reviews-message {
     min-height: 180px;
   }
 }
 
-@media (max-width: vars.$breakpoint-sm) {
+/* SM – smartphone */
+@media (max-width: bp(sm)) {
   .section-title {
     font-size: 1.8rem;
   }
+
   .carousel-container {
-    padding: 0 vars.$spacing-xs;
+    padding: 0 space(1);
     min-height: 200px;
   }
+
   .reviews-wrapper {
     min-height: 200px;
   }
+
   mat-card {
-    padding: vars.$spacing-sm;
+    padding: space(2);
     min-height: 160px;
   }
+
   .reviewer-avatar {
     width: 40px;
     height: 40px;
   }
+
   .reviewer-details h3 {
     font-size: 1rem;
   }
+
   .star-rating mat-icon {
     font-size: 1rem;
     width: 1rem;
     height: 1rem;
   }
+
   .review-comment {
     font-size: 0.9rem;
   }
+
   .carousel-button {
     width: 36px;
     height: 36px;
+
     mat-icon {
       font-size: 24px;
       width: 24px;
       height: 24px;
     }
   }
-  .loading-spinner, .no-reviews-message {
+
+  .loading-spinner,
+  .no-reviews-message {
     min-height: 160px;
   }
 }
+
+/* LG – desktop piccoli */
+@include between(md, lg) {
+  .carousel-container {
+    max-width: 760px;
+  }
+}
+
+/* XL – desktop grandi */
+@include up(xl) {
+  .carousel-container {
+    max-width: 900px;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+  }
+}
+

@@ -1,0 +1,35 @@
+
+$colors: (
+  dark-bg: #1a1a2e,
+  dark-bg-2: #131322,
+  light-bg: #F5F5F5,
+
+  primary: #1976d2,
+  accent: #00bcd4,
+  card-bg: #2e2e4a,
+
+  text: #e0e0e0,
+  text-light: #B0B0B0,
+  text-dark: #333333,
+  white: #ffffff,
+
+  error: #ff5252,
+  success: #4CAF50,
+  star: #FFD700
+);
+
+/* helper */
+@function color($key) {
+  @return map-get($colors, $key);
+}
+
+/* glow */
+$neon: (
+  cyan: rgba(0, 188, 212, 0.65),
+  strong: rgba(0, 255, 255, 0.9)
+);
+
+@function neon($key) {
+  @return map-get($neon, $key);
+}
+

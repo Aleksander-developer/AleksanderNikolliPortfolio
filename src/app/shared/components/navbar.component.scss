@@ -1,20 +1,19 @@
+
 /* src/app/shared/components/navbar/navbar.component.scss */
 
-// Importa le variabili globali dal tuo file _variables.scss
-@use '../../../styles/variables' as vars;
+@use 'theme/theme' as *;
 
 // Variabili specifiche della navbar.
-$darkest-bg: #141428;     // Toolbar molto scura
-$brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
-
+$darkest-bg: #141428;         // Toolbar molto scura
+$brand-link-color: #58a6ff;   // Un blu brillante per il brand (GitHub-like)
 
 .toolbar-custom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: $darkest-bg !important;
-  padding: 0 vars.$spacing-md;
-  font-family: vars.$font-family-base;
+  padding: 0 space(4);
+  font-family: $font-family-base;
   height: 64px;
 
   /* ✅ Navbar fissa corretta */
@@ -49,7 +48,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 /* Contenitori per i link desktop */
 .nav-links-container {
   display: flex;
-  gap: vars.$spacing-md;
+  gap: space(4);
   align-items: center; /* Allinea verticalmente i link */
   z-index: 2; /* Assicura che i link siano sotto il brand ma sopra lo sfondo */
   flex-shrink: 1; /* Permette ai link di restringersi se necessario */
@@ -70,7 +69,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 }
 
 .desktop-links a {
-  color: vars.$text-color;
+  color: color(text);
   text-transform: uppercase;
   font-weight: 500;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -80,20 +79,20 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
   min-width: 0; /* Permette ai link di restringersi oltre il loro contenuto se necessario */
 
   &:hover {
-    color: vars.$accent-color;
+    color: color(accent);
     transform: translateY(-2px);
   }
 
   &.active { /* Stile per il link attivo */
-    color: vars.$accent-color;
-    border-bottom: 2px solid vars.$accent-color;
+    color: color(accent);
+    border-bottom: 2px solid color(accent);
     padding-bottom: 6px; /* Per compensare il bordo */
   }
 }
 
 .menu-button {
   display: none; /* Nascosto per desktop */
-  color: vars.$text-color;
+  color: color(text);
   order: 4; /* Posiziona il pulsante menu a destra */
 }
 
@@ -101,7 +100,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 .language-buttons {
   display: flex;
   align-items: center;
-  margin-left: vars.$spacing-md; /* Spazio tra i link e i pulsanti lingua */
+  margin-left: space(4); /* Spazio tra i link e i pulsanti lingua */
   flex-shrink: 0; /* Impedisce ai pulsanti lingua di restringersi */
 
   button {
@@ -109,7 +108,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
     padding: 4px 8px; /* Padding ridotto per i pulsanti lingua */
     border-radius: 4px;
     transition: background-color 0.3s ease, border-color 0.3s ease;
-    color: vars.$text-color; /* Colore del testo per i pulsanti lingua */
+    color: color(text); /* Colore del testo per i pulsanti lingua */
 
     .flag-icon {
       width: 24px; /* Dimensione delle immagini bandiera */
@@ -125,13 +124,13 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
     }
 
     &.active-lang {
-      background-color: rgba(vars.$accent-color, 0.2); /* Sfondo leggero per la lingua attiva */
-      border: 1px solid vars.$accent-color; /* Bordo per evidenziare */
-      color: vars.$accent-color; /* Colore del testo per la lingua attiva */
+      background-color: rgba(color(accent), 0.2); /* Sfondo leggero per la lingua attiva */
+      border: 1px solid color(accent); /* Bordo per evidenziare */
+      color: color(accent); /* Colore del testo per la lingua attiva */
     }
 
     &:hover {
-      background-color: rgba(vars.$accent-color, 0.1);
+      background-color: rgba(color(accent), 0.1);
     }
   }
 }
@@ -142,7 +141,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 }
 
 /* Media query per dispositivi mobili */
-@media (max-width: vars.$breakpoint-md) { /* Per schermi più piccoli di 768px (smartphone) */
+@media (max-width: bp(md)) { /* Per schermi più piccoli di 768px (smartphone) */
   .desktop-links {
     display: none; /* Nasconde i link desktop */
   }
@@ -175,7 +174,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
     display: flex;
     flex-direction: column; /* Impila i pulsanti verticalmente */
     padding: 8px 0;
-    border-top: 1px solid rgba(vars.$text-color, 0.1); /* Separatore */
+    border-top: 1px solid rgba(color(text), 0.1); /* Separatore */
 
     button {
       width: 100%; /* I pulsanti occupano tutta la larghezza del menu */
@@ -185,7 +184,7 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
       background-color: transparent; /* Sfondo trasparente */
 
       &:hover {
-        background-color: rgba(vars.$text-color, 0.05); /* Sfondo hover leggero */
+        background-color: rgba(color(text), 0.05); /* Sfondo hover leggero */
       }
 
       .lang-text {
@@ -201,14 +200,14 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
     font-size: 1.2rem; /* Riduci la dimensione del font del brand */
   }
   .desktop-links {
-    gap: vars.$spacing-xs; /* Riduci il gap tra i link */
+    gap: space(1); /* Riduci il gap tra i link */
   }
   .desktop-links a {
     font-size: 0.85rem; /* Riduci la dimensione del font dei link */
     padding: 0 6px; /* Riduci il padding dei link */
   }
   .language-buttons {
-    margin-left: vars.$spacing-xs; /* Riduci il margine per i pulsanti lingua */
+    margin-left: space(1); /* Riduci il margine per i pulsanti lingua */
   }
   .language-buttons button {
     padding: 2px 4px; /* Riduci il padding dei pulsanti lingua */
@@ -224,19 +223,19 @@ $brand-link-color: #58a6ff; // Un blu brillante per il brand (GitHub-like)
 
 // Stili per il menu di Angular Material (mat-menu)
 .mat-menu-panel {
-  background-color: lighten(vars.$dark-bg, 5%);
-  border: 1px solid rgba(vars.$accent-color, 0.2);
+  background-color: lighten(color(dark-bg), 5%);
+  border: 1px solid rgba(color(accent), 0.2);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .mat-menu-item {
-  color: vars.$text-color;
-  font-family: vars.$font-family-base;
+  color: color(text);
+  font-family: $font-family-base;
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: lighten(lighten(vars.$dark-bg, 5%), 5%);
-    color: vars.$accent-color;
+    background-color: lighten(lighten(color(dark-bg), 5%), 5%);
+    color: color(accent);
   }
 }
 

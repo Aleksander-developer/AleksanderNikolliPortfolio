@@ -1,0 +1,44 @@
+
+@use 'theme/theme' as *;
+
+mat-chip-listbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(2);
+  margin-top: space(3);
+
+  mat-chip-row {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+
+    background-color: rgba(color(accent), 0.12);
+    border: 1px solid rgba(color(accent), 0.35);
+
+    box-shadow: 0 0 10px rgba(color(accent), 0.2);
+    transition: all 0.25s ease-in-out;
+
+    ::ng-deep .mdc-evolution-chip__text-content {
+      color: color(text);
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      background-color: rgba(color(accent), 0.22);
+      box-shadow: 0 5px 15px rgba(color(accent), 0.45);
+    }
+
+    /* 🔥 SKILL IN EVIDENZA */
+    &.highlight {
+      background-color: color(accent);
+      border-color: color(accent);
+      box-shadow: 0 0 18px rgba(color(accent), 0.8);
+
+      ::ng-deep .mdc-evolution-chip__text-content {
+        color: color(dark-bg);
+        font-weight: 600;
+      }
+    }
+  }
+}
+

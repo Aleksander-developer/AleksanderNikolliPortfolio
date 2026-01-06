@@ -1,56 +1,63 @@
+
 /* src/app/pages/servizi/servizi.component.scss */
 
-@use '../../../styles/variables' as vars;
+@use 'theme/theme' as *;
 
-/* === SEZIONE SERVIZI === */
+/* =====================================================
+   SEZIONE SERVIZI
+===================================================== */
 .servizi-section {
   position: relative;
   z-index: 5;
-  padding: calc(64px + 2rem) vars.$spacing-lg vars.$spacing-xl;
+  padding: calc(64px + 2rem) space(6) space(8);
   text-align: center;
-  font-family: vars.$font-family-base;
+  font-family: $font-family-base;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   h1 {
     font-size: 2.6rem;
-    margin-bottom: vars.$spacing-xl;
-    color: vars.$accent-color;
+    margin-bottom: space(8);
+    color: color(accent);
     font-family: 'Share Tech Mono', monospace;
     font-weight: 700;
-    text-shadow: 0 0 12px rgba(vars.$accent-color, 0.7);
+    text-shadow: 0 0 12px rgba(color(accent), 0.7);
     animation: pulseGlow 4s infinite ease-in-out;
   }
 
-  /* === GRIGLIA === */
+  /* =================================================
+     GRIGLIA SERVIZI
+  ================================================== */
   .servizi-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: vars.$spacing-xl;
+    gap: space(8);
     max-width: 1200px;
     width: 100%;
-    margin-bottom: vars.$spacing-xl;
+    margin-bottom: space(8);
   }
 
-  /* === CARD SERVIZIO === */
+  /* =================================================
+     CARD SERVIZIO
+  ================================================== */
   .servizio-card {
-    background: rgba(vars.$dark-bg, 0.7);
+    background: rgba(color(dark-bg), 0.7);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(vars.$accent-color, 0.25);
+    border: 1px solid rgba(color(accent), 0.25);
     border-radius: 16px;
     padding: 2rem 1.5rem;
-    color: vars.$text-color;
+    color: color(text);
     box-shadow:
       0 8px 25px rgba(0, 0, 0, 0.6),
-      0 0 20px rgba(vars.$accent-color, 0.3);
+      0 0 20px rgba(color(accent), 0.3);
     transition: all 0.3s ease-in-out;
     cursor: default;
     text-align: center;
 
     &:hover {
       transform: translateY(-6px);
-      box-shadow: 0 0 25px rgba(vars.$accent-color, 0.5);
+      box-shadow: 0 0 25px rgba(color(accent), 0.5);
     }
 
     .icon-wrapper {
@@ -61,29 +68,28 @@
       height: 4.5rem;
       overflow: visible;
 
-        .icon {
-          font-size: 3.5rem;
-          width: 3.5rem;
-          height: 3.5rem;
-          line-height: 3.5rem;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: vars.$accent-color;
-          filter: drop-shadow(0 0 12px rgba(vars.$accent-color, 0.6));
-          transition: transform 0.4s ease, filter 0.4s ease;
-        }
+      .icon {
+        font-size: 3.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: color(accent);
+        filter: drop-shadow(0 0 12px rgba(color(accent), 0.6));
+        transition: transform 0.4s ease, filter 0.4s ease;
+      }
     }
 
-
-    .servizio-card:hover .icon {
+    &:hover .icon {
       transform: scale(1.15);
-      filter: drop-shadow(0 0 20px rgba(vars.$accent-color, 0.9));
+      filter: drop-shadow(0 0 20px rgba(color(accent), 0.9));
     }
 
     h2 {
       font-size: 1.4rem;
-      color: vars.$accent-color;
+      color: color(accent);
       margin-bottom: 0.6rem;
       font-weight: 600;
       letter-spacing: 0.5px;
@@ -92,14 +98,16 @@
     p {
       font-size: 1rem;
       line-height: 1.6;
-      color: vars.$light-gray;
+      color: color(text-light);
       opacity: 0.9;
     }
   }
 
-  /* === PULSANTE CONTATTAMI === */
+  /* =================================================
+     PULSANTE CONTATTAMI
+  ================================================== */
   .contact-button-container {
-    margin-top: vars.$spacing-xl;
+    margin-top: space(8);
     text-align: center;
 
     button {
@@ -108,10 +116,10 @@
       border-radius: 8px;
       font-weight: 600;
       letter-spacing: 1px;
-      background-color: vars.$primary-color;
-      color: vars.$text-color;
-      border: 1px solid rgba(vars.$primary-color, 0.6);
-      box-shadow: 0 5px 15px rgba(vars.$primary-color, 0.4);
+      background-color: color(primary);
+      color: color(text);
+      border: 1px solid rgba(color(primary), 0.6);
+      box-shadow: 0 5px 15px rgba(color(primary), 0.4);
       transition: all 0.3s ease;
 
       mat-icon {
@@ -120,39 +128,60 @@
       }
 
       &:hover {
-        background-color: darken(vars.$primary-color, 10%);
+        background-color: darken(color(primary), 10%);
         transform: translateY(-3px);
-        box-shadow: 0 8px 25px rgba(vars.$primary-color, 0.6);
+        box-shadow: 0 8px 25px rgba(color(primary), 0.6);
       }
     }
   }
 }
 
-/* === ANIMAZIONE NEON === */
+/* =====================================================
+   ANIMAZIONE NEON
+===================================================== */
 @keyframes pulseGlow {
   0% {
-    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.6);
+    text-shadow: 0 0 8px rgba(color(accent), 0.6);
   }
   50% {
-    text-shadow: 0 0 18px rgba(vars.$accent-color, 0.9);
+    text-shadow: 0 0 18px rgba(color(accent), 0.9);
   }
   100% {
-    text-shadow: 0 0 8px rgba(vars.$accent-color, 0.6);
+    text-shadow: 0 0 8px rgba(color(accent), 0.6);
   }
 }
 
-/* === RESPONSIVE === */
-@media (max-width: vars.$breakpoint-md) {
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+/* XL */
+@include up(xl) {
+  .servizi-grid {
+    max-width: 1300px;
+  }
+}
+
+/* LG */
+@include between(md, lg) {
+  .servizi-grid {
+    gap: space(7);
+  }
+}
+
+/* MD */
+@media (max-width: bp(md)) {
   .servizi-section {
-    padding: vars.$spacing-lg vars.$spacing-md;
+    padding: space(6) space(4);
 
     h1 {
       font-size: 2rem;
-      margin-bottom: vars.$spacing-lg;
+      margin-bottom: space(6);
     }
 
     .servizio-card {
       padding: 1.5rem;
+
       .icon {
         font-size: 2.5rem;
       }
@@ -165,21 +194,26 @@
   }
 }
 
-@media (max-width: vars.$breakpoint-sm) {
+/* SM */
+@media (max-width: bp(sm)) {
   .servizi-section {
-    padding: vars.$spacing-md vars.$spacing-sm;
+    padding: space(5) space(3);
+
     h1 {
       font-size: 1.7rem;
     }
 
     .servizio-card {
       padding: 1.2rem;
+
       .icon {
         font-size: 2.3rem;
       }
+
       h2 {
         font-size: 1.1rem;
       }
+
       p {
         font-size: 0.9rem;
       }
@@ -189,6 +223,17 @@
       font-size: 0.9rem;
       padding: 0.6rem 1.2rem;
     }
+  }
+}
+
+/* XS */
+@media (max-width: bp(xs)) {
+  .servizi-grid {
+    gap: space(4);
+  }
+
+  .contact-button-container button {
+    width: 100%;
   }
 }
 

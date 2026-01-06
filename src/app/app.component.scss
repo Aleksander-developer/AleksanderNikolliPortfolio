@@ -1,12 +1,11 @@
+
 /* src/app/app.component.scss */
 
-/* === Import variabili globali === */
-@use '../styles/variables' as vars;
+@use 'theme/theme' as *;
 
 :host {
   background: transparent !important;
 }
-
 
 /* === Layout principale === */
 .app-container {
@@ -14,16 +13,17 @@
   flex-direction: column;
   min-height: 100vh;
   position: relative;
-  z-index: 10; /* Sovrapposto al background */
+  z-index: z(app); /* sopra il background */
 }
 
 /* === Contenuto principale === */
 .main-content {
   flex: 1;
-  padding: 2rem;
-  color: vars.$text-color;
+  padding: space(6);
+  color: color(text);
   position: relative;
-  z-index: 10; /* Evita che il testo venga coperto dal background */
+  z-index: z(app); /* evita che il testo venga coperto dal background */
+  font-family: $font-family-base;
 }
 
 /* ===============================================================
@@ -33,17 +33,20 @@
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 1000;
+  z-index: z(scroll-top);
 
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity 0.3s ease-out, transform 0.3s ease-out, bottom 0.3s ease-out;
+  transition:
+    opacity 0.3s ease-out,
+    transform 0.3s ease-out,
+    bottom 0.3s ease-out;
 
-  /* Usa le variabili globali per i colori */
-  background-color: vars.$accent-color;
-  border: 1px solid rgba(vars.$accent-color, 0.6);
+  /* Colori theme */
+  background-color: color(accent);
+  border: 1px solid rgba(color(accent), 0.6);
   border-radius: 50%;
-  box-shadow: 0px 5px 15px rgba(vars.$accent-color, 0.4);
+  box-shadow: 0 5px 15px rgba(color(accent), 0.4);
 
   display: flex;
   align-items: center;
@@ -58,23 +61,56 @@
 
 /* Hover (effetto glow tech) */
 .scroll-to-top-button:hover {
-  background-color: darken(vars.$accent-color, 10%);
-  box-shadow: 0px 8px 20px rgba(vars.$accent-color, 0.6);
+  background-color: darken(color(accent), 10%);
+  box-shadow: 0 8px 20px rgba(color(accent), 0.6);
   transform: translateY(-2px);
 }
 
 /* Icona interna */
 .scroll-to-top-button mat-icon {
   font-size: 28px;
-  color: vars.$text-color;
-  text-shadow: 0 0 6px rgba(vars.$accent-color, 0.6);
+  color: color(text);
+  text-shadow: 0 0 6px rgba(color(accent), 0.6);
   transition: all 0.3s ease;
 }
 
-/* Responsive */
-@media (max-width: vars.$breakpoint-md) {
+/* =====================================================
+   RESPONSIVE — SCROLL TO TOP
+===================================================== */
+
+/* XL */
+@include up(xl) {
+  .scroll-to-top-button {
+    right: 28px;
+    bottom: 28px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .scroll-to-top-button mat-icon {
+    font-size: 30px;
+  }
+}
+
+/* LG */
+@include between(md, lg) {
+  .scroll-to-top-button {
+    right: 22px;
+    bottom: 22px;
+    width: 52px;
+    height: 52px;
+  }
+}
+
+/* MD */
+@media (max-width: bp(md)) {
+  .main-content {
+    padding: space(5);
+  }
+
   .scroll-to-top-button {
     right: 15px;
+    bottom: 15px;
     width: 48px;
     height: 48px;
   }
@@ -83,3 +119,36 @@
     font-size: 24px;
   }
 }
+
+/* SM */
+@media (max-width: bp(sm)) {
+  .main-content {
+    padding: space(4);
+  }
+
+  .scroll-to-top-button {
+    right: 12px;
+    bottom: 12px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* XS */
+@media (max-width: bp(xs)) {
+  .main-content {
+    padding: space(3);
+  }
+
+  .scroll-to-top-button {
+    right: 10px;
+    bottom: 10px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .scroll-to-top-button mat-icon {
+    font-size: 22px;
+  }
+}
+
