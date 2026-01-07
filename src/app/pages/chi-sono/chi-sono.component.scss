@@ -6,6 +6,9 @@
   width: 100%;
 }
 
+/* =====================================================
+   SEZIONE CHI SONO
+===================================================== */
 .chi-sono-section {
   width: 100%;
   margin: 0 auto;
@@ -13,7 +16,9 @@
   box-sizing: border-box;
 }
 
-
+/* =====================================================
+   CONTENITORE CENTRALE
+===================================================== */
 .chi-sono-inner {
   width: 100%;
   max-width: 1100px;
@@ -22,13 +27,18 @@
   box-sizing: border-box;
 }
 
-
+/* =====================================================
+   CARD PRINCIPALE
+===================================================== */
 .chi-sono-card {
   width: 100%;
   max-width: 900px;
   margin: 48px auto;
   padding: 1.5rem;
   box-sizing: border-box;
+
+  position: relative;
+  color: color(text);
 
   background: rgba(color(dark-bg), 0.75);
   backdrop-filter: blur(6px);
@@ -40,6 +50,9 @@
     0 0 25px rgba(color(accent), 0.4);
 }
 
+/* =====================================================
+   WHY CHOOSE ME
+===================================================== */
 .why-wrapper {
   width: 100%;
   max-width: 900px;
@@ -47,9 +60,78 @@
   box-sizing: border-box;
 }
 
+/* =====================================================
+   DIVIDER
+===================================================== */
+.mat-divider-margin {
+  margin: 40px 0;
+  background-color: rgba(color(accent), 0.3);
+}
+
+/* =====================================================
+   ATTESTATI
+===================================================== */
+.attestati-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.attestato-item {
+  background: rgba(color(dark-bg), 0.65);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+
+  border: 1px solid rgba(color(accent), 0.3);
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(color(accent), 0.35);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.8),
+      0 0 30px rgba(color(accent), 0.6);
+  }
+}
+
+.attestato-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.attestato-caption {
+  display: block;
+  padding: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: color(accent);
+  text-shadow: 0 0 6px rgba(color(accent), 0.4);
+}
+
+/* =====================================================
+   SKILLS BOX
+===================================================== */
+app-skills-box {
+  display: block;
+  margin-top: 16px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 @media (max-width: bp(md)) {
   .chi-sono-card {
     padding: 1.25rem;
+  }
+
+  .attestati-grid {
+    grid-template-columns: 1fr;
   }
 }
 

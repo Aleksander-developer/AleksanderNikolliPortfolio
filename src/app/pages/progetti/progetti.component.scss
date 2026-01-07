@@ -47,6 +47,7 @@
 ===================================================== */
 .projects-grid {
   display: grid;
+  
 
   grid-template-columns: repeat(2, 260px); // 🔥 2 colonne fisse
   grid-auto-rows: auto;                    // righe automatiche

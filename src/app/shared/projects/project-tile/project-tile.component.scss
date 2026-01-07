@@ -6,6 +6,7 @@
 ===================================================== */
 .project-tile {
   width: 260px; // 🔥 larghezza fissa (obbligatoria per scroll orizzontale)
+  height: 340px;
 
   padding: space(4);
   border-radius: radius(card);
@@ -66,7 +67,13 @@
   text-align: center;
   letter-spacing: 0.4px;
   margin-top: space(2);
+
+  min-height: 2.6em; // 🔥 stessa altezza per tutti
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 
 /* =====================================================
    AZIONI
@@ -74,6 +81,7 @@
 .project-actions {
   display: flex;
   gap: space(2);
+  margin-top: auto;
 }
 
 /* Base bottone */
