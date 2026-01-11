@@ -1,0 +1,268 @@
+
+
+@use 'theme/theme' as *;
+
+.service-page {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: space(7) space(5);
+  color: color(text);
+  font-family: $font-family-base;
+  isolation: isolate;
+
+  @include down(md) {
+    padding: space(6) space(3);
+  }
+
+  /* ----------------------------------
+     BACKGROUND FUTURISTICO (HUD STYLE)
+  ----------------------------------- */
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(
+        circle at top,
+        rgba(color(accent), 0.12),
+        transparent 65%
+      ),
+      linear-gradient(
+        120deg,
+        rgba(color(accent), 0.04),
+        transparent 40%,
+        rgba(color(accent), 0.03)
+      );
+    z-index: -2;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 24px,
+        rgba(color(accent), 0.025) 25px
+      );
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  /* ----------------------------------
+     H1 – TITOLO PRINCIPALE (WOW)
+  ----------------------------------- */
+  h1 {
+    font-family: $font-family-heading;
+    font-size: fluid(2.2rem, 2.8rem);
+    color: color(accent);
+    margin-bottom: space(5);
+    letter-spacing: 0.04em;
+    position: relative;
+
+    text-shadow:
+      0 0 12px neon(cyan),
+      0 0 28px rgba(color(accent), 0.35);
+
+    animation: titleGlow 5s ease-in-out infinite;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        color(accent),
+        transparent
+      );
+      box-shadow: 0 0 12px neon(cyan);
+    }
+  }
+
+  /* ----------------------------------
+     INTRO – EFFETTO “PANNELLO TECH”
+  ----------------------------------- */
+  .intro {
+    font-size: font(md);
+    line-height: 1.75;
+    color: color(text-light);
+    margin-bottom: space(6);
+    padding: space(4);
+    border-left: 3px solid rgba(color(accent), 0.45);
+    background: rgba(color(dark-bg), 0.45);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+
+    box-shadow:
+      inset 0 0 20px rgba(color(accent), 0.08),
+      0 0 18px rgba(color(accent), 0.12);
+  }
+
+  /* ----------------------------------
+     H2 – SEZIONI
+  ----------------------------------- */
+  h2 {
+    font-family: $font-family-heading;
+    font-size: font(lg);
+    margin-top: space(7);
+    margin-bottom: space(3);
+    color: color(accent);
+    letter-spacing: 0.03em;
+    position: relative;
+
+    &::before {
+      content: '▸';
+      margin-right: 8px;
+      color: color(accent);
+      text-shadow: 0 0 8px neon(cyan);
+    }
+  }
+
+  /* ----------------------------------
+     PARAGRAFI
+  ----------------------------------- */
+  p {
+    font-size: font(base);
+    line-height: 1.7;
+    color: color(text-light);
+    max-width: 800px;
+  }
+
+  /* ----------------------------------
+     LISTE – EFFETTO TERMINAL
+  ----------------------------------- */
+  ul {
+    margin-top: space(4);
+    padding-left: 0;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: space(2);
+      font-size: font(base);
+      color: color(text);
+
+      &::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: color(accent);
+        text-shadow: 0 0 6px neon(cyan);
+      }
+    }
+  }
+
+  /* ----------------------------------
+     CTA – FUTURISTIC ACTION
+  ----------------------------------- */
+  .cta {
+    margin-top: space(8);
+    text-align: center;
+
+    button {
+      font-family: $font-family-heading;
+      font-size: font(base);
+      padding: space(3) space(6);
+      border-radius: $btn-radius;
+      background: transparent;
+      color: color(accent);
+      border: $btn-border;
+      letter-spacing: 0.08em;
+      position: relative;
+      overflow: hidden;
+
+      box-shadow:
+        0 0 15px rgba(color(accent), 0.35),
+        inset 0 0 12px rgba(color(accent), 0.25);
+
+      transition: all 0.35s ease;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgba(color(accent), 0.25),
+          transparent
+        );
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+      }
+
+      &:hover {
+        background: $btn-hover-bg;
+        color: $btn-hover-color;
+        box-shadow: 0 0 30px neon(strong);
+
+        &::before {
+          transform: translateX(100%);
+        }
+      }
+    }
+  }
+}
+
+.back-wrapper {
+  margin-bottom: space(5);
+
+  button {
+    font-family: $font-family-heading;
+    letter-spacing: 0.08em;
+    border-radius: $btn-radius;
+    border: 1px solid rgba(color(accent), 0.6);
+    color: color(accent);
+    background: transparent;
+
+    box-shadow:
+      0 0 10px rgba(color(accent), 0.3),
+      inset 0 0 8px rgba(color(accent), 0.25);
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: color(accent);
+      color: color(dark-bg);
+      box-shadow: 0 0 20px neon(cyan);
+    }
+  }
+}
+
+@include down(sm) {
+  .back-wrapper {
+    text-align: center;
+  }
+}
+
+
+/* ----------------------------------
+   ANIMAZIONI
+----------------------------------- */
+@keyframes titleGlow {
+  0% {
+    text-shadow:
+      0 0 10px neon(cyan),
+      0 0 22px rgba(color(accent), 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 20px neon(strong),
+      0 0 40px rgba(color(accent), 0.6);
+  }
+  100% {
+    text-shadow:
+      0 0 10px neon(cyan),
+      0 0 22px rgba(color(accent), 0.3);
+  }
+}
+

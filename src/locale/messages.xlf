@@ -13,39 +13,32 @@
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;primary&quot;&gt;"/>person<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Chi sono </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">5,7</context>
+          <context context-type="linenumber">7,8</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeParagraph1" datatype="html">
         <source> Sono <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Aleksander Nikolli<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Frontend / Backend Developer / Database Administrator<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con passione per lo sviluppo web moderno e accessibile. Unisco creatività e tecnologia per creare interfacce dinamiche e intuitive. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">9,11</context>
+          <context context-type="linenumber">11,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeParagraph2" datatype="html">
         <source> Mi sono formato con un corso intensivo di <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>550+ ore<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> in Frontend / Backend Developer / Database Administrator Development (HTML, CSS, JavaScript, Angular, MySQL) e continuo i miei studi in <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Sistemi Informatici<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> all’Università Roma Tre. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">12,14</context>
+          <context context-type="linenumber">14,16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeParagraph3" datatype="html">
         <source> Opero da <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Roma<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/>, ma sono disponibile per progetti da remoto in tutta Italia e anche all’estero. Cerco collaborazioni in ambienti tech dinamici. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">15,17</context>
+          <context context-type="linenumber">17,19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeSkillsTitle" datatype="html">
         <source>🎯 Competenze principali</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="aboutMeSkillsAriaLabel" datatype="html">
-        <source>Competenze principali</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
           <context context-type="linenumber">23</context>
@@ -55,84 +48,87 @@
         <source>💡 Soft Skills</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">39</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="softSkill1" datatype="html">
         <source>Problem Solving e adattabilità</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit>
       <trans-unit id="softSkill2" datatype="html">
         <source>Creatività e innovazione</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="softSkill3" datatype="html">
         <source>Leadership &amp; lavoro di squadra</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="softSkill4" datatype="html">
         <source>Apprendimento continuo</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
+
+
+
       <trans-unit id="aboutMeCertificatesTitle" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon color=&quot;accent&quot;&gt;"/>school<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> I miei Attestati </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">52,54</context>
+          <context context-type="linenumber">43,44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeCertificatesIntro" datatype="html">
         <source> La mia formazione è comprovata da attestati e certificazioni, che garantiscono la solidità delle mie competenze. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">56,58</context>
+          <context context-type="linenumber">47,49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="frontendCertAlt" datatype="html">
         <source>Attestato Frontend Developer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="frontendCertCaption" datatype="html">
         <source>Frontend Developer</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">61,62</context>
+          <context context-type="linenumber">52,53</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dbaCertAlt" datatype="html">
         <source>Attestato Database Administrator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">64</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dbaCertCaption" datatype="html">
         <source>Database Administrator</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="aboutMeFinalNote" datatype="html">
         <source> Se cerchi un giovane sviluppatore motivato e orientato ai risultati, <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/contatti&quot; class=&quot;contact-link&quot;&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>contattami<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>! Sono pronto a dare valore al tuo progetto digitale. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/chi-sono/chi-sono.component.html</context>
-          <context context-type="linenumber">71,74</context>
+          <context context-type="linenumber">62,65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactTitle" datatype="html">
@@ -160,7 +156,7 @@
         <source> Inserisci un nome valido </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">22,23</context>
+          <context context-type="linenumber">22,24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactEmailLabel" datatype="html">
@@ -181,7 +177,7 @@
         <source> Email non valida </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">39,40</context>
+          <context context-type="linenumber">39,41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactPhoneLabel" datatype="html">
@@ -202,7 +198,7 @@
         <source> Inserisci un numero di cellulare valido </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">56,57</context>
+          <context context-type="linenumber">56,58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="contactMessageLabel" datatype="html">
@@ -251,7 +247,7 @@
         <source>Invia</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/contatti/contatti.component.html</context>
-          <context context-type="linenumber">100,101</context>
+          <context context-type="linenumber">100,102</context>
         </context-group>
       </trans-unit>
       <trans-unit id="homeHeroTitle" datatype="html">
@@ -293,208 +289,809 @@
         <source>Hai un progetto in mente?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">70,71</context>
+          <context context-type="linenumber">83,84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="ctaSubtitle" datatype="html">
         <source>Parliamone! Posso aiutarti a costruirlo da zero.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">71,72</context>
+          <context context-type="linenumber">84,85</context>
         </context-group>
       </trans-unit>
+
+
+
       <trans-unit id="ctaButton" datatype="html">
         <source>Scrivimi ora</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/home/home.component.html</context>
-          <context context-type="linenumber">72,74</context>
+          <context context-type="linenumber">85,87</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectsPageTitle" datatype="html">
+      <trans-unit id="techHtml" datatype="html">
+        <source>HTML5</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techCss" datatype="html">
+        <source>CSS3</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techJs" datatype="html">
+        <source>JavaScript</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techAjax" datatype="html">
+        <source>AJAX</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techTs" datatype="html">
+        <source>TypeScript</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techEs" datatype="html">
+        <source>ECMAScript 6+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techResponsive" datatype="html">
+        <source>Responsive Design</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techJquery" datatype="html">
+        <source>jQuery</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techBootstrap" datatype="html">
+        <source>Bootstrap</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techGit" datatype="html">
+        <source>GIT</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techAngular" datatype="html">
+        <source>Angular</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techNode" datatype="html">
+        <source>Node.js</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techExpress" datatype="html">
+        <source>Express</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techRest" datatype="html">
+        <source>REST API</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techMongo" datatype="html">
+        <source>MongoDB</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techMysql" datatype="html">
+        <source>MySQL Database</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techIonic" datatype="html">
+        <source>Ionic Framework</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techCapacitor" datatype="html">
+        <source>Capacitor</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techFfmpeg" datatype="html">
+        <source>FFmpeg</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techMediamtx" datatype="html">
+        <source>MediaMTX</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techWebrtc" datatype="html">
+        <source>WebRTC</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techHls" datatype="html">
+        <source>HLS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techDash" datatype="html">
+        <source>MPEG-DASH</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techBunny" datatype="html">
+        <source>Bunny.net</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techHetzner" datatype="html">
+        <source>Hetzner Cloud</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techGcp" datatype="html">
+        <source>Google Cloud Platform</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techAws" datatype="html">
+        <source>Amazon Web Services (AWS)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techDocker" datatype="html">
+        <source>Docker</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+
+        
+      </trans-unit>
+      <trans-unit id="techCicd" datatype="html">
+        <source>CI/CD DevOps</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="techSeo" datatype="html">
+        <source>SEO &amp; Analytics</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqProjectTypesQ" datatype="html">
+        <source>Che tipo di progetti realizzi?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqProjectTypesA" datatype="html">
+        <source>Sviluppo software personalizzato, app web e mobile, piattaforme streaming e soluzioni digitali su misura.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">137</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqComplexProjectsQ" datatype="html">
+        <source>Lavori anche su progetti complessi o già avviati?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqComplexProjectsA" datatype="html">
+        <source>Sì, intervengo sia su nuovi progetti che su software esistenti per migliorarli, ottimizzarli o completarli.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqMaintenanceQ" datatype="html">
+        <source>Segui anche la fase di manutenzione?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqMaintenanceA" datatype="html">
+        <source>Offro supporto continuo, manutenzione evolutiva e ottimizzazione per garantire stabilità, sicurezza e performance nel tempo.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">145</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqFirstContactQ" datatype="html">
+        <source>Come avviene il primo contatto?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">148</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="faqFirstContactA" datatype="html">
+        <source>Dopo un primo contatto analizziamo insieme il progetto e definiamo una strategia chiara, realistica e sostenibile.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/home/home.component.ts</context>
+          <context context-type="linenumber">149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectsTitle" datatype="html">
         <source> Progetti </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">7,8</context>
+          <context context-type="linenumber">7,10</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectsListIntro" datatype="html">
-        <source> Ecco alcuni dei miei progetti più recenti: </source>
+      <trans-unit id="projectsSubtitle" datatype="html">
+        <source> Alcuni progetti reali sviluppati e portati in produzione. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">13,16</context>
+          <context context-type="linenumber">11,14</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectsContactButton" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contattami </source>
+      <trans-unit id="projectsComingSoon" datatype="html">
+        <source> Altri progetti sono in arrivo 🚀 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/progetti/progetti.component.html</context>
-          <context context-type="linenumber">71,73</context>
+          <context context-type="linenumber">26,30</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="readMoreButton" datatype="html">
-        <source>Mostra di più</source>
+      <trans-unit id="serviceDigitalTitle" datatype="html">
+        <source> Consulenza Digitale e Soluzioni per Imprese </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">19,20</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">41,42</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">57,58</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">73,74</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">89,90</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">103,104</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">6,9</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="readLessButton" datatype="html">
-        <source>Mostra di meno</source>
+      <trans-unit id="backToServicesAria" datatype="html">
+        <source>Torna ai servizi</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">20,22</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">42,43</context>
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">58,59</context>
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">74,75</context>
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">90,91</context>
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">104,105</context>
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="projectDetailTechTitle" datatype="html">
-        <source>Tecnologie utilizzate</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">24,25</context>
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="projectDetailTechAriaLabel" datatype="html">
-        <source>Tecnologie usate</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">15,16</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailFeaturesTitle" datatype="html">
-        <source>Funzionalità Principali</source>
+      <trans-unit id="backToServices" datatype="html">
+        <source> ← Tutti i servizi </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">33,34</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">18,21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">18,21</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailChallengesTitle" datatype="html">
-        <source>Sfide Affrontate</source>
+      <trans-unit id="serviceDigitalIntro" datatype="html">
+        <source> Supporto aziende e professionisti nella digitalizzazione dei processi e nello sviluppo di soluzioni efficaci. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">49,50</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">24,28</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailSolutionsTitle" datatype="html">
-        <source>Soluzioni Implementate</source>
+      <trans-unit id="serviceDigitalAreasTitle" datatype="html">
+        <source> Aree di intervento </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">65,66</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">30,34</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailResultsTitle" datatype="html">
-        <source>Risultati Chiave</source>
+      <trans-unit id="serviceDigitalAreaStrategy" datatype="html">
+        <source>Strategia digitale</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">81,82</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">34,35</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailArchitectureTitle" datatype="html">
-        <source>Architettura</source>
+      <trans-unit id="serviceDigitalAreaAutomation" datatype="html">
+        <source>Automazione processi</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">97,98</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">35,36</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailDevelopmentPhasesTitle" datatype="html">
-        <source>Fasi di Sviluppo</source>
+      <trans-unit id="serviceDigitalAreaSoftware" datatype="html">
+        <source>Soluzioni software</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">111,113</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">36,37</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailTargetAudienceTitle" datatype="html">
-        <source>Target Audience</source>
+
+
+
+      <trans-unit id="serviceDigitalAreaWorkflow" datatype="html">
+        <source>Ottimizzazione flussi di lavoro</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">119,120</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">37,41</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailAspectsCoveredTitle" datatype="html">
-        <source>Aspetti Coperti</source>
+      <trans-unit id="serviceDigitalApproachTitle" datatype="html">
+        <source> Approccio </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">125,127</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">42,45</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailDemoButton" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>launch<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Vai al progetto </source>
+      <trans-unit id="serviceDigitalApproachText" datatype="html">
+        <source> Analisi concreta, soluzioni pratiche e orientate ai risultati reali. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">135,137</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">46,51</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailRepoButton" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>code<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Codice sorgente </source>
+      <trans-unit id="serviceDigitalCta" datatype="html">
+        <source> Richiedi consulenza </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">138,140</context>
+          <context context-type="sourcefile">src/app/pages/servizi/consulenza-digitale/consulenza-digitale.component.html</context>
+          <context context-type="linenumber">57,61</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailBackButton" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>arrow_back<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Torna ai Progetti </source>
+      <trans-unit id="serviceSoftwareTitle" datatype="html">
+        <source> Creazione Software e Siti Web Personalizzati </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">145,147</context>
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">6,9</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailLoadingMessage" datatype="html">
-        <source>Caricamento dettaglio progetto...</source>
+      <trans-unit id="serviceSoftwareIntro" datatype="html">
+        <source> Sviluppo software su misura e siti web moderni, progettati per rispondere a esigenze reali di business, performance e scalabilità. </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">152,154</context>
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">24,29</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailErrorMessage" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{ errore }}"/></source>
+      <trans-unit id="serviceSoftwareOfferTitle" datatype="html">
+        <source> Cosa offro </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">156,157</context>
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">30,34</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="projectDetailErrorBackButton" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>arrow_back<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Torna ai Progetti </source>
+      <trans-unit id="serviceSoftwareOfferCustom" datatype="html">
+        <source> Software personalizzato </source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/pages/progetti/progetto-detail/progetto-detail.component.html</context>
-          <context context-type="linenumber">158,160</context>
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">35,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSoftwareOfferWebsites" datatype="html">
+        <source> Siti web professionali e performanti </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSoftwareOfferWebApp" datatype="html">
+        <source> Web application su misura </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSoftwareOfferScalable" datatype="html">
+        <source> Architetture scalabili </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">44,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSoftwareApproachTitle" datatype="html">
+        <source> Approccio </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSoftwareApproachText" datatype="html">
+        <source> Ogni progetto nasce dall’analisi delle reali necessità del cliente, con soluzioni tecniche affidabili e orientate al lungo periodo. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">54,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSoftwareCta" datatype="html">
+        <source> Richiedi una consulenza </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/creazione-software/creazione-software.component.html</context>
+          <context context-type="linenumber">65,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectTitle" datatype="html">
+        <source> Consulenza e Gestione Progetti Digitali </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">6,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectIntro" datatype="html">
+        <source> Gestisco progetti digitali dall’idea al rilascio, garantendo organizzazione, chiarezza e risultati. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">24,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectManageTitle" datatype="html">
+        <source> Cosa gestisco </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">30,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectManageAnalysis" datatype="html">
+        <source> Analisi e pianificazione </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">35,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectManageCoordination" datatype="html">
+        <source> Coordinamento sviluppo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectManageQuality" datatype="html">
+        <source> Controllo qualità </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectManageLaunch" datatype="html">
+        <source> Lancio del progetto </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">44,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectBenefitsTitle" datatype="html">
+        <source> Vantaggi </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectBenefitsText" datatype="html">
+        <source> Riduzione dei rischi, tempi chiari e obiettivi ben definiti. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">54,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceProjectCta" datatype="html">
+        <source> Parliamo del tuo progetto </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/gestione-progetti/gestione-progetti.component.html</context>
+          <context context-type="linenumber">65,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsTitle" datatype="html">
+        <source> Strategie Google Ads e Campagne PPC </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">6,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsIntro" datatype="html">
+        <source> Creo e gestisco campagne Google Ads mirate per aumentare la visibilità online e ottenere risultati concreti. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">24,28</context>
+        </context-group>
+      </trans-unit>
+
+
+
+      <trans-unit id="serviceAdsOfferTitle" datatype="html">
+        <source> Servizi offerti </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">30,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsOfferCampaigns" datatype="html">
+        <source> Creazione campagne PPC </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">35,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsOfferKeywords" datatype="html">
+        <source> Analisi keyword </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsOfferOptimization" datatype="html">
+        <source> Ottimizzazione annunci </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsOfferTracking" datatype="html">
+        <source> Monitoraggio conversioni </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">44,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsGoalTitle" datatype="html">
+        <source> Obiettivo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsGoalText" datatype="html">
+        <source> Portare traffico qualificato e migliorare il ritorno sull’investimento pubblicitario. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">54,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAdsCta" datatype="html">
+        <source> Avvia una campagna Ads </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/google-ads/google-ads.component.html</context>
+          <context context-type="linenumber">65,67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceTitle" datatype="html">
+        <source> Manutenzione e Ottimizzazione Continua del Software </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">6,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceIntro" datatype="html">
+        <source> Mantengo software e siti web sempre aggiornati, sicuri e performanti nel tempo. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">24,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceIncludesTitle" datatype="html">
+        <source> Cosa include </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">30,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceIncludeBugfix" datatype="html">
+        <source> Bug fixing </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">35,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceIncludeSecurity" datatype="html">
+        <source> Aggiornamenti di sicurezza </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceIncludePerformance" datatype="html">
+        <source> Ottimizzazione performance </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceIncludeMonitoring" datatype="html">
+        <source> Monitoraggio continuo </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">44,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceWhyTitle" datatype="html">
+        <source> Perché è fondamentale </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceWhyText" datatype="html">
+        <source> Un software non mantenuto perde valore e sicurezza. La manutenzione garantisce stabilità nel lungo periodo. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">54,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceMaintenanceCta" datatype="html">
+        <source> Mantieni il tuo software efficiente </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/manutenzione-software/manutenzione-software.component.html</context>
+          <context context-type="linenumber">65,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoTitle" datatype="html">
+        <source> Ottimizzazione SEO Tecnica e Contenuti </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">6,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoIntro" datatype="html">
+        <source> Miglioro il posizionamento sui motori di ricerca attraverso SEO tecnica e contenuti ottimizzati. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">24,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoInterventionsTitle" datatype="html">
+        <source> Interventi SEO </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">30,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoInterventionTechnical" datatype="html">
+        <source> SEO tecnica </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">35,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoInterventionContent" datatype="html">
+        <source> Ottimizzazione contenuti </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoInterventionStructure" datatype="html">
+        <source> Struttura del sito </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoInterventionPerformance" datatype="html">
+        <source> Performance e accessibilità </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">44,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoResultTitle" datatype="html">
+        <source> Risultato </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoResultText" datatype="html">
+        <source> Più visibilità, traffico organico qualificato e migliori conversioni. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">54,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceSeoCta" datatype="html">
+        <source> Migliora la tua SEO </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/seo-contenuti/seo-contenuti.component.html</context>
+          <context context-type="linenumber">65,67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servicesPageTitle" datatype="html">
@@ -504,11 +1101,21 @@
           <context context-type="linenumber">4,6</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="servicesCardCta" datatype="html">
+        <source> Scopri di più <x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;cta-icon&quot;&gt;"/>arrow_forward<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.html</context>
+          <context context-type="linenumber">25,28</context>
+        </context-group>
+      </trans-unit>
+
+
+
       <trans-unit id="servicesContactButton" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon&gt;"/>mail_outline<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Contattami </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.html</context>
-          <context context-type="linenumber">22,24</context>
+          <context context-type="linenumber">33,36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_creazione_software_title" datatype="html">
@@ -539,74 +1146,231 @@
           <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="servizio_streaming_title" datatype="html">
+        <source>Streaming Media, Flussi &amp; Protocolli</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="servizio_streaming_desc" datatype="html">
+        <source>Esperienza nella gestione e generazione di flussi audio/video tramite FFmpeg e MediaMTX. Implemento soluzioni basate su protocolli HLS, DASH, WebRTC e RTSP per streaming live, on-demand e comunicazioni real-time ad alte prestazioni.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="servizio_manutenzione_title" datatype="html">
         <source>Manutenzione &amp; Ottimizzazione Continua</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_manutenzione_desc" datatype="html">
         <source>Assicuro che le tue piattaforme digitali siano sempre al top. Offro aggiornamenti costanti, risoluzione proattiva dei bug e ottimizzazioni continue per garantire sicurezza, velocità e funzionalità inalterate nel tempo.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_ads_title" datatype="html">
         <source>Strategie Google Ads (PPC)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_ads_desc" datatype="html">
         <source>Massimizza la tua visibilità online con campagne Google Ads mirate. Progetto e gestisco strategie Pay-Per-Click per attrarre il tuo pubblico ideale, aumentare il traffico qualificato e convertire i clic in risultati concreti.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_seo_title" datatype="html">
         <source>Ottimizzazione SEO &amp; Contenuti</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">55</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_seo_desc" datatype="html">
         <source>Rendi il tuo sito una calamita per i motori di ricerca. Implemento tecniche SEO avanzate e strategie di contenuto per migliorare il tuo posizionamento, aumentare il traffico organico e farti trovare dai tuoi clienti ideali.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_digitale_title" datatype="html">
         <source>Consulenza Digitale &amp; Soluzioni per Imprese</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_digitale_desc" datatype="html">
         <source>Hai un&apos;attività? La tua presenza online è fondamentale. Offro consulenza strategica e sviluppo soluzioni su misura (siti web, software, app) per semplificare il lavoro e ottimizzare la tua operatività digitale.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_progetto_title" datatype="html">
         <source>Consulenza &amp; Gestione Progetti Digitali</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">61</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="servizio_progetto_desc" datatype="html">
         <source>Ti guido attraverso ogni fase del tuo progetto digitale, dalla concezione all&apos;implementazione. Offro consulenza strategica e gestione completa per trasformare le tue idee in realtà, garantendo un lancio fluido e di successo.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/servizi/servizi.component.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingTitle" datatype="html">
+        <source> Streaming Media, WebRTC, HLS e FFmpeg </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">6,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingIntro" datatype="html">
+        <source> Sviluppo soluzioni professionali di streaming audio e video ad alte prestazioni, progettate per garantire bassa latenza, qualità costante e scalabilità reale. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">24,29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingSolutionsTitle" datatype="html">
+        <source> Soluzioni di streaming su misura </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">30,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingSolutionsText" datatype="html">
+        <source> Progetto architetture basate su WebRTC, HLS, DASH, FFmpeg e MediaMTX, scegliendo la tecnologia più adatta in base al contesto reale di utilizzo. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">34,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingItemRealtime" datatype="html">
+        <source> Streaming real-time a bassa latenza </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">40,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingItemLiveVod" datatype="html">
+        <source> Live streaming e video on-demand </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">43,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingItemFfmpeg" datatype="html">
+        <source> Pipeline video avanzate con FFmpeg </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">46,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingItemServers" datatype="html">
+        <source> Media server moderni e leggeri </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">49,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingFaqTitle" datatype="html">
+        <source>Domande frequenti sullo streaming media</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">56,60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceStreamingCta" datatype="html">
+        <source> Parliamo del tuo progetto streaming </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/streaming-media/streaming-media.component.html</context>
+          <context context-type="linenumber">67,71</context>
+        </context-group>
+
+
+
+      </trans-unit>
+      <trans-unit id="serviceAppTitle" datatype="html">
+        <source> Sviluppo App Mobile e Progressive Web App </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">6,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppIntro" datatype="html">
+        <source> Progetto e sviluppo applicazioni mobile e PWA moderne, veloci e intuitive, compatibili con i principali dispositivi. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">24,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppIncludesTitle" datatype="html">
+        <source> Servizi inclusi </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">30,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppIncludeMobile" datatype="html">
+        <source> App mobile Android e iOS </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">35,37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppIncludePwa" datatype="html">
+        <source> Progressive Web App (PWA) </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">38,40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppIncludeUi" datatype="html">
+        <source> Interfacce moderne e responsive </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">41,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppIncludePerformance" datatype="html">
+        <source> Ottimizzazione performance </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">44,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppWhyPwaTitle" datatype="html">
+        <source> Perché una PWA </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">50,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppWhyPwaText" datatype="html">
+        <source> Le PWA offrono un’esperienza simile a un’app nativa, con costi ridotti e maggiore accessibilità. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">54,59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="serviceAppCta" datatype="html">
+        <source> Sviluppiamo la tua app </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/servizi/sviluppo-app/sviluppo-app.component.html</context>
+          <context context-type="linenumber">65,67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cookieConsentText" datatype="html">
@@ -747,6 +1511,9 @@
           <context context-type="linenumber">52,54</context>
         </context-group>
       </trans-unit>
+
+
+      
       <trans-unit id="changeLangItMobile" datatype="html">
         <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img src=&quot;assets/flags/it.png&quot; alt=&quot;Italian Flag&quot; class=&quot;flag-icon&quot;&gt;"/><x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;lang-text&quot;&gt;"/>It<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
@@ -814,67 +1581,74 @@
           <context context-type="linenumber">68,71</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="closeBtn" datatype="html">
-        <source>Chiudi</source>
+      <trans-unit id="aboutMeSkillsAriaLabel" datatype="html">
+        <source>Competenze principali</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/software-preview-modal/software-preview-modal.component.html</context>
-          <context context-type="linenumber">12,14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="openDemoBtn" datatype="html">
-        <source> Apri Demo → </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/software-preview-modal/software-preview-modal.component.html</context>
-          <context context-type="linenumber">19,21</context>
+          <context context-type="sourcefile">src/app/shared/components/skills-box/skills-box.component.html</context>
+          <context context-type="linenumber">3,4</context>
         </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeTitle" datatype="html">
         <source> Perché scegliere me? </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">6,8</context>
+          <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeIntro" datatype="html">
-        <source>A differenza delle grandi agenzie, con me non dovrai:</source>
+        <source> A differenza delle grandi agenzie, con me non dovrai: </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">11,13</context>
+          <context context-type="linenumber">22,25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeNegative1" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>cancel<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Aspettare giorni per una semplice risposta </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">14,16</context>
+          <context context-type="linenumber">28,30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeNegative2" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>email<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Inviare decine di email per ogni richiesta </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">18,20</context>
+          <context context-type="linenumber">33,35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMeNegative3" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;negative-icon&quot;&gt;"/>person_off<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Parlare con operatori diversi ogni volta </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">22,24</context>
+          <context context-type="linenumber">38,40</context>
         </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMePositive1" datatype="html">
-        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>lightbulb<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Affidandoti a me, parli <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>direttamente<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con chi sviluppa il tuo progetto — sia frontend, backend che database. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> Hai un dubbio? Mi chiami. Serve una modifica? Mi scrivi. Ci vediamo di persona? Nessun problema. </source>
+        <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>lightbulb<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Affidandoti a me, parli <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>direttamente<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/> con chi sviluppa frontend, backend e database. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">28,32</context>
+          <context context-type="linenumber">45,50</context>
         </context-group>
       </trans-unit>
       <trans-unit id="whyChooseMePositive2" datatype="html">
         <source><x id="START_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;mat-icon class=&quot;positive-icon&quot;&gt;"/>rocket_launch<x id="CLOSE_TAG_MAT_ICON" ctype="x-mat_icon" equiv-text="&lt;/mat-icon&gt;"/> Supporto rapido, diretto, umano. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/why-chose-me.component.html</context>
-          <context context-type="linenumber">35,38</context>
+          <context context-type="linenumber">51,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectVisit" datatype="html">
+        <source>Visita</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/projects/project-tile/project-tile.component.html</context>
+          <context context-type="linenumber">29,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="projectContact" datatype="html">
+        <source>Contattami</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/projects/project-tile/project-tile.component.html</context>
+          <context context-type="linenumber">37,42</context>
         </context-group>
       </trans-unit>
     </body>

@@ -1,0 +1,58 @@
+
+@use 'theme/theme' as *;
+
+.faq-section {
+  margin-top: space(8);
+
+  h2 {
+    font-family: $font-family-heading;
+    font-size: font(lg);
+    color: color(accent);
+    margin-bottom: space(4);
+    text-shadow: 0 0 10px neon(cyan);
+  }
+
+  .faq-item {
+    border: 1px solid rgba(color(accent), 0.25);
+    border-radius: $card-radius;
+    background: $card-bg;
+    margin-bottom: space(3);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: space(4);
+    background: transparent;
+    border: none;
+    color: color(text);
+    font-size: font(base);
+    font-family: $font-family-base;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(color(accent), 0.08);
+    }
+
+    .icon {
+      font-size: 1.2rem;
+      color: color(accent);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .faq-item.open .icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    padding: space(4);
+    color: color(text-light);
+    line-height: 1.6;
+    background: rgba(color(dark-bg), 0.4);
+  }
+}
+

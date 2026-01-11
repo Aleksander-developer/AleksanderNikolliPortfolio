@@ -1,4 +1,5 @@
 
+// src/styles/_fluid
 @function fluid($min, $max, $min-vw: 360px, $max-vw: 1440px) {
   @return clamp(
     $min,

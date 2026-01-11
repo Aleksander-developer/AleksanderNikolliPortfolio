@@ -21,6 +21,7 @@ import { LogoComponent } from '../pages/logo/logo.component';
 import { SocialIconsModule } from './components/social-icons/social-icons.module';
 import { VetrinaSoftwareModule } from './vetrina-software/vetrina-software.module';
 import { SkillsBoxComponent } from './components/skills-box/skills-box.component';
+import { FaqComponent } from './components/faq/faq.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { SkillsBoxComponent } from './components/skills-box/skills-box.component
     GoogleVerifiedBadgeComponent,
     BackgroundComponent,
     LogoComponent,
-    SkillsBoxComponent
+    SkillsBoxComponent,
+    FaqComponent
   ],
   imports: [
     CommonModule,
@@ -61,7 +63,8 @@ import { SkillsBoxComponent } from './components/skills-box/skills-box.component
     LogoComponent,
     SocialIconsModule,
     VetrinaSoftwareModule,
-    SkillsBoxComponent
+    SkillsBoxComponent,
+    FaqComponent
 
   ]
 })

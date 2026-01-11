@@ -101,4 +101,12 @@ export class SeoService {
       }
     });
   }
+
+  addJsonLd(schema: object): void {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+
 }

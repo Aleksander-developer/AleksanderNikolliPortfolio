@@ -325,6 +325,17 @@
   60% { transform: translateY(-5px); }
 }
 
+.home-faq {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: space(7) space(4);
+
+  @include down(md) {
+    padding: space(6) space(3);
+  }
+}
+
+
 /* -------------------------------------------------------
    RESPONSIVE
 -------------------------------------------------------- */

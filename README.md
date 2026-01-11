@@ -75,6 +75,23 @@ ng g c shared/components/social-icons/svg-instagram --standalone=false
 ng g c shared/components/social-icons/svg-facebook --standalone=false
 ng g c shared/components/social-icons/svg-whatsapp --standalone=false
 
+ng g c shared/components/faq --standalone=false
+
+rm -rf src/app/pages/servizi/servizi
+rm -rf src/app/pages/servizi/consulenza-digitale
+rm -rf src/app/pages/servizi/sviluppo-app
+
+
+ng g c pages/servizi/creazione-software --standalone=false
+ng g c pages/servizi/sviluppo-app --standalone=false
+ng g c pages/servizi/streaming-media --standalone=false
+ng g c pages/servizi/manutenzione-software --standalone=false
+ng g c pages/servizi/google-ads --standalone=false
+ng g c pages/servizi/seo-contenuti --standalone=false
+ng g c pages/servizi/consulenza-digitale --standalone=false
+ng g c pages/servizi/gestione-progetti --standalone=false
+
+
 ng extract-i18n --output-path src/locale
 
 Ogni volta che fai modifiche Angular → devi rifare:

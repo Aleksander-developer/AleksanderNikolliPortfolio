@@ -1,0 +1,26 @@
+
+<section class="faq-section" *ngIf="faqs.length">
+
+  <h2>{{ title }}</h2>
+
+  <div
+    class="faq-item"
+    *ngFor="let faq of faqs; let i = index"
+    [class.open]="openIndex === i"
+  >
+    <button
+      class="faq-question"
+      (click)="toggle(i)"
+      [attr.aria-expanded]="openIndex === i"
+    >
+      {{ faq.question }}
+      <span class="icon">+</span>
+    </button>
+
+    <div class="faq-answer" *ngIf="openIndex === i">
+      <p>{{ faq.answer }}</p>
+    </div>
+  </div>
+
+</section>
+
