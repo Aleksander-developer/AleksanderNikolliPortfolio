@@ -1,6 +1,9 @@
 
 /* src/app/shared/projects/fondazione-gea/fondazione-gea.component.scss */
 
+@use '../../../../styles/theme/theme' as *;
+
+
 :host {
   display: flex;
   justify-content: center;

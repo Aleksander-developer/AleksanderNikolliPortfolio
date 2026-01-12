@@ -1,6 +1,9 @@
 
 /* src/app/shared/projects/sharing-tv-europa/sharing-tv-europa.component.scss */
 
+@use '../../../../styles/theme/theme' as *;
+
+
 :host {
   display: flex;
   justify-content: center;

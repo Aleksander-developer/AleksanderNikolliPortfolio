@@ -1,7 +1,8 @@
 
 /* src/app/shared/components/background-animated/background-animated.component.scss */
 
-@use 'theme/theme' as *;
+@use '../../../styles/theme/theme' as *;
+
 
 :host {
   position: fixed;

@@ -2,7 +2,8 @@
 /* src/app/shared/components/logo-animated/logo-animated.component.scss */
 
 @use "sass:math";
-@use "theme/theme" as *;
+@use '../../../styles/theme/theme' as *;
+
 
 :host {
   display: flex;

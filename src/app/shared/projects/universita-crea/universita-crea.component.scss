@@ -1,6 +1,9 @@
 
 /* src/app/shared/projects/universita-crea/universita-crea.component.scss */
 
+@use '../../../../styles/theme/theme' as *;
+
+
 :host {
   display: flex;
   justify-content: center;
