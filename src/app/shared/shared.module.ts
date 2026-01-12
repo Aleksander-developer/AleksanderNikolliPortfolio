@@ -22,6 +22,7 @@ import { SocialIconsModule } from './components/social-icons/social-icons.module
 import { VetrinaSoftwareModule } from './vetrina-software/vetrina-software.module';
 import { SkillsBoxComponent } from './components/skills-box/skills-box.component';
 import { FaqComponent } from './components/faq/faq.component';
+import { TechStackComponent } from './components/tech-stack/tech-stack.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { FaqComponent } from './components/faq/faq.component';
     BackgroundComponent,
     LogoComponent,
     SkillsBoxComponent,
-    FaqComponent
+    FaqComponent,
+    TechStackComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +66,8 @@ import { FaqComponent } from './components/faq/faq.component';
     SocialIconsModule,
     VetrinaSoftwareModule,
     SkillsBoxComponent,
-    FaqComponent
+    FaqComponent,
+    TechStackComponent
 
   ]
 })

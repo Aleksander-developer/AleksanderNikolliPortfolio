@@ -77,6 +77,8 @@ ng g c shared/components/social-icons/svg-whatsapp --standalone=false
 
 ng g c shared/components/faq --standalone=false
 
+ng g c shared/components/tech-stack --standalone=false
+
 rm -rf src/app/pages/servizi/servizi
 rm -rf src/app/pages/servizi/consulenza-digitale
 rm -rf src/app/pages/servizi/sviluppo-app

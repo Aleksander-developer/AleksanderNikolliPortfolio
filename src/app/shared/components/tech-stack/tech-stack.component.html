@@ -1,0 +1,18 @@
+
+<section class="tech-section" #techSection>
+  <h2 class="section-title" i18n="@@techSkillsTitle">
+    Competenze Tecnologiche
+  </h2>
+
+  <div class="tech-grid">
+    <mat-card
+      *ngFor="let tech of displayedTechList; let i = index"
+      class="tech-tile mat-elevation-z2"
+      [style.--i]="i">
+      <mat-card-content class="tech-content">
+        {{ tech.name }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>
+
